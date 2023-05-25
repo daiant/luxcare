@@ -1,0 +1,47 @@
+.center {
+  text-align: center;
+  width: 100%;
+}
+
+.center h1 {
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1rem + 2.5vw, 4rem);
+  font-weight: 300;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.center button {
+  width: fit-content;
+  font-weight: 300;
+  padding: 10px 48px;
+  border-radius: 5rem;
+  border: 0;
+  outline: 0;
+  background-color: var(--color);
+  color: var(--background-color);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.left {
+  align-items: flex-start !important;
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 1rem + 1.1vw, 2.25rem);
+  line-height: 30px;
+  max-width: 1000px;
+  padding-inline-start: 180px;
+}
+
+.parallax_content .parallax_title {
+  font-size: 48px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+}
+.parallax_content .parallax_subtitle {
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+}
