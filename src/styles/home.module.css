@@ -7,7 +7,6 @@
   font-size: 1.5rem;
   font-size: clamp(1.5rem, 1rem + 2.5vw, 4rem);
   font-weight: 300;
-  white-space: nowrap;
   text-transform: uppercase;
 }
 
@@ -21,7 +20,8 @@
   background-color: var(--color);
   color: var(--background-color);
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
 }
 
 .left {
@@ -29,19 +29,27 @@
   font-size: 1.125rem;
   font-size: clamp(1.125rem, 1rem + 1.1vw, 2.25rem);
   line-height: 30px;
-  max-width: 1000px;
-  padding-inline-start: 180px;
+  max-width: 960px;
+  margin-inline: auto;
+  padding-inline: 32px;
 }
 
+.left p {
+  text-wrap: balance;
+}
+.parallax_content {
+  text-align: center;
+}
 .parallax_content .parallax_title {
-  font-size: 48px;
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 0.75rem + 1.875vw, 3rem);
   font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: -3px;
 }
+
 .parallax_content .parallax_subtitle {
-  font-size: 60px;
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1rem + 2.5vw, 4rem);
   font-weight: 500;
-  letter-spacing: -3px;
   text-transform: uppercase;
 }
