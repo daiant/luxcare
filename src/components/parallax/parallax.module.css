@@ -4,10 +4,16 @@
   height: 70vh;
   background-color: var(--background-color);
   position: relative;
+  overflow: hidden;
+}
+.wrapper:hover img {
+  transform: scale(1.01);
+  
 }
 .wrapper img {
   object-fit: cover;
   user-select: none;
+  transition: transform 500ms ease;
 }
 .wrapper .mask {
   position: absolute;
@@ -23,6 +29,7 @@
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
+  color: var(--color);
 }
 .content > * {
   display: flex;
