@@ -1,5 +1,6 @@
 import Hero from "@/components/hero/hero";
 import Parallax from "@/components/parallax/parallax";
+import Featured from "./components/featured/featured";
 
 export type Product = 'no kiero';
 export default function Product(props: Product) {
@@ -8,9 +9,14 @@ export default function Product(props: Product) {
       <h1>series crown</h1>
       <h2>Marquis deep sea</h2>
     </Hero>
+    <Featured
+      title="Una verdadera leyenda"
+      subtitle="Con asientos esculpidos de varios niveles para seis personas, incluida una silla Adirondack de cuerpo completo para una poderosa terapia de cuello a pies. El asiento de remojo súper profundo envuelve en calidez, dirigido a su cuello, hombros y columna vertebral."
+      action="Contacta"
+    />
     <div className="featured">
-      <p className="title">Una verdadera leyenda</p>
-      <p className="subtitle">Con asientos esculpidos de varios niveles para seis personas, incluida una silla Adirondack de cuerpo completo para una poderosa terapia de cuello a pies. El asiento de remojo súper profundo envuelve en calidez, dirigido a su cuello, hombros y columna vertebral. </p>
+      <p className="title">k</p>
+      <p className="subtitle"></p>
       <button className="action">Contacta</button>
     </div>
     <ul className="info">
