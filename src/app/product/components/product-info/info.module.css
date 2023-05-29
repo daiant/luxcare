@@ -1,0 +1,35 @@
+.wrapper {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 96px 32px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.item+.item {
+  border-left: 1px solid var(--color);
+}
+
+.item {
+  padding-inline: 32px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-block-end: 32px;
+}
+
+.title span {
+  opacity: 0.7;
+  font-size: 20px;
+}
+
+.content {
+  font-size: 40px;
+  font-weight: 500;
+}
