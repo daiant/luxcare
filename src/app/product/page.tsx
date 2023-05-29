@@ -3,7 +3,7 @@ import Parallax from "@/components/parallax/parallax";
 import Featured from "./components/featured/featured";
 import Info, { ProductInfo } from "./components/product-info/info";
 
-export type Product = 'no kiero';
+export type Product = 'kiero';
 export default function Product(props: Product) {
   const info: ProductInfo[] = [
     { title: 'Medidas', subtitle: 'CM', content: '229 x 229 x 90' },
