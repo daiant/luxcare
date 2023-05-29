@@ -18,7 +18,7 @@ export default function Home() {
           <p className='italic'>- Luxcare</p>
         </div>
       </Hero>
-      <Link href="/next">
+      <Link href="/product">
         <Parallax src='/test.jpg'>
           <div className={styles.parallax_content}>
             <p className={styles.parallax_title}>Serie title</p>
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
         </Parallax>
       </Link>
-      <Link href="/next">
+      <Link href="/product">
         <Parallax src='/test.jpg'>
           <div className={styles.parallax_content}>
             <p className={styles.parallax_title}>Serie title</p>
@@ -34,7 +34,7 @@ export default function Home() {
           </div>
         </Parallax>
       </Link>
-      <Link href="/next">
+      <Link href="/product">
         <Parallax src='/test.jpg'>
           <div className={styles.parallax_content}>
             <p className={styles.parallax_title}>Serie title</p>
