@@ -4,7 +4,9 @@
   padding: 96px 32px;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  row-gap: 32px;
 }
 
 .item+.item {
