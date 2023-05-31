@@ -53,7 +53,7 @@
           object-fit: cover;
           width: 80%;
           height: 80%;
-          /* transition: height 300ms, width 300ms; */
+          transition: height 300ms, width 300ms;
         }
       }
     }
