@@ -1,7 +1,10 @@
+'use client';
+
 import Hero from "@/components/hero/hero";
 import Parallax from "@/components/parallax/parallax";
 import Featured from "./components/featured/featured";
 import Info, { ProductInfo } from "./components/product-info/info";
+import Showcase from "./components/showcase/showcase";
 
 export default function Product(props: any) {
   const info: ProductInfo[] = [
@@ -25,11 +28,11 @@ export default function Product(props: any) {
       title="Featured text"
       subtitle="La nueva colección Crown de Marquis es una obra maestra de innovación. Combina nuestras funciones de terapia más avanzadas y comodidades de lujo con el sistema de hidromasaje más elegante y flexible del mercado."
     />
-    <div className="showcase">
-      <img src="/test.jpg" alt="" />
-      <img src="/test.jpg" alt="" />
-      <button className="secondary">Explora mas caracteristicas</button>
-    </div>
+    <Showcase
+      images={[{ src: '/test.jpg', height: 804, width: 716, alt: '' }, { src: '/test.jpg', height: 804, width: 716, alt: '' }]}
+      button="Explora mas caracteristicas"
+      buttonAction={() => console.log('ei')}
+    ></Showcase>
     <Featured
       title="Featured text"
       subtitle="La nueva colección Crown de Marquis es una obra maestra de innovación. Combina nuestras funciones de terapia más avanzadas y comodidades de lujo con el sistema de hidromasaje más elegante y flexible del mercado."
