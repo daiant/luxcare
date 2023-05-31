@@ -43,7 +43,7 @@ export default function Gallery(props: { images: GalleryImage[] }) {
     list.current.scrollLeft = list.current.scrollLeft + position - event.clientX;
 
     setPosition(event.clientX);
-    setSelected(-1);
+    // setSelected(-1);
   }
   function handleMouseEnter(event: MouseEvent) {
     if (active) { setActive(false) }
@@ -92,7 +92,7 @@ export default function Gallery(props: { images: GalleryImage[] }) {
       {props.images.map((image, index) => { return <div className={styles.dot} aria-selected={false} key={index}></div> })}
     </div>
     <div className={styles.text}>
-      <p>{props.images[1]?.content}</p>
+      <p>{props.images[selected]?.content}</p>
     </div>
   </div>
 }
