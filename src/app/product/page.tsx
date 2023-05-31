@@ -5,6 +5,7 @@ import Parallax from "@/components/parallax/parallax";
 import Featured from "./components/featured/featured";
 import Info, { ProductInfo } from "./components/product-info/info";
 import Showcase from "./components/showcase/showcase";
+import Gallery from "./components/gallery/gallery";
 
 export default function Product(props: any) {
   const info: ProductInfo[] = [
@@ -37,20 +38,10 @@ export default function Product(props: any) {
       title="Featured text"
       subtitle="La nueva colección Crown de Marquis es una obra maestra de innovación. Combina nuestras funciones de terapia más avanzadas y comodidades de lujo con el sistema de hidromasaje más elegante y flexible del mercado."
     />
-    <ul className="gallery">
-      <li>
-        <img src="/test.jpg" />
-        <p>El flujo laminar optimiza el flujo de agua al eliminar la turbulencia entre las bombas y los chorros. Como resultado, experimenta una penetración más profunda del tejido muscular sin causar molestias en la piel. En otras palabras, "¡Alto flujo, sin picadura!".</p>
-      </li>
-      <li>
-        <img src="/test.jpg" />
-        <p>El flujo laminar optimiza el flujo de agua al eliminar la turbulencia entre las bombas y los chorros. Como resultado, experimenta una penetración más profunda del tejido muscular sin causar molestias en la piel. En otras palabras, "¡Alto flujo, sin picadura!".</p>
-      </li>
-      <li>
-        <img src="/test.jpg" />
-        <p>El flujo laminar optimiza el flujo de agua al eliminar la turbulencia entre las bombas y los chorros. Como resultado, experimenta una penetración más profunda del tejido muscular sin causar molestias en la piel. En otras palabras, "¡Alto flujo, sin picadura!".</p>
-      </li>
-      <button>Contacta con un proveedor</button>
-    </ul>
+    <Gallery images={[
+      { src: "/test.jpg", content: 'El flujo laminar optimiza el flujo de agua al eliminar la turbulencia entre las bombas y los chorros. Como resultado, experimenta una penetración más profunda del tejido muscular sin causar molestias en la piel. En otras palabras, "¡Alto flujo, sin picadura!".' },
+      { src: '/test.jpg', content: 'El flujo laminar optimiza el flujo de agua al eliminar la turbulencia entre las bombas y los chorros. Como resultado, experimenta una penetración más profunda del tejido muscular sin causar molestias en la piel. En otras palabras, "¡Alto flujo, sin picadura!".' },
+      { src: '/test.jpg', content: 'El flujo laminar optimiza el flujo de agua al eliminar la turbulencia entre las bombas y los chorros. Como resultado, experimenta una penetración más profunda del tejido muscular sin causar molestias en la piel. En otras palabras, "¡Alto flujo, sin picadura!".' },
+    ]}></Gallery>
   </main >
 }
