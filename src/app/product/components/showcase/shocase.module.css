@@ -1,4 +1,6 @@
 .wrapper {
+  padding-inline: 16px;
+
   .list {
     display: flex;
     gap: 32px;
