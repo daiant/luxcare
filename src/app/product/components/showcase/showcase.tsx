@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import styles from './shocase.module.css';
+import styles from './showcase.module.css';
 import Button from '@/components/button/button';
 export type ShowcaseImage = {
   src: string;
