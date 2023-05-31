@@ -51,9 +51,9 @@
 
         .image img {
           object-fit: cover;
-          width: 80%;
-          height: 80%;
-          transition: height 300ms, width 300ms;
+          width: var(--width);
+          height: var(--height);
+          /* transition: height 300ms, width 300ms; */
         }
       }
     }
