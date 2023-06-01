@@ -10,5 +10,20 @@
   top: 0;
   left: 0;
   right: 0;
+  user-select: none;
   z-index: 9;
+
+  .image {
+    height: 16px;
+    width: auto;
+  }
+
+  .image:last-of-type {
+    height: 20px;
+  }
+
+  .logo {
+    color: var(--color);
+    text-decoration: none;
+  }
 }

@@ -15,8 +15,8 @@ export default function Product(props: any) {
   ];
   return <main>
     <Hero src="/test.jpg">
-      <h1>series crown</h1>
-      <h2>Marquis deep sea</h2>
+      <h1 className="hero__subtitle">series crown</h1>
+      <h2 className="hero__title">Marquis deep sea</h2>
     </Hero>
     <Featured
       title="Una verdadera leyenda"

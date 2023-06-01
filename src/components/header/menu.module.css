@@ -1,0 +1,15 @@
+.menu[aria-hidden="true"] {
+  left: -150%;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99;
+  background-color: blueviolet;
+  opacity: 0.2;
+  transition: left 800ms;
+}

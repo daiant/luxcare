@@ -1,9 +1,16 @@
+'use client';
+
+import Link from 'next/link';
 import styles from './header.module.css';
+import { useState } from 'react';
+import Menu from './menu';
 
 export default function Header() {
+  const [visible, setVisible] = useState(false);
   return <nav className={styles.header}>
-    <span>menu</span>
-    <span>Luxcare</span>
-    <span>Find a dealer</span>
+    <img src='/menu.svg' className={styles.image} onClick={() => { console.log('yes'); setVisible(true) }}></img>
+    <Link href={'/'} className={styles.logo}>L U X C A R E</Link>
+    <img src="/search.svg" className={styles.image} />
+    <Menu visible={visible} onClick={() => setVisible(false)}></Menu>
   </nav >
 }
