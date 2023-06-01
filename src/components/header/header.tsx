@@ -9,7 +9,7 @@ export default function Header() {
   const [visible, setVisible] = useState(false);
   return <nav className={styles.header}>
     <img src='/menu.svg' className={styles.image} onClick={() => { console.log('yes'); setVisible(true) }}></img>
-    <Link href={'/'} className={styles.logo}>L U X C A R E</Link>
+    <Link href={'/'} className={styles.logo}><img src='/logo.png'></img></Link>
     <img src="/search.svg" className={styles.image} />
     <Menu visible={visible} onClick={() => setVisible(false)}></Menu>
   </nav >

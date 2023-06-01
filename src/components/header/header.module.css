@@ -22,8 +22,10 @@
     height: 20px;
   }
 
-  .logo {
+  .logo>* {
     color: var(--color);
     text-decoration: none;
+    height: 2rem;
+    width: auto;
   }
 }
