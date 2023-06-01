@@ -13,7 +13,7 @@ export default function Gallery(props: { images: GalleryImage[] }) {
   const list = useRef<HTMLUListElement>(null);
   const [position, setPosition] = useState(0);
   const [active, setActive] = useState(false);
-
+  const [trigger, setTrigger] = useState(false);
   useEffect(() => {
     // console.log(position);
     if (!didMount) { setDidMount(true); return };
@@ -23,14 +23,7 @@ export default function Gallery(props: { images: GalleryImage[] }) {
     const item = list.current.querySelector('[aria-selected="true"]');
     if (!item) return;
     item.scrollIntoView({ behavior: "smooth" });
-    // list.current.scrollTo({
-    //   left: 650 * selected,
-    //   behavior: 'smooth'
-    // });
-
-    // }
-    console.log('triggering')
-  }, [selected]);
+  }, [selected, trigger]);
 
   function handleMouseDown(event: MouseEvent) {
     event.preventDefault();
@@ -66,6 +59,7 @@ export default function Gallery(props: { images: GalleryImage[] }) {
       i++;
     }
     setSelected(closest.index);
+    setTrigger(!trigger);
   }
   function handleNext() { if (selected + 1 >= props.images.length) return; navigate(1); }
   function handlePrev() { if (selected - 1 < 0) return; navigate(-1); }
@@ -75,8 +69,9 @@ export default function Gallery(props: { images: GalleryImage[] }) {
     <div className={styles.controls} onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
-      onMouseUp={handleMouseUp}>
-      <div className={styles.arrow} onClick={handlePrev}></div>
+      onMouseUp={handleMouseUp}
+    >
+      <div className={styles.arrow} onClick={handlePrev}>&lsaquo;</div>
       <ul className={styles.list} ref={list}>
         {props.images.map((image, index) => {
           return <li key={index} className={styles.item}>
@@ -86,10 +81,10 @@ export default function Gallery(props: { images: GalleryImage[] }) {
           </li>
         })}
       </ul>
-      <div className={styles.arrow} onClick={handleNext}></div>
+      <div className={styles.arrow} onClick={handleNext}>&rsaquo;</div>
     </div>
     <div className={styles.indicator}>
-      {props.images.map((image, index) => { return <div className={styles.dot} aria-selected={false} key={index}></div> })}
+      {props.images.map((image, index) => { return <div className={styles.dot} aria-selected={index === selected} key={index}></div> })}
     </div>
     <div className={styles.text}>
       <p>{props.images[selected]?.content}</p>
