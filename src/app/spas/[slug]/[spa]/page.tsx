@@ -7,7 +7,7 @@ import Info, { ProductInfo } from "./components/product-info/info";
 import Showcase from "./components/showcase/showcase";
 import Gallery from "./components/gallery/gallery";
 
-export default function Product(props: any) {
+export default async function Product(props: { params: any }) {
   const info: ProductInfo[] = [
     { title: 'Medidas', subtitle: 'CM', content: '229 x 229 x 90' },
     { title: 'Capacidad', subtitle: 'Personas', content: '6' },
