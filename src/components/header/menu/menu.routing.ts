@@ -1,10 +1,10 @@
 export interface Route {
   name: string;
   url: string;
-  routes?: Route[];
+  routes?: Routes;
 }
 export type Routes = Route[];
-const routes: Routes = [
+export const routes: Routes = [
   {
     name: "Spas",
     url: 'spas',

@@ -1,15 +1,65 @@
 .menu[aria-hidden="true"] {
-  left: -150%;
+  left: calc(-1 * var(--width));
 }
 
-.menu {
+.mask[aria-hidden="true"] {
+  display: none;
+}
+
+.mask {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
+  z-index: 80;
+}
+
+.menu {
+  --width: 400px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--width);
   z-index: 99;
-  background-color: blueviolet;
-  opacity: 0.2;
+  background-color: rgba(0 0 0 / 0.7);
+  backdrop-filter: blur(3px);
   transition: left 800ms;
+
+  .list {
+    padding: 64px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .item {
+      .item--link {
+        cursor: pointer;
+        color: var(--color);
+        text-decoration: none;
+      }
+
+      .item--link__parent::after {
+        content: ' fleshita'
+      }
+
+      .item--link:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.submenu {
+  position: fixed;
+  --width: 400px;
+  top: 0;
+  left: var(--width);
+  width: calc(100vw - var(--width));
+  height: 100vh;
+  background-color: rebeccapurple;
+  z-index: 99;
 }

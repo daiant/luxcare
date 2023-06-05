@@ -16,6 +16,7 @@
   .image {
     height: 16px;
     width: auto;
+    cursor: pointer;
   }
 
   .image:last-of-type {
