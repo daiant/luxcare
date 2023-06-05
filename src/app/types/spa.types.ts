@@ -11,7 +11,7 @@ export interface Serie {
 }
 export interface Spa {
   title: string;
+  subtitle: string;
   url: string;
   img: string;
-
 }

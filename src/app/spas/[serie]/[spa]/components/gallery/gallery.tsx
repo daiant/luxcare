@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './gallery.module.css';
 import { MouseEvent, useEffect, useRef, useState } from 'react';

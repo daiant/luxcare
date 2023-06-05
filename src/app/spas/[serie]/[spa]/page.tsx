@@ -1,22 +1,26 @@
-'use client';
-
 import Hero from "@/components/hero/hero";
 import Parallax from "@/components/parallax/parallax";
 import Featured from "./components/featured/featured";
 import Info, { ProductInfo } from "./components/product-info/info";
 import Showcase from "./components/showcase/showcase";
 import Gallery from "./components/gallery/gallery";
+import { getSpa } from "@/lib/spa.utils";
+import { useEffect, useState } from "react";
+import { Spa } from "@/app/types/spa.types";
+import { series } from "@/lib/spas.data";
 
-export default async function Product(props: { params: any }) {
+export default async function Product(props: { params: { serie: string, spa: string } }) {
+  const spa = getSpa(props.params.serie, props.params.spa);
+
   const info: ProductInfo[] = [
     { title: 'Medidas', subtitle: 'CM', content: '229 x 229 x 90' },
     { title: 'Capacidad', subtitle: 'Personas', content: '6' },
     { title: 'Features', subtitle: '', content: 'idk' }
   ];
   return <main>
-    <Hero src="/test.jpg">
-      <h1 className="hero__subtitle">series crown</h1>
-      <h2 className="hero__title">Marquis deep sea</h2>
+    <Hero src={spa?.img}>
+      <h1 className="hero__subtitle">{spa?.title}</h1>
+      <h2 className="hero__title">{spa?.subtitle}</h2>
     </Hero>
     <Featured
       title="Una verdadera leyenda"
@@ -32,7 +36,7 @@ export default async function Product(props: { params: any }) {
     <Showcase
       images={[{ src: '/test.jpg', height: 804, width: 716, alt: '' }, { src: '/test.jpg', height: 804, width: 716, alt: '' }]}
       button="Explora mas caracteristicas"
-      buttonAction={() => console.log('ei')}
+      buttonAction="#"
     ></Showcase>
     <Featured
       title="Featured text"

@@ -4,10 +4,13 @@
   background-color: var(--background-color);
   position: relative;
 }
+
 .hero img {
+  opacity: 0.5;
   object-fit: cover;
   user-select: none;
 }
+
 .content {
   position: absolute;
   z-index: 2;
@@ -15,7 +18,8 @@
   transform: translateY(-50%);
   width: 100%;
 }
-.content > * {
+
+.content>* {
   display: flex;
   flex-direction: column;
   gap: 16px;

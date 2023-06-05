@@ -9,7 +9,7 @@ export type ShowcaseImage = {
   width: number;
   alt: string;
 }
-export default function Showcase(props: { images: ShowcaseImage[], button: string, buttonAction: any }) {
+export default function Showcase(props: { images: ShowcaseImage[], button: string, buttonAction: string }) {
   return <div className={styles.wrapper}>
     <ul className={styles.list}>
 
