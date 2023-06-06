@@ -28,5 +28,9 @@ export const routes: Routes = [
         url: 'spas/vector/v84l'
       },
     ]
+  },
+  {
+    name: 'Contact Us',
+    url: '/contact'
   }
 ] 
