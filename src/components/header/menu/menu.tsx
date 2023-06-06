@@ -28,7 +28,7 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
       <ul className={styles.list}>
         {routes.map((route, index) => (
           <li key={index} className={styles.item}>
-            {!route.routes && <Link href={route.url} className={styles['item--link']}>{route.name}</Link>}
+            {!route.routes && <Link href={route.url} className={styles['item--link']} onClick={props.onClick}>{route.name}</Link>}
             {route.routes && <span className={`${styles['item--link']} ${styles['item--link__parent']}`} onClick={() => handleChildren(route.routes)}>{route.name}</span>}
           </li>
         ))}
