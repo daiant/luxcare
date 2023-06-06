@@ -20,7 +20,13 @@ export const routes: Routes = [
       {
         name: 'v84l',
         url: 'spas/vector/v84l'
-      }
+      }, {
+        name: 'v84l',
+        url: 'spas/vector/v84l'
+      }, {
+        name: 'v84l',
+        url: 'spas/vector/v84l'
+      },
     ]
   }
 ] 

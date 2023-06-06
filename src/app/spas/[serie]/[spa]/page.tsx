@@ -5,9 +5,6 @@ import Info, { ProductInfo } from "./components/product-info/info";
 import Showcase from "./components/showcase/showcase";
 import Gallery from "./components/gallery/gallery";
 import { getSpa } from "@/lib/spa.utils";
-import { useEffect, useState } from "react";
-import { Spa } from "@/app/types/spa.types";
-import { series } from "@/lib/spas.data";
 
 export default async function Product(props: { params: { serie: string, spa: string } }) {
   const spa = getSpa(props.params.serie, props.params.spa);

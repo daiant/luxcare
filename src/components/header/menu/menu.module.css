@@ -3,7 +3,16 @@
 }
 
 .mask[aria-hidden="true"] {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.close {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 101;
+  cursor: pointer;
 }
 
 .mask {
@@ -12,7 +21,36 @@
   left: 0;
   height: 100vh;
   width: 100vw;
+  opacity: 1;
   z-index: 80;
+  background-color: rgba(0 0 0 / 0.4);
+  backdrop-filter: blur(3px);
+  transition: opacity 800ms, visibility 800ms;
+}
+
+.list {
+  padding: 64px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+
+  .item {
+    .item--link {
+      cursor: pointer;
+      color: var(--color);
+      text-decoration: none;
+    }
+
+    .item--link__parent::after {
+      content: ' fleshita'
+    }
+
+    .item--link:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .menu {
@@ -24,42 +62,61 @@
   height: 100vh;
   width: var(--width);
   z-index: 99;
-  background-color: rgba(0 0 0 / 0.7);
-  backdrop-filter: blur(3px);
   transition: left 800ms;
+}
 
-  .list {
-    padding: 64px;
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-    .item {
-      .item--link {
-        cursor: pointer;
-        color: var(--color);
-        text-decoration: none;
-      }
-
-      .item--link__parent::after {
-        content: ' fleshita'
-      }
-
-      .item--link:hover {
-        text-decoration: underline;
-      }
-    }
-  }
+.submenu::-webkit-scrollbar {
+  display: none;
 }
 
 .submenu {
   position: fixed;
   --width: 400px;
   top: 0;
-  left: var(--width);
+  left: calc(-1 * var(--width));
   width: calc(100vw - var(--width));
   height: 100vh;
-  background-color: rebeccapurple;
-  z-index: 99;
+  z-index: 98;
+  animation: show forwards 800ms;
+  overflow-y: auto;
+
+  .submenu--list--item {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-transform: uppercase;
+    overflow: hidden;
+
+    .title {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--color);
+    }
+
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    left: calc(-1 * var(--width));
+  }
+
+  to {
+    left: var(--width);
+    opacity: 1;
+  }
 }
