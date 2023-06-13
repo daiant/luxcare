@@ -7,14 +7,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 export default function Menu(props: { visible: boolean, onClick: any }) {
   const [children, setChildren] = useState<Routes>([]);
-  function handleChildren(children?: Routes) {
-    if (!children) return;
-    setChildren(children);
+  const [opacity, setOpacity] = useState(1);
+  const OPACITY_DELAY = 400;
+  function handleChildren(routes?: Routes) {
+    if (!routes) return;
+    setOpacity(0);
+    setTimeout(() => { setOpacity(1); setChildren(routes); }, OPACITY_DELAY);
   }
   useEffect(() => {
     if (!props.visible) {
-      setChildren([]);
       document.body.style.overflow = "visible";
+      handleChildren([]);
     }
     else {
       document.body.style.overflow = 'hidden';
@@ -32,19 +35,22 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
             {!route.routes && <Link href={route.url} className={styles['item--link']} onClick={props.onClick}>{route.name}</Link>}
             {route.routes && <span className={styles['item--link']} onClick={() => handleChildren(route.routes)}>
               {route.name}
-              <img src="/next.svg" alt="" className={styles.img} />
+              {/* <img src="/next.svg" alt="" className={styles.img} /> */}
             </span>}
           </li>
         ))}
       </ul>
     </menu>
-    {children.length > 0 && <div className={styles.submenu}>
+    {children.length > 0 && <div className={styles.submenu} style={{ '--opacity': opacity } as React.CSSProperties}>
       <ul className={styles.list}>
-        {children.map((route) => <li key={route.name} className={styles['submenu--list--item']}>
-          <Link href={route.url} onClick={props.onClick}>
-            <p className={styles.title}>{route.name}</p>
+        {children.map((route, index) => <li key={route.name + index} className={styles['submenu--list--item']}>
+          <Link href={route.url} onClick={props.onClick} className={styles['submenu--list--item--link']}>
             <Image src="/test.jpg" alt='' className={styles.image} fill></Image>
           </Link>
+          <div className={styles.info}>
+            <h2>{route.name}</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero quos iste sunt harum aspernatur sit neque nam asperiores quisquam ut perspiciatis, exercitationem atque illum. Error esse quae suscipit voluptatum.</p>
+          </div>
         </li>)}
       </ul>
     </div>}

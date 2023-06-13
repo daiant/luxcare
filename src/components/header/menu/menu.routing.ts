@@ -6,12 +6,38 @@ export interface Route {
 export type Routes = Route[];
 export const routes: Routes = [
   {
-    name: "Spas",
-    url: 'spas',
+    name: "Spas Serie Vector",
+    url: '',
+    routes: [
+      {
+        name: "Spas Serie Vector",
+        url: "spas/vector",
+      }
+    ]
   },
   {
-    name: "Serie vector",
-    url: "spas/vector",
+    name: "Spas Serie Crown",
+    url: '',
+    routes: [
+      {
+        name: 'Spas Serie Crown',
+        url: "spas/crown",
+      }
+    ]
+  },
+  {
+    name: "Spas Serie Strato",
+    url: '',
+    routes: [
+      {
+        name: 'Spas Serie Strato',
+        url: "spas/vector",
+      }
+    ]
+  },
+  {
+    name: "Recomendations",
+    url: "",
     routes: [
       {
         name: 'v94l',

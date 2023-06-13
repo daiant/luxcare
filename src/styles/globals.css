@@ -6,6 +6,8 @@
   --background-color: #030303;
   --background-1: rgb(30 30 30 / 71%);
   --color: #fefefe;
+  --font-main: 'Arimo', sans-serif;
+  --font-title: 'Caladea', serif;
 }
 
 body {
@@ -152,6 +154,7 @@ table {
 
 p.italic {
   font-style: italic;
+  font-family: var(--font-title);
 }
 
 .hero__subtitle {

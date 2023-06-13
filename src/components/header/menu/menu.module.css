@@ -1,5 +1,5 @@
 .menu[aria-hidden="true"] {
-  left: calc(-1 * var(--width));
+  left: calc(-1.5 * var(--width));
 }
 
 .mask[aria-hidden="true"] {
@@ -28,7 +28,7 @@
   width: 100vw;
   opacity: 1;
   z-index: 80;
-  background-color: rgba(0 0 0 / 0.4);
+  background-color: rgba(0 0 0 / 0.5);
   backdrop-filter: blur(3px);
   transition: opacity 800ms, visibility 800ms;
 }
@@ -38,7 +38,7 @@
   opacity: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   align-items: flex-end;
 
   .item {
@@ -46,6 +46,7 @@
       cursor: pointer;
       color: var(--color);
       text-decoration: none;
+      padding-block: 8px;
 
       .img {
         width: 12px;
@@ -63,6 +64,7 @@
 .menu {
   --width: 400px;
 
+  padding: 64px;
   position: fixed;
   top: 0;
   left: 0;
@@ -77,8 +79,9 @@
 }
 
 .submenu {
-  position: fixed;
   --width: 400px;
+  --opacity__delay: 400ms;
+  position: fixed;
   top: 0;
   left: calc(-1 * var(--width));
   width: calc(100vw - var(--width));
@@ -87,22 +90,40 @@
   animation: show forwards 800ms;
   overflow-y: auto;
 
-  .submenu--list--item {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    text-transform: uppercase;
-    overflow: hidden;
+  .list {
+    opacity: var(--opacity);
+    transition: opacity var(--opacity__delay) ease;
+    padding: 128px;
 
-    .title {
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 28px;
-      font-weight: 600;
-      color: var(--color);
+    .submenu--list--item {
+      width: 100%;
+      overflow: hidden;
+      min-width: 300px;
+
+      .submenu--list--item--link {
+        display: block;
+        height: 300px;
+        position: relative;
+
+        .title {
+          position: absolute;
+          z-index: 2;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 28px;
+          font-weight: 600;
+          color: var(--color);
+        }
+      }
+
+      .info {
+        position: relative;
+        z-index: 2;
+        margin-block: 32px;
+        max-width: 90%;
+        margin-inline: auto;
+      }
     }
 
     .image {
