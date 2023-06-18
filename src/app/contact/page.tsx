@@ -4,7 +4,7 @@ import Input from '@/components/form/input/input';
 import Textarea from '@/components/form/textarea/textarea';
 import Button from '@/components/button/button';
 export default function Contact() {
-  return <>
+  return <div className={styles.wrapper}>
     <header className={styles.hero}>
       <p className="info">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, quibusdam! Nisi neque, similique odio ratione, distinctio incidunt nemo ullam, nihil beatae eligendi deleniti aut doloremque vitae possimus id nam eveniet.
@@ -18,7 +18,6 @@ export default function Contact() {
       </aside>
       <form className={styles.form}>
         <p>Get in touch</p>
-
         <Input label='Name' name='name' type='text' icon='testo'></Input>
         <Input label='Email' name='email' type='email' icon='testo'></Input>
         <Input label='Phone' name='phone' type='tel' icon='testo'></Input>
@@ -27,5 +26,5 @@ export default function Contact() {
         <Button handleAction={"/form/submit"} type="submit">Send</Button>
       </form>
     </main>
-  </>
+  </div>
 }

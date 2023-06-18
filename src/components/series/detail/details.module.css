@@ -1,7 +1,8 @@
 .wrapper {
   display: flex;
   margin-block: 96px;
-  gap: 48px;
+  gap: 24px 48px;
+  flex-wrap: wrap;
   --width: 300px;
 }
 
@@ -18,7 +19,8 @@
 }
 
 .info {
-  font-size: 22px;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem);
 }
 
 .title {
