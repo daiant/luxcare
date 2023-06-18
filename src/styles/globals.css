@@ -6,6 +6,7 @@
   --background-color: #1a1a1a;
   --background-1: rgb(30 30 30 / 71%);
   --color: #fefefe;
+  --accent: #EDBB38;
   --font-main: 'Arimo', sans-serif;
   --font-title: 'Caladea', serif;
 }
@@ -157,16 +158,43 @@ p.italic {
   font-family: var(--font-title);
 }
 
+.main-section {
+  padding-block: 128px;
+  max-width: min(calc(100% - 96px), 1440px);
+  margin-inline: auto;
+}
+
 .hero__subtitle {
-  font-size: 1.125rem;
-  font-size: clamp(1.125rem, 0.85rem + 1.375vw, 2.5rem);
+  /* font-size: 1.125rem; */
+  /* font-size: clamp(1.125rem, 0.85rem + 1.375vw, 2.5rem); */
+  font-size: 32px;
   font-weight: 300;
   text-transform: uppercase;
 }
 
 .hero__title {
-  font-size: 1.75rem;
-  font-size: clamp(1.75rem, 1.3rem + 2.25vw, 4rem);
+  /* font-size: 1.75rem;
+  font-size: clamp(1.75rem, 1.3rem + 2.25vw, 4rem); */
+  font-size: 64px;
   font-weight: 500;
   text-transform: uppercase;
+  font-family: var(--font-title);
+}
+
+.article__title {
+  font-size: 32px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: var(--font-title);
+}
+
+.article__content {
+  font-size: 22px;
+  font-weight: 300;
+  margin-block: 16px;
+
+  & b {
+    font-weight: 500;
+    color: var(--accent);
+  }
 }

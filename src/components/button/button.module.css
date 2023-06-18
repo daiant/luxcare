@@ -11,6 +11,7 @@
   border-color: transparent;
   border-radius: 3rem;
   text-decoration: none;
+  display: inline-block;
 }
 
 .button.secondary {

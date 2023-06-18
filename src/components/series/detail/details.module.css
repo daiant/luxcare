@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  margin-block: 96px;
+  gap: 48px;
+  --width: 300px;
+}
+
+.article {
+  flex-basis: var(--width);
+  flex-grow: 1;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.info {
+  font-size: 22px;
+}
+
+.title {
+  font-weight: 500;
+  color: var(--accent);
+}
