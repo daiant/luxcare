@@ -5,7 +5,11 @@
 :root {
   --background-color: #1a1a1a;
   --background-1: rgb(30 30 30 / 71%);
+  --background-2: #292929;
+  --background-5: grey;
+  --background-9: #dedede;
   --color: #fefefe;
+  --color-8: hsl(0, 0%, 80%);
   --accent: #EDBB38;
   --font-main: 'Arimo', sans-serif;
   --font-title: 'Caladea', serif;

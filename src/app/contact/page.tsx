@@ -1,39 +1,30 @@
 import Image from 'next/image';
 import styles from './contact.module.css';
+import Input from '@/components/form/input/input';
+import Textarea from '@/components/form/textarea/textarea';
+import Button from '@/components/button/button';
 export default function Contact() {
   return <>
     <header className={styles.hero}>
-      <h1 className={styles.title}>Contact us</h1>
-      <Image src={'/test.jpg'} alt='' fill className={styles.image}></Image>
+      <p className="info">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, quibusdam! Nisi neque, similique odio ratione, distinctio incidunt nemo ullam, nihil beatae eligendi deleniti aut doloremque vitae possimus id nam eveniet.
+      </p>
     </header>
     <main className={styles.main}>
       <aside className={styles.aside}>
-        <p className="info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, quibusdam! Nisi neque, similique odio ratione, distinctio incidunt nemo ullam, nihil beatae eligendi deleniti aut doloremque vitae possimus id nam eveniet.
-        </p>
+        <p>Always there for you</p>
+        <a href="tel:+44 207 40404 404">+44 207 40404 404</a>
+        <a href="mailto:email@email.com">email@email.com</a>
       </aside>
       <form className={styles.form}>
-        <label className={styles.label} htmlFor="name">
-          Name
-          <input className={styles.input} type="text" id='name' />
-        </label>
-        <label className={styles.label} htmlFor="email">
-          Email
-          <input className={styles.input} type="email" id='email' />
-        </label>
-        <label className={styles.label} htmlFor="phone">
-          Phone
-          <input className={styles.input} type="tel" id='phone' />
-        </label>
-        <label className={styles.label} htmlFor="subject">
-          Subject
-          <input className={styles.input} type="text" id='subject' />
-        </label>
-        <label className={styles.label} htmlFor="body">
-          Body
-          <textarea className={styles.input} name="body" id="body" rows={10}></textarea>
-        </label>
-        <button type="submit">Send</button>
+        <p>Get in touch</p>
+
+        <Input label='Name' name='name' type='text' icon='testo'></Input>
+        <Input label='Email' name='email' type='email' icon='testo'></Input>
+        <Input label='Phone' name='phone' type='tel' icon='testo'></Input>
+        <Textarea label='How can we help?' name='subject' />
+
+        <Button handleAction={"/form/submit"} type="submit">Send</Button>
       </form>
     </main>
   </>
