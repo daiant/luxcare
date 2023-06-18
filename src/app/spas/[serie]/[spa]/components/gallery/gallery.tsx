@@ -24,7 +24,7 @@ export default function Gallery(props: { images: GalleryImage[] }) {
     // if (list.current) {
     const item = list.current.querySelector('[aria-selected="true"]');
     if (!item) return;
-    item.scrollIntoView({ behavior: "smooth" });
+    item.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, [selected, trigger]);
 
   function handleMouseDown(event: MouseEvent) {
