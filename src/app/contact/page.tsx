@@ -12,12 +12,12 @@ export default function Contact() {
     </header>
     <main className={styles.main}>
       <aside className={styles.aside}>
-        <p>Always there for you</p>
-        <a href="tel:+44 207 40404 404">+44 207 40404 404</a>
-        <a href="mailto:email@email.com">email@email.com</a>
+        <p className='article__title'>Always there for you</p>
+        <a className='article__content' href="tel:+44 207 40404 404">+44 207 40404 404</a>
+        <a className='article__content' href="mailto:email@email.com">email@email.com</a>
       </aside>
       <form className={styles.form}>
-        <p>Get in touch</p>
+        <p className='article__title' style={{ width: '100%' }}>Get in touch</p>
         <Input label='Name' name='name' type='text' icon='testo'></Input>
         <Input label='Email' name='email' type='email' icon='testo'></Input>
         <Input label='Phone' name='phone' type='tel' icon='testo'></Input>

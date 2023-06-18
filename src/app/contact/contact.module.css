@@ -32,6 +32,8 @@
 
 .aside {
   grid-column: span 5;
+  display: flex;
+  flex-direction: column;
 }
 
 .form {
