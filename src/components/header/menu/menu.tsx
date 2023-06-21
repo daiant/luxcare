@@ -16,11 +16,11 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
   }
   useEffect(() => {
     if (!props.visible) {
-      document.body.style.overflow = "visible";
+      // document.body.style.overflow = "visible";
       handleChildren([]);
     }
     else {
-      document.body.style.overflow = 'hidden';
+      // document.body.style.overflow = 'hidden';
     }
   }, [props.visible])
   return <>

@@ -3,7 +3,7 @@
 .hero {
   position: relative;
   padding-block: 128px 96px;
-  max-width: 66%;
+  width: min(100% - 48px, 600px);
   margin-inline: auto;
 }
 
@@ -31,13 +31,13 @@
 }
 
 .aside {
-  grid-column: span 5;
+  grid-column: 2 / 6;
   display: flex;
   flex-direction: column;
 }
 
 .form {
-  grid-column: span 5;
+  grid-column: 7 / 12;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -61,11 +61,25 @@
   .main {
     grid-template-columns: repeat(10, 1fr);
   }
+
+  .aside {
+    grid-column: 1 / 5;
+  }
+
+  .form {
+    grid-column: 6/13;
+  }
 }
 
 @media (max-width: 768px) {
   .main {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 24px;
+    padding-inline: 24px;
+  }
+
+  .aside,
+  .form {
+    grid-column: 1 / -1;
   }
 }

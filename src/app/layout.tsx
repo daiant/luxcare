@@ -1,10 +1,10 @@
 import Header from '@/components/header/header'
 import '@/styles/globals.css'
-import { Arimo } from 'next/font/google'
+import { Arimo, Geologica } from 'next/font/google'
 import Footer from '@/components/footer/footer'
 
 const arimo = Arimo({ subsets: ['latin'], weight: ['400', '500'] })
-const caladea = Arimo({ subsets: ["latin"] })
+const geologica = Geologica({ subsets: ["latin"] })
 
 export const metadata = {
   title: 'Luxcare | Home',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${arimo.className} ${caladea.className}`}>
+      <body className={`${arimo.className} ${geologica.className}`}>
         <Header></Header>
         {children}
         <Footer></Footer>
