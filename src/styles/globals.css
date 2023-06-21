@@ -11,6 +11,8 @@
   --color: #fefefe;
   --color-8: hsl(0, 0%, 80%);
   --accent: #EDBB38;
+  --accent-50: #281432;
+  --accent-10: #1b0d2e;
   --font-main: 'Arimo', sans-serif;
   --font-title: 'Caladea', serif;
 }
