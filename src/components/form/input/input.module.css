@@ -35,6 +35,11 @@
   width: 100%;
 }
 
+.input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--background-2) inset !important;
+  -webkit-text-fill-color: var(--color) !important;
+}
+
 .icon {
   aspect-ratio: 1;
   display: grid;

@@ -16,7 +16,7 @@ export default function Contact() {
         <a className='article__content' href="tel:+44 207 40404 404">+44 207 40404 404</a>
         <a className='article__content' href="mailto:email@email.com">email@email.com</a>
       </aside>
-      <form className={styles.form}>
+      <form className={styles.form} autoComplete='off'>
         <p className='article__title' style={{ width: '100%' }}>Get in touch</p>
         <Input label='Name' name='name' type='text' icon='testo'></Input>
         <Input label='Email' name='email' type='email' icon='testo'></Input>
