@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -14,10 +16,11 @@
   --accent-50: #281432;
   --accent-10: #1b0d2e;
   --font-main: 'Arimo', sans-serif;
-  --font-title: 'Caladea', serif;
+  --font-title: 'Geologica', serif;
 }
 
 body {
+  font-family: var(--font-main);
   background-color: var(--background-color);
   color: var(--color);
 }
@@ -113,7 +116,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 

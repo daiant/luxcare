@@ -3,6 +3,7 @@ import Hero from "@/components/hero/hero";
 import Parallax from "@/components/parallax/parallax";
 import Link from 'next/link';
 import { getSpaSeries } from '@/lib/spa.utils';
+import Button from '@/components/button/button';
 
 export default function Home() {
   const series = getSpaSeries();
@@ -11,7 +12,7 @@ export default function Home() {
       <Hero src="/test.jpg">
         <div className={styles.center}>
           <h1>Simplemente perfecto</h1>
-          <button className={styles.primary}>Contacta</button>
+          <Button handleAction={'/contact'}>Contacta</Button>
         </div>
       </Hero>
       <Hero>

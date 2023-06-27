@@ -44,6 +44,34 @@
   gap: 8px;
 }
 
+.actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 12px;
+}
+
+.actions .info {
+  transition: opacity 300ms ease;
+  opacity: 0;
+}
+
+.actions .info[aria-hidden="false"] {
+  opacity: 1;
+}
+
+.actions .button {
+  border: none;
+  background-color: var(--color);
+  color: var(--background-color);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3rem;
+  padding: 12px 40px;
+}
+
 .label {
   width: 100%;
   max-width: 500px;
@@ -81,5 +109,9 @@
   .aside,
   .form {
     grid-column: 1 / -1;
+  }
+
+  .actions .button {
+    width: 100%;
   }
 }

@@ -1,10 +1,6 @@
 import Header from '@/components/header/header'
 import '@/styles/globals.css'
-import { Arimo, Geologica } from 'next/font/google'
 import Footer from '@/components/footer/footer'
-
-const arimo = Arimo({ subsets: ['latin'], weight: ['400', '500'] })
-const geologica = Geologica({ subsets: ["latin"] })
 
 export const metadata = {
   title: 'Luxcare | Home',
@@ -18,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${arimo.className} ${geologica.className}`}>
+      <body>
         <Header></Header>
         {children}
         <Footer></Footer>
