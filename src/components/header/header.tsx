@@ -13,7 +13,7 @@ export default function Header() {
     <nav className={styles.header}>
       <img src='/menu.svg' className={styles.image} onClick={() => { setMenuVisibility(true) }}></img>
       <Link href={'/'} className={styles.logo}><img src='/logo.png'></img></Link>
-      <div onClick={() => { setDialogVisibility(true) }}><img src="/search.svg" className={styles.image} /> Dealers</div>
+      <div onClick={() => { setDialogVisibility(true) }} className={styles.link}><img src="/search.svg" className={styles.image} /> Dealers</div>
     </nav >
     <Menu visible={menuVisibility} onClick={() => setMenuVisibility(false)}></Menu>
     <DealerDialog visible={dialogVisibility} className={styles.dialog} onChange={() => setDialogVisibility(false)}></DealerDialog>
