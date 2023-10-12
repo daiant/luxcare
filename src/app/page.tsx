@@ -8,12 +8,10 @@ import Button from '@/components/button/button';
 export default function Home() {
   const series = getSpaSeries();
   return (
-    <main>
+    <main className={styles.home}>
       <Hero src="/test.jpg">
-        <div className={styles.center}>
-          <h1>Simplemente perfecto</h1>
-          <Button handleAction={'/contact'}>Contacta</Button>
-        </div>
+        <h1>Serie Vector</h1>
+        <Button handleAction={'/contact'}>Explora</Button>
       </Hero>
       <Hero>
         <div className={styles.left}>

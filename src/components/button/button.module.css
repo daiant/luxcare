@@ -1,16 +1,16 @@
 .button {
   cursor: pointer;
-  padding: 12px 42px;
+  padding: 10px;
   text-transform: uppercase;
-  font-size: 20px;
-  background-color: var(--color);
-  color: var(--background-color);
+  background-color: var(--background-1);
+  backdrop-filter: blur(4px);
+  color: var(--accent);
   font-weight: 200;
   outline: 0;
   border-color: transparent;
-  border-radius: 3rem;
   text-decoration: none;
-  display: inline-block;
+  display: block;
+
 }
 
 .button.secondary {

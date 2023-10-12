@@ -1,11 +1,10 @@
 .header {
-  background-color: var(--background-1);
+  background-color: var(--background-color);
   height: 80px;
-  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 16px;
+  padding-inline: 32px;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,11 +22,13 @@
     height: 20px;
   }
 
-  .logo>* {
-    color: var(--color);
+  .logo {
+    color: var(--accent);
     text-decoration: none;
-    height: 2rem;
-    width: auto;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 32px;
+    font-weight: 200;
   }
 
   .link {
