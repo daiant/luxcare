@@ -115,6 +115,25 @@
   color: var(--accent);
 }
 
+.splash {
+  font-size: 96px;
+  text-transform: uppercase;
+  line-height: 120px;
+  padding: 96px;
+}
+
+.splash code {
+  font-family: inherit;
+  color: var(--accent);
+}
+
+.splash p:nth-child(3) {}
+
+.splash p:last-child {
+  width: 80%;
+  margin-left: auto;
+}
+
 @media (max-width: 768px) {
   .intro {
     grid-template-columns: 1fr;
@@ -136,7 +155,17 @@
 
   .intro main footer {
     max-width: 100%;
-    font-size: 24px;
+    font-size: 22px;
     padding: 0;
+  }
+
+  .splash {
+    padding: 48px 0;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .splash p:last-child {
+    width: fit-content;
   }
 }

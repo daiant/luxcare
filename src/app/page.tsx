@@ -31,6 +31,12 @@ export default function Home() {
           </footer>
         </main>
       </div>
+      <div className={styles.splash}>
+        <p>nunca has</p>
+        <p>estado tan</p>
+        <p>cerca de experimentar</p>
+        <p>una sensación tan <code>simplemente perfecta</code></p>
+      </div>
       {series.map((serie => {
         return <Link href={`/spas/${serie.url}`} key={serie.title}>
           <Parallax src={serie.img}>
