@@ -13,12 +13,24 @@ export default function Home() {
         <h1>Serie Vector</h1>
         <Button handleAction={'/contact'}>Explora</Button>
       </Hero>
-      <Hero>
-        <div className={styles.left}>
-          <p>Exigirnos día a día los mejores resultados nos ha permitido jugar con el agua, entenderla, moldearla y experimentar hasta un nivel tan alto que incluso se ha convertido en nuestra pasión.</p>
-          <p className='italic'>- Luxcare</p>
-        </div>
-      </Hero>
+      <div className={styles.intro}>
+        <aside>
+          <img src="intro.png" alt="" />
+        </aside>
+        <main>
+          <p>Simple,</p>
+          <p>Mente,</p>
+          <p>Perfecto</p>
+          <footer>
+            <p>
+              A través de los tiempos, el ser humano siempre ha buscado el éxito y la perfección de la forma más simple.
+            </p>
+            <p>
+              Después de 4000 millones de años de vida, <code>luxcare</code> ha encontrado la forma de hacerlo posible.
+            </p>
+          </footer>
+        </main>
+      </div>
       {series.map((serie => {
         return <Link href={`/spas/${serie.url}`} key={serie.title}>
           <Parallax src={serie.img}>
