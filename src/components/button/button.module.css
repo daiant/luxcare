@@ -3,7 +3,6 @@
   padding: 10px;
   text-transform: uppercase;
   background-color: var(--background-1);
-  backdrop-filter: blur(4px);
   color: var(--accent);
   font-weight: 200;
   outline: 0;

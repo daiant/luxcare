@@ -12,10 +12,11 @@
 }
 
 .content {
+  --spacing: 64px;
   position: absolute;
   z-index: 2;
-  bottom: 64px;
-  left: 64px;
+  bottom: var(--spacing);
+  left: var(--spacing);
   transform: translateY(-50%, -50%);
 }
 
@@ -24,4 +25,14 @@
   font-weight: normal;
   margin-block-end: 8px;
   padding-inline-end: 16px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    --spacing: 32px;
+  }
+
+  .content h1 {
+    font-size: 32px;
+  }
 }
