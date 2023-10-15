@@ -136,6 +136,10 @@
 }
 
 @media (max-width: 768px) {
+  .home {
+    padding-inline: 16px;
+  }
+
   .intro {
     grid-template-columns: 1fr;
     gap: 0;
