@@ -68,6 +68,7 @@
   justify-content: space-between;
   grid-template-columns: repeat(12, 1fr);
   padding-block: 64px;
+  gap: 64px;
 }
 
 .intro aside {
@@ -77,7 +78,7 @@
 
 .intro aside img {
   height: 900px;
-  width: auto;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -135,8 +136,13 @@
 }
 
 @media (max-width: 768px) {
+  .home {
+    padding-inline: 16px;
+  }
+
   .intro {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .intro aside img {
