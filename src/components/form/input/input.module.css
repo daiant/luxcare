@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 2px;
   border: 1px solid var(--background-5);
   background-color: var(--background-2);
   padding: 8px 24px;
@@ -8,12 +8,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: outline 300ms ease;
+  transition: border-color 300ms ease;
   outline: 1px solid transparent;
 }
 
 .wrapper:focus-within {
-  outline: 1px solid var(--background-5);
+  border-color: var(--background-4);
 }
 
 .label {

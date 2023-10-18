@@ -14,7 +14,7 @@ export default function Textarea(props: TextareaProps) {
   return <div className={styles.wrapper}>
     <label className={styles.label}>
       {props.label}
-      <textarea onChange={handleChange} required={props.required} className={styles.input} name={props.name} id={props.name} cols={30} rows={10} ></textarea>
+      <textarea onChange={handleChange} required={props.required} className={styles.input} name={props.name} id={props.name} cols={30} rows={9} ></textarea>
     </label>
   </div>
 }
