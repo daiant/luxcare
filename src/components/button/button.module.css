@@ -4,7 +4,7 @@
   text-transform: uppercase;
   background-color: var(--background-1);
   color: var(--accent);
-  font-weight: 200;
+  font-weight: 300;
   outline: 0;
   border-color: transparent;
   text-decoration: none;
@@ -13,7 +13,7 @@
 }
 
 .button.secondary {
-  color: var(--color);
-  background-color: var(--background-color);
-  border: 1px solid var(--color);
+  color: var(--background-color);
+  background-color: var(--accent);
+  border: none;
 }

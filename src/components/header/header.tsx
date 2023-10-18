@@ -6,11 +6,15 @@ import { useState } from 'react';
 import Menu from './menu/menu';
 import DealerDialog from '../dialog/dialog';
 
-export default function Header() {
+export default function Header({ transparent }: { transparent?: boolean }) {
   const [menuVisibility, setMenuVisibility] = useState(false);
   const [dialogVisibility, setDialogVisibility] = useState(false);
+  const getClassList = () => {
+    if (transparent) return `${styles.header} ${styles.transparent}`;
+    else return styles.header;
+  }
   return <>
-    <nav className={styles.header}>
+    <nav className={getClassList()}>
       <img src='/menu.svg' className={styles.image} onClick={() => { setMenuVisibility(true) }}></img>
       <Link href={'/'} className={styles.logo}>L U X C A R E</Link>
       <div onClick={() => { setDialogVisibility(true) }} className={styles.link}>Dealers</div>

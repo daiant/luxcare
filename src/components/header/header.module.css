@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding-inline: 32px;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -41,6 +41,10 @@
   .link:hover {
     text-decoration: underline;
   }
+}
+
+.header.transparent {
+  background-color: transparent;
 }
 
 @media (max-width: 768px) {

@@ -2,14 +2,10 @@
 import { getSerie } from "@/lib/spa.utils";
 import { Serie } from '@/app/types/spa.types';
 import { useEffect, useState } from 'react';
-import SerieHero from '@/components/series/hero/hero';
-import SerieText from "@/components/series/text/text";
+import { ProductInfo } from "./[spa]/components/product-info/info";
+import { SerieDetailProps } from "@/components/series/detail/detail";
+import styles from './series.module.css';
 import Button from "@/components/button/button";
-import Info, { ProductInfo } from "./[spa]/components/product-info/info";
-import Showcase from "./[spa]/components/showcase/showcase";
-import Parallax from "@/components/parallax/parallax";
-import Gallery from "./[spa]/components/gallery/gallery";
-import SerieDetail, { SerieDetailProps } from "@/components/series/detail/detail";
 
 export default function Series({ params }: { params: { serie: string } }) {
   const [serie, setSerie] = useState<Serie | undefined>(undefined)
@@ -35,32 +31,58 @@ export default function Series({ params }: { params: { serie: string } }) {
       }
     ]
   }
-  return <>
-    {serie && <section className="main-section">
-      <SerieHero image='/test.jpg' title='Spas Serie Crown' subttitle='Redefine la comodidad' />
-      <SerieText>
-        <h1 className="article__title">Texto texto</h1>
-        <p className="article__content">Texto texto <b>color de acento</b>, texto texto <b>color de acento</b></p>
-        <Button handleAction="ei">Contacta</Button>
-      </SerieText>
-      <Info info={info}></Info>
-      <Parallax src='/test.jpg'></Parallax>
-      <SerieText>
-        <h1 className="article__title">Texto texto</h1>
-        <p className="article__content">Texto texto <b>color de acento</b>, texto texto <b>color de acento</b></p>
-        <Button handleAction="ei" variant="secondary">Contacta</Button>
-      </SerieText>
-      <Gallery images={[
-        { src: "/test.jpg", content: 'El flujo laminar optimiza el flujo de agua al eliminar la turbulencia entre las bombas y los chorros. Como resultado, experimenta una penetración más profunda del tejido muscular sin causar molestias en la piel. En otras palabras, "¡Alto flujo, sin picadura!".' },
-        { src: '/test.jpg', content: 'El flujo laminar optimiza el flujo de agua al eliminar la turbulencia entre las bombas y los chorros. Como resultado, experimenta una penetración más profunda del tejido muscular sin causar molestias en la piel. En otras palabras, "¡Alto flujo, sin picadura!".' },
-        { src: '/test.jpg', content: 'El flujo laminar optimiza el flujo de agua al eliminar la turbulencia entre las bombas y los chorros. Como resultado, experimenta una penetración más profunda del tejido muscular sin causar molestias en la piel. En otras palabras, "¡Alto flujo, sin picadura!".' },
-      ]}></Gallery>
-      <SerieDetail details={details.details}></SerieDetail>
-      <SerieText>
-        <h1 className="article__title">Texto texto</h1>
-        <p className="article__content">Texto texto <b>color de acento</b>, texto texto <b>color de acento</b></p>
-        <Button handleAction="ei">Contacta</Button>
-      </SerieText>
-    </section >}
-  </>
+  return (
+    <>
+      {serie && <section className={styles.wrapper}>
+        <header>
+          <h1>{serie.title}</h1>
+          <img src="/test.jpg" alt="Foto de un spa muy bonito" />
+          <section>
+            <ul>
+              <li>v94</li>
+              <li>v94l</li>
+              <li>v84</li>
+              <li>v84l</li>
+              <li>v77l</li>
+              <li>v65l</li>
+            </ul>
+          </section>
+        </header>
+        <main>
+          <section className={styles.intro}>
+            <aside>
+              <img src="/intro.png" alt="" />
+            </aside>
+            <main>
+              <p>Spas</p>
+              <p>Serie</p>
+              <p>Vector</p>
+              <footer>
+                <p>
+                  La Serie Vector evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.
+                </p>
+              </footer>
+            </main>
+          </section>
+          <section className={styles.splash}>
+            <img src="/boat.jpg" alt="Barco" />
+            <header className={styles.header}>
+              <p>Elegancia.</p>
+              <p>Perfección.</p>
+              <p>Armonía.</p>
+            </header>
+          </section>
+          <section className={styles.actions}>
+            <h2>Serie vector</h2>
+            <div className={styles.flex}>
+              <p>La Serie Vector evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.</p>
+              <div>
+                <Button handleAction="/contact" variant="secondary">Explorar productos</Button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </section>}
+    </>
+  )
 }
