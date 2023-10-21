@@ -1,7 +1,7 @@
 'use client';
 import { getSerie } from "@/lib/spa.utils";
 import { Serie } from '@/app/types/spa.types';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ProductInfo } from "./[spa]/components/product-info/info";
 import { SerieDetailProps } from "@/components/series/detail/detail";
 import styles from './series.module.css';
@@ -9,15 +9,16 @@ import Button from "@/components/button/button";
 
 export default function Series({ params }: { params: { serie: string } }) {
   const [serie, setSerie] = useState<Serie | undefined>(undefined)
+  const [spas, setSpas] = useState(['v94', 'v94l', 'v84', 'v84l', 'v77l', 'v65l']);
+  const [selected, setSelected] = useState(spas[1]);
+  const spaNameRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     const data = getSerie(params.serie);
     setSerie(data);
   }, []);
-  const info: ProductInfo[] = [
-    { title: 'Medidas', subtitle: 'CM', content: '229 x 229 x 90' },
-    { title: 'Capacidad', subtitle: 'Personas', content: '6' },
-    { title: 'Features', subtitle: '', content: 'idk' }
-  ];
+
+
+
   const details: SerieDetailProps = {
     details: [
       {
@@ -31,22 +32,27 @@ export default function Series({ params }: { params: { serie: string } }) {
       }
     ]
   }
+  function handleSpaSelected(spa: string) {
+    spaNameRef.current?.classList.add(styles.hide);
+    setTimeout(() => {
+      setSelected(spa);
+      spaNameRef.current?.classList.remove(styles.hide);
+    }, 800)
+  }
   return (
     <>
-      {serie && <section className={styles.wrapper}>
+      {serie && <section className={styles.wrapper} >
+        <section className={styles.navigation} >
+          <ul>
+            {spas.map(spa => <li onClick={() => handleSpaSelected(spa)} key={spa} aria-selected={spa === selected}>{spa}</li>)}
+          </ul>
+        </section>
         <header>
-          <h1>{serie.title}</h1>
+          <div className={styles.title}>
+            <h1>{serie.title}</h1>
+            <h2 className={styles.spa_name} ref={spaNameRef}>{selected}</h2>
+          </div>
           <img src="/test.jpg" alt="Foto de un spa muy bonito" />
-          <section>
-            <ul>
-              <li>v94</li>
-              <li>v94l</li>
-              <li>v84</li>
-              <li>v84l</li>
-              <li>v77l</li>
-              <li>v65l</li>
-            </ul>
-          </section>
         </header>
         <main>
           <section className={styles.intro}>
@@ -74,11 +80,9 @@ export default function Series({ params }: { params: { serie: string } }) {
           </section>
           <section className={styles.actions}>
             <h2>Serie vector</h2>
-            <div className={styles.flex}>
+            <div>
               <p>La Serie Vector evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.</p>
-              <div>
-                <Button handleAction="/contact" variant="secondary">Explorar productos</Button>
-              </div>
+              <Button handleAction="/contact" variant="secondary" classname={styles.button}>Contacta con un proveedor</Button>
             </div>
           </section>
         </main>

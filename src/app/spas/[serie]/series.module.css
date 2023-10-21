@@ -19,24 +19,36 @@
   opacity: 0.7;
 }
 
-.wrapper>header h1 {
+.wrapper>header .title {
   position: absolute;
   z-index: 1;
-  font-size: 64px;
+  font-size: 48px;
   top: 112px;
   left: 32px;
   font-weight: 400;
 }
 
-.wrapper>header section {
-  position: absolute;
-  bottom: 0;
+.wrapper>header .title .spa_name {
+  font-size: 64px;
+  text-transform: uppercase;
+  transition: opacity 700ms ease;
+}
+
+.wrapper>header .title .spa_name.hide {
+  opacity: 0;
+}
+
+.navigation {
+  --bottom: 0;
+  position: fixed;
+  bottom: var(--bottom);
   padding: 32px;
   left: 0;
   width: 100%;
+  z-index: 9;
 }
 
-.wrapper>header section ul {
+.navigation ul {
   padding: 0;
   list-style: none;
   display: flex;
@@ -45,32 +57,33 @@
   margin-inline: auto;
 }
 
-.wrapper>header section ul li {
+.navigation ul li {
   font-size: 1rem;
   font-size: clamp(1rem, 0.75rem + 1.25vw, 2.25rem);
-  ;
   cursor: pointer;
   position: relative;
   text-transform: uppercase;
+  transition: color 300ms ease;
 }
 
-.wrapper>header section ul li::after {
+.navigation ul li::after {
   content: "";
   border-bottom: 3px solid;
   position: absolute;
-  bottom: 0;
+  bottom: -3px;
   left: 0;
   width: 0;
   transition: width 400ms ease;
 }
 
-.wrapper>header section ul li:hover::after {
+.navigation ul li[aria-selected="true"]::after,
+.navigation ul li:hover::after {
   width: 100%;
 }
 
-.wrapper>header section ul li:active,
-.wrapper>header section ul li:focus,
-.wrapper>header section ul li[aria-selected="true"] {
+.navigation ul li:active,
+.navigation ul li:focus,
+.navigation ul li[aria-selected="true"] {
   color: var(--accent);
 }
 
@@ -164,26 +177,20 @@
 
 .actions h2 {
   font-size: 40px;
+  margin-block-end: 16px;
 }
 
-.actions .flex {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  justify-content: space-between;
-  margin-block-start: 48px;
-  flex-wrap: wrap;
+.actions p {
+  font-size: 20px;
 }
 
-.actions .flex div {
-  flex-grow: 4;
-}
-
-.actions .flex div>* {
+.actions .button {
   width: fit-content;
-  margin-left: auto;
+  margin-block-start: 12px;
+  border-radius: 2px;
 }
+
+
 
 @media (max-width: 768px) {
   .home {
@@ -231,5 +238,4 @@
   .splash img {
     min-height: 400px;
   }
-
 }

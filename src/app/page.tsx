@@ -13,7 +13,7 @@ export default function Home() {
       <main className={styles.home}>
         <Hero src="/test.jpg">
           <h1>Serie Vector</h1>
-          <Button handleAction={'/contact'}>Explora</Button>
+          <Button handleAction={'/spas/vector'}>Explora</Button>
         </Hero>
         <div className={styles.intro}>
           <aside>
