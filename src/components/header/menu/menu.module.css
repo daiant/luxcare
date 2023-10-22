@@ -1,5 +1,7 @@
+.close[aria-hidden="true"],
 .menu[aria-hidden="true"] {
-  left: calc(-1.5 * var(--width));
+  left: -100vw;
+
 }
 
 .mask[aria-hidden="true"] {
@@ -11,8 +13,9 @@
   position: absolute;
   top: 32px;
   left: 32px;
-  z-index: 101;
+  z-index: 120;
   cursor: pointer;
+  transition: left 300ms ease;
 }
 
 .close--img {

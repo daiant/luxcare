@@ -5,6 +5,7 @@ import { SetStateAction, useEffect, useRef, useState } from 'react';
 import { SerieDetailProps } from "@/components/series/detail/detail";
 import styles from './series.module.css';
 import Button from "@/components/button/button";
+import Spas from "./[spa]/page";
 const spas_const = [
   {
     title: 'v94',
@@ -29,105 +30,9 @@ const spas_const = [
 
 export default function Series({ params }: { params: { serie: string } }) {
   const [serie, setSerie] = useState<Serie | undefined>(undefined)
-  const [spas, setSpas] = useState(spas_const);
-  const [selected, setSelected] = useState(spas[1]);
-  const spaNameRef = useRef<HTMLDivElement>(null);
-  const navRef = useRef<HTMLUListElement>(null);
-  const [navigatorPosition, setNavigatorPosition] = useState({ bottom: 0, top: 'unset', position: 'absolute' } as React.CSSProperties);
   useEffect(() => {
     const data = getSerie(params.serie);
     setSerie(data);
-    document.addEventListener('scroll', handleScroll);
   }, []);
-  function handleScroll(event: Event) {
-    if (!navRef.current) return;
-    const top = navRef.current.getBoundingClientRect().top;
-    if (top < 0) {
-      setNavigatorPosition({ top: 0, bottom: 'unset', position: 'fixed', backdropFilter: 'blur(4px)' });
-    }
-    else if (top === 0 && document.scrollingElement) {
-      const distance = document.scrollingElement.scrollTop + navRef.current.clientHeight;
-      if (distance <= document.scrollingElement.clientHeight) {
-        setNavigatorPosition({ top: 'unset', bottom: 0, position: 'absolute' });
-      }
-    }
-  }
-  const details: SerieDetailProps = {
-    details: [
-      {
-        title: "Test",
-        image: "/test.jpg",
-        text: 'tes test test est tes test set tes tset es'
-      }, {
-        title: "Test",
-        image: "/test.jpg",
-        text: 'tes test test est tes test set tes tset es'
-      }
-    ]
-  }
-  function handleSpaSelected(spa: SetStateAction<{ title: string; summary: string[]; }>) {
-    console.log("👻 ~ handleSpaSelected ~ spaNameRef.current:", spaNameRef.current);
-    spaNameRef.current?.classList.add(styles.hide);
-    setTimeout(() => {
-      setSelected(spa);
-      spaNameRef.current?.classList.remove(styles.hide);
-    }, 1200)
-  }
-  return (
-    <>
-      {serie && <section className={styles.wrapper} >
-        <section className={styles.navigation} ref={navRef} style={navigatorPosition} >
-          <ul>
-            {spas.map(spa => <li onClick={() => handleSpaSelected(spa)} key={spa.title} aria-selected={spa === selected}>{spa.title}</li>)}
-          </ul>
-        </section>
-        <header>
-          <div className={styles.title}>
-            <div className={styles.header}>
-              <h1>{serie.title}</h1>
-              <h2 className={styles.spa_name}>{selected.title}</h2>
-            </div>
-            <div className={styles.spa_selected} ref={spaNameRef}>
-              <ul className={styles.summary}>
-                {selected.summary.map((s) => <li key={s}>{s}</li>)}
-              </ul>
-            </div>
-          </div>
-          <img src="/test.jpg" alt="Foto de un spa muy bonito" />
-        </header>
-        <main>
-          <section className={styles.intro}>
-            <aside>
-              <img src="/intro.png" alt="" />
-            </aside>
-            <main>
-              <p>Spas</p>
-              <p>Serie</p>
-              <p>Vector</p>
-              <footer>
-                <p>
-                  La Serie Vector evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.
-                </p>
-              </footer>
-            </main>
-          </section>
-          <section className={styles.splash}>
-            <img src="/boat.jpg" alt="Barco" />
-            <header className={styles.header}>
-              <p>Elegancia.</p>
-              <p>Perfección.</p>
-              <p>Armonía.</p>
-            </header>
-          </section>
-          <section className={styles.actions}>
-            <h2>Serie vector</h2>
-            <div>
-              <p>La Serie Vector evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.</p>
-              <Button handleAction="/contact" variant="secondary" classname={styles.button}>Contacta con un proveedor</Button>
-            </div>
-          </section>
-        </main>
-      </section>}
-    </>
-  )
+  return (<Spas params={{ serie: serie?.url, spa: undefined }}></Spas>)
 }

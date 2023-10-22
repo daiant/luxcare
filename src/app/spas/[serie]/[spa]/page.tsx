@@ -27,7 +27,7 @@ const spas_const = [
   },
 ];
 
-export default function Series({ params }: { params: { serie: string, spa: string } }) {
+export default function Spas({ params }: { params: { serie: string | undefined, spa: string | undefined } }) {
   const [serie, setSerie] = useState<Serie | undefined>(undefined)
   const [spas, setSpas] = useState(spas_const);
   const [selected, setSelected] = useState<{ summary: string[], title: string } | undefined>(undefined);
@@ -35,12 +35,11 @@ export default function Series({ params }: { params: { serie: string, spa: strin
   const navRef = useRef<HTMLUListElement>(null);
   const [navigatorPosition, setNavigatorPosition] = useState({ bottom: 0, top: 'unset', position: 'absolute' } as React.CSSProperties);
   useEffect(() => {
-    console.log(params)
-    const data = getSerie(params.serie);
-    setSelected(spas.find(spa => spa.title.includes(params.spa)));
+    const data = getSerie(params.serie ?? '');
+    setSelected(spas.find(spa => params.spa && spa.title.includes(params.spa)));
     setSerie(data);
     document.addEventListener('scroll', handleScroll);
-  }, []);
+  }, [params.serie, params.spa]);
   function handleScroll(event: Event) {
     if (!navRef.current) return;
     const top = navRef.current.getBoundingClientRect().top;
@@ -73,11 +72,11 @@ export default function Series({ params }: { params: { serie: string, spa: strin
     setTimeout(() => {
       setSelected(spa);
       spaNameRef.current?.classList.remove(styles.hide);
-    }, 1200)
+    }, 800)
   }
   return (
     <>
-      {serie && <section className={styles.wrapper} >
+      {<section className={styles.wrapper}>
         <section className={styles.navigation} ref={navRef} style={navigatorPosition} >
           <ul>
             {spas.map(spa => <li onClick={() => handleSpaSelected(spa)} key={spa.title} aria-selected={spa === selected}>{spa.title}</li>)}
@@ -86,7 +85,7 @@ export default function Series({ params }: { params: { serie: string, spa: strin
         <header>
           <div className={styles.title}>
             <div className={styles.header}>
-              <h1>{serie.title}</h1>
+              <h1>{serie?.title}</h1>
               <h2 className={styles.spa_name}>{selected?.title}</h2>
             </div>
             <div className={styles.spa_selected} ref={spaNameRef}>

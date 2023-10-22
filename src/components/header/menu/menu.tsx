@@ -26,12 +26,12 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
   function restoreChildren() {
     handleChildren([]);
   }
-  return <>
+  return <div className={styles.wrapper}>
     <div className={styles.mask} onClick={props.onClick} aria-hidden={!props.visible}></div>
+    <div className={styles.close} onClick={props.onClick} aria-hidden={!props.visible}>
+      <img src="/close.svg" className={styles['close--img']} alt="" />
+    </div>
     <menu aria-hidden={!props.visible} className={styles.menu}>
-      <div className={styles.close} onClick={props.onClick}>
-        <img src="/close.svg" className={styles['close--img']} alt="" />
-      </div>
       <ul className={styles.list} aria-hidden={Boolean(children.length)}>
         {routes.map((route, index) => (
           <li key={index} className={styles.item}>
@@ -58,5 +58,5 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
         </li>)}
       </ul>
     </div>}
-  </>
+  </div>
 }
