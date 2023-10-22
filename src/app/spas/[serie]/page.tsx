@@ -31,6 +31,7 @@ const spas_const = [
 export default function Series({ params }: { params: { serie: string } }) {
   const [serie, setSerie] = useState<Serie | undefined>(undefined)
   useEffect(() => {
+    console.log(params.serie)
     const data = getSerie(params.serie);
     setSerie(data);
   }, []);

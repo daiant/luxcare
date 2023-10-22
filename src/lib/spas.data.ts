@@ -3,107 +3,124 @@ import { Serie } from "@/app/types/spa.types";
 export const series: Serie[] = [
   {
     "title": "Serie Crown",
-    "url": "crown",
+    "description": "La Serie Crown evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.",
+    "url": "/spas/crown",
     "img": "/test.jpg",
     "subtitle": "Featured spas inside",
     "items": [
       {
-        "title": "Summit Spa",
+        "title": "Summit",
         "subtitle": "Subtitle",
         "img": "/spas/crown/summit.jpg",
+        "summary": ['hola', 'hola'],
         "url": "summit"
       },
       {
-        "title": "Epic Spa",
+        "title": "Epic",
         "subtitle": "Subtitle",
         "img": "/spas/crown/epic.jpg",
+        "summary": ['hola', 'hola'],
         "url": "epic"
       },
       {
-        "title": "Euphoria Spa",
+        "title": "Euphoria",
         "subtitle": "Subtitle",
         "img": "/spas/crown/euphoria.jpg",
+        "summary": ['hola', 'hola'],
         "url": "euphoria"
       },
       {
-        "title": "Destiny Spa",
+        "title": "Destiny",
         "subtitle": "Subtitle",
         "img": "/spas/crown/destiny.jpg",
+        "summary": ['hola', 'hola'],
         "url": "destiny"
       },
       {
-        "title": "Resort Spa",
+        "title": "Resort",
         "subtitle": "Subtitle",
         "img": "/spas/crown/resort.jpg",
+        "summary": ['hola', 'hola'],
         "url": "resort"
       },
       {
-        "title": "Wish Spa",
+        "title": "Wish",
         "subtitle": "Subtitle",
         "img": "/spas/crown/wish.jpg",
+        "summary": ['hola', 'hola'],
         "url": "wish"
       },
       {
-        "title": "Spirit Spa",
+        "title": "Spirit",
         "subtitle": "Subtitle",
         "img": "/spas/crown/spirit.jpg",
+        "summary": ['hola', 'hola'],
         "url": "spirit"
       }
     ]
   },
   {
     "title": "Serie Vector",
-    "url": "vector",
+    "description": "La Serie Vector  evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.",
+    "url": "spas/vector",
     "img": "/test.jpg",
     "subtitle": "Featured spas inside",
     "items": [
       {
-        "title": "V94L Spa",
+        "title": "V94L",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v94l.jpg",
+        "summary": ['hola', 'hola'],
         "url": "v94l"
       },
       {
-        "title": "V94 Spa",
+        "title": "V94",
         "subtitle": "Subtitle",
         "img": "/spas/test.jpg",
+        "summary": ['hola', 'hola'],
         "url": "v94"
       },
       {
-        "title": "V84L Spa",
+        "title": "V84L",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v84l.jpg",
+        "summary": ['hola', 'hola'],
         "url": "v84l"
       },
       {
-        "title": "V84 Spa",
+        "title": "V84",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v84.jpg",
+        "summary": ['hola', 'hola'],
         "url": "v84"
       },
       {
-        "title": "V77L Spa",
+        "title": "V77L",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v77l.jpg",
+        "summary": ['hola', 'hola'],
         "url": "v77l"
       },
       {
-        "title": "V77 Spa",
+        "title": "V77",
         "subtitle": "Subtitle",
         "img": "/spas/test.jpg",
+        "summary": ['hola', 'hola'],
         "url": "v77"
       },
       {
-        "title": "V65L Spa",
+        "title": "V65L",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v65l.jpg",
+        "summary": ['hola', 'hola'],
         "url": "v65"
       }
     ]
   },
   {
     "title": "Serie Strato",
-    "url": "crown",
+    "description": "La Serie Strato evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.",
+    "url": "spas/strato",
     "img": "/test.jpg",
     "subtitle": "Featured spas inside",
     "items": [
@@ -111,12 +128,14 @@ export const series: Serie[] = [
         "title": "Strato 2.4",
         "subtitle": "Subtitle",
         "img": "/spas/test.jpg",
+        "summary": ['hola', 'hola'],
         "url": "test"
       },
       {
         "title": "Strato 2.1",
         "subtitle": "Subtitle",
         "img": "/spas/test.jpg",
+        "summary": ['hola', 'hola'],
         "url": "test"
       }
     ]

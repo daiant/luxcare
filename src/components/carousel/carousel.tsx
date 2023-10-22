@@ -16,7 +16,6 @@ export default function Carousel() {
   }, []);
 
   function scrollTo(index: number) {
-    console.log("👻 ~ scrollTo ~ index:", index);
     if (!listRef.current) return;
     const rect = listRef.current.children[index]?.getBoundingClientRect();
     const listRect = listRef.current.getBoundingClientRect();

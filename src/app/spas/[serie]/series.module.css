@@ -63,7 +63,7 @@
   --bottom: 0;
   position: fixed;
   bottom: var(--bottom);
-  padding: 32px;
+  padding-block: 32px;
   left: 0;
   width: 100%;
   z-index: 9;
@@ -71,11 +71,19 @@
 
 .navigation ul {
   padding: 0;
+  padding-bottom: 3px;
   list-style: none;
   display: flex;
+  gap: 12px;
   width: min(960px, calc(100% - 32px));
   justify-content: space-between;
   margin-inline: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.navigation ul::-webkit-scrollbar {
+  display: none;
 }
 
 .navigation ul li {
@@ -143,6 +151,7 @@
 .intro main>p {
   font-size: 96px;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .splash header>p:last-of-type,
