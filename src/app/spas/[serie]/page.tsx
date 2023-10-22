@@ -12,13 +12,26 @@ export default function Series({ params }: { params: { serie: string } }) {
   const [spas, setSpas] = useState(['v94', 'v94l', 'v84', 'v84l', 'v77l', 'v65l']);
   const [selected, setSelected] = useState(spas[1]);
   const spaNameRef = useRef<HTMLHeadingElement>(null);
+  const navRef = useRef<HTMLUListElement>(null);
+  const [navigatorPosition, setNavigatorPosition] = useState({ bottom: 0, top: 'unset', position: 'absolute' } as React.CSSProperties);
   useEffect(() => {
     const data = getSerie(params.serie);
     setSerie(data);
+    document.addEventListener('scroll', handleScroll);
   }, []);
-
-
-
+  function handleScroll(event: Event) {
+    if (!navRef.current) return;
+    const top = navRef.current.getBoundingClientRect().top;
+    if (top < 0) {
+      setNavigatorPosition({ top: 0, bottom: 'unset', position: 'fixed' });
+    }
+    else if (top === 0 && document.scrollingElement) {
+      const distance = document.scrollingElement.scrollTop + navRef.current.clientHeight;
+      if (distance <= document.scrollingElement.clientHeight) {
+        setNavigatorPosition({ top: 'unset', bottom: 0, position: 'absolute' });
+      }
+    }
+  }
   const details: SerieDetailProps = {
     details: [
       {
@@ -42,7 +55,7 @@ export default function Series({ params }: { params: { serie: string } }) {
   return (
     <>
       {serie && <section className={styles.wrapper} >
-        <section className={styles.navigation} >
+        <section className={styles.navigation} ref={navRef} style={navigatorPosition} >
           <ul>
             {spas.map(spa => <li onClick={() => handleSpaSelected(spa)} key={spa} aria-selected={spa === selected}>{spa}</li>)}
           </ul>
