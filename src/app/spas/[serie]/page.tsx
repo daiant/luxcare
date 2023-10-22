@@ -1,17 +1,38 @@
 'use client';
 import { getSerie } from "@/lib/spa.utils";
 import { Serie } from '@/app/types/spa.types';
-import { useEffect, useRef, useState } from 'react';
+import { SetStateAction, useEffect, useRef, useState } from 'react';
 import { ProductInfo } from "./[spa]/components/product-info/info";
 import { SerieDetailProps } from "@/components/series/detail/detail";
 import styles from './series.module.css';
 import Button from "@/components/button/button";
+const spas_const = [
+  {
+    title: 'v94',
+    summary: ['Dynamic', '7 Person hot tub', 'Whitewater-4 jet']
+  }, {
+    title: 'v94l',
+    summary: ['Dynamic', '7 Person hot tub', 'Whitewater-4 jet']
+  }, {
+    title: 'v84',
+    summary: ['Dynamic', '7 Person hot tub', 'Whitewater-4 jet']
+  }, {
+    title: 'v84l',
+    summary: ['Dynamic', '7 Person hot tub', 'Whitewater-4 jet']
+  }, {
+    title: 'v77l',
+    summary: ['Dynamic', '7 Person hot tub', 'Whitewater-4 jet']
+  }, {
+    title: 'v65l',
+    summary: ['Dynamic', '7 Person hot tub', 'Whitewater-4 jet']
+  },
+];
 
 export default function Series({ params }: { params: { serie: string } }) {
   const [serie, setSerie] = useState<Serie | undefined>(undefined)
-  const [spas, setSpas] = useState(['v94', 'v94l', 'v84', 'v84l', 'v77l', 'v65l']);
+  const [spas, setSpas] = useState(spas_const);
   const [selected, setSelected] = useState(spas[1]);
-  const spaNameRef = useRef<HTMLHeadingElement>(null);
+  const spaNameRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLUListElement>(null);
   const [navigatorPosition, setNavigatorPosition] = useState({ bottom: 0, top: 'unset', position: 'absolute' } as React.CSSProperties);
   useEffect(() => {
@@ -23,7 +44,7 @@ export default function Series({ params }: { params: { serie: string } }) {
     if (!navRef.current) return;
     const top = navRef.current.getBoundingClientRect().top;
     if (top < 0) {
-      setNavigatorPosition({ top: 0, bottom: 'unset', position: 'fixed' });
+      setNavigatorPosition({ top: 0, bottom: 'unset', position: 'fixed', backdropFilter: 'blur(4px)' });
     }
     else if (top === 0 && document.scrollingElement) {
       const distance = document.scrollingElement.scrollTop + navRef.current.clientHeight;
@@ -45,25 +66,33 @@ export default function Series({ params }: { params: { serie: string } }) {
       }
     ]
   }
-  function handleSpaSelected(spa: string) {
+  function handleSpaSelected(spa: SetStateAction<{ title: string; summary: string[]; }>) {
+    console.log("👻 ~ handleSpaSelected ~ spaNameRef.current:", spaNameRef.current);
     spaNameRef.current?.classList.add(styles.hide);
     setTimeout(() => {
       setSelected(spa);
       spaNameRef.current?.classList.remove(styles.hide);
-    }, 800)
+    }, 1200)
   }
   return (
     <>
       {serie && <section className={styles.wrapper} >
         <section className={styles.navigation} ref={navRef} style={navigatorPosition} >
           <ul>
-            {spas.map(spa => <li onClick={() => handleSpaSelected(spa)} key={spa} aria-selected={spa === selected}>{spa}</li>)}
+            {spas.map(spa => <li onClick={() => handleSpaSelected(spa)} key={spa.title} aria-selected={spa === selected}>{spa.title}</li>)}
           </ul>
         </section>
         <header>
           <div className={styles.title}>
-            <h1>{serie.title}</h1>
-            <h2 className={styles.spa_name} ref={spaNameRef}>{selected}</h2>
+            <div className={styles.header}>
+              <h1>{serie.title}</h1>
+              <h2 className={styles.spa_name}>{selected.title}</h2>
+            </div>
+            <div className={styles.spa_selected} ref={spaNameRef}>
+              <ul className={styles.summary}>
+                {selected.summary.map((s) => <li key={s}>{s}</li>)}
+              </ul>
+            </div>
           </div>
           <img src="/test.jpg" alt="Foto de un spa muy bonito" />
         </header>
