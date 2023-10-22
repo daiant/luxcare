@@ -2,7 +2,6 @@
 import { getSerie } from "@/lib/spa.utils";
 import { Serie } from '@/app/types/spa.types';
 import { SetStateAction, useEffect, useRef, useState } from 'react';
-import { ProductInfo } from "./[spa]/components/product-info/info";
 import { SerieDetailProps } from "@/components/series/detail/detail";
 import styles from './series.module.css';
 import Button from "@/components/button/button";

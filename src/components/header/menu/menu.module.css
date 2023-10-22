@@ -33,13 +33,19 @@
   transition: opacity 800ms, visibility 800ms;
 }
 
+.list[aria-hidden="true"] {
+  left: -110%;
+}
+
 .list {
-  padding: 64px;
+  padding-block: 64px;
   opacity: 1;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  align-items: flex-end;
+  position: relative;
+  transition: left 300ms ease;
+  left: 0;
 
   .item {
     .item--link {
@@ -64,7 +70,7 @@
 .menu {
   --width: 400px;
 
-  padding: 64px;
+  padding: 64px 32px;
   position: fixed;
   top: 0;
   left: 0;
@@ -79,21 +85,30 @@
 }
 
 .submenu {
-  --width: 400px;
+  --width: 0;
   --opacity__delay: 400ms;
   position: fixed;
+  padding: 64px 32px;
   top: 0;
   left: calc(-1 * var(--width));
-  width: calc(100vw - var(--width));
+  width: 100vw;
   height: 100vh;
-  z-index: 98;
+  z-index: 100;
   animation: show forwards 800ms;
   overflow-y: auto;
+
+  .back {
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .back:hover {
+    text-decoration: underline;
+  }
 
   .list {
     opacity: var(--opacity);
     transition: opacity var(--opacity__delay) ease;
-    padding: 128px;
 
     .submenu--list--item {
       width: 100%;
@@ -140,11 +155,11 @@
 @keyframes show {
   from {
     opacity: 0;
-    left: calc(-1 * var(--width));
+    left: 101vw;
   }
 
   to {
-    left: var(--width);
+    left: 0;
     opacity: 1;
   }
 }

@@ -8,7 +8,7 @@ import Image from 'next/image';
 export default function Menu(props: { visible: boolean, onClick: any }) {
   const [children, setChildren] = useState<Routes>([]);
   const [opacity, setOpacity] = useState(1);
-  const OPACITY_DELAY = 400;
+  const OPACITY_DELAY = 0;
   function handleChildren(routes?: Routes) {
     if (!routes) return;
     setOpacity(0);
@@ -23,13 +23,16 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
       // document.body.style.overflow = 'hidden';
     }
   }, [props.visible])
+  function restoreChildren() {
+    handleChildren([]);
+  }
   return <>
     <div className={styles.mask} onClick={props.onClick} aria-hidden={!props.visible}></div>
     <menu aria-hidden={!props.visible} className={styles.menu}>
       <div className={styles.close} onClick={props.onClick}>
         <img src="/close.svg" className={styles['close--img']} alt="" />
       </div>
-      <ul className={styles.list}>
+      <ul className={styles.list} aria-hidden={Boolean(children.length)}>
         {routes.map((route, index) => (
           <li key={index} className={styles.item}>
             {!route.routes && <Link href={route.url} className={styles['item--link']} onClick={props.onClick}>{route.name}</Link>}
@@ -43,6 +46,7 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
     </menu>
     {children.length > 0 && <div className={styles.submenu} style={{ '--opacity': opacity } as React.CSSProperties}>
       <ul className={styles.list}>
+        <p onClick={restoreChildren} className={styles.back}>Back</p>
         {children.map((route, index) => <li key={route.name + index} className={styles['submenu--list--item']}>
           <Link href={route.url} onClick={props.onClick} className={styles['submenu--list--item--link']}>
             <Image src="/test.jpg" alt='' className={styles.image} fill></Image>
