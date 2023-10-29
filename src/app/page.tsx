@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Header></Header>
       <main className={styles.home}>
-        <Hero src="/test.jpg">
+        <Hero src="/test.webp">
           <h1>Serie Vector</h1>
           <Button handleAction={'/spas/vector'}>Explora</Button>
         </Hero>

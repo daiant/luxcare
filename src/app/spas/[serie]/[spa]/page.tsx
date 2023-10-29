@@ -68,7 +68,7 @@ export default function Spas({ params }: { params: { serie: string | undefined, 
               </ul>
             </div>
           </div>
-          <img src="/test.jpg" alt="Foto de un spa muy bonito" />
+          <img src="/test.webp" alt="Foto de un spa muy bonito" />
         </header>
         <main>
           <section className={styles.intro}>

@@ -5,7 +5,7 @@ export const series: Serie[] = [
     "title": "Serie Crown",
     "description": "La Serie Crown evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.",
     "url": "/spas/crown",
-    "img": "/test.jpg",
+    "img": "/test.webp",
     "subtitle": "Featured spas inside",
     "items": [
       {
@@ -63,7 +63,7 @@ export const series: Serie[] = [
     "title": "Serie Vector",
     "description": "La Serie Vector  evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.",
     "url": "spas/vector",
-    "img": "/test.jpg",
+    "img": "/test.webp",
     "subtitle": "Featured spas inside",
     "items": [
       {
@@ -76,7 +76,7 @@ export const series: Serie[] = [
       {
         "title": "V94",
         "subtitle": "Subtitle",
-        "img": "/spas/test.jpg",
+        "img": "/spas/test.webp",
         "summary": ['hola', 'hola'],
         "url": "v94"
       },
@@ -104,7 +104,7 @@ export const series: Serie[] = [
       {
         "title": "V77",
         "subtitle": "Subtitle",
-        "img": "/spas/test.jpg",
+        "img": "/spas/test.webp",
         "summary": ['hola', 'hola'],
         "url": "v77"
       },
@@ -121,20 +121,20 @@ export const series: Serie[] = [
     "title": "Serie Strato",
     "description": "La Serie Strato evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.",
     "url": "spas/strato",
-    "img": "/test.jpg",
+    "img": "/test.webp",
     "subtitle": "Featured spas inside",
     "items": [
       {
         "title": "Strato 2.4",
         "subtitle": "Subtitle",
-        "img": "/spas/test.jpg",
+        "img": "/spas/test.webp",
         "summary": ['hola', 'hola'],
         "url": "test"
       },
       {
         "title": "Strato 2.1",
         "subtitle": "Subtitle",
-        "img": "/spas/test.jpg",
+        "img": "/spas/test.webp",
         "summary": ['hola', 'hola'],
         "url": "test"
       }

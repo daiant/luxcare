@@ -49,7 +49,7 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
         <p onClick={restoreChildren} className={styles.back}>Back</p>
         {children.map((route, index) => <li key={route.name + index} className={styles['submenu--list--item']}>
           <Link href={route.url} onClick={props.onClick} className={styles['submenu--list--item--link']}>
-            <Image src="/test.jpg" alt='' className={styles.image} fill></Image>
+            <Image src="/test.webp" alt='' className={styles.image} fill></Image>
           </Link>
           <div className={styles.info}>
             <h2>{route.name}</h2>
