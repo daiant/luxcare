@@ -13,12 +13,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body>
-        <Header transparent={true}></Header>
-        {children}
-        <Footer></Footer>
-      </body>
-    </html>
+    <>
+      <Header transparent={true}></Header>
+      {children}
+      <Footer></Footer>
+    </>
   )
 }
