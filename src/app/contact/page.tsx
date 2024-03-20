@@ -18,7 +18,7 @@ export default function Contact() {
   }
   return <div className={styles.wrapper}>
     <header className={styles.hero}>
-      <img src='intro.png' alt='contacto' />
+      <img src='/contact/banner.jpg' alt='contacto' />
     </header>
     <main className={styles.main}>
       <aside className={styles.aside}>
