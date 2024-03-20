@@ -31,6 +31,11 @@
     font-weight: 200;
   }
 
+  .logo img {
+    width: auto;
+    height: 32px;
+  }
+
   .link {
     display: flex;
     align-items: center;

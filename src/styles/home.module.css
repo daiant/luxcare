@@ -69,7 +69,8 @@
   grid-template-columns: repeat(12, 1fr);
   padding-block: 64px;
   gap: 64px;
-  height: 100dvh;
+  min-height: 100dvh;
+  margin-block-end: 64px;
 }
 
 .intro aside {
