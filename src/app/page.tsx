@@ -4,6 +4,7 @@ import Carousel from '@/components/carousel/carousel';
 import Hero from '@/components/hero/hero';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
+import { series } from '@/lib/spas.data';
 
 
 export default function Home() {
@@ -11,15 +12,12 @@ export default function Home() {
     <>
       <Header></Header>
       <main className={styles.home}>
-        <Carousel />
+        <Carousel series={series} />
         <div className={styles.intro}>
           <aside>
-            <img src="intro.png" alt="" />
+            <img src="/home/vertical_marquis.png" alt="" />
           </aside>
           <section>
-            {/* <p>Simple,</p>
-            <p>Mente,</p>
-            <p>Perfecto</p> */}
             <img src="/icons/logo.svg" alt="Simplemente perfectop" />
             <footer>
               <p>
@@ -37,9 +35,9 @@ export default function Home() {
           <p>cerca de experimentar</p>
           <p>una sensación tan <code>simplemente perfecta</code></p>
         </div>
-        <Hero src="/test.webp">
-          <h1>Serie Vector</h1>
-          <Button handleAction={'/spas/vector'}>Explora</Button>
+        <Hero src="/home/banner.jpg">
+          <h1>Serie Strato</h1>
+          <Button handleAction={'/spas/strato'}>Explora</Button>
         </Hero>
       </main>
       <Footer></Footer>

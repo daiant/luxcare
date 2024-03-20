@@ -4,7 +4,7 @@ import styles from './footer.module.css';
 export default function Footer() {
   return <footer className={styles.footer}>
     <header className={styles.logo}>
-      <p className={styles.title}>L U X C A R E</p>
+      <img src="/icons/luxcare.svg" alt="L U X C A R E" />
     </header>
     <section className={styles.links}>
       <ul className={styles.list}>

@@ -4,15 +4,14 @@
 }
 
 .logo {
-  border-bottom: 1px solid #7D7056;
+  border-bottom: 2px solid #7D7056;
   margin-block-end: 32px;
 }
 
-.title {
-  font-size: 28px;
-  margin-block-end: 32px;
-  font-weight: 600;
-  color: #7D7056;
+.logo img {
+  height: 32px;
+  width: auto;
+  margin-block-end: 12px;
 }
 
 .links {

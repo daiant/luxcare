@@ -1,24 +1,18 @@
 'use client';
 
 import React from 'react';
-import { getSpaSeries } from "@/lib/spa.utils"
 import { Serie } from '@/app/types/spa.types';
 import styles from './carousel.module.css';
 import Button from '../button/button';
 
 
-export default function Carousel() {
-  const [series, setSeries] = React.useState<Serie[]>([]);
+export default function Carousel({ series }: { series: Serie[] }) {
   const [activeLi, setActiveLi] = React.useState(0);
   const listRef = React.useRef<HTMLUListElement>(null);
-  React.useEffect(() => {
-    setSeries(getSpaSeries());
-  }, []);
 
   function scrollTo(index: number) {
     if (!listRef.current) return;
     const rect = listRef.current.children[index]?.getBoundingClientRect();
-    const listRect = listRef.current.getBoundingClientRect();
     listRef.current.scrollBy({
       top: 0,
       left: rect.left,
