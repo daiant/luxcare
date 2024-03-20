@@ -11,18 +11,16 @@ export default function Home() {
     <>
       <Header></Header>
       <main className={styles.home}>
-        <Hero src="/test.webp">
-          <h1>Serie Vector</h1>
-          <Button handleAction={'/spas/vector'}>Explora</Button>
-        </Hero>
+        <Carousel />
         <div className={styles.intro}>
           <aside>
             <img src="intro.png" alt="" />
           </aside>
-          <main>
-            <p>Simple,</p>
+          <section>
+            {/* <p>Simple,</p>
             <p>Mente,</p>
-            <p>Perfecto</p>
+            <p>Perfecto</p> */}
+            <img src="/icons/logo.svg" alt="Simplemente perfectop" />
             <footer>
               <p>
                 A través de los tiempos, el ser humano siempre ha buscado el éxito y la perfección de la forma más simple.
@@ -31,7 +29,7 @@ export default function Home() {
                 Después de 4000 millones de años de vida, <code>luxcare</code> ha encontrado la forma de hacerlo posible.
               </p>
             </footer>
-          </main>
+          </section>
         </div>
         <div className={styles.splash}>
           <p>nunca has</p>
@@ -39,7 +37,10 @@ export default function Home() {
           <p>cerca de experimentar</p>
           <p>una sensación tan <code>simplemente perfecta</code></p>
         </div>
-        <Carousel />
+        <Hero src="/test.webp">
+          <h1>Serie Vector</h1>
+          <Button handleAction={'/spas/vector'}>Explora</Button>
+        </Hero>
       </main>
       <Footer></Footer>
     </>

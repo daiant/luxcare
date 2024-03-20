@@ -22,6 +22,7 @@
   align-items: flex-start;
   gap: 64px;
   padding-block-end: 16px;
+  flex-wrap: wrap;
 }
 
 .list {

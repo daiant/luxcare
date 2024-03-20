@@ -69,6 +69,7 @@
   grid-template-columns: repeat(12, 1fr);
   padding-block: 64px;
   gap: 64px;
+  height: 100dvh;
 }
 
 .intro aside {
@@ -77,41 +78,42 @@
 }
 
 .intro aside img {
-  height: 900px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.intro main {
+.intro section {
   height: 100%;
   display: flex;
   flex-direction: column;
   grid-column: span 8;
 }
 
-.intro main>p {
+.intro section>p {
   font-size: 96px;
   font-weight: bold;
 }
 
-.intro main>p:last-of-type {
+.intro section>p:last-of-type {
   color: var(--accent);
 }
 
-.intro main footer {
+.intro section footer {
   margin-top: auto;
   text-transform: uppercase;
   font-size: 26px;
   max-width: 80%;
   margin-inline-start: auto;
   padding: 64px;
+  padding-block-end: 32px;
 }
 
-.intro main footer p+p {
+.intro section footer p+p {
   margin-block-start: 8px;
 }
 
-.intro main footer code {
+.intro section footer code {
   font-family: inherit;
   color: var(--accent);
 }
@@ -153,15 +155,15 @@
     max-height: 700px;
   }
 
-  .intro main {
+  .intro section {
     margin-block: 32px;
   }
 
-  .intro main>p {
+  .intro section>p {
     font-size: 64px;
   }
 
-  .intro main footer {
+  .intro section footer {
     max-width: 100%;
     font-size: 22px;
     padding: 0;

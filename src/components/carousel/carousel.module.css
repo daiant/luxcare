@@ -67,6 +67,8 @@
   border-radius: 100%;
   width: 48px;
   cursor: pointer;
+  display: grid;
+  place-content: center;
 }
 
 .carousel .carousel_actions button.previous {

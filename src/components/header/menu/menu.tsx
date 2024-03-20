@@ -38,7 +38,7 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
       </div>
       <div role='contentgroup'>
         <ul>
-          <li role='heading'><Link href='/spas'>Series</Link></li>
+          {/* <li role='heading'><Link href='/spas'>Series</Link></li> */}
           <li><Link href='/spas/vector'>Vector</Link></li>
           <li><Link href='/spas/strato'>Strato</Link></li>
           <li><Link href='/spas/crown'>Crown</Link></li>
