@@ -27,7 +27,7 @@ export default function Spas({ params }: { params: { serie: string | undefined, 
     if (!navRef.current) return;
     const top = navRef.current.getBoundingClientRect().top;
     if (top < 0) {
-      setNavigatorPosition({ top: 0, bottom: 'unset', position: 'fixed', backdropFilter: 'blur(4px)' });
+      setNavigatorPosition({ top: 0, bottom: 'unset', position: 'fixed' });
     }
     else if (top === 0 && document.scrollingElement) {
       const distance = document.scrollingElement.scrollTop + navRef.current.clientHeight;
@@ -51,7 +51,10 @@ export default function Spas({ params }: { params: { serie: string | undefined, 
   return (
     <>
       {<section className={styles.wrapper}>
-        <section className={styles.navigation} ref={navRef} style={navigatorPosition} >
+        <section className={[
+          styles.navigation,
+          navigatorPosition.top === 0 ? styles.sticky : '',
+        ].join(' ')} ref={navRef} style={navigatorPosition} >
           <ul>
             {spas?.map(spa => <li onClick={() => handleSpaSelected(spa)} key={spa.title} aria-selected={spa === selected}>{spa.title}</li>)}
           </ul>
@@ -68,7 +71,7 @@ export default function Spas({ params }: { params: { serie: string | undefined, 
               </ul>
             </div>
           </div>
-          <img src="/test.webp" alt="Foto de un spa muy bonito" />
+          <img src={serie?.img} alt="Foto de un spa muy bonito" />
         </header>
         <main>
           <section className={styles.intro}>

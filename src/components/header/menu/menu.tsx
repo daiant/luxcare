@@ -15,20 +15,15 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
   }
   useEffect(() => {
     if (!props.visible) {
-      // document.body.style.overflow = "visible";
       handleChildren([]);
     }
     else {
-      // document.body.style.overflow = 'hidden';
     }
   }, [props.visible])
-  function restoreChildren() {
-    handleChildren([]);
-  }
   return <div className={styles.wrapper}>
     <div className={styles.mask} onClick={props.onClick} aria-hidden={!props.visible}></div>
     <div className={styles.close} onClick={props.onClick} aria-hidden={!props.visible}>
-      <img src="/close.svg" className={styles['close--img']} alt="" />
+      <img src="/icons/close.svg" className={styles['close--img']} alt="" />
     </div>
     <article className={styles.menu} aria-hidden={!props.visible}>
       <div role='contentgroup'>

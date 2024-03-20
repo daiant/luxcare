@@ -67,6 +67,15 @@
   left: 0;
   width: 100%;
   z-index: 9;
+  top: unset;
+}
+
+.sticky {
+  backdrop-filter: blur(4px);
+}
+
+.sticky ul li {
+  font-size: 1.5rem !important;
 }
 
 .navigation ul {
@@ -75,7 +84,7 @@
   list-style: none;
   display: flex;
   gap: 12px;
-  width: min(960px, calc(100% - 32px));
+  width: min(1200px, calc(100% - 32px));
   justify-content: space-between;
   margin-inline: auto;
   overflow-x: auto;
@@ -92,7 +101,7 @@
   cursor: pointer;
   position: relative;
   text-transform: uppercase;
-  transition: color 300ms ease;
+  transition: color 300ms ease, font-size 100ms ease-out;
 }
 
 .navigation ul li::after {
