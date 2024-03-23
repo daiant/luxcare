@@ -18,7 +18,7 @@ export default function Home() {
             <img src="/home/vertical_marquis.png" alt="" />
           </aside>
           <section>
-            <img src="/icons/logo.svg" alt="Simplemente perfectop" />
+            <img src="/icons/slogan.svg" alt="Simplemente perfecto" />
             <footer>
               <p>
                 A través de los tiempos, el ser humano siempre ha buscado el éxito y la perfección de la forma más simple.
