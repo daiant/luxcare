@@ -1,5 +1,8 @@
 .wrapper {
   padding-inline: 32px;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero {
@@ -35,6 +38,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   padding-block: 64px 32px;
+  flex-grow: 1;
 }
 
 .aside {
@@ -52,66 +56,7 @@
 }
 
 .aside h1 {
-  font-size: 8vw;
-}
-
-.form {
-  grid-column: 7 / 13;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 16px;
-}
-
-.actions {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap-reverse;
-  gap: 12px;
-}
-
-.actions .info {
-  transition: opacity 300ms ease;
-  opacity: 0;
-}
-
-.actions .info[aria-hidden="false"] {
-  opacity: 1;
-}
-
-.actions .button {
-  background-color: var(--color);
-  color: var(--background-color);
-  font-family: var(--font-main);
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 2px;
-  padding: 16px 32px;
-  font-size: 24px;
-  font-weight: 300;
-  min-width: 60%;
-  border: none;
-  outline: 1px solid transparent;
-  transition: outline-color 300ms ease;
-}
-
-.actions .button:focus {
-  outline-color: var(--color);
-}
-
-.label {
-  width: 100%;
-  max-width: 500px;
-  box-sizing: border-box;
-}
-
-.input {
-  width: 100%;
-  box-sizing: border-box;
-  min-height: 32px;
-  margin-block-start: 4px;
+  font-size: 7vw;
 }
 
 @media (max-width: 1024px) {

@@ -19,9 +19,8 @@ export default function Header({ transparent }: { transparent?: boolean }) {
       <Link href={'/'} className={styles.logo}>
         <img src="/icons/luxcare.svg" alt="L U X C A R E" />
       </Link>
-      <div onClick={() => { setDialogVisibility(true) }} className={styles.link}>Dealers</div>
+      <Link href='/dealers' className={styles.link}>Dealers</Link>
     </nav >
     <Menu visible={menuVisibility} onClick={() => setMenuVisibility(false)}></Menu>
-    <DealerDialog visible={dialogVisibility} className={styles.dialog} onChange={() => setDialogVisibility(false)}></DealerDialog>
   </>
 }

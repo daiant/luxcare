@@ -1,17 +1,7 @@
-import { useState } from 'react';
 import styles from './dialog.module.css';
 import DialogButton from './button/dialogbutton';
-import { useRouter } from 'next/router';
 
-export default function DealerDialog(props: { className?: string, visible: boolean, onChange: any }) {
-  const [closing, setClosing] = useState(false);
-  function beginClose() {
-    setClosing(true);
-    setTimeout(() => {
-      props.onChange(false);
-      setClosing(false);
-    }, 800);
-  }
+export default function DealerDialog(props: { className?: string, visible: boolean }) {
   function handleSubmit(event: any) {
     event.preventDefault(); handleSubmit
     globalThis.location.href = '/contact';
@@ -21,10 +11,7 @@ export default function DealerDialog(props: { className?: string, visible: boole
     const errorCallback = () => { };
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   }
-  return <div className={`${props.className} ${styles.dialog} ${closing ? styles.closing : ''}`} aria-hidden={!props.visible}>
-    <div className={styles.closeWrapper} onClick={beginClose}>
-      <img src="/close.svg" alt="" className={styles.close} />
-    </div>
+  return <div className={`${props.className} ${styles.dialog}`} aria-hidden={!props.visible}>
     <form className={styles.form} autoComplete='off' onSubmit={handleSubmit}>
       <header>
         <h1 className={styles.title}>Find a dealer</h1>

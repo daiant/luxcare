@@ -6,11 +6,11 @@ export type InputProps = {
   icon?: string;
   value?: string;
   required?: boolean;
-  onChange: any;
+  onChange?: any;
 }
 export default function Input(props: InputProps) {
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    props.onChange(event)
+    props.onChange ? props.onChange(event) : undefined;
   }
 
 

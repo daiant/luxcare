@@ -4,11 +4,11 @@ export type TextareaProps = {
   name: string;
   value?: string;
   required?: boolean;
-  onChange: any;
+  onChange?: any;
 }
 export default function Textarea(props: TextareaProps) {
   function handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
-    props.onChange(event);
+    props.onChange ? props.onChange(event) : undefined;
   }
 
   return <div className={styles.wrapper}>
