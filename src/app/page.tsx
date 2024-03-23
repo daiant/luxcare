@@ -5,6 +5,7 @@ import Hero from '@/components/hero/hero';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import { series } from '@/lib/spas.data';
+import NewsSummary from '@/components/news/summary/news-summary';
 
 
 export default function Home() {
@@ -39,6 +40,9 @@ export default function Home() {
           <h1>Serie Strato</h1>
           <Button handleAction={'/spas/strato'}>Explora</Button>
         </Hero>
+        <section>
+          <NewsSummary />
+        </section>
       </main>
       <Footer></Footer>
     </>

@@ -1,0 +1,54 @@
+.title {
+  margin-block-end: 2.5em;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  justify-content: center;
+  gap: 48px;
+}
+
+.list li {
+  border-left: 1px solid gray;
+  padding-block-end: 32px;
+}
+
+.list li a {
+  color: unset;
+  text-decoration: none;
+}
+
+.list li img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  transition: opacity 300ms ease-out;
+}
+
+.list li p {
+  padding-inline: 16px;
+  transition: color 300ms ease-out;
+}
+
+.list li p[role=heading] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-block: 1em;
+}
+
+.list li p[role=contentinfo] {
+  font-size: 15px;
+}
+
+.list li:hover img {
+  opacity: 0.8;
+}
+
+.list li:hover p {
+  color: #ccc;
+}
