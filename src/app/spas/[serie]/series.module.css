@@ -75,10 +75,6 @@
   backdrop-filter: blur(4px);
 }
 
-.sticky ul li {
-  font-size: 1.5rem !important;
-}
-
 .navigation ul {
   padding: 0;
   padding-bottom: 3px;
