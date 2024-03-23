@@ -1,29 +1,41 @@
 'use client';
 import { getSerie, getSpasFromSerie } from "@/lib/spa.utils";
 import { Serie, Spa } from '@/app/types/spa.types';
-import { SetStateAction, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../series.module.css';
 import Button from "@/components/button/button";
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 
-export default function Spas({ params }: { params: { serie: string | undefined, spa: string | undefined } }) {
+export default function Spas() {
   const [serie, setSerie] = useState<Serie | undefined>(undefined)
   const [spas, setSpas] = useState<Array<Spa> | undefined>();
   const [selected, setSelected] = useState<Spa | undefined>(undefined);
   const spaNameRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLUListElement>(null);
   const [navigatorPosition, setNavigatorPosition] = useState({ bottom: 0, top: 'unset', position: 'absolute' } as React.CSSProperties);
+  const searchParams = useParams();
+
   useEffect(() => {
-    const data = getSerie(params.serie ?? '');
-    const spas_serie = getSpasFromSerie(params.serie);
-
-    setSelected(spas_serie?.find(spa => params.spa && spa.title.includes(params.spa)));
-    setSerie(data);
-    setSpas(spas_serie);
-
     document.addEventListener('scroll', handleScroll);
-  }, [params.serie, params.spa]);
+  }, []);
 
-  function handleScroll(event: Event) {
+  useEffect(() => {
+    const serie = searchParams['serie'];
+    if (!serie) return;
+    const dataSerie = getSerie(serie);
+    const spas = getSpasFromSerie(serie);
+    setSerie(dataSerie);
+    setSpas(spas);
+
+    const handle = searchParams['spa'];
+    if (!handle) return;
+    if (!serie) return;
+
+    setSelected(spas?.find(s => s.title.toLowerCase() === handle.toLowerCase()));
+  }, [searchParams]);
+
+  function handleScroll() {
     if (!navRef.current) return;
     const top = navRef.current.getBoundingClientRect().top;
     if (top < 0) {
@@ -36,17 +48,11 @@ export default function Spas({ params }: { params: { serie: string | undefined, 
       }
     }
   }
-
-  function handleSpaSelected(spa: SetStateAction<Spa | undefined>) {
-    if (!spa) return;
-    spaNameRef.current?.classList.add(styles.hide);
-    setTimeout(() => {
-      setSelected(spa);
-      spaNameRef.current?.classList.remove(styles.hide);
-    }, 800)
-  }
   function getSerieTitle(): string {
     return serie?.url.split('/').at(-1) ?? '';
+  }
+  function getLink(spa: string): string {
+    return `/spas/${searchParams['serie']}/${spa.toLowerCase()}`
   }
   return (
     <>
@@ -56,7 +62,7 @@ export default function Spas({ params }: { params: { serie: string | undefined, 
           navigatorPosition.top === 0 ? styles.sticky : '',
         ].join(' ')} ref={navRef} style={navigatorPosition} >
           <ul>
-            {spas?.map(spa => <li onClick={() => handleSpaSelected(spa)} key={spa.title} aria-selected={spa === selected}>{spa.title}</li>)}
+            {spas?.map(spa => <li key={spa.title} aria-selected={spa === selected}><Link href={getLink(spa.title)}>{spa.title}</Link></li>)}
           </ul>
         </section>
         <header>

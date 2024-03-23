@@ -32,7 +32,7 @@
 
 .wrapper>header .title .spa_selected {
   transition: opacity 800ms ease;
-  text-align: end;
+  text-align: center;
   margin-block-start: 64px;
 }
 
@@ -47,6 +47,7 @@
 
 
 .wrapper>header .title .summary {
+  margin-block: 2em;
   font-size: 32px;
   font-weight: bold;
 }
@@ -102,6 +103,11 @@
   position: relative;
   text-transform: uppercase;
   transition: color 300ms ease, font-size 100ms ease-out;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: unset;
 }
 
 .navigation ul li::after {

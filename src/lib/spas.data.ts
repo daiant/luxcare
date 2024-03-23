@@ -12,49 +12,49 @@ export const series: Serie[] = [
         "title": "Summit",
         "subtitle": "Subtitle",
         "img": "/spas/crown/summit.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "summit"
       },
       {
         "title": "Epic",
         "subtitle": "Subtitle",
         "img": "/spas/crown/epic.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "epic"
       },
       {
         "title": "Euphoria",
         "subtitle": "Subtitle",
         "img": "/spas/crown/euphoria.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "euphoria"
       },
       {
         "title": "Destiny",
         "subtitle": "Subtitle",
         "img": "/spas/crown/destiny.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "destiny"
       },
       {
         "title": "Resort",
         "subtitle": "Subtitle",
         "img": "/spas/crown/resort.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "resort"
       },
       {
         "title": "Wish",
         "subtitle": "Subtitle",
         "img": "/spas/crown/wish.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "wish"
       },
       {
         "title": "Spirit",
         "subtitle": "Subtitle",
         "img": "/spas/crown/spirit.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "spirit"
       }
     ]
@@ -70,49 +70,49 @@ export const series: Serie[] = [
         "title": "V94L",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v94l.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "v94l"
       },
       {
         "title": "V94",
         "subtitle": "Subtitle",
         "img": "/spas/test.webp",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "v94"
       },
       {
         "title": "V84L",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v84l.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "v84l"
       },
       {
         "title": "V84",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v84.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "v84"
       },
       {
         "title": "V77L",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v77l.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "v77l"
       },
       {
         "title": "V77",
         "subtitle": "Subtitle",
         "img": "/spas/test.webp",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "v77"
       },
       {
         "title": "V65L",
         "subtitle": "Subtitle",
         "img": "/spas/vector/v65l.jpg",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "v65"
       }
     ]
@@ -128,14 +128,14 @@ export const series: Serie[] = [
         "title": "Strato 2.4",
         "subtitle": "Subtitle",
         "img": "/spas/test.webp",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "test"
       },
       {
         "title": "Strato 2.1",
         "subtitle": "Subtitle",
         "img": "/spas/test.webp",
-        "summary": ['hola', 'hola'],
+        "summary": ['Lorem ipsum dolor sit amet pillastre pillastre 1', 'Lorem ipsum dolor sit amet pillastre pillastre'],
         "url": "test"
       }
     ]
