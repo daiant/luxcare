@@ -41,6 +41,7 @@ export default function Menu(props: { visible: boolean, onClick: any }) {
       </div>
       <div role='contentgroup'>
         <ul>
+          <li><Link href='/news'>Noticias</Link></li>
           <li><Link href='/recommendations'>Recomendaciones</Link></li>
         </ul>
       </div>
