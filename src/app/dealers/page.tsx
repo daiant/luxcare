@@ -25,35 +25,37 @@ export default function DealersPage() {
     }, 1500);
   }
 
-  return <div className={styles.wrapper}>
+  return <>
     <Header />
-    <header className={styles.hero}>
-      <img src='/contact/banner.jpg' alt='contacto' />
-    </header>
-    <main className={styles.main}>
-      <aside className={styles.aside}>
-        <div>
+    <div className={styles.wrapper}>
+      <header className={styles.hero}>
+        <img src='/contact/banner.jpg' alt='contacto' />
+      </header>
+      <main className={styles.main}>
+        <aside className={styles.aside}>
+          <div>
 
-          <p>Encuentra tu dealer mas cercano</p>
-          {Boolean(zipCode) && <ul className={dealers.list}>
-            <li>
-              <img src="/dealers/dealer.jpg" alt="Dealer" />
-              <div className={dealers.info}>
-                <p>Charli</p>
-                <small>La Cañada, Valencia.</small>
-              </div>
-            </li>
-          </ul>}
-        </div>
+            <p>Encuentra tu dealer mas cercano</p>
+            {Boolean(zipCode) && <ul className={dealers.list}>
+              <li>
+                <img src="/dealers/dealer.jpg" alt="Dealer" />
+                <div className={dealers.info}>
+                  <p>Charli</p>
+                  <small>La Cañada, Valencia.</small>
+                </div>
+              </li>
+            </ul>}
+          </div>
 
-        <h1>DEALERS</h1>
-      </aside>
-      {loading && <>Cargando...</>}
-      {!loading && <>
-        {!Boolean(zipCode) && <DealersForm className={styles.form} onSubmit={handleZipCodeSubmit} submitted={false} />}
-        {Boolean(zipCode) && <ContactForm className={styles.form} onSubmit={handleSubmit} submitted={submitted} />}
-      </>
-      }
-    </main>
-  </div>
+          <h1>DEALERS</h1>
+        </aside>
+        {loading && <>Cargando...</>}
+        {!loading && <>
+          {!Boolean(zipCode) && <DealersForm className={styles.form} onSubmit={handleZipCodeSubmit} submitted={false} />}
+          {Boolean(zipCode) && <ContactForm className={styles.form} onSubmit={handleSubmit} submitted={submitted} />}
+        </>
+        }
+      </main>
+    </div>
+  </>
 }
