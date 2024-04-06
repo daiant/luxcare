@@ -5,7 +5,7 @@ export const series: Serie[] = [
     "title": "Serie Crown",
     "description": "La Serie Crown evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.",
     "url": "/spas/crown",
-    "img": "/spas/crown/carousel_1.png",
+    "img": "/spas/crown/carousel_2.jpg",
     "subtitle": "Featured spas inside",
     "items": [
       {
@@ -63,7 +63,7 @@ export const series: Serie[] = [
     "title": "Serie Vector",
     "description": "La Serie Vector  evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.",
     "url": "spas/vector",
-    "img": "/spas/vector/image1.png",
+    "img": "/spas/vector/carousel_1.jpg",
     "subtitle": "Featured spas inside",
     "items": [
       {
@@ -121,7 +121,7 @@ export const series: Serie[] = [
     "title": "Serie Strato",
     "description": "La Serie Strato evoca elegancia con su diseño sofisticado y su ambiente relajante, creando un oasis de tranquilidad para los sentidos.",
     "url": "spas/strato",
-    "img": "/test.webp",
+    "img": "/spas/strato/carousel_1.jpg",
     "subtitle": "Featured spas inside",
     "items": [
       {
