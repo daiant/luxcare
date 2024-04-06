@@ -37,7 +37,8 @@ export default function Home() {
         </div>
         <section className={styles.philosophy}>
           <div className={styles.cta}>
-            <p>Si buscas lo mejor, simplemente LuxCare</p>
+            <p>Si buscas lo mejor, simplemente</p>
+            <img src="/icons/luxcare.svg" alt="" />
             <p> Llevamos 20 años creando experiencias Spa. Descubre quiénes somos.</p>
             <button>Ver más</button>
           </div>
