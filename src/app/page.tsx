@@ -6,6 +6,7 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import { series } from '@/lib/spas.data';
 import NewsSummary from '@/components/news/summary/news-summary';
+import Slider from '@/components/slider/slider';
 
 
 export default function Home() {
@@ -34,6 +35,14 @@ export default function Home() {
           <p>cerca de experimentar</p>
           <p>una sensación tan <code>simplemente perfecta</code></p>
         </div>
+        <section className={styles.philosophy}>
+          <div className={styles.cta}>
+            <p>Si buscas lo mejor, simplemente LuxCare</p>
+            <p> Llevamos 20 años creando experiencias Spa. Descubre quiénes somos.</p>
+            <button>Ver más</button>
+          </div>
+          <Slider />
+        </section>
         <Hero src="/home/banner.jpg">
           <h1>Serie Strato</h1>
           <Button handleAction={'/spas/strato'}>Explora</Button>

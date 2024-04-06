@@ -1,0 +1,40 @@
+.slider {
+  --_width: 500px;
+  width: var(--_width);
+}
+
+.slider ul {
+  display: flex;
+  width: var(--_width);
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.slider ul li {
+  scroll-snap-align: start;
+}
+
+.slider ul li img {
+  width: var(--_width);
+  aspect-ratio: 3 / 4;
+  display: block;
+  object-fit: cover;
+
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-block: 24px;
+}
+
+.next {
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+.previous {
+  transform: rotate(90deg);
+  cursor: pointer;
+}
