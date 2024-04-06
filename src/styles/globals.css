@@ -19,6 +19,7 @@
   --accent-10: #1b0d2e;
   --font-main: 'Inter', 'Arimo', sans-serif;
   --font-title: 'Geologica', serif;
+  --navbar: 80px;
 }
 
 * {

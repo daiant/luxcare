@@ -13,23 +13,21 @@ export default function Home() {
     <>
       <Header></Header>
       <main className={styles.home}>
-        <Carousel series={series} />
         <div className={styles.intro}>
           <aside>
-            <img src="/home/vertical_marquis.png" alt="" />
+            <img src="/home/intro.webp" alt="" />
           </aside>
           <section>
+            <span className="separator"></span>
             <img src="/icons/slogan.svg" alt="Simplemente perfecto" />
             <footer>
               <p>
-                A través de los tiempos, el ser humano siempre ha buscado el éxito y la perfección de la forma más simple.
-              </p>
-              <p>
-                Después de 4000 millones de años de vida, <code>luxcare</code> ha encontrado la forma de hacerlo posible.
+                <code>LuxCare</code> es mucho más que un spa. Es el arte de ofrecer una experiencia única creada exclusivamente para ti.
               </p>
             </footer>
           </section>
         </div>
+        <Carousel series={series} />
         <div className={styles.splash}>
           <p>nunca has</p>
           <p>estado tan</p>

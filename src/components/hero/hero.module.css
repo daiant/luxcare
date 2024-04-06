@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  height: calc(98vh - 80px);
+  height: calc(98vh - var(--navbar));
   background-color: var(--background-color);
   position: relative;
 }

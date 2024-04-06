@@ -1,6 +1,6 @@
 .wrapper {
   padding-inline: 32px;
-  min-height: calc(100dvh - 80px);
+  min-height: calc(100dvh - var(--navbar));
   display: flex;
   flex-direction: column;
 }
