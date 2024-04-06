@@ -18,7 +18,7 @@ export default function Home() {
             <img src="/home/intro.webp" alt="" />
           </aside>
           <section>
-            <span className="separator"></span>
+            <span className={styles.separator}></span>
             <img src="/icons/slogan.svg" alt="Simplemente perfecto" />
             <footer>
               <p>
