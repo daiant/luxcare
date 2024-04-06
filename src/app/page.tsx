@@ -44,6 +44,32 @@ export default function Home() {
           </div>
           <Slider />
         </section>
+        <section className={styles.benefits}>
+          <p role='title'>Las claves de la perfección</p>
+          <ul>
+            <li>
+              <div role='heading'>
+                <img src="/icons/fish.svg" alt="Fish" />
+                <p>Exclusividad</p>
+              </div>
+              <p>Ofrecemos un lore ipsum dolor sit amet lore ipsum dolor sit ametlore ipsum dolor sit amet</p>
+            </li>
+            <li>
+              <div role='heading'>
+                <img src="/icons/fish.svg" alt="Fish" />
+                <p>Diseño</p>
+              </div>
+              <p>Ofrecemos un lore ipsum dolor sit amet lore ipsum dolor sit ametlore ipsum dolor sit amet</p>
+            </li>
+            <li>
+              <div role='heading'>
+                <img src="/icons/fish.svg" alt="Fish" />
+                <p>Atención</p>
+              </div>
+              <p>Ofrecemos un lore ipsum dolor sit amet lore ipsum dolor sit ametlore ipsum dolor sit amet</p>
+            </li>
+          </ul>
+        </section>
         <Hero src="/home/banner.jpg">
           <h1>Serie Strato</h1>
           <Button handleAction={'/spas/strato'}>Explora</Button>
