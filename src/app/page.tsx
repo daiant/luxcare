@@ -27,8 +27,8 @@ export default function Home() {
             </footer>
           </section>
         </div>
-        <Carousel series={series} />
-        <div className={styles.splash}>
+        <Carousel series={series} element='#splash' />
+        <div className={styles.splash} id='splash'>
           <p>nunca has</p>
           <p>estado tan</p>
           <p>cerca de experimentar</p>

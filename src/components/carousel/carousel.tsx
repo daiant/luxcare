@@ -6,7 +6,7 @@ import styles from './carousel.module.css';
 import Button from '../button/button';
 
 
-export default function Carousel({ series }: { series: Serie[] }) {
+export default function Carousel({ series, element }: { series: Serie[], element?: string }) {
   const [activeLi, setActiveLi] = React.useState(0);
   const listRef = React.useRef<HTMLUListElement>(null);
 
@@ -56,6 +56,10 @@ export default function Carousel({ series }: { series: Serie[] }) {
       <button className={styles.next} onClick={handleNext}>
         <img src="/next.svg" alt="next" />
       </button>
+    </div>
+    <div className={styles.explore} onClick={() => document.querySelector(element ?? '')?.scrollIntoView({ behavior: 'smooth' })}>
+      <span>Explore more</span>
+      <img src="/icons/arrow_down.svg" alt="Arrow" />
     </div>
   </main>
 }

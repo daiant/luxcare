@@ -82,6 +82,32 @@
   width: 16px;
 }
 
+.explore {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  text-transform: uppercase;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.explore img {
+  transition: transform 600ms ease;
+}
+
+.explore:hover span {
+  text-decoration: underline;
+}
+
+.explore:hover img {
+  transform: translateY(2px);
+}
+
+
 @media (max-width: 768px) {
   .carousel {
     --spacing: 16px;
