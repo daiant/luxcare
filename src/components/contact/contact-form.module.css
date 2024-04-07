@@ -6,6 +6,22 @@
   gap: 16px;
 }
 
+.form .input_wrapper {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.form .input_wrapper p {
+  margin-inline-start: 6px;
+  margin-block-start: 4px;
+  cursor: pointer;
+}
+
+.form .input_wrapper p:hover {
+  text-decoration: underline;
+}
+
+
 .actions {
   display: flex;
   width: 100%;
