@@ -7,6 +7,7 @@ import Footer from '@/components/footer/footer';
 import { series } from '@/lib/spas.data';
 import NewsSummary from '@/components/news/summary/news-summary';
 import Slider from '@/components/slider/slider';
+import Contact from './contact/page';
 
 
 export default function Home() {
@@ -28,14 +29,14 @@ export default function Home() {
             </footer>
           </section>
         </div>
-        <Carousel series={series} element='#splash' />
-        <div className={styles.splash} id='splash'>
+        <Carousel series={series} element='#philosophy' />
+        {/* <div className={styles.splash} id='splash'>
           <p>nunca has</p>
           <p>estado tan</p>
           <p>cerca de experimentar</p>
           <p>una sensación tan <code>simplemente perfecta</code></p>
-        </div>
-        <section className={styles.philosophy}>
+        </div> */}
+        <section className={styles.philosophy} id='philosophy'>
           <div className={styles.cta}>
             <p>Si buscas lo mejor, simplemente</p>
             <img src="/icons/luxcare.svg" alt="" />
