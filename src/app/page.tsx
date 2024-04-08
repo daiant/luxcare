@@ -1,3 +1,4 @@
+'use client';
 import styles from '@/styles/home.module.css';
 import Button from '@/components/button/button';
 import Carousel from '@/components/carousel/carousel';
@@ -7,10 +8,17 @@ import Footer from '@/components/footer/footer';
 import { series } from '@/lib/spas.data';
 import NewsSummary from '@/components/news/summary/news-summary';
 import Slider from '@/components/slider/slider';
-import Contact from './contact/page';
+import InputAutocomplete from '@/components/form/input-autocomplete/input-autocomplete';
+import { useRouter } from 'next/navigation'
+
 
 
 export default function Home() {
+  const router = useRouter();
+  function handleLocation(value: string): void {
+    router.push('/dealers?loc=' + encodeURI(value));
+  }
+
   return (
     <>
       <Header></Header>
@@ -77,6 +85,17 @@ export default function Home() {
         </Hero>
         <section>
           <NewsSummary />
+        </section>
+        <section className={styles.location_cta}>
+          <div role='heading'>
+            <h1>¿Quieres experimentar la perfección?</h1>
+            <h2>Contacta con tu proveedor más cercano</h2>
+          </div>
+          <form>
+            <InputAutocomplete
+              required={true} label='Ubicacion' name='zipcode' type='text' icon='/icons/person.svg' onSelect={handleLocation}></InputAutocomplete>
+            <button type='button'>Contactar</button>
+          </form>
         </section>
       </main>
       <Footer></Footer>

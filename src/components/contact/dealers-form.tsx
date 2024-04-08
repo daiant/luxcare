@@ -6,7 +6,7 @@ export default function DealersForm({ onSubmit, submitted, className }: { onSubm
   const button = React.useRef<HTMLButtonElement>(null);
   function handleSelect(_value: string) {
     if (!button.current) return;
-    button.current.click();
+    setTimeout(() => { button!.current!.click(); }, 1);
   }
   return <form className={`${styles.form} ${className}`} autoComplete='off' onSubmit={onSubmit} >
     <div className={styles.input_wrapper}>

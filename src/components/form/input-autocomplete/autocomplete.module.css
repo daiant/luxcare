@@ -34,3 +34,15 @@
 .list li:active {
   background-color: var(--background-5);
 }
+
+.geo {
+  display: flex;
+  gap: 0.5ch;
+  align-items: center;
+  cursor: pointer;
+  margin: 4px 0 0 6px;
+}
+
+.geo:hover span {
+  text-decoration: underline;
+}

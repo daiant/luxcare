@@ -239,6 +239,48 @@
   font-size: 20px;
 }
 
+.location_cta {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.location_cta h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-block: 0;
+}
+
+.location_cta h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-block: 16px;
+}
+
+.location_cta form {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.location_cta form>*:nth-child(1) {
+  flex: 1;
+}
+
+.location_cta form button {
+  height: 55px;
+  background-color: var(--color);
+  color: var(--background-color);
+  font-family: var(--font-main);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  font-weight: 400;
+  border: none;
+  outline: 1px solid transparent;
+  transition: outline-color 300ms ease;
+  margin-block-start: 2px;
+}
+
 
 @media (max-width: 768px) {
   .home {

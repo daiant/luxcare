@@ -6,11 +6,22 @@ import dealers from './dealers.module.css';
 import Header from '@/components/header/header';
 import ContactForm from '@/components/contact/contact-form';
 import DealersForm from '@/components/contact/dealers-form';
+import Footer from '@/components/footer/footer';
+import React from 'react';
+import { useSearchParams } from 'next/navigation'
 
 export default function DealersPage() {
   const [zipCode, setZipCode] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const searchParams = useSearchParams()
+
+  React.useEffect(() => {
+    const search = searchParams.get('loc')
+    if (!search) return;
+    setZipCode(search);
+  }, []);
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     (event.target as any).reset();
@@ -57,5 +68,6 @@ export default function DealersPage() {
         }
       </main>
     </div>
+    <Footer></Footer>
   </>
 }

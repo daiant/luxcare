@@ -27,7 +27,7 @@ export default function DealerDialog(props: { className?: string, visible: boole
       </label>
       <div role='group'>
         <DialogButton icon='/search.svg' type='submit' text='Search'></DialogButton>
-        <DialogButton icon='/location.svg' type='button' text='Use my location' variant='secondary' onClick={requestLocation}></DialogButton>
+        <DialogButton icon='/icons/location.svg' type='button' text='Use my location' variant='secondary' onClick={requestLocation}></DialogButton>
       </div>
     </form>
   </div>
