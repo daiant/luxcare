@@ -15,6 +15,11 @@ import { useRouter } from 'next/navigation'
 
 export default function Home() {
   const router = useRouter();
+  function handleSubmitLocation(event: React.FormEvent): void {
+    event.preventDefault()
+    const formdata = new FormData(event.target as HTMLFormElement);
+    handleLocation(formdata.get('zipcode') as string);
+  }
   function handleLocation(value: string): void {
     router.push('/dealers?loc=' + encodeURI(value));
   }
@@ -91,10 +96,10 @@ export default function Home() {
             <h1>¿Quieres experimentar la perfección?</h1>
             <h2>Contacta con tu proveedor más cercano</h2>
           </div>
-          <form>
+          <form onSubmit={handleSubmitLocation}>
             <InputAutocomplete
               required={true} label='Ubicacion' name='zipcode' type='text' icon='/icons/person.svg' onSelect={handleLocation}></InputAutocomplete>
-            <button type='button'>Contactar</button>
+            <button>Contactar</button>
           </form>
         </section>
       </main>
