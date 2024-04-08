@@ -13,7 +13,6 @@ export default function Input(props: InputProps) {
     props.onChange ? props.onChange(event) : undefined;
   }
 
-
   return <div className={styles.wrapper}>
     <label htmlFor={props.name} className={styles.label}>
       {props.label}

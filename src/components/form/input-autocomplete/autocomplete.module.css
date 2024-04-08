@@ -1,0 +1,36 @@
+.wrapper {
+  position: relative;
+}
+
+.list[aria-hidden=true] {
+  display: none;
+}
+
+.list {
+  position: absolute;
+  top: 60px;
+  background-color: var(--background-2);
+  border: 1px solid var(--background-5);
+  padding-block: 8px;
+}
+
+.list li {
+  color: #ddd;
+  cursor: pointer;
+  padding-block: 8px;
+  margin-inline: 8px;
+
+}
+
+.list li+li {
+  border-block-start: 1px solid var(--background-5);
+}
+
+.list li:hover {
+  color: #fff;
+  background-color: var(--background-4);
+}
+
+.list li:active {
+  background-color: var(--background-5);
+}

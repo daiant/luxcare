@@ -17,6 +17,7 @@ export default function DealersPage() {
     setSubmitted(true);
   }
   function handleZipCodeSubmit(event: FormEvent<HTMLFormElement>): void {
+    event.preventDefault();
     setLoading(true);
     setTimeout(() => {
       const data = new FormData(event.target as HTMLFormElement)
@@ -34,7 +35,6 @@ export default function DealersPage() {
       <main className={styles.main}>
         <aside className={styles.aside}>
           <div>
-
             <p>Encuentra tu dealer mas cercano</p>
             {Boolean(zipCode) && <ul className={dealers.list}>
               <li>
