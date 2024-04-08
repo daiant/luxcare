@@ -42,7 +42,7 @@ export default function InputAutocomplete(props: InputProps & { onSelect: (value
   return <div className={styles.wrapper}>
     <div className={styles.input}>
       <Input required={props.required} label={props.label} name={props.name} type={props.type} icon={props.icon} onChange={handleChange} value={location}></Input>
-      <p onClick={getGeolocation} className={styles.geo}>
+      <p onClick={getGeolocation} className={styles.geo} role='button'>
         <img src="/icons/location.svg" alt="" />
         <span>Usar mi ubicación actual</span></p>
     </div>

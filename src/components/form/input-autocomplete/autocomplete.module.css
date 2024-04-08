@@ -41,6 +41,7 @@
   align-items: center;
   cursor: pointer;
   margin: 4px 0 0 6px;
+  user-select: none;
 }
 
 .geo:hover span {
