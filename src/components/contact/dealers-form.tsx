@@ -10,7 +10,7 @@ export default function DealersForm({ onSubmit, submitted, className }: { onSubm
   }
   return <form className={`${styles.form} ${className}`} autoComplete='off' onSubmit={onSubmit} >
     <div className={styles.input_wrapper}>
-      <InputAutocomplete required={true} label='Ubicacion' name='zipcode' type='text' icon='/icons/person.svg' onSelect={handleSelect}></InputAutocomplete>
+      <InputAutocomplete required={true} label='Ubicación' name='zipcode' type='text' icon='/icons/location.svg' onSelect={handleSelect}></InputAutocomplete>
     </div>
     <div className={styles.actions}>
       <span aria-hidden={!submitted} className={styles.info}>Mensaje enviado correctamente!</span>

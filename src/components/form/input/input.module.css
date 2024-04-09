@@ -47,3 +47,18 @@
   place-items: center;
   height: 24px;
 }
+
+.rotate {
+  animation: rotate 900ms infinite forwards;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}

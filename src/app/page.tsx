@@ -98,7 +98,7 @@ export default function Home() {
           </div>
           <form onSubmit={handleSubmitLocation}>
             <InputAutocomplete
-              required={true} label='Ubicacion' name='zipcode' type='text' icon='/icons/person.svg' onSelect={handleLocation}></InputAutocomplete>
+              required={true} label='Ubicación' name='zipcode' type='text' icon='/icons/location.svg' onSelect={handleLocation}></InputAutocomplete>
             <button>Contactar</button>
           </form>
         </section>
