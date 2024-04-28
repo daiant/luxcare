@@ -17,7 +17,7 @@
 }
 
 .main .banner {
-  height: 100dvh;
+  height: 100svh;
   position: relative;
   background: linear-gradient(#DBCAAD, #000);
   padding-block-start: 16px;
@@ -64,7 +64,7 @@
 }
 
 .main .mission {
-  min-height: 100dvh;
+  min-height: 100svh;
   padding-inline: 32px;
   padding-block: calc(var(--padding) * 1.5);
   display: flex;
@@ -101,7 +101,7 @@
 }
 
 .main .series .serie {
-  height: 100dvh;
+  height: 100svh;
   position: relative;
   display: grid;
   align-items: end;
@@ -142,7 +142,7 @@
 .main .cta {
   padding-block-start: var(--padding);
   overflow: hidden;
-  min-height: 100dvh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -192,7 +192,7 @@
 
 .main .keys {
   padding: var(--padding);
-  min-height: 100dvh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -262,7 +262,7 @@
 
 .main .cta_form {
   padding: var(--padding);
-  min-height: 100dvh;
+  min-height: 100svh;
 }
 
 .main .cta_form [role='heading'] {
