@@ -23,8 +23,7 @@ export default function NewsSummary() {
       url: '/news/ghost/',
     }
   ]
-  return <section className='main-section'>
-    <p role='heading' className={styles.title}>Continue exploring</p>
+  return <>
     <ul className={styles.list}>
       {news.map(n => <li key={n.title}>
         <Link href={n.url}>
@@ -34,5 +33,5 @@ export default function NewsSummary() {
         </Link>
       </li>)}
     </ul>
-  </section>
+  </>
 }

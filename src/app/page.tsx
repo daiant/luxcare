@@ -1,109 +1,99 @@
-'use client';
 import styles from '@/styles/home.module.css';
-import Button from '@/components/button/button';
-import Carousel from '@/components/carousel/carousel';
-import Hero from '@/components/hero/hero';
-import Header from '@/components/header/header';
-import Footer from '@/components/footer/footer';
-import { series } from '@/lib/spas.data';
+import beach from '../../public/home/beach.jpg';
+import logo from '../../public/home/luxcare.svg';
+import crown from '../../public/home/crown.jpg';
+import vector from '../../public/home/vector.jpg';
+import strato from '../../public/home/strato.jpg';
 import NewsSummary from '@/components/news/summary/news-summary';
-import Slider from '@/components/slider/slider';
 import InputAutocomplete from '@/components/form/input-autocomplete/input-autocomplete';
-import { useRouter } from 'next/navigation'
-
-
-
 export default function Home() {
-  const router = useRouter();
-  function handleSubmitLocation(event: React.FormEvent): void {
-    event.preventDefault()
-    const formdata = new FormData(event.target as HTMLFormElement);
-    handleLocation(formdata.get('zipcode') as string);
-  }
-  function handleLocation(value: string): void {
-    router.push('/dealers?loc=' + encodeURI(value));
-  }
-
   return (
-    <>
-      <Header></Header>
-      <main className={styles.home}>
-        <div className={styles.intro}>
-          <aside>
-            <img src="/home/intro.webp" alt="" />
-          </aside>
-          <section>
-            <span className={styles.separator}></span>
-            <img src="/icons/slogan.svg" alt="Simplemente perfecto" />
-            <footer>
-              <p>
-                <code>LuxCare</code> es mucho más que un spa. Es el arte de ofrecer una experiencia única creada exclusivamente para ti.
-              </p>
-            </footer>
-          </section>
+    <main className={`snap ${styles.main}`}>
+      <section className={styles.banner}>
+        <img className={styles.title} src={logo.src} alt='Luxcare' />
+        <img className={styles.background} src={beach.src} alt="" />
+        <p className={styles.scroll_indicator}>Scroll</p>
+      </section>
+      <section className={styles.mission}>
+        <div role='heading'>
+          <p>Simplemente</p>
+          <p>perfecto</p>
         </div>
-        <Carousel series={series} element='#philosophy' />
-        {/* <div className={styles.splash} id='splash'>
-          <p>nunca has</p>
-          <p>estado tan</p>
-          <p>cerca de experimentar</p>
-          <p>una sensación tan <code>simplemente perfecta</code></p>
-        </div> */}
-        <section className={styles.philosophy} id='philosophy'>
-          <div className={styles.cta}>
-            <p>Si buscas lo mejor, simplemente</p>
-            <img src="/icons/luxcare.svg" alt="" />
-            <p> Llevamos 20 años creando experiencias Spa. Descubre quiénes somos.</p>
-            <button>Ver más</button>
+        <div role='contentinfo'>
+          <p>LuxCare es el arte de ofrecer una experiencia única de compra, donde la creación de sensaciones auténticas, garantías sólidas, compromiso con la perfección y la búsqueda de la excelencia se combinan para ofrecer una experiencia simplemente perfecta.</p>
+          <a href="/contact">Contacta</a>
+        </div>
+      </section>
+      <section className={styles.series}>
+        <article className={styles.serie}>
+          <div role='contentinfo'>
+            <p className={styles.subtitle}>Visión. Equilibrio.</p>
+            <p className={styles.title}>Serie Crown</p>
+            <a href="/series/crown">Acapara las miradas</a>
           </div>
-          <Slider />
-        </section>
-        <section className={styles.benefits}>
-          <p role='title'>Las claves de la perfección</p>
-          <ul>
-            <li>
-              <div role='heading'>
-                <img src="/icons/fish.svg" alt="Fish" />
-                <p>Exclusividad</p>
-              </div>
-              <p>Ofrecemos un lore ipsum dolor sit amet lore ipsum dolor sit ametlore ipsum dolor sit amet</p>
-            </li>
-            <li>
-              <div role='heading'>
-                <img src="/icons/fish.svg" alt="Fish" />
-                <p>Diseño</p>
-              </div>
-              <p>Ofrecemos un lore ipsum dolor sit amet lore ipsum dolor sit ametlore ipsum dolor sit amet</p>
-            </li>
-            <li>
-              <div role='heading'>
-                <img src="/icons/fish.svg" alt="Fish" />
-                <p>Atención</p>
-              </div>
-              <p>Ofrecemos un lore ipsum dolor sit amet lore ipsum dolor sit ametlore ipsum dolor sit amet</p>
-            </li>
-          </ul>
-        </section>
-        <Hero src="/home/banner.jpg">
-          <h1>Serie Strato</h1>
-          <Button handleAction={'/spas/strato'}>Explora</Button>
-        </Hero>
-        <section>
-          <NewsSummary />
-        </section>
-        <section className={styles.location_cta}>
-          <div role='heading'>
-            <h1>¿Quieres experimentar la perfección?</h1>
-            <h2>Contacta con tu proveedor más cercano</h2>
+          <img src={crown.src} alt="Crown" />
+        </article>
+        <article className={styles.serie}>
+          <div role='contentinfo'>
+            <p className={styles.subtitle}>Distinción. Diseño.</p>
+            <p className={styles.title}>Serie Vector</p>
+            <a href="/series/vector">Despierta emociones</a>
           </div>
-          <form onSubmit={handleSubmitLocation}>
-            <InputAutocomplete
-              required={true} label='Ubicación' name='zipcode' type='text' icon='/icons/location.svg' onSelect={handleLocation}></InputAutocomplete>
-            <button>Contactar</button>
-          </form>
-        </section>
-      </main>
-      <Footer></Footer>
-    </>
+          <img src={vector.src} alt="Vector" />
+        </article>
+        <article className={styles.serie}>
+          <div role='contentinfo'>
+            <p className={styles.subtitle}>La cumbre. El icono.</p>
+            <p className={styles.title}>Serie Strato</p>
+            <a href="/series/crown">Supera las expectativas</a>
+          </div>
+          <img src={strato.src} alt="Strato" />
+        </article>
+      </section>
+      <section className={styles.cta}>
+        <p role='heading'>Tu destino preferido</p>
+        <div role='contentinfo'>
+          <p>Creamos sensaciones únicas y garantizamos perfección y compromiso en cada detalle.</p>
+          <p>En LuxCare Spas, somos más que un producto; somos parte de tu estilo de vida. Nos acompañamos en tus momentos de relajación, en tus celebraciones especiales y en tu búsqueda de bienestar.</p>
+        </div>
+        <div className={styles.carousel}>
+          <img alt="crown" src={crown.src} />
+          <img alt="vector" src={vector.src} />
+          <img alt="strato" src={strato.src} />
+        </div>
+      </section>
+      <section className={styles.keys}>
+        <p role='heading'>Las claves del éxito</p>
+        <div role='list'>
+          <div role='listitem'>
+            <p className={styles.title}>Exclusividad</p>
+            <p className={styles.subtitle}>La exclusividad de LuxCare Spas se manifiesta en cada detalle, desde la atmósfera cuidadosamente diseñada hasta los procesos personalizados que ofrecen una experiencia única para cada cliente.</p>
+          </div>
+          <div role='listitem'>
+            <p className={styles.title}>Diseño</p>
+            <p className={styles.subtitle}>LuxCare entiende que cada cliente es único, por lo que ofrece una amplia gama de opciones de personalización para adaptarse a diferentes gustos y preferencias.</p>
+          </div>
+          <div role='listitem'>
+            <p className={styles.title}>Atención</p>
+            <p className={styles.subtitle}>LuxCare valora a cada cliente como único y trata a cada uno con la atención individualizada que se merece. El equipo de LuxCare está siempre disponible para proporcionar orientación y apoyo personalizado.</p>
+          </div>
+        </div>
+        <a href="/contact">Contacta ahora</a>
+      </section>
+      <section className={styles.news}>
+        <p role='heading' className={styles.title}>Continue exploring</p>
+        <NewsSummary />
+      </section>
+      <section className={styles.cta_form}>
+        <p role='heading'>Contacta con nosotros</p>
+        <p>Encuentra tu proveedor más cercano</p>
+        <form>
+          <InputAutocomplete
+            required={true} label='Ubicación' name='zipcode' type='text' icon='/icons/location.svg'></InputAutocomplete>
+          <a href='/contact'>Contactar</a>
+        </form>
+
+      </section>
+    </main>
   )
 }

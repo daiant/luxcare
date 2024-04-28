@@ -3,7 +3,7 @@ import React from 'react';
 import Input, { InputProps } from '../input/input';
 import styles from './autocomplete.module.css';
 
-export default function InputAutocomplete(props: InputProps & { onSelect: (value: string) => void }) {
+export default function InputAutocomplete(props: InputProps & { onSelect?: (value: string) => void }) {
   const [loading, setLoading] = React.useState(false);
   const [timeoutId, setTimeoutId] = React.useState<unknown>();
   const [location, setLocation] = React.useState<string>('');
@@ -20,7 +20,7 @@ export default function InputAutocomplete(props: InputProps & { onSelect: (value
   }
   function handleSelect(name: string) {
     setLocation(name);
-    props.onSelect(name);
+    props.onSelect ? props.onSelect(name) : undefined;
     setPlaces([]);
   }
   async function handleAutoComplete(value: string) {
