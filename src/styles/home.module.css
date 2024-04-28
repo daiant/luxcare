@@ -205,7 +205,7 @@
  .main .keys .title {
    font-size: 28px;
    font-weight: 500;
-   margin-block-end: 16px;
+   margin-block: 16px;
  }
 
  .main .keys a {

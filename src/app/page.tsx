@@ -4,6 +4,9 @@ import logo from '../../public/home/luxcare.svg';
 import crown from '../../public/home/crown.jpg';
 import vector from '../../public/home/vector.jpg';
 import strato from '../../public/home/strato.jpg';
+import diamond from '../../public/icons/SketchLogo.svg';
+import lightbulb from '../../public/icons/Lightbulb.svg';
+import target from '../../public/icons/Target.svg';
 import NewsSummary from '@/components/news/summary/news-summary';
 import InputAutocomplete from '@/components/form/input-autocomplete/input-autocomplete';
 export default function Home() {
@@ -66,14 +69,17 @@ export default function Home() {
         <p role='heading'>Las claves del éxito</p>
         <div role='list'>
           <div role='listitem'>
+            <img className={styles.icon} src={diamond.src} alt="" />
             <p className={styles.title}>Exclusividad</p>
             <p className={styles.subtitle}>La exclusividad de LuxCare Spas se manifiesta en cada detalle, desde la atmósfera cuidadosamente diseñada hasta los procesos personalizados que ofrecen una experiencia única para cada cliente.</p>
           </div>
           <div role='listitem'>
+            <img className={styles.icon} src={lightbulb.src} alt="" />
             <p className={styles.title}>Diseño</p>
             <p className={styles.subtitle}>LuxCare entiende que cada cliente es único, por lo que ofrece una amplia gama de opciones de personalización para adaptarse a diferentes gustos y preferencias.</p>
           </div>
           <div role='listitem'>
+            <img className={styles.icon} src={target.src} alt="" />
             <p className={styles.title}>Atención</p>
             <p className={styles.subtitle}>LuxCare valora a cada cliente como único y trata a cada uno con la atención individualizada que se merece. El equipo de LuxCare está siempre disponible para proporcionar orientación y apoyo personalizado.</p>
           </div>
