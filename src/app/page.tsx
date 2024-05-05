@@ -5,6 +5,7 @@ import vector from '../../public/home/vector.jpg';
 import strato from '../../public/home/strato.jpg';
 import NewsSummary from '@/components/news/summary/news-summary';
 import InputAutocomplete from '@/components/form/input-autocomplete/input-autocomplete';
+import RecommendationsSummary from '@/components/recommendations/summary/summary';
 export default function Home() {
   return (
     <main className={`snap ${styles.main}`}>
@@ -83,8 +84,11 @@ export default function Home() {
         <a href="/contact">Contacta ahora</a>
       </section>
       <section className={styles.news}>
-        <p role='heading' className={styles.title}>Continue exploring</p>
+        <p role='heading' className={styles.title}>Últimas noticias</p>
         <NewsSummary />
+      </section>
+      <section className={styles.news}>
+        <RecommendationsSummary />
       </section>
       <section className={styles.cta_form}>
         <p role='heading'>Contacta con nosotros</p>
