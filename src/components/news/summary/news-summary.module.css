@@ -71,7 +71,8 @@
   transition: opacity 300ms ease-out;
 }
 
-.posts .link {
+.wrapper .link {
+  grid-column: 5 / -1;
   display: flex;
   align-content: center;
   justify-content: flex-start;
@@ -80,7 +81,7 @@
   width: fit-content;
 }
 
-.posts .link * {
+.link * {
   border: 1px solid var(--color);
   min-width: unset;
   padding: 8px 16px !important;
@@ -93,12 +94,18 @@
   }
 
   .posts,
-  .img {
+  .img,
+  .wrapper .link {
     grid-column: 1 /-1;
   }
 
   .img {
     min-height: 300px;
+  }
+
+  .wrapper .link {
+    justify-content: center;
+    justify-self: center;
   }
 
 }

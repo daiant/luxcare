@@ -67,11 +67,11 @@ export default function NewsSummary() {
         </p>
         <p role='subtittle'>LuxCare conoce la solución a todos tus problemas</p>
       </div>
-      <Link className={styles.link} href={'/blog'}>
-        <span>Ir al blog</span>
-        <span>{'>'}</span>
-      </Link>
     </main>
+    <Link className={styles.link} href={'/blog'}>
+      <span>Ir al blog</span>
+      <span>{'>'}</span>
+    </Link>
 
   </section>
 }
