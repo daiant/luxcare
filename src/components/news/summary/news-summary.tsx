@@ -1,8 +1,13 @@
+'use client';
+
 import React from 'react'
 import styles from './news-summary.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
+import Caret from '../../../../public/icons/CaretRight.svg';
 
 export default function NewsSummary() {
+  const [img, setImg] = React.useState(0);
   const news = [
     {
       title: 'Prueba',
@@ -23,15 +28,50 @@ export default function NewsSummary() {
       url: '/news/ghost/',
     }
   ]
-  return <>
-    <ul className={styles.list}>
-      {news.map(n => <li key={n.title}>
-        <Link href={n.url}>
-          <img src={n.src} alt={n.subtitle} />
-          <p role='heading'>{n.title}</p>
-          <p role='contentinfo'>{n.subtitle}</p>
-        </Link>
-      </li>)}
-    </ul>
-  </>
+  function handleOver(index: number): void {
+    setImg(index);
+  }
+  return <section className={styles.wrapper}>
+    <aside className={styles.img}>
+      <Image aria-hidden={img !== 0} src={'/news/ghost.png'} loading='lazy' alt='' width={960} height={960} />
+      <Image aria-hidden={img !== 1} src={'/home/beach.jpg'} loading='lazy' alt='' width={960} height={960} />
+      <Image aria-hidden={img !== 2} src={'/home/crown.jpg'} loading='lazy' alt='' width={960} height={960} />
+      <Image aria-hidden={img !== 3} src={'/home/strato.jpg'} loading='lazy' alt='' width={960} height={960} />
+    </aside>
+    <main className={styles.posts}>
+      <div className={styles.post} onMouseOver={() => handleOver(0)}>
+        <p role='title'>
+          <span>Tu piscina sufre</span>
+          <Caret className={styles.caret} />
+        </p>
+        <p role='subtittle'>LuxCare conoce la solución a todos tus problemas</p>
+      </div>
+      <div className={styles.post} onMouseOver={() => handleOver(1)}>
+        <p role='title'>
+          <span>Tu piscina sufre</span>
+          <Caret className={styles.caret} />
+        </p>
+        <p role='subtittle'>LuxCare conoce la solución a todos tus problemas</p>
+      </div>
+      <div className={styles.post} onMouseOver={() => handleOver(2)}>
+        <p role='title'>
+          <span>Tu piscina sufre</span>
+          <Caret className={styles.caret} />
+        </p>
+        <p role='subtittle'>LuxCare conoce la solución a todos tus problemas</p>
+      </div>
+      <div className={styles.post} onMouseOver={() => handleOver(3)}>
+        <p role='title'>
+          <span>Tu piscina sufre</span>
+          <Caret className={styles.caret} />
+        </p>
+        <p role='subtittle'>LuxCare conoce la solución a todos tus problemas</p>
+      </div>
+      <Link className={styles.link} href={'/blog'}>
+        <span>Ir al blog</span>
+        <span>{'>'}</span>
+      </Link>
+    </main>
+
+  </section>
 }

@@ -11,8 +11,9 @@
   --background-2: #292929;
   --background-4: hsl(0, 0%, 35%);
   --background-5: hsl(0, 0%, 27%);
-  --background-9: #dedede;
+  --background-9: hsl(0, 0%, 87%);
   --color: #fefefe;
+  --color-gray: hsl(0, 0%, 59%);
   --color-8: hsl(0, 0%, 80%);
   --accent: hsl(44, 57%, 67%);
   --accent-50: #281432;
