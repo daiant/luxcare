@@ -5,6 +5,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
 :root {
   --background-color: hsl(0, 0%, 14%);
   --background-1: rgb(61 61 61 / 40%);
@@ -21,6 +22,7 @@
   /* --font-main: 'Inter', 'Arimo', sans-serif;
   --font-title: 'Geologica', serif; */
   --navbar: 80px;
+  --padding: 48px;
 }
 
 * {
@@ -225,3 +227,17 @@ p.italic {
     color: var(--accent);
   }
 }
+
+@media (max-width: 768px) {
+  :root {
+    --padding: 16px;
+  }
+
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #fefefe;
+    --color: hsl(0, 0%, 14%);
+  }
+} */

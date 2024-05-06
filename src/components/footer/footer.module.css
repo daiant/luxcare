@@ -13,7 +13,6 @@
 }
 
 .footer {
-  --padding: 48px;
   background-color: var(--background-color);
   color: var(--color);
   margin-block-start: 64px;
@@ -93,10 +92,6 @@
 
 
 @media (max-width: 768px) {
-  .footer {
-    --padding: 16px;
-  }
-
   .links {
     flex-direction: column;
   }
