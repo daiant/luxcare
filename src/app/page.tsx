@@ -98,7 +98,6 @@ export default function Home() {
             required={true} label='Ubicación' name='zipcode' type='text' icon='/icons/location.svg'></InputAutocomplete>
           <a href='/contact'>Contactar</a>
         </form>
-
       </section>
     </main>
   )

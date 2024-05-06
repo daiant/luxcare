@@ -262,7 +262,7 @@
 
 .main .cta_form {
   padding: var(--padding);
-  min-height: 100svh;
+  /* min-height: 100svh; */
 }
 
 .main .cta_form [role='heading'] {
