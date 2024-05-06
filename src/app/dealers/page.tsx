@@ -3,7 +3,6 @@
 import { FormEvent, useState } from 'react';
 import styles from '../contact/contact.module.css';
 import dealers from './dealers.module.css';
-import Header from '@/components/header/header';
 import ContactForm from '@/components/contact/contact-form';
 import DealersForm from '@/components/contact/dealers-form';
 import Footer from '@/components/footer/footer';
@@ -38,7 +37,6 @@ export default function DealersPage() {
   }
 
   return <>
-    <Header />
     <div className={styles.wrapper}>
       <header className={styles.hero}>
         <img src='/contact/banner.jpg' alt='contacto' />

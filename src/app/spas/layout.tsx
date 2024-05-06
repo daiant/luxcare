@@ -1,4 +1,3 @@
-import Header from '@/components/header/header'
 import '@/styles/globals.css'
 import Footer from '@/components/footer/footer'
 
@@ -14,7 +13,6 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <Header transparent={true}></Header>
       {children}
       <Footer></Footer>
     </>
