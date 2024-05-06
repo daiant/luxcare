@@ -1,4 +1,5 @@
 import Footer from '@/components/footer/footer';
+import Menu from '@/components/header/menu/menu';
 import '@/styles/globals.css'
 import { DM_Sans } from 'next/font/google';
 // Font files can be colocated inside of `app`
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={sans.className}>
       <body>
+        <Menu />
         {children}
         <Footer />
       </body>
