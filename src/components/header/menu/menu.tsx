@@ -9,10 +9,11 @@ export default function Menu() {
   const [open, setOpen] = React.useState(false);
   const handleScroll = () => {
     const st = window.scrollY || document.documentElement.scrollTop;
-    const newVisible = st <= lastScroll;
-    setLastScroll(st);
-    setVisible(newVisible);
-    if (!newVisible) setOpen(false);
+    const hidden = st >= lastScroll;
+    if (hidden && st - lastScroll < 20) return;
+    setVisible(!hidden);
+    if (hidden) setOpen(false);
+    if (hidden) setLastScroll(st);
   };
 
   React.useEffect(() => {
