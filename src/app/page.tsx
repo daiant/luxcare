@@ -1,8 +1,7 @@
 import styles from '@/styles/home.module.css';
-import beach from '../../public/home/beach.jpg';
-import crown from '../../public/home/crown.jpg';
-import vector from '../../public/home/vector.jpg';
-import strato from '../../public/home/strato.jpg';
+import crown from '../../public/home/crown.webp';
+import vector from '../../public/home/vector.webp';
+import strato from '../../public/home/strato.webp';
 import NewsSummary from '@/components/news/summary/news-summary';
 import InputAutocomplete from '@/components/form/input-autocomplete/input-autocomplete';
 import RecommendationsSummary from '@/components/recommendations/summary/summary';
@@ -11,7 +10,8 @@ export default function Home() {
     <main className={`snap ${styles.main}`}>
       <section className={styles.banner}>
         <img className={styles.title} src='/home/luxcare.svg' alt='Luxcare' />
-        <img className={styles.background} src={beach.src} alt="" />
+        {/* <img className={styles.background} src={beach.src} alt="" /> */}
+        <video src="/home/beach.webm" autoPlay muted playsInline loop className={styles.background}></video>
         <p className={styles.scroll_indicator}>Scroll</p>
       </section>
       <section className={styles.mission}>
