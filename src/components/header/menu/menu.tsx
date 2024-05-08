@@ -1,12 +1,17 @@
 'use client';
 import Link from 'next/link';
 import styles from './menu.module.css';
-import React from 'react';
+import React, { useState } from 'react';
 export default function Menu() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") ?? 'dark';
+  });
+
   const menu = React.useRef<HTMLDivElement>(null);
   const [lastScroll, setLastScroll] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
   const [open, setOpen] = React.useState(false);
+
   const handleScroll = () => {
     const st = window.scrollY || document.documentElement.scrollTop;
     const hidden = st >= lastScroll;
@@ -16,6 +21,16 @@ export default function Menu() {
     if (hidden) setLastScroll(st);
   };
 
+  function handleTheme() {
+    if (theme === 'dark') {
+      localStorage.setItem('theme', 'light');
+      setTheme('light');
+    } else {
+      localStorage.setItem('theme', 'dark');
+      setTheme('dark');
+    }
+  }
+
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -23,8 +38,9 @@ export default function Menu() {
     };
   }, [menu, lastScroll]);
 
-  return <div className={styles.wrapper} aria-hidden={!visible} ref={menu}>
+  return <div className={styles.wrapper} aria-hidden={!visible} ref={menu} id={'theme-' + theme}>
     <Link href="/" className={styles.home}>Luxcare</Link>
+    <img src={theme === 'dark' ? "/icons/sun.svg" : '/icons/moon.svg'} alt="" className={styles.theme} onClick={handleTheme} />
     <div className={styles.burger} onClick={() => setOpen(!open)}>
       {!open && <>
         <span role='button'>Menú</span>

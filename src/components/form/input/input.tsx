@@ -18,7 +18,6 @@ export default function Input(props: InputProps) {
     const classes = [
       styles.icon
     ]
-    console.log(props.loading)
     return props.loading ? classes.concat(styles.rotate).join(' ') : classes.join(' ');
   }
   return <div className={styles.wrapper}>

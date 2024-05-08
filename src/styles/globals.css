@@ -1,31 +1,38 @@
-:root {
-  --background-color: hsl(0, 0%, 14%);
-  --background-1: rgb(61 61 61 / 40%);
-  --background-2: #292929;
-  --background-4: hsl(0, 0%, 35%);
-  --background-5: hsl(0, 0%, 27%);
-  --background-9: hsl(0, 0%, 87%);
-  --color: #fefefe;
-  --color-gray: hsl(0, 0%, 59%);
-  --color-8: hsl(0, 0%, 80%);
-  --accent: hsl(44, 57%, 67%);
-  --accent-50: #281432;
-  --accent-10: #1b0d2e;
-  /* --font-main: 'Inter', 'Arimo', sans-serif;
-  --font-title: 'Geologica', serif; */
-  --navbar: 80px;
-  --padding: 48px;
-}
+:root {}
 
 * {
   box-sizing: border-box;
 }
 
 body {
+  --black: hsl(0, 0%, 14%);
+  --white: #fefefe;
+  --background-color: var(--black);
+  --background-1: rgb(61 61 61 / 40%);
+  --background-2: #292929;
+  --background-4: hsl(0, 0%, 35%);
+  --background-5: hsl(0, 0%, 27%);
+  --background-9: hsl(0, 0%, 87%);
+  --color: var(--white);
+  --color-gray: hsl(0, 0%, 59%);
+  --color-8: hsl(0, 0%, 80%);
+  --accent: hsl(44, 57%, 67%);
+  --accent-50: #281432;
+  --accent-10: #1b0d2e;
+  /* --font-main: 'Inter', 'Arimo', sans-serif;
+    --font-title: 'Geologica', serif; */
+  --navbar: 80px;
+  --padding: 48px;
   /* font-family: var(--font-main); */
   background-color: var(--background-color, #3d3d3d);
   color: var(--color);
   -webkit-tap-highlight-color: transparent;
+}
+
+body:has(#theme-light) {
+  --background-color: var(--white);
+  --color: var(--black);
+  --color-gray: hsl(0, 0%, 35%);
 }
 
 html,
@@ -221,7 +228,7 @@ p.italic {
 }
 
 @media (max-width: 768px) {
-  :root {
+  body {
     --padding: 16px;
   }
 

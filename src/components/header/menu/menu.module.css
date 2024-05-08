@@ -87,3 +87,9 @@
 .submenu a:hover {
   color: var(--color);
 }
+
+.theme {
+  width: 18px;
+  height: 18px;
+  margin-inline-end: 16px;
+}
