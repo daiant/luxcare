@@ -2,6 +2,7 @@
 import React from 'react';
 import Input, { InputProps } from '../input/input';
 import styles from './autocomplete.module.css';
+import Location from '../../../../public/icons/location.svg';
 
 export default function InputAutocomplete(props: InputProps & { onSelect?: (value: string) => void }) {
   const [loading, setLoading] = React.useState(false);
@@ -45,7 +46,7 @@ export default function InputAutocomplete(props: InputProps & { onSelect?: (valu
     <div className={styles.input}>
       <Input required={props.required} label={props.label} name={props.name} type={props.type} icon={loading ? '/icons/loader-circle.svg' : props.icon} onChange={handleChange} value={location} loading={loading}></Input>
       <p onClick={getGeolocation} className={styles.geo} role='button'>
-        <img src="/icons/location.svg" alt="" />
+        <Location />
         <span>Usar mi ubicación actual</span></p>
     </div>
     <ul className={styles.list} aria-hidden={places.length <= 0}>

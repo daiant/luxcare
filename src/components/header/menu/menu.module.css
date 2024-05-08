@@ -37,9 +37,8 @@
   cursor: pointer;
 }
 
-.wrapper .burger img {
-  width: 16px;
-  height: 16px;
+.wrapper .burger svg {
+  fill: var(--color);
 }
 
 .submenu {

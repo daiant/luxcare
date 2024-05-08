@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import styles from './menu.module.css';
 import React, { useState } from 'react';
+import Waves from '../../../../public/icons/waves.svg';
+import Close from '../../../../public/icons/close.svg';
 export default function Menu() {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") ?? 'dark';
@@ -44,11 +46,12 @@ export default function Menu() {
     <div className={styles.burger} onClick={() => setOpen(!open)}>
       {!open && <>
         <span role='button'>Menú</span>
-        <img src="/icons/waves.svg" alt="" />
+        <Waves />
+        {/* <img src="/icons/waves.svg" alt="" /> */}
       </>}
       {open && <>
         <span role='button'>Cerrar</span>
-        <img src="/icons/close.svg" alt="" />
+        <Close />
       </>}
     </div>
     <div className={styles.submenu} aria-hidden={!visible || !open}>
