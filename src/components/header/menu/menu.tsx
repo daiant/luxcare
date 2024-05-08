@@ -25,10 +25,10 @@ export default function Menu() {
 
   function handleTheme() {
     if (theme === 'dark') {
-      localStorage.setItem('theme', 'light');
+      localStorage?.setItem('theme', 'light');
       setTheme('light');
     } else {
-      localStorage.setItem('theme', 'dark');
+      localStorage?.setItem('theme', 'dark');
       setTheme('dark');
     }
   }
