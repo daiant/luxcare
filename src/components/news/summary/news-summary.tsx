@@ -35,8 +35,8 @@ export default function NewsSummary() {
     <aside className={styles.img}>
       <Image aria-hidden={img !== 0} src={'/news/ghost.png'} loading='lazy' alt='' width={960} height={960} />
       <Image aria-hidden={img !== 1} src={'/home/beach.jpg'} loading='lazy' alt='' width={960} height={960} />
-      <Image aria-hidden={img !== 2} src={'/home/crown.jpg'} loading='lazy' alt='' width={960} height={960} />
-      <Image aria-hidden={img !== 3} src={'/home/strato.jpg'} loading='lazy' alt='' width={960} height={960} />
+      <Image aria-hidden={img !== 2} src={'/home/crown.webp'} loading='lazy' alt='' width={960} height={960} />
+      <Image aria-hidden={img !== 3} src={'/home/strato.webp'} loading='lazy' alt='' width={960} height={960} />
     </aside>
     <main className={styles.posts}>
       <div className={styles.post} onMouseOver={() => handleOver(0)}>
