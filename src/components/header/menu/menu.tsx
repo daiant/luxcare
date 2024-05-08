@@ -1,13 +1,11 @@
 'use client';
 import Link from 'next/link';
 import styles from './menu.module.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Waves from '../../../../public/icons/waves.svg';
 import Close from '../../../../public/icons/close.svg';
 export default function Menu() {
-  const [theme, setTheme] = useState(() => {
-    return localStorage?.getItem("theme") ?? 'dark';
-  });
+  const [theme, setTheme] = useState('dark');
 
   const menu = React.useRef<HTMLDivElement>(null);
   const [lastScroll, setLastScroll] = React.useState(0);
@@ -22,6 +20,12 @@ export default function Menu() {
     if (hidden) setOpen(false);
     if (hidden) setLastScroll(st);
   };
+
+  React.useEffect(() => {
+    setTheme(
+      localStorage.getItem('theme') || 'dark',
+    )
+  }, []);
 
   function handleTheme() {
     if (theme === 'dark') {
