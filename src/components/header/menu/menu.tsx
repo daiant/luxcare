@@ -6,7 +6,7 @@ import Waves from '../../../../public/icons/waves.svg';
 import Close from '../../../../public/icons/close.svg';
 export default function Menu() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") ?? 'dark';
+    return localStorage?.getItem("theme") ?? 'dark';
   });
 
   const menu = React.useRef<HTMLDivElement>(null);
