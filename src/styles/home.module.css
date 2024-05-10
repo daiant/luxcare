@@ -18,7 +18,7 @@
 
 /* Banner */
 .main .banner {
-  height: 100svh;
+  height: 100lvh;
   padding: var(--padding);
   /* background: linear-gradient(#DBCAAD, #000); */
   display: flex;
@@ -93,7 +93,7 @@
 }
 
 .main .series .serie {
-  height: 100svh;
+  height: 100lvh;
   position: relative;
   display: grid;
   align-items: end;
@@ -135,7 +135,7 @@
 .main .cta {
   padding-block-start: var(--padding);
   overflow: hidden;
-  min-height: 100svh;
+  min-height: 100lvh;
   display: flex;
   flex-direction: column;
 }
@@ -185,7 +185,7 @@
 
 .main .keys {
   padding: var(--padding);
-  min-height: 100svh;
+  min-height: 100lvh;
   display: flex;
   flex-direction: column;
 }
@@ -255,7 +255,7 @@
 
 .main .cta_form {
   padding: var(--padding);
-  /* min-height: 100svh; */
+  /* min-height: 100lvh; */
 }
 
 .main .cta_form [role='heading'] {
