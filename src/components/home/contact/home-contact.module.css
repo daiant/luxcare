@@ -69,6 +69,8 @@
   outline: none;
   margin-block-start: 8px;
   scroll-padding-block: 3em;
+  background-color: var(--background-color);
+  color: var(--color);
 }
 
 .form .actions {
