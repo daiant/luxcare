@@ -34,6 +34,7 @@
 .main .banner video {
   align-self: end;
   max-width: 100%;
+  /* mix-blend-mode: hard-light; */
 }
 
 .main .banner .header h1 {
@@ -42,8 +43,8 @@
 }
 
 .main .banner .header h2 {
-  font-size: 4.75rem;
-  font-size: clamp(4.75rem, 4.5rem + 1.25vw, 6rem);
+  font-size: 3.5rem;
+  font-size: clamp(3.5rem, 3rem + 2.5vw, 6rem);
   display: flex;
   flex-direction: column;
   text-transform: uppercase;

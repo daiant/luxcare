@@ -5,6 +5,9 @@ import Image from 'next/image';
 export default function Footer() {
   return <footer className={styles.footer}>
     <div className={styles.header}>
+      <div className={styles.main}>
+        <Image src={'/LuxCare_c.svg'} width={0} height={0} sizes="100vw" alt='luxcare' />
+      </div>
       <div className={styles.cta}>
         <p>Cada día más<br />cerca de nuestros clientes</p>
         <Link href={'/contact'}>Contacta</Link>
@@ -22,9 +25,6 @@ export default function Footer() {
           <Link href='www.linkedin.com' target='_blank'>LinkedIn</Link>
         </div>
       </div>
-    </div>
-    <div className={styles.main}>
-      <Image src={'/LuxCare_c.svg'} width={0} height={0} sizes="100vw" alt='luxcare' />
     </div>
     <div className={styles.legal}>
       <Link href='/legal/privacy'>Privacidad</Link>

@@ -17,11 +17,10 @@
   background-color: var(--black);
   color: var(--white);
   margin-block-start: 64px;
-  padding-block-start: 64px;
+  padding-block-start: 32px;
 }
 
 .header,
-.main,
 .legal {
   padding-inline: var(--padding);
 }
@@ -69,15 +68,13 @@
 
 
 .main {
-  position: relative;
-  border-top: 1px solid;
-  margin-block-start: 32px;
-  padding-block-start: 32px;
+  width: 100%;
+  margin-block: 0;
 }
 
 .main img {
-  width: 100%;
-  height: auto;
+  height: 40px;
+  width: auto;
 }
 
 .legal {

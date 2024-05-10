@@ -21,8 +21,8 @@ export default function Home() {
       </section>
       <section className={styles.mission}>
         <div role='heading'>
-          <p>Simplemente</p>
-          <p>perfecto</p>
+          <p>Una sensación</p>
+          <p>simplemente perfecta</p>
         </div>
         <div role='contentinfo'>
           <p>LuxCare es el arte de ofrecer una experiencia única de compra, donde la creación de sensaciones auténticas, garantías sólidas, compromiso con la perfección y la búsqueda de la excelencia se combinan para ofrecer una experiencia simplemente perfecta.</p>
