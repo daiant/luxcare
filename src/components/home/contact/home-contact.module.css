@@ -38,6 +38,7 @@
 
 .aside [role=main] .current {
   min-width: 1ch;
+  text-align: center;
 }
 
 .form fieldset {
