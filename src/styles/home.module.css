@@ -18,7 +18,7 @@
 
 /* Banner */
 .main .banner {
-  height: 100lvh;
+  height: 100svh;
   padding: var(--padding);
   /* background: linear-gradient(#DBCAAD, #000); */
   display: flex;
