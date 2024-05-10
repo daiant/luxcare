@@ -9,10 +9,15 @@ export default function Home() {
   return (
     <main className={`snap ${styles.main}`}>
       <section className={styles.banner}>
-        <img className={styles.title} src='/home/luxcare.svg' alt='Luxcare' />
-        {/* <img className={styles.background} src={beach.src} alt="" /> */}
-        <video src="/home/beach.webm" autoPlay muted playsInline loop className={styles.background}></video>
-        <p className={styles.scroll_indicator}>Scroll</p>
+        <div className={styles.header}>
+          <h1>LuxCare Spas</h1>
+          <h2>
+            <span>Simple</span>
+            <span>Mente</span>
+            <span>Perfecto</span>
+          </h2>
+        </div>
+        <video src="/home/watermarked_preview.webm" loop muted playsInline autoPlay></video>
       </section>
       <section className={styles.mission}>
         <div role='heading'>

@@ -5,8 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Waves from '../../../../public/icons/waves.svg';
 import Close from '../../../../public/icons/close.svg';
 export default function Menu() {
-  const [theme, setTheme] = useState('dark');
-
+  const [theme, setTheme] = useState('light');
   const menu = React.useRef<HTMLDivElement>(null);
   const [lastScroll, setLastScroll] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
@@ -23,7 +22,7 @@ export default function Menu() {
 
   React.useEffect(() => {
     setTheme(
-      localStorage.getItem('theme') || 'dark',
+      localStorage.getItem('theme') || 'light',
     )
   }, []);
 
@@ -37,12 +36,12 @@ export default function Menu() {
     }
   }
 
-  React.useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [menu, lastScroll]);
+  // React.useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [menu, lastScroll]);
 
   return <div className={styles.wrapper} aria-hidden={!visible} ref={menu} id={'theme-' + theme}>
     <Link href="/" className={styles.home}>Luxcare</Link>

@@ -16,54 +16,45 @@
   display: block;
 }
 
+/* Banner */
 .main .banner {
   height: 100svh;
-  position: relative;
-  background: linear-gradient(#DBCAAD, #000);
-  padding-block-start: 16px;
-  z-index: 10;
+  padding: var(--padding);
+  /* background: linear-gradient(#DBCAAD, #000); */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
 }
 
-.main .banner .background {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  /* transform: rotate(180deg); */
-  opacity: 0.8;
+.main .banner .header {
+  grid-column: 1 / 1;
+  align-self: end;
 }
 
-.main .banner .title {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding-inline: 4px;
-  animation: shrink ease;
-  animation-timeline: scroll(root block);
+.main .banner video {
+  align-self: end;
+  max-width: 100%;
 }
 
-.main .banner .scroll_indicator {
-  position: absolute;
-  right: 16px;
-  bottom: var(--padding);
-  writing-mode: vertical-lr;
-  text-decoration: underline;
-  color: var(--accent);
+.main .banner .header h1 {
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.main .banner .header h2 {
+  font-size: 4.75rem;
+  font-size: clamp(4.75rem, 4.5rem + 1.25vw, 6rem);
+  display: flex;
+  flex-direction: column;
   text-transform: uppercase;
 }
 
-@keyframes shrink {
-  0% {
-    width: 100%;
-  }
-
-  15% {
-    width: 15%;
-  }
+.main .banner .header span:nth-child(1)::after,
+.main .banner .header span:nth-child(2)::before {
+  content: '-'
 }
 
+/* Mission */
 .main .mission {
   min-height: 100svh;
   padding-inline: var(--padding);
