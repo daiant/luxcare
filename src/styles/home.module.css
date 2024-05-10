@@ -57,13 +57,12 @@
 
 /* Mission */
 .main .mission {
-  min-height: 100svh;
   padding-inline: var(--padding);
   padding-block: calc(var(--padding) * 1.5);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 48px;
+  gap: 128px;
 }
 
 .main .mission [role=heading] {
