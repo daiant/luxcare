@@ -73,6 +73,10 @@
   color: var(--color);
 }
 
+.form textarea {
+  font-family: unset;
+}
+
 .form .actions {
   margin-block-start: 16px;
   text-align: end;
