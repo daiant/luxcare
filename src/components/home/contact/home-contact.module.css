@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  column-gap: 96px;
   min-height: 500px;
 }
 
@@ -33,7 +33,11 @@
 
 .aside [role=main] p {
   font-weight: 700;
-  font-size: 20cqw;
+  font-size: 16cqw;
+}
+
+.aside [role=main] .current {
+  min-width: 1ch;
 }
 
 .form fieldset {
