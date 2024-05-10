@@ -5,6 +5,7 @@ import strato from '../../public/home/strato.webp';
 import NewsSummary from '@/components/news/summary/news-summary';
 import InputAutocomplete from '@/components/form/input-autocomplete/input-autocomplete';
 import RecommendationsSummary from '@/components/recommendations/summary/summary';
+import HomeContactForm from '@/components/home/contact/home-contact';
 export default function Home() {
   return (
     <main className={`snap ${styles.main}`}>
@@ -95,7 +96,10 @@ export default function Home() {
       <section className={styles.news}>
         <RecommendationsSummary />
       </section>
-      <section className={styles.cta_form}>
+      <section className={styles.news}>
+        <HomeContactForm />
+      </section>
+      {/* <section className={styles.cta_form}>
         <p role='heading'>Contacta con nosotros</p>
         <p>Encuentra tu proveedor más cercano</p>
         <form>
@@ -103,7 +107,7 @@ export default function Home() {
             required={true} label='Ubicación' name='zipcode' type='text' icon='/icons/location.svg'></InputAutocomplete>
           <a href='/contact'>Contactar</a>
         </form>
-      </section>
+      </section> */}
     </main>
   )
 }
