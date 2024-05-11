@@ -22,10 +22,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
+  gap: calc(var(--padding) * 2) 48px;
 }
 
 .header {
-  padding-inline: var(--padding);
   flex-grow: 1;
 }
 
