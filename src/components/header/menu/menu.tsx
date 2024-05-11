@@ -63,13 +63,14 @@ export default function Menu() {
           <Link href={'/'}>Inicio</Link>
           <Link href={'/series'}>Series</Link>
           <Link href={'/blog'}>Blog</Link>
-          <Link href={'/recommendations'}>Recomendaciones</Link>
+          {/* <Link href={'/recommendations'}>Recomendaciones</Link> */}
           <Link href={'/contact'}>Contacto</Link>
         </div>
         <div className={styles.group}>
+          <Link href={'/series'}>Todas las series</Link>
           <Link href={'/series/crown'}>Serie Crown</Link>
           <Link href={'/series/vector'}>Serie Vector</Link>
-          <Link href={'/series/strato'}>Series</Link>
+          <Link href={'/series/strato'}>Serie Strato</Link>
         </div>
       </div>
     </div>
