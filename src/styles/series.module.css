@@ -179,6 +179,7 @@
   font-weight: 500;
   align-items: center;
   transition: opacity 400ms ease-out;
+  color: var(--black);
 }
 
 .serie .images .content .spa {
@@ -243,7 +244,6 @@
   gap: 8px;
   align-items: center;
   margin-block: 8px;
-  color: var(--black);
 }
 
 .serie .images .info .details .detail p:first-child {
