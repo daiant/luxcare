@@ -4,27 +4,21 @@ import styles from './menu.module.css';
 import React, { useEffect, useState } from 'react';
 import Waves from '../../../../public/icons/waves.svg';
 import Close from '../../../../public/icons/close.svg';
+import { usePathname } from 'next/navigation';
 export default function Menu() {
   const [theme, setTheme] = useState('light');
   const menu = React.useRef<HTMLDivElement>(null);
-  const [lastScroll, setLastScroll] = React.useState(0);
-  const [visible, setVisible] = React.useState(true);
   const [open, setOpen] = React.useState(false);
-
-  const handleScroll = () => {
-    const st = window.scrollY || document.documentElement.scrollTop;
-    const hidden = st >= lastScroll;
-    if (hidden && st - lastScroll < 20) return;
-    setVisible(!hidden);
-    if (hidden) setOpen(false);
-    if (hidden) setLastScroll(st);
-  };
+  const pathname = usePathname();
 
   React.useEffect(() => {
     setTheme(
       localStorage.getItem('theme') || 'light',
     )
   }, []);
+  React.useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   function handleTheme() {
     if (theme === 'dark') {
@@ -35,15 +29,7 @@ export default function Menu() {
       setTheme('dark');
     }
   }
-
-  // React.useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [menu, lastScroll]);
-
-  return <div className={styles.wrapper} aria-hidden={!visible} ref={menu} id={'theme-' + theme}>
+  return <div className={styles.wrapper} ref={menu} id={'theme-' + theme}>
     <Link href="/" className={styles.home}>Luxcare</Link>
     <img src={theme === 'dark' ? "/icons/sun.svg" : '/icons/moon.svg'} alt="" className={styles.theme} onClick={handleTheme} />
     <div className={styles.burger} onClick={() => setOpen(!open)}>
@@ -57,7 +43,7 @@ export default function Menu() {
         <Close />
       </>}
     </div>
-    <div className={styles.submenu} aria-hidden={!visible || !open}>
+    <div className={styles.submenu} aria-hidden={!open}>
       <div className={styles.links}>
         <div className={styles.group}>
           <Link href={'/'}>Inicio</Link>

@@ -61,7 +61,7 @@
 
 .submenu .links {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -91,4 +91,11 @@
   width: 18px;
   height: 18px;
   margin-inline-end: 16px;
+}
+
+@media (max-width: 768px) {
+  .submenu .links {
+    justify-content: space-between;
+  }
+
 }
