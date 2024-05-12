@@ -42,7 +42,9 @@ export default function SeriesPage() {
           </p>
           <p></p>
         </div>
-        <SeriesSliderComponent />
+        <div className={styles.slider}>
+          <SeriesSliderComponent />
+        </div>
         <div className={styles.video}>
           <video src="/home/beach.webm" autoPlay loop muted playsInline></video>
         </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '@/styles/series.module.css';
+import styles from './slider.module.css'
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -45,7 +45,7 @@ export default function SeriesSliderComponent() {
     slider.current.style.cursor = 'grab';
     slider.current.style.removeProperty('user-select');
   }
-  return <div className={styles.images}>
+  return <div className={styles.slider}>
     <ul ref={slider} onMouseDown={handleMouseDown}>
       <li>
         <div className={styles.content}>
