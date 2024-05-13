@@ -11,6 +11,10 @@
   padding-inline: var(--padding);
 }
 
+.banner {
+  padding-block-end: 64px;
+}
+
 .banner h1,
 .banner h2 {
   font-size: 3rem;
@@ -72,21 +76,27 @@
   font-weight: 700;
   font-size: 20px;
   padding-block-start: 8px;
-  padding-inline-start: var(--padding);
+  padding-inline: var(--padding);
+}
+
+.media_wrapper .media:last-child p {
+  text-align: end;
 }
 
 .right,
 .left {
-  height: 100svh;
+  min-height: 100svh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-block-end: 64px;
 }
 
 .right .media,
 .left .media {
   position: relative;
-  height: 80%;
+  height: 80vh;
   width: 80%;
   display: grid;
   align-items: end;
@@ -155,9 +165,12 @@
   max-width: 80ch;
 }
 
+.left .media {}
+
 .left .media img {
   right: unset;
   left: 0;
+  padding-block: 64px;
 }
 
 .left .call {
@@ -298,6 +311,8 @@
 .other_series .subheading {
   font-weight: 500;
   font-size: 18px;
+  margin-block-start: 16px;
+  margin-block-end: -16px;
 }
 
 .other_series .heading {
