@@ -6,7 +6,7 @@
   gap: calc(var(--padding) * 2);
   padding-block: calc(var(--padding) * 2);
   padding-inline: var(--padding);
-  background: linear-gradient(var(--background-color) 50%, var(--accent) 40%);
+  background: linear-gradient(var(--background-color) 50%, #ffe395 40%);
   cursor: grab;
 }
 

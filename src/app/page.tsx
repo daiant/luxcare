@@ -21,16 +21,16 @@ export default function Home() {
         </div>
         <video src="/home/watermarked_preview.webm" loop muted playsInline autoPlay></video>
       </section>
-      <section className={styles.mission}>
+      {/* <section className={styles.mission}>
         <div role='heading'>
           <p>Una sensación</p>
           <p>simplemente perfecta</p>
         </div>
         <div role='contentinfo'>
-          <p>LuxCare es el arte de ofrecer una experiencia única de compra, donde la creación de sensaciones auténticas, garantías sólidas, compromiso con la perfección y la búsqueda de la excelencia se combinan para ofrecer una experiencia simplemente perfecta.</p>
+          <p</p>
           <a href="/contact">Contacta</a>
         </div>
-      </section>
+      </section> */}
       <section className={styles.series}>
         <article className={styles.serie}>
           <div role='contentinfo'>
@@ -58,10 +58,9 @@ export default function Home() {
         </article>
       </section>
       <section className={styles.cta}>
-        <p role='heading'>Tu destino preferido</p>
         <div role='contentinfo'>
-          <p>Creamos sensaciones únicas y garantizamos perfección y compromiso en cada detalle.</p>
-          <p>En LuxCare Spas, somos más que un producto; somos parte de tu estilo de vida. Nos acompañamos en tus momentos de relajación, en tus celebraciones especiales y en tu búsqueda de bienestar.</p>
+          <p>Tu destino preferido</p>
+          <p>LuxCare es el arte de ofrecer una experiencia única de compra, donde la creación de sensaciones auténticas, garantías sólidas, compromiso con la perfección y la búsqueda de la excelencia se combinan para ofrecer una experiencia simplemente perfecta.</p>
         </div>
         <HomeCarouselComponent />
       </section>

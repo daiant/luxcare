@@ -134,17 +134,17 @@
 }
 
 .main .cta {
-  padding-block-start: var(--padding);
+  padding-block-start: 96px;
   overflow: hidden;
   min-height: 100lvh;
   display: flex;
   flex-direction: column;
 }
 
-.main .cta [role=heading] {
-  /* font-size: 48px;
-  margin-block: var(--padding); */
+.main .cta [role=contentinfo] p:first-child {
+  font-size: 48px;
   padding-inline: var(--padding);
+  font-weight: 500;
 }
 
 .main .cta [role=contentinfo] {
