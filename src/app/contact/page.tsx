@@ -3,6 +3,7 @@
 import ContactForm from '@/components/contact/contact-form';
 import styles from './contact.module.css';
 import { useState } from 'react';
+import Link from 'next/link';
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -17,8 +18,12 @@ export default function Contact() {
     </header>
     <main className={styles.main}>
       <aside className={styles.aside}>
-        <i>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi</i>
-        <h1>CONTACTO</h1>
+        <h1>¿Nos conocemos?</h1>
+        <p>¿Estás buscando información, materiales o servicios específicos?
+          Nuestro Servicio de Atención al Cliente está a tu disposición para
+          informarte y resolver tus dudas. Recuerda que también puedes
+          visitar la sección de preguntas frecuentes (FAQ).</p>
+        <Link href="/providers">¿Quieres ser distribuidor?</Link>
       </aside>
       <ContactForm className={styles.form} onSubmit={handleSubmit} submitted={submitted} />
     </main>

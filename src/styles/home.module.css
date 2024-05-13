@@ -162,67 +162,45 @@
   min-width: 25ch;
 }
 
-.main .cta .carousel {
-  margin-block-start: auto;
-  width: 100vw;
-  overflow-x: auto;
-  display: flex;
-  gap: calc(var(--padding) * 2);
-  padding-block: calc(var(--padding) * 2);
-  padding-inline: var(--padding);
-  background: linear-gradient(var(--background-color) 70%, var(--accent) 30%);
-}
-
-.main .cta .carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.main .cta .carousel img {
-  height: 400px;
-  width: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
 
 .main .keys {
   padding: var(--padding);
-  min-height: 100lvh;
-  display: flex;
-  flex-direction: column;
+  padding-block-start: 96px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  max-width: 160ch;
+  margin-inline: auto;
+  gap: 48px 80px;
 }
 
 .main .keys [role=heading] {
-  /* font-size: 48px;
-  margin-block: var(--padding); */
+  font-size: 48px;
+  margin-block: var(--padding);
 }
 
 .main .keys [role=list] {
   display: flex;
-  gap: max(calc(var(--padding) * 1.5), 32px);
+  flex-direction: column;
+  gap: 64px;
   align-items: flex-start;
   padding-block: var(--padding);
-  overflow: auto;
-
-}
-
-.main .keys [role=list]::-webkit-scrollbar {
-  display: none;
 }
 
 .main .keys .title {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 500;
-  margin-block: 16px;
+  margin-block-end: 8px;
 }
 
 .main .keys [role=listitem] {
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .main .keys [role=listitem] img {
-  height: 80px;
+  height: 64px;
   object-fit: contain;
   width: fit-content;
 }
@@ -234,8 +212,6 @@
 
 .main .keys a {
   width: fit-content;
-  margin-inline: auto;
-  margin-block-start: auto;
 }
 
 .main .news a {

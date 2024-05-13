@@ -1,17 +1,35 @@
+'use client';
 import { FormEventHandler } from 'react';
 import styles from './contact-form.module.css';
 import Input from '../form/input/input';
 import Textarea from '../form/textarea/textarea';
+import Link from 'next/link';
+import React from 'react';
 export default function ContactForm({ onSubmit, submitted, className }: { onSubmit: FormEventHandler<HTMLFormElement>, submitted: boolean, className?: string }) {
-  return <form className={`${styles.form} ${className}`} autoComplete='off' onSubmit={onSubmit}>
-    <Input required={true} label='Name' name='name' type='text' icon='/icons/person.svg'></Input>
-    <Input required={true} label='Email' name='email' type='email' icon='/icons/mail.svg'></Input>
-    <Input required={true} label='Phone' name='phone' type='tel' icon='/icons/phone.svg'></Input>
-    <Textarea required={true} label='How can we help?' name='subject' />
+  const [missingTOS, setMissingTOS] = React.useState(false);
+
+  function checkTOS($event: React.FormEvent<HTMLFormElement>) {
+    $event.preventDefault()
+    const data = new FormData($event.target as HTMLFormElement);
+    if (data.get('tos')) onSubmit($event);
+    else {
+      setMissingTOS(true);
+      setTimeout(() => { setMissingTOS(false); }, 2000)
+    }
+  }
+  return <form className={`${styles.form} ${className}`} autoComplete='off' onSubmit={checkTOS}>
+    <Input required={true} label='Nombre' name='name' type='text' ></Input>
+    <Input required={true} label='Email' name='email' type='email' ></Input>
+    <Input required={true} label='Teléfono' name='phone' type='tel' ></Input>
+    <Textarea required={true} label='¿Cómo te podemos ayudar?' name='subject' />
 
     <div className={styles.actions}>
       <span aria-hidden={!submitted} className={styles.info}>Mensaje enviado correctamente!</span>
       <button className={styles.button}>Contactar</button>
+      <label className={missingTOS ? styles.missingTOS : ''}>
+        <input type="checkbox" name="tos" id="tos" />
+        Acepto los <Link href="/legal/tos" target="_blank">términos y condiciones</Link>
+      </label>
     </div>
   </form>
 }

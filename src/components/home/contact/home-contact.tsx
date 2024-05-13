@@ -76,7 +76,7 @@ export default function HomeContactForm() {
     <aside className={styles.aside}>
       <header>
         <h1>Haz tu consulta</h1>
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, rem obcaecati! empora sunt commodi quas nostrum!</h2>
+        <h2>Si tienes cualquier duda o sugerencia, escríbenos y sigue los siguientes pasos. Deja que LuxCare se preocupe por ti.</h2>
       </header>
       <div role='main'>
         <p className={styles.current}>

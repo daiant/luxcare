@@ -166,6 +166,7 @@
   font-size: 1.5rem;
   font-size: clamp(1.5rem, 1.2rem + 1.5vw, 3rem);
   font-weight: 500;
+  margin-block: 96px 48px;
 }
 
 .left .call span:last-child {
