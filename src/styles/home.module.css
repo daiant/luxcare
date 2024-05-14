@@ -175,6 +175,7 @@
 .main .keys>div {
   display: flex;
   flex-direction: column;
+  gap: 24px;
   max-width: 60ch;
 }
 
