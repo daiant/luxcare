@@ -1,7 +1,10 @@
 'use client';
-import crown from '@/public/home/crown.webp';
-import vector from '@/public/home/vector.webp';
-import strato from '@/public/home/strato.webp';
+import photo1 from '@/public/home/destino/destino_01.webp';
+import photo2 from '@/public/home/destino/destino_02.webp';
+import photo3 from '@/public/home/destino/destino_03.webp';
+import photo4 from '@/public/home/destino/destino_04.webp';
+import photo6 from '@/public/home/destino/destino_06.webp';
+import photo7 from '@/public/home/destino/destino_07.webp';
 import styles from './carousel.module.css';
 import React from 'react';
 
@@ -45,27 +48,27 @@ export default function HomeCarouselComponent() {
   }
   return <div className={styles.carousel} onMouseDown={handleMouseDown} ref={slider}>
     <div className={styles.item}>
-      <img draggable="false" alt="crown" src={crown.src} />
+      <img draggable="false" alt="crown" src={photo1.src} />
       <p><strong>Innovación, bienestar, experiencia</strong>: te ofrecemos un oasis de relajación y rejuvenecimiento con una variedad de servicios diseñados para revitalizar tanto tu cuerpo como tu mente.</p>
     </div>
     <div className={styles.item}>
-      <img draggable="false" alt="vector" src={vector.src} />
+      <img draggable="false" alt="vector" src={photo2.src} />
       <p><strong>Nuestro objetivo es simple</strong>: continuar innovando para estar cada día más cerca de nuestros clientes. Queremos ofrecer soluciones y productos que hagan que su vida sea más relajada y confortable.</p>
     </div>
     <div className={styles.item}>
-      <img draggable="false" alt="strato" src={strato.src} />
+      <img draggable="false" alt="strato" src={photo3.src} />
       <p><strong>En LuxCare</strong>, cada compra se convierte en una experiencia sensorial auténtica. Nos comprometemos con la perfección y nos respaldamos por sólidas garantías</p>
     </div>
     <div className={styles.item}>
-      <img draggable="false" alt="vector" src={vector.src} />
+      <img draggable="false" alt="vector" src={photo4.src} />
       <p>Buscamos <strong>conectar con las emociones</strong> mientras garantizamos la más alta calidad. Somos sinónimo de compromiso y autenticidad: nos esforzamos por ofrecer algo más que un producto, creamos una experiencia única donde cada detalle cuenta.</p>
     </div>
     <div className={styles.item}>
-      <img draggable="false" alt="crown" src={crown.src} />
+      <img draggable="false" alt="crown" src={photo7.src} />
       <p> Ofrecemos una selección exclusiva de spas de primera calidad, cuidadosamente seleccionados por su calidad, diseño y características innovadoras. Cada cliente es recibido con una atención individualizada, donde se les escucha atentamente para comprender sus necesidades específicas.</p>
     </div>
     <div className={styles.item}>
-      <img draggable="false" alt="crown" src={crown.src} />
+      <img draggable="false" alt="crown" src={photo6.src} />
       <p> Es por eso que nos esforzamos por crear un ambiente donde cada detalle destaque por su <strong>autenticidad y perfección</strong>, respaldado por sólidas garantías que refuerzan nuestro compromiso de calidad.</p>
     </div>
   </div>

@@ -1,9 +1,9 @@
 import styles from '@/styles/home.module.css';
-import crown from '../../public/home/crown.webp';
-import vector from '../../public/home/vector.webp';
-import strato from '../../public/home/strato.webp';
+import crown from '../../public/spas/crown.webp';
+import vector from '../../public/spas/vector.webp';
+import strato from '../../public/spas/strato.webp';
 import NewsSummary from '@/components/news/summary/news-summary';
-import InputAutocomplete from '@/components/form/input-autocomplete/input-autocomplete';
+
 import RecommendationsSummary from '@/components/recommendations/summary/summary';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import HomeCarouselComponent from '@/components/home/carousel/carousel';
