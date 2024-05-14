@@ -49,14 +49,14 @@
   margin-block: 8px;
 }
 
-.banner .content a {
+.link {
   color: unset;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.banner .content a *:not(span) {
+.link *:not(span) {
   color: var(--accent);
 }
 
@@ -152,4 +152,11 @@
 .contact {
   padding-inline: var(--padding);
   padding-block: calc(var(--padding) * 2);
+}
+
+@media (max-width: 768px) {
+  .banner .content .image {
+    padding-inline: 0 var(--padding);
+    max-width: unset;
+  }
 }

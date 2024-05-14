@@ -5,6 +5,7 @@ export const crown = {
   header: '/spas/crown/header.webp',
   cta_img: '/spas/crown/crown_3.webp',
   cta_2_img: '/spas/crown/crown_4.webp',
+  url: '/series/crown',
   summary: {
     top: 'Una experiencia simple',
     bottom: 'mente perfecta',
@@ -123,6 +124,7 @@ export const vector = {
   header: '/spas/vector/header.webp',
   cta_img: '/spas/vector/vector_3.webp',
   cta_2_img: '/spas/vector/vector_4.webp',
+  url: '/series/vector',
   summary: {
     top: 'La nueva visión',
     bottom: 'de entender el arte',
@@ -232,6 +234,7 @@ export const strato = {
   header: '/spas/strato/header.webp',
   cta_img: '/spas/strato/strato_2.webp',
   cta_2_img: '/spas/strato/strato_4.webp',
+  url: '/series/strato',
   summary: {
     top: 'Tu destino preferido',
     bottom: 'en interiores y exteriores',
@@ -266,7 +269,22 @@ export const strato = {
       },
     ],
 
-  models: [],
+  models: [
+    {
+      title: 'Strato 2.1',
+      serie: 'Strato',
+      capacity: '4 personas',
+      jets: '30 jets',
+      src: '/spas/strato/models/strato_21.webp'
+    },
+    {
+      title: 'Strato 2.4',
+      serie: 'Strato',
+      capacity: '5 personas',
+      jets: '36 jets',
+      src: '/spas/strato/models/strato_24.webp'
+    },
+  ],
   other_series: [
     {
       title: 'Serie Crown',

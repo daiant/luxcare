@@ -14,8 +14,8 @@ export default function SeriesPage() {
           <h2>
             Innovación, bienestar, experiencia: revitaliza cuerpo y mente.
           </h2>
-          <hr style={{ marginBlock: 24 }} />
-          <Link href={'/contact'}>
+          <p style={{ marginBlock: 24 }}></p>
+          <Link href={'/contact'} className={styles.link}>
             <span>Contacta con nosotros</span>
             <CaretRight />
           </Link>
@@ -33,6 +33,9 @@ export default function SeriesPage() {
               <span>{serie.summary.bottom}</span>
             </p>
             <p>{serie.summary.content}</p>
+            <Link href={serie.url} className={styles.link}>
+              <span>Ir a la colección</span>
+              <CaretRight /></Link>
           </header>
           <p className={styles.title}>
             <span>Serie</span>
