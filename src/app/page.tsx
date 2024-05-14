@@ -52,7 +52,7 @@ export default function Home() {
           <div role='contentinfo'>
             <p className={styles.subtitle}>La cumbre. El icono.</p>
             <p className={styles.title}>Serie Strato</p>
-            <a href="/series/crown">Supera las expectativas</a>
+            <a href="/series/strato">Supera las expectativas</a>
           </div>
           <img src={strato.src} alt="Strato" />
         </article>
