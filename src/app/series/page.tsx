@@ -4,7 +4,7 @@ import CaretRight from '@/public/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import { SERIES } from '@/lib/spas.data';
 export default function SeriesPage() {
-  const allModels = Object.values(SERIES).flatMap(s => s.models);
+
   return <main className={styles.container}>
     <section className={styles.banner}>
       <h1><span className={styles.gray}>Descubre</span> todos los modelos</h1>
@@ -13,9 +13,7 @@ export default function SeriesPage() {
           <h2>
             Innovación, bienestar, experiencia: revitaliza cuerpo y mente.
           </h2>
-          <p>
-            Innovación, bienestar, experiencia: revitaliza cuerpo y mente.Innovación, bienestar, experiencia: revitaliza cuerpo y mente.Innovación, bienestar, experiencia: revitaliza cuerpo y mente.
-          </p>
+          <hr style={{ marginBlock: 24 }} />
           <Link href={'/contact'}>
             <span>Contacta con nosotros</span>
             <CaretRight />
@@ -24,26 +22,25 @@ export default function SeriesPage() {
         <video src="/home/watermarked_preview.webm" className={styles.image} autoPlay loop muted playsInline></video>
       </div>
     </section>
-    {[0, 1, 2].map(v => {
-      return <section className={styles.serie} key={v}>
+    {Object.values(SERIES).map(serie => {
+      return <section className={styles.serie} key={serie.title}>
         <div className={styles.container}>
           <header>
             <p role='heading' aria-level={2}>
-              <span>Grandeza. Exclusividad.</span>
-              <span>Una experiencia simple</span>
-              <span>mente perfecta</span>
+              <span>{serie.adjectives}</span>
+              <span>{serie.summary.top}</span>
+              <span>{serie.summary.bottom}</span>
             </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus assumenda illo iusto nemo cumque, maiores magnam enim error nobis esse odit id necessitatibus repellendus aliquam quas deserunt quos? Labore, aliquid.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus assumenda illo iusto nemo cumque, maiores magnam enim error nobis esse odit id necessitatibus repellendus aliquam quas deserunt quos? Labore, aliquid.</p>
+            <p>{serie.summary.content}</p>
           </header>
           <p className={styles.title}>
             <span>Serie</span>
-            <span>Crown</span>
+            <span>{serie.title}</span>
           </p>
           <p></p>
         </div>
         <div className={styles.slider}>
-          <SeriesSliderComponent models={allModels} />
+          <SeriesSliderComponent models={serie.models} />
         </div>
         <div className={styles.video}>
           <video src="/home/beach.webm" autoPlay loop muted playsInline></video>

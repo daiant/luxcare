@@ -1,6 +1,12 @@
 export const crown = {
   title: 'Crown',
   adjective: 'Autenticidad',
+  adjectives: 'Grandeza. Exclusividad.',
+  summary: {
+    top: 'Una experiencia simple',
+    bottom: 'mente perfecta',
+    content: 'Descubre la Serie Crown de Marquis Spas, una obra maestra de innovación en el mundo del spa. Esta colección redefine el estándar de lujo y rendimiento en hidromasaje, fusionando nuestras características terapéuticas más avanzadas con comodidades de primer nivel, dando lugar al sistema de hidromasaje más elegante y versátil del mercado.',
+  },
   mission: [
     { spa: 'SUMMIT', content: 'Llega hasta la cumbre.', },
     { spa: 'EPIC', content: 'Conviértete en leyenda.' },
@@ -100,6 +106,12 @@ export const crown = {
 export const vector = {
   title: 'Vector',
   adjective: 'Potencia',
+  adjectives: 'Potencia. Ergonomía.',
+  summary: {
+    top: 'La nueva visión',
+    bottom: 'de entender el arte',
+    content: 'La serie Vector21 ofrece un flujo y una fuerza nunca antes vistos en el arte de los spas: un control y una versatilidad incomparables en cualquier otro concepto de sistema avanzado: un comando y control individuales, pero perfectamente diseñados para transportar una experiencia completa: un nuevo vehículo para transportar cuerpo, mente y alma.',
+  },
   mission: [
     { spa: 'V94', content: 'La potencia importa. ', },
     { spa: 'V94L', content: 'La esencia del poder.' },
@@ -191,6 +203,12 @@ export const vector = {
 export const strato = {
   title: 'Strato',
   adjective: 'Diseño',
+  adjectives: 'Diseño. Minimalismo.',
+  summary: {
+    top: 'Tu destino preferido',
+    bottom: 'en interiores y exteriores',
+    content: 'El elegante, moderno y lineal diseño eleva esta serie de spas al máximo nivel de confort. Los prácticos escalones de entrada central, el inteligente equipamiento de chorros y las sofisticadas áreas de masaje garantizan una experiencia de bienestar pura.'
+  },
   mission: [
     { spa: "Strato 2.1", content: 'Redefine el concepto.' },
     { spa: "Strato 2.4", content: 'Supera las expectativas.' },
@@ -238,7 +256,7 @@ export const strato = {
 }
 
 export const SERIES = {
-  vector,
   crown,
+  vector,
   strato,
 }
