@@ -177,35 +177,35 @@ export const vector = {
       serie: 'Vector',
       capacity: '7 personas',
       jets: '44 jets',
-      src: '/spas/vector/models/V94l.webp'
+      src: '/spas/vector/models/V94L.webp'
     },
     {
       title: 'V84',
       serie: 'Vector',
       capacity: '6 personas',
       jets: '37 jets',
-      src: '/spas/vector/models/V84l.webp'
+      src: '/spas/vector/models/V84L.webp'
     },
     {
       title: 'V84L',
       serie: 'Vector',
       capacity: '5 personas',
       jets: '36 jets',
-      src: '/spas/vector/models/V84l.webp'
+      src: '/spas/vector/models/V84L.webp'
     },
     {
       title: 'V77L',
       serie: 'Vector',
       capacity: '5 personas',
       jets: '27 jets',
-      src: '/spas/vector/models/V77l.webp'
+      src: '/spas/vector/models/V77L.webp'
     },
     {
       title: 'V65L',
       serie: 'Vector',
       capacity: '3 personas',
       jets: '22 jets',
-      src: '/spas/vector/models/V65l.webp'
+      src: '/spas/vector/models/V65L.webp'
     },
   ],
   other_series: [
