@@ -1,9 +1,10 @@
-import Image from 'next/image';
 import styles from '@/styles/series.module.css';
 import Link from 'next/link';
 import CaretRight from '@/public/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
+import { SERIES } from '@/lib/spas.data';
 export default function SeriesPage() {
+  const allModels = Object.values(SERIES).map(serie => serie.models)
   return <main className={styles.container}>
     <section className={styles.banner}>
       <h1><span className={styles.gray}>Descubre</span> todos los modelos</h1>
@@ -20,7 +21,6 @@ export default function SeriesPage() {
             <CaretRight />
           </Link>
         </div>
-        {/* <Image src="/home/beach.jpg" alt='' width={865.5} height={562.5} className={styles.image}></Image> */}
         <video src="/home/watermarked_preview.webm" className={styles.image} autoPlay loop muted playsInline></video>
       </div>
     </section>
@@ -43,7 +43,7 @@ export default function SeriesPage() {
           <p></p>
         </div>
         <div className={styles.slider}>
-          <SeriesSliderComponent />
+          <SeriesSliderComponent models={allModels.flat()} />
         </div>
         <div className={styles.video}>
           <video src="/home/beach.webm" autoPlay loop muted playsInline></video>
