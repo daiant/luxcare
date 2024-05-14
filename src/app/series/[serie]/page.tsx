@@ -19,7 +19,7 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           <h1>Serie {serie.title}</h1>
           <h2>{serie.adjective}</h2>
         </header>
-        <img src="/home/crown.webp" alt={serie.title} />
+        <img src={serie.header} alt={serie.title} />
       </section>
       <SerieBannerComponent data={serie.mission} />
       <section className={styles.media_wrapper}>
@@ -28,13 +28,13 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           <p>{serie.multimedia.left}</p>
         </div>
         <div className={styles.media}>
-          <img src="/home/beach.jpg" alt="" />
+          <img src={serie.multimedia.right_src} alt="" />
           <p>{serie.multimedia.right}</p>
         </div>
       </section>
       <section className={styles.right}>
         <div className={styles.media}>
-          <img src="/home/crown.webp" alt={serie.title} />
+          <img src={serie.cta_2_img} alt={serie.title} />
           <div className={styles.content}>
             <p className={styles.details}>{serie.adjective}</p>
             <p className={styles.title}>Serie {serie.title}</p>
@@ -46,7 +46,7 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
         <p>{serie.left.top}</p>
         <span>Diseño y construcción</span>
         <div className={styles.media}>
-          <img src="/home/crown.webp" alt="Crown" />
+          <img src={serie.cta_img} alt="Crown" />
         </div>
         <p>{serie.left.bottom}</p>
         <span>Diseño y construcción</span>
@@ -84,7 +84,7 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
         <ul>
           {serie.other_series.map(other => (
             <li key={other.title}>
-              <img src="/home/vector.webp" alt={other.title} />
+              <img src={other.src} alt={other.title} />
               <div role='contentinfo'>
                 <p className={styles.subheading}>{other.subheading}</p>
                 <p className={styles.heading}>{other.title}</p>

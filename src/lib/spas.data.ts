@@ -2,6 +2,9 @@ export const crown = {
   title: 'Crown',
   adjective: 'Autenticidad',
   adjectives: 'Grandeza. Exclusividad.',
+  header: '/spas/crown/header.webp',
+  cta_img: '/spas/crown/crown_3.webp',
+  cta_2_img: '/spas/crown/crown_4.webp',
   summary: {
     top: 'Una experiencia simple',
     bottom: 'mente perfecta',
@@ -19,6 +22,7 @@ export const crown = {
   multimedia: {
     left: 'Serie Crown: redefine el estándar de lujo y rendimiento en hidromasaje',
     right: 'Descubre una experiencia de hidromasaje incomparable con su avanzada tecnología y características exclusivas.',
+    right_src: '/spas/crown/crown_2.webp'
   },
   left: {
     top: 'Cada spa de la Serie Crown presenta líneas y contornos suaves que no solo añaden un toque de sofisticación, sino que también mejoran la ergonomía y la comodidad del usuario. Los materiales de alta calidad seleccionados garantizan una durabilidad excepcional, mientras que los acabados realzan la belleza estética de cada modelo.',
@@ -99,12 +103,14 @@ export const crown = {
       subheading: 'Potencia. Distinción.',
       content: 'Flujo y una fuerza nunca antes vistos: un control y una versatilidad incomparables en cualquier otro concepto de sistema avanzado. Comando y control individuales, perfectamente diseñados para transportar una experiencia completa de spa.',
       url: '/series/vector',
+      src: '/spas/vector.webp'
     },
     {
       subheading: 'Elegancia. Diseño.',
       title: 'Serie Strato',
       content: 'El diseño de esta serie destaca por su elegancia, modernidad y líneas limpias. Los escalones de entrada central facilitan el acceso, mientras que el equipamiento de chorros y las áreas de masaje garantizan una experiencia única.',
       url: '/series/strato',
+      src: '/spas/strato.webp'
     },
   ]
 
@@ -114,6 +120,9 @@ export const vector = {
   title: 'Vector',
   adjective: 'Potencia',
   adjectives: 'Potencia. Ergonomía.',
+  header: '/spas/vector/header.webp',
+  cta_img: '/spas/vector/vector_3.webp',
+  cta_2_img: '/spas/vector/vector_4.webp',
   summary: {
     top: 'La nueva visión',
     bottom: 'de entender el arte',
@@ -131,6 +140,7 @@ export const vector = {
   multimedia: {
     left: 'Serie Vector: spas que transportan mente, cuerpo y alma.',
     right: 'Flujo y una fuerza nunca antes vistos. Un control y una versatilidad incomparables en cualquier otro concepto de sistema avanzado.',
+    right_src: '/spas/vector/vector_2.webp'
   },
   left: {
     top: 'El diseño de los spas Vector21 fusiona una estética contemporánea con funcionalidad avanzada. Cada modelo presenta líneas limpias y modernas, combinadas con una ergonomía excepcional para garantizar la máxima comodidad del usuario.',
@@ -204,12 +214,14 @@ export const vector = {
       subheading: 'Elegancia. Exclusividad.',
       content: 'Redefine el estándar de lujo y rendimiento en hidromasaje. Nacida de la galardonada Serie Signature y potenciada por las mejores características terapéuticas, la Serie Crown representa una arquitectura de sistema completamente nueva.',
       url: '/series/crown',
+      src: '/spas/crown.webp'
     },
     {
       subheading: 'Elegancia. Diseño.',
       title: 'Serie Strato',
       content: 'El diseño de esta serie destaca por su elegancia, modernidad y líneas limpias. Los escalones de entrada central facilitan el acceso, mientras que el equipamiento de chorros y las áreas de masaje garantizan una experiencia única.',
       url: '/series/strato',
+      src: '/spas/strato.webp'
     },
   ]
 }
@@ -217,6 +229,9 @@ export const strato = {
   title: 'Strato',
   adjective: 'Diseño',
   adjectives: 'Diseño. Minimalismo.',
+  header: '/spas/strato/header.webp',
+  cta_img: '/spas/strato/strato_2.webp',
+  cta_2_img: '/spas/strato/strato_4.webp',
   summary: {
     top: 'Tu destino preferido',
     bottom: 'en interiores y exteriores',
@@ -230,6 +245,7 @@ export const strato = {
   multimedia: {
     left: 'Serie Strato: El Strato 2.1 y el nuevo Strato 2.4 son spas portátiles con 5 asientos, que destacan por su diseño contemporáneo de vanguardia.',
     right: 'Estos spas ofrecen una combinación única de estilo y funcionalidad, diseñados para satisfacer las necesidades de los usuarios más exigentes. ',
+    right_src: '/spas/strato/strato_3.webp'
   },
   left: {
     top: 'El diseño contemporáneo del Strato 2.1 y el Strato 2.4 los convierte en el complemento perfecto para cualquier espacio, ya sea en interiores o exteriores. Su portabilidad los hace ideales para aquellos que desean disfrutar de la relajación en cualquier lugar.',
@@ -257,12 +273,15 @@ export const strato = {
       subheading: 'Elegancia. Exclusividad.',
       content: 'Redefine el estándar de lujo y rendimiento en hidromasaje. Nacida de la galardonada Serie Signature y potenciada por las mejores características terapéuticas, la Serie Crown representa una arquitectura de sistema completamente nueva.',
       url: '/series/crown',
+      src: '/spas/crown.webp'
+
     },
     {
       title: 'Serie Vector',
       subheading: 'Potencia. Distinción.',
       content: 'Flujo y una fuerza nunca antes vistos: un control y una versatilidad incomparables en cualquier otro concepto de sistema avanzado. Comando y control individuales, perfectamente diseñados para transportar una experiencia completa de spa.',
       url: '/series/vector',
+      src: '/spas/vector.webp'
     },
   ]
 
