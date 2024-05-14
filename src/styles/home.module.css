@@ -174,9 +174,19 @@
   gap: 48px 80px;
 }
 
+.main .keys>div {
+  display: flex;
+  flex-direction: column;
+  max-width: 60ch;
+}
+
+.main .keys>div a {
+  margin-block-start: auto;
+}
+
 .main .keys [role=heading] {
   font-size: 48px;
-  margin-block: var(--padding);
+  margin-block-end: var(--padding);
 }
 
 .main .keys [role=list] {
@@ -184,7 +194,7 @@
   flex-direction: column;
   gap: 64px;
   align-items: flex-start;
-  padding-block: var(--padding);
+  padding-block-start: 24px;
 }
 
 .main .keys .title {

@@ -67,6 +67,7 @@ export default function Home() {
       <section className={styles.keys}>
         <div>
           <p role='heading'>LuxCare, nuestra forma de ser únicos.</p>
+          <p>Vamos más allá de ofrecer productos de alta gama como Marquis Spas y Riviera Pool. Lo que nos hace destacar es la pasión que ponemos en cada recomendación que hacemos y en cada experiencia que proporcionamos. Nos esforzamos por entender las preferencias de nuestros clientes y reflejar su estilo en cada sugerencia, ofreciendo opciones que no solo son elegantes, sino que también brindan momentos de relajación y bienestar incomparables.</p>
           <a href="/contact">Contacta ahora</a>
         </div>
         <div role='list'>
