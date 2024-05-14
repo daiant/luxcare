@@ -98,7 +98,7 @@
   position: relative;
   display: grid;
   align-items: end;
-  padding: max(var(--padding), 48px) calc(var(--padding) * 1.5);
+  padding: max(var(--padding), 96px) calc(var(--padding) * 1.5);
   background-color: black;
   position: sticky;
   top: 0;
