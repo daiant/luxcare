@@ -7,8 +7,7 @@ import React from 'react';
 
 
 let pos = { x: 0, y: 0, left: 0, top: 0 }
-export default function SeriesSliderComponent() {
-
+export default function SeriesSliderComponent({ models }: { models: { title: string, serie: string, capacity: string, jets: string }[] }) {
   const slider = React.useRef<HTMLUListElement>(null);
 
   function handleMouseDown(e: React.MouseEvent) {
@@ -47,42 +46,35 @@ export default function SeriesSliderComponent() {
   }
   return <div className={styles.slider}>
     <ul ref={slider} onMouseDown={handleMouseDown}>
-      <li>
-        <div className={styles.content}>
-          <Image src={'/spa.png'} alt={''} width={250} height={250} className={styles.spa}></Image>
-          <p>The Resort</p>
-          <p>Crown</p>
-        </div>
-        <div className={styles.info_wrapper} >
-          <div className={styles.info}>
-            <Link className={styles.title} href={'/series/crown/the-resort'}>Lorme iprussm dolor si</Link>
-            <div className={styles.details}>
-              <div className={styles.detail}>
-                <p>Serie</p>
-                <p>Crown</p>
+      {models.map((model, index) => (
+        <li key={model.title}>
+          <div className={styles.content}>
+            <Image src={'/spa.png'} alt={''} width={250} height={250} className={styles.spa}></Image>
+            <p>{model.title}</p>
+            <p>{model.serie}</p>
+          </div>
+          <div className={styles.info_wrapper} >
+            <div className={styles.info}>
+              <Link className={styles.title} href={'/series/crown/the-resort'}>{model.title}</Link>
+              <div className={styles.details}>
+                <div className={styles.detail}>
+                  <p>Serie</p>
+                  <p>{model.serie}</p>
+                </div>
+                <div className={styles.detail}>
+                  <p>Capacidad</p>
+                  <p>{model.capacity}</p>
+                </div>
+                <div className={styles.detail}>
+                  <p>Jets</p>
+                  <p>{model.jets}</p>
+                </div>
+                <Link className={styles.detail} href={'/series/crown/the-resort'}>Descubre más</Link>
               </div>
-              <div className={styles.detail}>
-                <p>Capacidad</p>
-                <p>7 Personas</p>
-              </div>
-              <div className={styles.detail}>
-                <p>Jets</p>
-                <p>64 Jets</p>
-              </div>
-              <Link className={styles.detail} href={'/series/crown/the-resort'}>Descubre más</Link>
-
             </div>
           </div>
-        </div>
-      </li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+        </li>
+      ))}
     </ul>
   </div>
 }

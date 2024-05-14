@@ -1,0 +1,36 @@
+.mission {
+  padding-block: 64px;
+  padding-inline: var(--padding);
+
+  .title {
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 3rem);
+    max-width: 14ch;
+    font-weight: 500;
+  }
+
+  .static_content {
+    color: #9b9f9f;
+  }
+
+  .spa {
+    font-size: 4rem;
+    font-size: clamp(4rem, 2.3rem + 8.5vw, 12.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: end;
+    width: 100%;
+    padding-block-start: 64px;
+  }
+}
+
+.mission .dynamic_content,
+.mission .spa {
+  transition: opacity 800ms ease-out;
+}
+
+@media (max-width: 768px) {
+  .mission .title {
+    max-width: unset;
+  }
+}
