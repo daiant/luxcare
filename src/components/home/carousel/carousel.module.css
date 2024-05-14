@@ -39,3 +39,12 @@
   background-color: var(--color);
   border-radius: 9999px;
 }
+
+@media (max-width: 768px) {
+  .carousel img {
+    width: 250px;
+    height: auto;
+    aspect-ratio: 6 / 8;
+  }
+
+}
