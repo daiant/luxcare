@@ -3,6 +3,7 @@ import Link from 'next/link';
 import CaretRight from '@/public/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import { SERIES } from '@/lib/spas.data';
+import HomeContactForm from '@/components/home/contact/home-contact';
 export default function SeriesPage() {
 
   return <main className={styles.container}>
@@ -47,5 +48,8 @@ export default function SeriesPage() {
         </div>
       </section>
     })}
+    <section className={styles.contact}>
+      <HomeContactForm />
+    </section>
   </main>
 }
