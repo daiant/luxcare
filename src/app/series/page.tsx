@@ -4,7 +4,7 @@ import CaretRight from '@/public/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import { SERIES } from '@/lib/spas.data';
 export default function SeriesPage() {
-  const allModels = Object.values(SERIES).map(serie => serie.models)
+  const allModels = Object.values(SERIES).flatMap(s => s.models);
   return <main className={styles.container}>
     <section className={styles.banner}>
       <h1><span className={styles.gray}>Descubre</span> todos los modelos</h1>
@@ -43,7 +43,7 @@ export default function SeriesPage() {
           <p></p>
         </div>
         <div className={styles.slider}>
-          <SeriesSliderComponent models={allModels.flat()} />
+          <SeriesSliderComponent models={allModels} />
         </div>
         <div className={styles.video}>
           <video src="/home/beach.webm" autoPlay loop muted playsInline></video>
