@@ -7,7 +7,7 @@ import React from 'react';
 
 
 let pos = { x: 0, y: 0, left: 0, top: 0 }
-export default function SeriesSliderComponent({ models }: { models: { title: string, serie: string, capacity: string, jets: string }[] }) {
+export default function SeriesSliderComponent({ models }: { models: { src: string, title: string, serie: string, capacity: string, jets: string }[] }) {
   const slider = React.useRef<HTMLUListElement>(null);
 
   function handleMouseDown(e: React.MouseEvent) {
@@ -49,7 +49,7 @@ export default function SeriesSliderComponent({ models }: { models: { title: str
       {models.map((model, index) => (
         <li key={model.title}>
           <div className={styles.content}>
-            <Image src={'/spa.png'} alt={''} width={250} height={250} className={styles.spa}></Image>
+            <Image src={model.src} alt={model.title} width={250} height={250} className={styles.spa}></Image>
             <p>{model.title}</p>
             <p>{model.serie}</p>
           </div>

@@ -44,7 +44,7 @@ export default function SeriesPage() {
           <SeriesSliderComponent models={serie.models} />
         </div>
         <div className={styles.video}>
-          <video src="/home/beach.webm" autoPlay loop muted playsInline></video>
+          <img src={'/spas/' + serie.title.toLowerCase() + '.webp'} />
         </div>
       </section>
     })}

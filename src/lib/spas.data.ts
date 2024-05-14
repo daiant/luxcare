@@ -48,42 +48,49 @@ export const crown = {
       serie: 'Crown',
       capacity: '5 personas',
       jets: '50 jets',
+      src: '/spas/crown/models/resort.webp'
     },
     {
       title: 'Summit',
       serie: 'Crown',
       capacity: '7 personas',
       jets: '65 jets',
+      src: '/spas/crown/models/summit.webp'
     },
     {
       title: 'Epic',
       serie: 'Crown',
       capacity: '6 personas',
       jets: '53 jets',
+      src: '/spas/crown/models/epic.webp'
     },
     {
       title: 'Euphoria',
       serie: 'Crown',
       capacity: '7 personas',
       jets: '53 jets',
+      src: '/spas/crown/models/euphoria.webp'
     },
     {
       title: 'Destiny',
       serie: 'Crown',
       capacity: '7 personas',
       jets: '41 jets',
+      src: '/spas/crown/models/destiny.webp'
     },
     {
       title: 'Wish',
       serie: 'Crown',
       capacity: '5 personas',
       jets: '29 - 30 jets',
+      src: '/spas/crown/models/wish.webp'
     },
     {
       title: 'Spirit',
       serie: 'Crown',
       capacity: '3 personas',
       jets: '32 jets',
+      src: '/spas/crown/models/spirit.webp'
     },
   ],
   other_series: [
@@ -153,36 +160,42 @@ export const vector = {
       serie: 'Vector',
       capacity: '7 personas',
       jets: '41 jets',
+      src: '/spas/vector/models/V94.webp'
     },
     {
       title: 'V94L',
       serie: 'Vector',
       capacity: '7 personas',
       jets: '44 jets',
+      src: '/spas/vector/models/V94l.webp'
     },
     {
       title: 'V84',
       serie: 'Vector',
       capacity: '6 personas',
       jets: '37 jets',
+      src: '/spas/vector/models/V84l.webp'
     },
     {
       title: 'V84L',
       serie: 'Vector',
       capacity: '5 personas',
       jets: '36 jets',
+      src: '/spas/vector/models/V84l.webp'
     },
     {
       title: 'V77L',
       serie: 'Vector',
       capacity: '5 personas',
       jets: '27 jets',
+      src: '/spas/vector/models/V77l.webp'
     },
     {
       title: 'V65L',
       serie: 'Vector',
       capacity: '3 personas',
       jets: '22 jets',
+      src: '/spas/vector/models/V65l.webp'
     },
   ],
   other_series: [
