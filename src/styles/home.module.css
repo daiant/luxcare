@@ -102,6 +102,20 @@
   background-color: black;
   position: sticky;
   top: 0;
+  animation: transformate linear both;
+  animation-timeline: view();
+  overflow: hidden;
+}
+
+@keyframes transformate {
+  90% {
+    margin-top: 20%;
+  }
+
+  100% {
+    transform: scale(0.85);
+    border-radius: 36px;
+  }
 }
 
 .main .series .serie img {
