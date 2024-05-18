@@ -289,6 +289,10 @@
     --padding: 16px;
   }
 
+  .main .banner .header {
+    font-size: 4rem;
+  }
+
   .main .banner video {
     width: 100%;
   }
