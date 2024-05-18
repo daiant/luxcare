@@ -215,16 +215,18 @@
   padding-block-start: 24px;
 }
 
-.main .keys .title {
-  font-size: 28px;
-  font-weight: 500;
-  margin-block-end: 16px;
-}
 
 .main .keys [role=listitem] {
   display: flex;
   align-items: flex-start;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+}
+
+.main .keys .title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-block-end: 16px;
 }
 
 .main .keys [role=listitem] img {
