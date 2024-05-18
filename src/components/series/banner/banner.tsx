@@ -16,8 +16,8 @@ export default function SerieBannerComponent({ data }: { data: { spa: string, co
     const interval = setInterval(() => {
       setChanging(true)
 
-      setTimeout(() => { setChanging(false); setIndex((prev) => (prev + 1) % data.length); }, 800)
-    }, 3000);
+      setTimeout(() => { setChanging(false); setIndex((prev) => (prev + 1) % data.length); }, 1200)
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [data]);
@@ -28,5 +28,6 @@ export default function SerieBannerComponent({ data }: { data: { spa: string, co
       <p className={styles.static_content}>Trasciende lo ordinario.</p>
     </div>
     <p className={styles.spa} style={{ opacity: changing ? 0 : 1 }}>{actual.spa}</p>
+    <video src="/broll.mp4" loop muted autoPlay playsInline></video>
   </section>
 }
