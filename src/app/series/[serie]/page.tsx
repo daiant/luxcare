@@ -24,7 +24,8 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
       <SerieBannerComponent data={serie.mission} />
       <section className={styles.media_wrapper}>
         <div className={styles.media}>
-          <video src="/burbuja.webm" autoPlay loop muted playsInline></video>
+          {/* <video src="/burbuja.webm" autoPlay loop muted playsInline></video> */}
+          <img src={serie.cta_2_img} alt={serie.multimedia.right} />
           <p className={styles.media_content}>{serie.multimedia.left}</p>
         </div>
         <div className={styles.media}>

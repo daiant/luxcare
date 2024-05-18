@@ -121,9 +121,9 @@ export const vector = {
   title: 'Vector',
   adjective: 'Potencia',
   adjectives: 'Potencia. Ergonomía.',
-  header: '/spas/vector/header.webp',
-  cta_img: '/spas/vector/vector_3.webp',
-  cta_2_img: '/spas/vector/vector_4.webp',
+  header: '/spas/vector/vector_6.webp',
+  cta_img: '/spas/vector/header.webp',
+  cta_2_img: '/spas/vector/vector_3.webp',
   url: '/series/vector',
   summary: {
     top: 'La nueva visión',

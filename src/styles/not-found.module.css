@@ -13,6 +13,11 @@
   top: 50%;
   transform: translate(-50%, -50%);
   mix-blend-mode: difference;
+  max-width: calc(100% - var(--padding));
+}
+
+.logo {
+  max-width: 40%;
 }
 
 .border {
@@ -20,10 +25,21 @@
   height: auto;
   width: auto;
   max-width: 100%;
+  transform-origin: center center;
+}
+
+.border:not(.disk) {
+  animation: rotateClockWise 20s linear infinite;
+}
+
+.disk {
+  mix-blend-mode: unset;
+  animation-duration: 30s;
+  animation: rotateCounterClockWise 20s linear infinite;
 }
 
 .logo {
-  animation: rotateVinyl 3.636s linear infinite;
+  animation: rotateClockWise 6s linear infinite;
   transform-origin: center center;
 }
 
@@ -49,7 +65,17 @@
   color: var(--accent);
 }
 
-@keyframes rotateVinyl {
+@keyframes rotateCounterClockWise {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes rotateClockWise {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
   }
