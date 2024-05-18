@@ -3,13 +3,21 @@
   width: 100vw;
   overflow-x: auto;
   display: flex;
-  gap: calc(var(--padding) * 2);
+  gap: calc(var(--padding) / 2);
   padding-block: calc(var(--padding) * 2);
   padding-inline: var(--padding);
-  background: linear-gradient(var(--background-color) 50%, #ffe395 40%);
+  /* background: linear-gradient(var(--background-color) 50%, #ffd03488 40%); */
   cursor: grab;
 }
 
+.carousel .img_wrapper {
+  height: 400px;
+  width: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-block-end: 32px;
+}
 
 .carousel img {
   height: 400px;
@@ -17,13 +25,20 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
   margin-block-end: 16px;
+  border-radius: 16px;
+  box-shadow: 4px 4px 8px -6px var(--color);
+  transition: transform 3s ease;
+}
 
+.carousel img:hover {
+  transform: scale(1.1);
 }
 
 .carousel p {
   font-size: 18px;
-  color: var(--black);
+  color: var(--color);
   padding-inline: 16px;
+  line-height: 22px;
 }
 
 .carousel::-webkit-scrollbar {

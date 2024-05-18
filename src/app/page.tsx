@@ -2,41 +2,38 @@ import styles from '@/styles/home.module.css';
 import crown from '../../public/spas/crown.webp';
 import vector from '../../public/spas/vector.webp';
 import strato from '../../public/spas/strato.webp';
-import NewsSummary from '@/components/news/summary/news-summary';
-
-import RecommendationsSummary from '@/components/recommendations/summary/summary';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import HomeCarouselComponent from '@/components/home/carousel/carousel';
+
 export default function Home() {
   return (
     <main className={`snap ${styles.main}`}>
       <section className={styles.banner}>
         <div className={styles.header}>
+          <h2>Simplemente perfecto</h2>
           <h1>LuxCare Spas</h1>
+        </div>
+        <video src="/burbuja.webm" loop muted playsInline autoPlay></video>
+      </section>
+
+      <section className={styles.cta}>
+        <div role='contentinfo'>
           <h2>
             <span>Simple</span>
             <span>Mente</span>
             <span>Perfecto</span>
           </h2>
+          <p>LuxCare es el arte de ofrecer una experiencia única de compra, donde la creación de sensaciones auténticas, garantías sólidas, compromiso con la perfección y la búsqueda de la excelencia se combinan para ofrecer una experiencia simplemente perfecta.</p>
         </div>
-        <video src="/home/watermarked_preview.webm" loop muted playsInline autoPlay></video>
+        <HomeCarouselComponent />
       </section>
-      {/* <section className={styles.mission}>
-        <div role='heading'>
-          <p>Una sensación</p>
-          <p>simplemente perfecta</p>
-        </div>
-        <div role='contentinfo'>
-          <p</p>
-          <a href="/contact">Contacta</a>
-        </div>
-      </section> */}
       <section className={styles.series}>
         <article className={styles.serie}>
           <div role='contentinfo'>
             <p className={styles.subtitle}>Visión. Equilibrio.</p>
             <p className={styles.title}>Serie Crown</p>
-            <a href="/series/crown">Acapara las miradas</a>
+            <p>Acapara las miradas</p>
+            <a href="/series/crown">Ver la colección</a>
           </div>
           <img src={crown.src} alt="Crown" />
         </article>
@@ -44,7 +41,8 @@ export default function Home() {
           <div role='contentinfo'>
             <p className={styles.subtitle}>Distinción. Diseño.</p>
             <p className={styles.title}>Serie Vector</p>
-            <a href="/series/vector">Despierta emociones</a>
+            <p>Despierta emociones</p>
+            <a href="/series/crown">Ver la colección</a>
           </div>
           <img src={vector.src} alt="Vector" />
         </article>
@@ -52,22 +50,19 @@ export default function Home() {
           <div role='contentinfo'>
             <p className={styles.subtitle}>La cumbre. El icono.</p>
             <p className={styles.title}>Serie Strato</p>
-            <a href="/series/strato">Supera las expectativas</a>
+            <p>Supera las expectativas</p>
+            <a href="/series/crown">Ver la colección</a>
           </div>
           <img src={strato.src} alt="Strato" />
         </article>
       </section>
-      <section className={styles.cta}>
-        <div role='contentinfo'>
-          <p>Tu destino preferido</p>
-          <p>LuxCare es el arte de ofrecer una experiencia única de compra, donde la creación de sensaciones auténticas, garantías sólidas, compromiso con la perfección y la búsqueda de la excelencia se combinan para ofrecer una experiencia simplemente perfecta.</p>
-        </div>
-        <HomeCarouselComponent />
-      </section>
       <section className={styles.keys}>
         <div>
           <p role='heading'>LuxCare, nuestra forma de ser únicos.</p>
-          <p>Vamos más allá de ofrecer productos de alta gama como Marquis Spas y Riviera Pool. Lo que nos hace destacar es la pasión que ponemos en cada recomendación que hacemos y en cada experiencia que proporcionamos. Nos esforzamos por entender las preferencias de nuestros clientes y reflejar su estilo en cada sugerencia, ofreciendo opciones que no solo son elegantes, sino que también brindan momentos de relajación y bienestar incomparables.</p>
+          <p role='contentinfo'>Vamos más allá de ofrecer productos de alta gama como Marquis Spas y Riviera Pool. Nos hace destacar la pasión que ponemos en cada recomendación que hacemos y en cada experiencia que proporcionamos. </p>
+          <p role='contentinfo'>
+            Nos esforzamos por entender las preferencias de nuestros clientes y reflejar su estilo en cada sugerencia, ofreciendo opciones que no solo son elegantes, sino que también brindan momentos de relajación y bienestar incomparables.
+          </p>
           <a href="/contact">Contacta ahora</a>
         </div>
         <div role='list'>
@@ -94,25 +89,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={styles.news}>
+      {/*
+       <section className={styles.news}>
         <p role='heading' className={styles.title}>Últimas noticias</p>
         <NewsSummary />
       </section>
       <section className={styles.news}>
         <RecommendationsSummary />
       </section>
+      */}
       <section className={styles.news}>
         <HomeContactForm />
       </section>
-      {/* <section className={styles.cta_form}>
-        <p role='heading'>Contacta con nosotros</p>
-        <p>Encuentra tu proveedor más cercano</p>
-        <form>
-          <InputAutocomplete
-            required={true} label='Ubicación' name='zipcode' type='text' icon='/icons/location.svg'></InputAutocomplete>
-          <a href='/contact'>Contactar</a>
-        </form>
-      </section> */}
     </main>
   )
 }

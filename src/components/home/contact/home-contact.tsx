@@ -33,6 +33,7 @@ export default function HomeContactForm() {
       value: '',
     },
   ];
+  function handlePhoneSubmit(event: FormEvent) { }
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
     if (!form.current) return;
@@ -78,25 +79,34 @@ export default function HomeContactForm() {
         <h1>Haz tu consulta</h1>
         <h2>Si tienes cualquier duda o sugerencia, escríbenos y sigue los siguientes pasos. Deja que LuxCare se preocupe por ti.</h2>
       </header>
-      <div role='main'>
+      <header className={styles.quickForm}>
+        <h1>¿Te llamamos?</h1>
+        <h2>Introduce únicamente tu teléfono y nosotros haremos el resto.</h2>
+        <form onSubmit={handlePhoneSubmit} className={styles.form}>
+          <label htmlFor="quickPhone">Introduce tu teléfono</label>
+          <input type="tel" id='quickPhone' name='phone' />
+          <div className={styles.actions}>
+            <button type='submit'>Llámame</button>
+          </div>
+        </form>
+      </header>
+      {/* <div role='main'>
         <p className={styles.current}>
-          {/* {questions.map((_, index) => <span key={index}>{index + 1}</span>)} */}
           {questionIndex + 1}
         </p>
         <p className={styles.separator}>/</p>
         <p className={styles.total}>4</p>
-      </div>
+      </div> */}
     </aside>
     <form onSubmit={handleSubmit} ref={form} className={styles.form}>
       <fieldset>
-        {questions.map((question, index) => <div key={question.name} data-index={index} className={`${index === questionIndex ? 'active' : ''} ${styles.question}`}>
+        {questions.map((question, index) => <div key={question.name} className={styles.question}>
           <label htmlFor={question.name}>{question.label}</label>
           {question.type === 'textarea' && <textarea
             defaultValue={question.value}
             onChange={(e) => question.value = e.target.value}
             id={question.name}
             name={question.name}
-            tabIndex={-1}
           ></textarea>}
 
           {question.type !== 'textarea' && <input type={question.type}
@@ -104,13 +114,11 @@ export default function HomeContactForm() {
             onChange={(e) => question.value = e.target.value}
             id={question.name}
             name={question.name}
-            tabIndex={-1}
           />}
         </div>)}
       </fieldset>
       <div className={styles.actions}>
-        <button onClick={handlePrevious} type='button' aria-hidden={questionIndex <= 0}>Anterior</button>
-        <button onClick={handleNext} className={loading ? styles.loading : ''} type={questionIndex >= questions.length - 1 ? 'submit' : 'button'}>{questionIndex >= questions.length - 1 ? 'Enviar consulta' : 'Siguiente'}</button>
+        <button onClick={handleNext} className={loading ? styles.loading : ''} type="submit">Enviar consulta</button>
       </div>
     </form>
   </div>
