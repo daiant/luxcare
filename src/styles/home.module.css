@@ -295,6 +295,7 @@
 
   .main .banner video {
     width: 120%;
+    overflow: hidden;
   }
 
   .main img.title {
