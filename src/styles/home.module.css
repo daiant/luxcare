@@ -24,6 +24,7 @@
   display: grid;
   place-content: center;
   background-color: white;
+  overflow: hidden;
 }
 
 .main .banner .header {
@@ -295,7 +296,6 @@
 
   .main .banner video {
     width: 120%;
-    overflow: hidden;
   }
 
   .main img.title {
