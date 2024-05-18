@@ -42,9 +42,10 @@
   transition: transform 3s ease;
 }
 
+/* 
 .carousel img:hover {
   transform: scale(1.1);
-}
+} */
 
 .carousel p {
   font-size: 18px;

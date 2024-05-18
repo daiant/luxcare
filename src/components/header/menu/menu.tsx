@@ -31,7 +31,6 @@ export default function Menu() {
   }
   return <div className={styles.wrapper} ref={menu} id={'theme-' + theme}>
     <Link href="/" className={styles.home}>Luxcare</Link>
-    <img src={theme === 'dark' ? "/icons/sun.svg" : '/icons/moon.svg'} alt="" className={styles.theme} onClick={handleTheme} />
     <div className={styles.burger} onClick={() => setOpen(!open)}>
       {!open && <>
         <span role='button'>Menú</span>
