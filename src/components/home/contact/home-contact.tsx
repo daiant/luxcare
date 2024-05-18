@@ -99,6 +99,7 @@ export default function HomeContactForm() {
       </div> */}
     </aside>
     <form onSubmit={handleSubmit} ref={form} className={styles.form}>
+      <h1>Contacto</h1>
       <fieldset>
         {questions.map((question, index) => <div key={question.name} className={styles.question}>
           <label htmlFor={question.name}>{question.label}</label>

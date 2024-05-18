@@ -2,14 +2,19 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  column-gap: 96px;
-  min-height: 500px;
+  gap: 96px;
 }
-
 
 
 .form {
   flex-grow: 1;
+}
+
+.form h1 {
+  font-weight: 500;
+  font-size: 28px;
+  margin-block-end: 1em;
+  display: none;
 }
 
 .aside header h1,
@@ -198,7 +203,8 @@
 }
 
 @media (max-width: 768px) {
-  .form fieldset {
-    max-height: 200px;
+  .form h1 {
+    display: block;
   }
+
 }

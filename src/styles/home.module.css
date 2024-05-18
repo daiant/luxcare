@@ -180,11 +180,10 @@
 
 .main .keys {
   padding-block: 96px;
+  padding-inline: var(--padding);
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  max-width: 160ch;
-  margin-inline: auto;
   gap: 48px 80px;
 }
 
@@ -288,6 +287,10 @@
 @media (max-width: 768px) {
   .main {
     --padding: 16px;
+  }
+
+  .main .banner video {
+    width: 100%;
   }
 
   .main img.title {
