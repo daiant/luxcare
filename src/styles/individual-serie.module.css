@@ -65,6 +65,7 @@
   object-fit: cover;
   max-width: min(900px, 100%);
   object-position: bottom;
+  aspect-ratio: 5 / 3;
 }
 
 .media_wrapper .media img {
