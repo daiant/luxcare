@@ -219,7 +219,6 @@
 .main .keys [role=listitem] {
   display: flex;
   align-items: flex-start;
-  flex-wrap: wrap;
   gap: 16px 32px;
 }
 
@@ -302,5 +301,9 @@
 
   .main img.title {
     margin-block-start: 64px;
+  }
+
+  .main .keys [role=listitem] {
+    flex-wrap: wrap;
   }
 }
