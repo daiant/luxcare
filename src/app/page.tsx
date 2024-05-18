@@ -13,6 +13,7 @@ export default function Home() {
         <div className={styles.header}>
           <h2>Simplemente perfecto</h2>
           <h1>LuxCare Spas</h1>
+          <h2>Página en proceso de construcción</h2>
         </div>
         <video src="/burbuja.webm" loop muted playsInline autoPlay></video>
         <footer>
