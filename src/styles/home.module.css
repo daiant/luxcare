@@ -78,6 +78,16 @@
   font-size: 22px;
 }
 
+.main .banner footer {
+  position: absolute;
+  bottom: var(--padding);
+  width: 100%;
+  animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  filter: blur(12px);
+  opacity: 0.1;
+  animation-delay: 1s;
+}
+
 .main .cta h2 {
   font-size: 3.5rem;
   font-size: clamp(3.5rem, 3rem + 2.5vw, 6rem);

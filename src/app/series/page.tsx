@@ -20,7 +20,7 @@ export default function SeriesPage() {
             <CaretRight />
           </Link>
         </div>
-        <video src="/home/watermarked_preview.webm" className={styles.image} autoPlay loop muted playsInline></video>
+        <video src="/burbuja.webm" className={styles.image} autoPlay loop muted playsInline></video>
       </div>
     </section>
     {Object.values(SERIES).map(serie => {

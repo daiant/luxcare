@@ -1,13 +1,25 @@
+.container {
+  margin-block-start: 64px;
+  padding-block: calc(var(--padding) * 2);
+  /* background: linear-gradient(var(--background-color) 50%, #ffd03488 40%); */
+  cursor: grab;
+  padding-inline: var(--padding);
+}
+
 .carousel {
-  margin-block-start: auto;
   width: 100vw;
   overflow-x: auto;
   display: flex;
   gap: calc(var(--padding) / 2);
-  padding-block: calc(var(--padding) * 2);
-  padding-inline: var(--padding);
-  /* background: linear-gradient(var(--background-color) 50%, #ffd03488 40%); */
-  cursor: grab;
+}
+
+.title {
+  font-size: 22px;
+  margin-block-end: 0.5em;
+  padding-inline-start: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .carousel .img_wrapper {

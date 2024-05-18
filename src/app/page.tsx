@@ -4,6 +4,7 @@ import vector from '../../public/spas/vector.webp';
 import strato from '../../public/spas/strato.webp';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import HomeCarouselComponent from '@/components/home/carousel/carousel';
+import ScrollIndicator from '@/components/scroll-indicator/scroll-indicator';
 
 export default function Home() {
   return (
@@ -14,9 +15,12 @@ export default function Home() {
           <h1>LuxCare Spas</h1>
         </div>
         <video src="/burbuja.webm" loop muted playsInline autoPlay></video>
+        <footer>
+          <ScrollIndicator />
+        </footer>
       </section>
 
-      <section className={styles.cta}>
+      <section className={styles.cta} id='next'>
         <div role='contentinfo'>
           <h2>
             <span>Simple</span>
