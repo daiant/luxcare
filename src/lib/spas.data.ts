@@ -26,8 +26,8 @@ export const crown = {
     right_src: '/spas/crown/crown_2.webp'
   },
   left: {
-    top: 'Cada spa de la Serie Crown presenta líneas y contornos suaves que no solo añaden un toque de sofisticación, sino que también mejoran la ergonomía y la comodidad del usuario. Los materiales de alta calidad seleccionados garantizan una durabilidad excepcional, mientras que los acabados realzan la belleza estética de cada modelo.',
-    bottom: 'Su construcción se basa en tecnología de vanguardia y artesanía experta, garantizando un rendimiento óptimo y una larga vida útil. Sus sistemas de terapia y controles de última generación se integran de manera impecable, ofreciendo una experiencia de hidromasaje sin igual.',
+    top: 'Cada spa de la Serie Crown presenta líneas y contornos suaves que no solo añaden un toque de sofisticación, sino que también mejoran la ergonomía y la comodidad del usuario.\n\nLos materiales de alta calidad seleccionados garantizan una durabilidad excepcional, mientras que los acabados realzan la belleza estética de cada modelo.',
+    bottom: 'Su construcción se basa en tecnología de vanguardia y artesanía experta, garantizando un rendimiento óptimo y una larga vida útil.\n\nSus sistemas de terapia y controles de última generación se integran de manera impecable, ofreciendo una experiencia de hidromasaje sin igual.',
   },
   steps:
     [
@@ -111,7 +111,7 @@ export const crown = {
       title: 'Serie Strato',
       content: 'El diseño de esta serie destaca por su elegancia, modernidad y líneas limpias. Los escalones de entrada central facilitan el acceso, mientras que el equipamiento de chorros y las áreas de masaje garantizan una experiencia única.',
       url: '/series/strato',
-      src: '/spas/strato.webp'
+      src: '/spas/strato/strato_3.webp'
     },
   ]
 
@@ -223,7 +223,7 @@ export const vector = {
       title: 'Serie Strato',
       content: 'El diseño de esta serie destaca por su elegancia, modernidad y líneas limpias. Los escalones de entrada central facilitan el acceso, mientras que el equipamiento de chorros y las áreas de masaje garantizan una experiencia única.',
       url: '/series/strato',
-      src: '/spas/strato.webp'
+      src: '/spas/strato/strato_3.webp'
     },
   ]
 }
@@ -247,12 +247,12 @@ export const strato = {
   ],
   multimedia: {
     left: 'Serie Strato: El Strato 2.1 y el nuevo Strato 2.4 son spas portátiles con 5 asientos, que destacan por su diseño contemporáneo de vanguardia.',
-    right: 'Estos spas ofrecen una combinación única de estilo y funcionalidad, diseñados para satisfacer las necesidades de los usuarios más exigentes. ',
+    right: 'Nuestros spas ofrecen una combinación única de estilo y funcionalidad, diseñados para satisfacer las necesidades de los usuarios más exigentes. ',
     right_src: '/spas/strato/strato_3.webp'
   },
   left: {
-    top: 'El diseño contemporáneo del Strato 2.1 y el Strato 2.4 los convierte en el complemento perfecto para cualquier espacio, ya sea en interiores o exteriores. Su portabilidad los hace ideales para aquellos que desean disfrutar de la relajación en cualquier lugar.',
-    bottom: 'Se utilizan paneles de aluminio de alta calidad para garantizar una estructura resistente y duradera, capaz de soportar las demandas del uso diario y resistir los elementos exteriores. Además, cuentan con una cubierta rígida patentada que proporciona protección adicional y asegura la seguridad del agua en todo momento.',
+    top: '',
+    bottom: 'Se utilizan paneles de aluminio de alta calidad para garantizar una estructura resistente y duradera, capaz de soportar las demandas del uso diario y resistir los elementos exteriores.\n\nAdemás, cuentan con una cubierta rígida patentada que proporciona protección adicional y asegura la seguridad del agua en todo momento.',
   },
   steps:
     [

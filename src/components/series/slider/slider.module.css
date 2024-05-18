@@ -36,6 +36,7 @@
   align-items: flex-end;
   padding: 16px;
   position: relative;
+  box-shadow: 4px 4px 8px -8px var(--black);
 }
 
 .slider li .content {
@@ -53,7 +54,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 150px !important;
+  width: 170px !important;
   height: auto !important;
 }
 
@@ -68,6 +69,7 @@
 .slider li:hover .info {
   transform: scaleY(1);
   transition-delay: 600ms;
+  opacity: 1;
 }
 
 .slider .info_wrapper {
@@ -91,7 +93,8 @@
   justify-content: space-between;
   flex-direction: column;
   transform: scaleY(0);
-  transition: transform 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 600ms cubic-bezier(0.075, 0.82, 0.165, 1), opacity 1ms linear 500ms;
+  opacity: 0;
 }
 
 .slider .info .title {

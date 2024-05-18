@@ -24,40 +24,28 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
       <SerieBannerComponent data={serie.mission} />
       <section className={styles.media_wrapper}>
         <div className={styles.media}>
-          <video src="/home/watermarked_preview.webm" autoPlay loop muted playsInline></video>
-          <p>{serie.multimedia.left}</p>
+          <video src="/burbuja.webm" autoPlay loop muted playsInline></video>
+          <p className={styles.media_content}>{serie.multimedia.left}</p>
         </div>
         <div className={styles.media}>
           <img src={serie.multimedia.right_src} alt="" />
-          <p>{serie.multimedia.right}</p>
+          <p className={styles.media_content}>{serie.multimedia.right}</p>
         </div>
-      </section>
-      <section className={styles.right}>
-        <div className={styles.media}>
-          <img src={serie.cta_2_img} alt={serie.title} />
-          <div className={styles.content}>
-            <p className={styles.details}>{serie.adjective}</p>
-            <p className={styles.title}>Serie {serie.title}</p>
-            <Link className={styles.link} href='#models'>Descubre los modelos</Link>
-          </div>
-        </div>
-      </section>
-      <section className={styles.left}>
-        <p>{serie.left.top}</p>
-        <span>Diseño y construcción</span>
         <div className={styles.media}>
           <img src={serie.cta_img} alt="Crown" />
+          <div className={styles.media_content}>
+            <p>{serie.left.top}</p>
+            <p>{serie.left.bottom}</p>
+            <p>Diseño y construcción</p>
+          </div>
         </div>
-        <p>{serie.left.bottom}</p>
-        <span>Diseño y construcción</span>
-        <div className={styles.call}>
-          <span>En LuxCare hablamos</span>
-          <span>de sensaciones.</span>
-        </div>
-      </section>
+      </section >
       <section className={styles.steps}>
         <header>
-          {/* <h1>Gent dolupTat et, apiendu</h1> */}
+          <div className={styles.call}>
+            <span>En LuxCare hablamos</span>
+            <span>de sensaciones.</span>
+          </div>
         </header>
         {serie.steps.map((step, index) => (<div className={styles.step} key={step.title}>
           <div className={styles.number}>{String(index + 1).padStart(2, '0')}</div>
@@ -73,9 +61,6 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           <p>Conoce <span>todos los</span> <br /><span>modelos</span> {serie.title}</p>
         </header>
         <SeriesSliderComponent models={serie.models} />
-        <div className={styles.video}>
-          <video src="/home/beach.webm" autoPlay loop muted playsInline></video>
-        </div>
       </section>
       <section className={styles.other_series}>
         <header>
@@ -84,10 +69,14 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
         <ul>
           {serie.other_series.map(other => (
             <li key={other.title}>
-              <img src={other.src} alt={other.title} />
+              <Link href={other.url}>
+                <img src={other.src} alt={other.title} />
+              </Link>
               <div role='contentinfo'>
                 <p className={styles.subheading}>{other.subheading}</p>
-                <p className={styles.heading}>{other.title}</p>
+                <Link href={other.url}>
+                  <p className={styles.heading}>{other.title}</p>
+                </Link>
                 <p>{other.content}</p>
                 <Link href={other.url}>
                   <span>Descubre la colección</span>
@@ -101,6 +90,6 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
       <section className={styles.contact_cta}>
         <HomeContactForm />
       </section>
-    </div>
+    </div >
 
 }
