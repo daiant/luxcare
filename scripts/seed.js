@@ -10,7 +10,8 @@ async function seedUsers(client) {
         name TEXT,
         email TEXT,
         phone TEXT,
-        comments TEXT 
+        comments TEXT,
+        created_at TIMESTAMP DEFAULT NOW()
       );
     `;
 

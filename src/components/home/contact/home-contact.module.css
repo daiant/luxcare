@@ -202,6 +202,12 @@
   font-size: 18px;
 }
 
+.error {
+  margin-block-start: 1em;
+  margin-inline-start: 0.5em;
+  color: red;
+}
+
 @media (max-width: 768px) {
   .form h1 {
     display: block;

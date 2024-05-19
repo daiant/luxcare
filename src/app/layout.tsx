@@ -2,6 +2,7 @@ import Footer from '@/components/footer/footer';
 import Menu from '@/components/header/menu/menu';
 
 import '@/styles/globals.css'
+import { ReCaptchaProvider } from 'next-recaptcha-v3';
 import { DM_Sans } from 'next/font/google';
 // // Font files can be colocated inside of `app`
 const sans = DM_Sans({ weight: ['400', '500'], subsets: ['latin'] })
@@ -73,9 +74,11 @@ export default function RootLayout({
         <meta name="google-site-verification" content="emwMyVv_Y97sB-tX2sNjSstG9k8Ts82RM6sLWnd0Gac" />
       </head>
       <body>
-        <Menu />
-        {children}
-        <Footer />
+        <ReCaptchaProvider reCaptchaKey="6Lc6leEpAAAAAHYRPY6O527AF_STDSE9C5d9Aw60" useEnterprise>
+          <Menu />
+          {children}
+          <Footer />
+        </ReCaptchaProvider>
       </body>
     </html>
   )

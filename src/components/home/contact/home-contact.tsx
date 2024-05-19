@@ -1,12 +1,14 @@
 'use client'
 import React, { FormEvent } from 'react';
 import styles from './home-contact.module.css';
+import { useReCaptcha } from 'next-recaptcha-v3';
 
 export default function HomeContactForm() {
-  const [questionIndex, setQuestionIndex] = React.useState(0);
   const form = React.useRef<HTMLFormElement>(null);
   const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState([false, false]);
   const [dialogVisible, setDialogVisible] = React.useState(false);
+  const { executeRecaptcha } = useReCaptcha();
   const questions = [
     {
       type: 'text',
@@ -33,35 +35,37 @@ export default function HomeContactForm() {
       value: '',
     },
   ];
-  function handlePhoneSubmit(event: FormEvent) { }
-  function handleSubmit(event: FormEvent) {
+  const handleSubmit = React.useCallback(async (event: FormEvent) => {
     event.preventDefault();
     if (!form.current) return;
+
     setLoading(true);
+    setError([false, false]);
+    const data = new FormData(event.target as HTMLFormElement);
+    // Generate ReCaptcha token
+    const token = await executeRecaptcha("form_submit");
 
-    setTimeout(() => {
-      setLoading(false);
+    const obj: { [index: string]: any } = {};
+    obj['name'] = data.get('name');
+    obj['email'] = data.get('email');
+    obj['phone'] = data.get('phone');
+    obj['question'] = data.get('question');
+    obj['token'] = token;
+    const headers = new Headers();
+    headers.set("Content-Type", "application/json");
+    const response = await fetch('/api/v1/contact', { method: "POST", body: JSON.stringify(obj), headers });
+    setLoading(false);
+    if (response.ok) {
       setDialogVisible(true);
-    }, 1000)
+    }
+    else {
+      if (!Boolean(obj.name) && !Boolean(obj.email)) {
+        setError([true, false]);
+      }
+      else setError([false, true])
+    }
 
-  }
-  function handlePrevious() {
-    const nextIndex = Math.max(questionIndex - 1, 0);
-    if (nextIndex === questionIndex) { return; }
-    scrollto(nextIndex);
-  }
-  function handleNext(event: React.MouseEvent) {
-    const nextIndex = Math.min(questionIndex + 1, questions.length - 1);
-    if (nextIndex === questionIndex) { return; }
-    scrollto(nextIndex);
-    event.preventDefault();
-  }
-  function scrollto(index: number) {
-    if (!form.current) return;
-    const questionElements = form.current.querySelectorAll('.' + styles.question);
-    questionElements[index].querySelector('label')!.focus()
-    setQuestionIndex(index);
-  }
+  }, [executeRecaptcha, form.current]);
 
   return <div className={styles.container}>
     <div className={styles.dialog} aria-hidden={!dialogVisible}>
@@ -82,11 +86,12 @@ export default function HomeContactForm() {
       <header className={styles.quickForm}>
         <h1>¿Te llamamos?</h1>
         <h2>Introduce únicamente tu teléfono y nosotros haremos el resto.</h2>
-        <form onSubmit={handlePhoneSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <label htmlFor="quickPhone">Introduce tu teléfono</label>
-          <input type="tel" id='quickPhone' name='phone' />
+          <input type="tel" id='quickPhone' name='phone' required />
           <div className={styles.actions}>
             <button type='submit'>Llámame</button>
+            {error[0] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
           </div>
         </form>
       </header>
@@ -108,6 +113,7 @@ export default function HomeContactForm() {
             onChange={(e) => question.value = e.target.value}
             id={question.name}
             name={question.name}
+            required
           ></textarea>}
 
           {question.type !== 'textarea' && <input type={question.type}
@@ -115,11 +121,13 @@ export default function HomeContactForm() {
             onChange={(e) => question.value = e.target.value}
             id={question.name}
             name={question.name}
+            required
           />}
         </div>)}
       </fieldset>
       <div className={styles.actions}>
-        <button onClick={handleNext} className={loading ? styles.loading : ''} type="submit">Enviar consulta</button>
+        <button className={loading ? styles.loading : ''} type="submit">Enviar consulta</button>
+        {error[1] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
       </div>
     </form>
   </div>

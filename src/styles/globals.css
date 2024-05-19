@@ -1,5 +1,9 @@
 :root {}
 
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
 * {
   box-sizing: border-box;
 }
