@@ -28,6 +28,6 @@ export default function SerieBannerComponent({ data }: { data: { spa: string, co
       <p className={styles.static_content}>Trasciende lo ordinario.</p>
     </div>
     <p className={styles.spa} style={{ opacity: changing ? 0 : 1 }}>{actual.spa}</p>
-    <video src="/broll.mp4" loop muted autoPlay playsInline></video>
+    <video src="/images/broll.mp4" loop muted autoPlay playsInline></video>
   </section>
 }

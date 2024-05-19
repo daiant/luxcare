@@ -10,6 +10,7 @@ module.exports = {
 
     return config;
   },
-  output: 'export',
-  distDir: 'dist'
+  output: 'standalone',
+  distDir: 'dist',
+  trailingSlash: true,
 }
