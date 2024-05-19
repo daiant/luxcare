@@ -1,7 +1,7 @@
 import styles from '@/styles/home.module.css';
-import crown from '../../public/spas/crown.webp';
-import vector from '../../public/spas/vector.webp';
-import strato from '../../public/spas/strato.webp';
+import crown from '@/public/images/spas/crown.webp';
+import vector from '@/public/images/spas/vector.webp';
+import strato from '@/public/images/spas/strato.webp';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import HomeCarouselComponent from '@/components/home/carousel/carousel';
 import ScrollIndicator from '@/components/scroll-indicator/scroll-indicator';
@@ -15,7 +15,7 @@ export default function Home() {
           <h1>LuxCare Spas</h1>
           <h2>Página en proceso de construcción</h2>
         </div>
-        <video src="/burbuja.webm" loop muted playsInline autoPlay></video>
+        <video src="/images/burbuja.webm" loop muted playsInline autoPlay></video>
         <footer>
           <ScrollIndicator />
         </footer>
@@ -72,21 +72,21 @@ export default function Home() {
         </div>
         <div role='list'>
           <div role='listitem'>
-            <img className={styles.icon} src={'/icons/SketchLogo.svg'} alt="" />
+            <img className={styles.icon} src={'/images/icons/SketchLogo.svg'} alt="" />
             <div className={styles.content}>
               <p className={styles.title}>Exclusividad</p>
               <p className={styles.subtitle}>La exclusividad de LuxCare Spas se manifiesta en cada detalle, desde la atmósfera cuidadosamente diseñada hasta los procesos personalizados que ofrecen una experiencia única para cada cliente.</p>
             </div>
           </div>
           <div role='listitem'>
-            <img className={styles.icon} src={'/icons/Lightbulb.svg'} alt="" />
+            <img className={styles.icon} src={'/images/icons/Lightbulb.svg'} alt="" />
             <div className={styles.content}>
               <p className={styles.title}>Diseño</p>
               <p className={styles.subtitle}>LuxCare entiende que cada cliente es único, por lo que ofrece una amplia gama de opciones de personalización para adaptarse a diferentes gustos y preferencias.</p>
             </div>
           </div>
           <div role='listitem'>
-            <img className={styles.icon} src={'/icons/Target.svg'} alt="" />
+            <img className={styles.icon} src={'/images/icons/Target.svg'} alt="" />
             <div className={styles.content}>
               <p className={styles.title}>Atención</p>
               <p className={styles.subtitle}>LuxCare valora a cada cliente como único y trata a cada uno con la atención individualizada que se merece. El equipo de LuxCare está siempre disponible para proporcionar orientación y apoyo personalizado.</p>

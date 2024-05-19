@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import styles from './menu.module.css';
 import React, { useEffect, useState } from 'react';
-import Waves from '../../../../public/icons/waves.svg';
-import Close from '../../../../public/icons/close.svg';
+import Waves from '@/public/images/icons/waves.svg';
+import Close from '@/public/images/icons/close.svg';
 import { usePathname } from 'next/navigation';
 export default function Menu() {
   const [theme, setTheme] = useState('light');

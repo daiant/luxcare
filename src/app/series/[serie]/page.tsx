@@ -1,4 +1,4 @@
-import CaretRight from '@/public/icons/CaretRight.svg';
+import CaretRight from '@/public/images/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import styles from '@/styles/individual-serie.module.css';
 import Link from 'next/link';
@@ -92,5 +92,12 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
         <HomeContactForm />
       </section>
     </div >
+}
 
+export async function generateStaticParams() {
+  const series = Object.keys(SERIES);
+
+  return series.map((serie) => ({
+    slug: serie,
+  }))
 }

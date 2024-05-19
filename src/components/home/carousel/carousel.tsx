@@ -1,12 +1,12 @@
 'use client';
-import photo1 from '@/public/home/destino/destino_01.webp';
-import photo2 from '@/public/home/destino/destino_02.webp';
-import photo3 from '@/public/home/destino/destino_03.webp';
-import photo4 from '@/public/home/destino/destino_04.webp';
-import photo6 from '@/public/home/destino/destino_06.webp';
-import photo7 from '@/public/home/destino/destino_07.webp';
+import photo1 from '@/public/images/home/destino/destino_01.webp';
+import photo2 from '@/public/images/home/destino/destino_02.webp';
+import photo3 from '@/public/images/home/destino/destino_03.webp';
+import photo4 from '@/public/images/home/destino/destino_04.webp';
+import photo6 from '@/public/images/home/destino/destino_06.webp';
+import photo7 from '@/public/images/home/destino/destino_07.webp';
 import styles from './carousel.module.css';
-import LongLine from '@/public/icons/long_line.svg';
+import LongLine from '@/public/images/icons/long_line.svg';
 import React from 'react';
 
 let pos = { x: 0, y: 0, left: 0, top: 0 }

@@ -1,6 +1,6 @@
 import styles from '@/styles/series.module.css';
 import Link from 'next/link';
-import CaretRight from '@/public/icons/CaretRight.svg';
+import CaretRight from '@/public/images/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import { SERIES } from '@/lib/spas.data';
 import HomeContactForm from '@/components/home/contact/home-contact';
@@ -20,7 +20,7 @@ export default function SeriesPage() {
             <CaretRight />
           </Link>
         </div>
-        <video src="/burbuja.webm" className={styles.image} autoPlay loop muted playsInline></video>
+        <video src="/images/burbuja.webm" className={styles.image} autoPlay loop muted playsInline></video>
       </div>
     </section>
     <div id='next'>
@@ -48,7 +48,7 @@ export default function SeriesPage() {
             <SeriesSliderComponent models={serie.models} />
           </div>
           <div className={styles.video}>
-            <img src={'/spas/' + serie.title.toLowerCase() + '.webp'} />
+            <img src={'/images/spas/' + serie.title.toLowerCase() + '.webp'} />
           </div>
         </section>
       })}

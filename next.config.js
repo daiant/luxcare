@@ -9,5 +9,7 @@ module.exports = {
     });
 
     return config;
-  }
+  },
+  output: 'export',
+  distDir: 'dist'
 }
