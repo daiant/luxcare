@@ -69,6 +69,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={sans.className}>
+      <head>
+        <meta name="google-site-verification" content="emwMyVv_Y97sB-tX2sNjSstG9k8Ts82RM6sLWnd0Gac" />
+      </head>
       <body>
         <Menu />
         {children}
