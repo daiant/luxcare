@@ -15,7 +15,6 @@ export default function HomeCarouselComponent() {
 
   function handleMouseDown(e: React.MouseEvent) {
     if (!slider.current) return;
-    console.log('estoy')
 
     pos = {
       // The current scroll
@@ -54,7 +53,7 @@ export default function HomeCarouselComponent() {
       <span>Arrastra</span>
       <LongLine />
     </p>
-    <div className={styles.carousel} onMouseDown={handleMouseDown} ref={slider} onTouchMove={(e) => { console.log('holaholita') }}>
+    <div className={styles.carousel} ref={slider} onMouseDown={handleMouseDown}>
       <div className={styles.item}>
         <div className={styles.img_wrapper}>
           <img draggable="false" alt="crown" src={photo1.src} />
@@ -92,5 +91,5 @@ export default function HomeCarouselComponent() {
         <p> Es por eso que nos esforzamos por crear un ambiente donde cada detalle destaque por su <strong>autenticidad y perfección</strong>, respaldado por sólidas garantías que refuerzan nuestro compromiso de calidad.</p>
       </div>
     </div>
-  </div>
+  </div >
 }
