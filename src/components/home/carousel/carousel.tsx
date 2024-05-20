@@ -15,6 +15,7 @@ export default function HomeCarouselComponent() {
 
   function handleMouseDown(e: React.MouseEvent) {
     if (!slider.current) return;
+    console.log('estoy')
 
     pos = {
       // The current scroll
@@ -47,12 +48,13 @@ export default function HomeCarouselComponent() {
     slider.current.style.cursor = 'grab';
     slider.current.style.removeProperty('user-select');
   }
+
   return <div className={styles.container}>
     <p className={styles.title}>
       <span>Arrastra</span>
       <LongLine />
     </p>
-    <div className={styles.carousel} onMouseDown={handleMouseDown} ref={slider}>
+    <div className={styles.carousel} onMouseDown={handleMouseDown} ref={slider} onTouchMove={(e) => { console.log('holaholita') }}>
       <div className={styles.item}>
         <div className={styles.img_wrapper}>
           <img draggable="false" alt="crown" src={photo1.src} />
