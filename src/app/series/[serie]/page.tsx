@@ -90,13 +90,13 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
       <section className={styles.contact_cta}>
         <HomeContactForm />
       </section>
-    </div >
+    </div>
 }
 
 export async function generateStaticParams() {
   const series = Object.keys(SERIES);
 
   return series.map((serie) => ({
-    slug: serie,
+    serie: serie,
   }))
 }
