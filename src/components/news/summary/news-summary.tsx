@@ -2,8 +2,6 @@
 
 import React from 'react'
 import styles from './news-summary.module.css';
-import Link from 'next/link';
-import Image from 'next/image';
 import Caret from '../../../../public/icons/CaretRight.svg';
 
 export default function NewsSummary() {
@@ -33,10 +31,10 @@ export default function NewsSummary() {
   }
   return <section className={styles.wrapper}>
     <aside className={styles.img}>
-      <Image aria-hidden={img !== 0} src={'/news/ghost.png'} loading='lazy' alt='' width={960} height={960} />
-      <Image aria-hidden={img !== 1} src={'/home/beach.jpg'} loading='lazy' alt='' width={960} height={960} />
-      <Image aria-hidden={img !== 2} src={'/home/crown.webp'} loading='lazy' alt='' width={960} height={960} />
-      <Image aria-hidden={img !== 3} src={'/home/strato.webp'} loading='lazy' alt='' width={960} height={960} />
+      <img aria-hidden={img !== 0} src={'/news/ghost.png'} loading='lazy' alt='' width={960} height={960} />
+      <img aria-hidden={img !== 1} src={'/home/beach.jpg'} loading='lazy' alt='' width={960} height={960} />
+      <img aria-hidden={img !== 2} src={'/home/crown.webp'} loading='lazy' alt='' width={960} height={960} />
+      <img aria-hidden={img !== 3} src={'/home/strato.webp'} loading='lazy' alt='' width={960} height={960} />
     </aside>
     <main className={styles.posts}>
       <div className={styles.post} onMouseOver={() => handleOver(0)}>
@@ -68,10 +66,10 @@ export default function NewsSummary() {
         <p role='subtittle'>LuxCare conoce la solución a todos tus problemas</p>
       </div>
     </main>
-    <Link className={styles.link} href={'/blog'}>
+    <a className={styles.link} href={'/blog'}>
       <span>Ir al blog</span>
       <span>{'>'}</span>
-    </Link>
+    </a>
 
   </section>
 }

@@ -1,5 +1,4 @@
 import styles from '@/styles/series.module.css';
-import Link from 'next/link';
 import CaretRight from '@/public/images/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import { SERIES } from '@/lib/spas.data';
@@ -15,10 +14,10 @@ export default function SeriesPage() {
             Innovación, bienestar, experiencia: revitaliza cuerpo y mente.
           </h2>
           <p style={{ marginBlock: 24 }}></p>
-          <Link href={'#next'} className={styles.link}>
+          <a href={'#next'} className={styles.link}>
             <span>Descubre</span>
             <CaretRight />
-          </Link>
+          </a>
         </div>
         <video src="/images/burbuja.webm" className={styles.image} autoPlay loop muted playsInline></video>
       </div>
@@ -34,9 +33,9 @@ export default function SeriesPage() {
                 <span>{serie.summary.bottom}</span>
               </p>
               <p>{serie.summary.content}</p>
-              <Link href={serie.url} className={styles.link}>
+              <a href={serie.url} className={styles.link}>
                 <span>Ir a la colección</span>
-                <CaretRight /></Link>
+                <CaretRight /></a>
             </header>
             <p className={styles.title}>
               <span>Serie</span>

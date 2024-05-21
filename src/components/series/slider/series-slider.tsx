@@ -1,8 +1,6 @@
 'use client';
 
 import styles from './slider.module.css'
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
 
@@ -49,13 +47,13 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
       {models.map((model, index) => (
         <li key={model.title}>
           <div className={styles.content}>
-            <Image src={model.src} alt={model.title} width={250} height={250} className={styles.spa}></Image>
+            <img src={model.src} alt={model.title} width={250} height={250} className={styles.spa}></img>
             <p>{model.title}</p>
             <p>{model.serie}</p>
           </div>
           <div className={styles.info_wrapper} >
             <div className={styles.info}>
-              <Link className={styles.title} href={'/series/crown/the-resort'}>{model.title}</Link>
+              <a className={styles.title} href={'/series/crown/the-resort'}>{model.title}</a>
               <div className={styles.details}>
                 <div className={styles.detail}>
                   <p>Serie</p>
@@ -69,7 +67,7 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
                   <p>Jets</p>
                   <p>{model.jets}</p>
                 </div>
-                <Link className={styles.detail} href={'/series/crown/the-resort'}>Descubre más</Link>
+                <a className={styles.detail} href={'/series/crown/the-resort'}>Descubre más</a>
               </div>
             </div>
           </div>

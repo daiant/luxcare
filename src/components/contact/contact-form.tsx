@@ -1,9 +1,8 @@
-'use client';
+'use client';;
 import { FormEventHandler } from 'react';
 import styles from './contact-form.module.css';
 import Input from '../form/input/input';
 import Textarea from '../form/textarea/textarea';
-import Link from 'next/link';
 import React from 'react';
 export default function ContactForm({ onSubmit, submitted, className }: { onSubmit: FormEventHandler<HTMLFormElement>, submitted: boolean, className?: string }) {
   const [missingTOS, setMissingTOS] = React.useState(false);
@@ -28,7 +27,7 @@ export default function ContactForm({ onSubmit, submitted, className }: { onSubm
       <button className={styles.button}>Contactar</button>
       <label className={missingTOS ? styles.missingTOS : ''}>
         <input type="checkbox" name="tos" id="tos" />
-        Acepto los <Link href="/legal/tos" target="_blank">términos y condiciones</Link>
+        Acepto los <a href="/legal/tos" target="_blank">términos y condiciones</a>
       </label>
     </div>
   </form>

@@ -1,7 +1,6 @@
 import CaretRight from '@/public/images/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import styles from '@/styles/individual-serie.module.css';
-import Link from 'next/link';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import SerieBannerComponent from '@/components/series/banner/banner';
 import { SERIES } from '@/lib/spas.data';
@@ -70,19 +69,19 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
         <ul>
           {serie.other_series.map(other => (
             <li key={other.title}>
-              <Link href={other.url}>
+              <a href={other.url}>
                 <img src={other.src} alt={other.title} />
-              </Link>
+              </a>
               <div role='contentinfo'>
                 <p className={styles.subheading}>{other.subheading}</p>
-                <Link href={other.url}>
+                <a href={other.url}>
                   <p className={styles.heading}>{other.title}</p>
-                </Link>
+                </a>
                 <p>{other.content}</p>
-                <Link href={other.url}>
+                <a href={other.url}>
                   <span>Descubre la colección</span>
                   <CaretRight />
-                </Link>
+                </a>
               </div>
             </li>
           ))}

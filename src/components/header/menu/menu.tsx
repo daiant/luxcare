@@ -1,7 +1,6 @@
-'use client';
-import Link from 'next/link';
+'use client';;
 import styles from './menu.module.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Waves from '@/public/images/icons/waves.svg';
 import Close from '@/public/images/icons/close.svg';
 import { usePathname } from 'next/navigation';
@@ -30,7 +29,7 @@ export default function Menu() {
     }
   }
   return <div className={styles.wrapper} ref={menu} id={'theme-' + theme}>
-    <Link href="/" className={styles.home}>Luxcare</Link>
+    <a href="/" className={styles.home}>Luxcare</a>
     <div className={styles.burger} onClick={() => setOpen(!open)}>
       {!open && <>
         <span role='button'>Menú</span>
@@ -45,17 +44,16 @@ export default function Menu() {
     <div className={styles.submenu} aria-hidden={!open}>
       <div className={styles.links}>
         <div className={styles.group}>
-          <Link href={'/'}>Inicio</Link>
-          <Link href={'/series'}>Series</Link>
-          <Link href={'/blog'}>Blog</Link>
-          {/* <Link href={'/recommendations'}>Recomendaciones</Link> */}
-          <Link href={'/contact'}>Contacto</Link>
+          <a href={'/'}>Inicio</a>
+          <a href={'/series'}>Series</a>
+          <a href={'/blog'}>Blog</a>
+          <a href={'/contact'}>Contacto</a>
         </div>
         <div className={styles.group}>
-          <Link href={'/series'}>Todas las series</Link>
-          <Link href={'/series/crown'}>Serie Crown</Link>
-          <Link href={'/series/vector'}>Serie Vector</Link>
-          <Link href={'/series/strato'}>Serie Strato</Link>
+          <a href={'/series'}>Todas las series</a>
+          <a href={'/series/crown'}>Serie Crown</a>
+          <a href={'/series/vector'}>Serie Vector</a>
+          <a href={'/series/strato'}>Serie Strato</a>
         </div>
       </div>
     </div>

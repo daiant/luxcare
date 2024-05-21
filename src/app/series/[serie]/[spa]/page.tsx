@@ -1,7 +1,6 @@
 import HomeContactForm from '@/components/home/contact/home-contact';
 import styles from '@/styles/spa.module.css';
 import Image from 'next/image';
-import Link from 'next/link';
 export default function SpaPage() {
   return <main className={styles.main}>
     <div className={styles.product}>
@@ -56,7 +55,7 @@ export default function SpaPage() {
             </ul>
           </article>
         </section>
-        <Link href='/dealers'>Encuentra a tu distribuidor</Link>
+        <a href='/dealers'>Encuentra a tu distribuidor</a>
       </div>
     </div>
     <div className={styles.section}>
