@@ -11,13 +11,13 @@
 body {
   --black: hsl(0, 0%, 14%);
   --white: #fefefe;
-  --background-color: var(--black);
+  --background-color: var(--white);
   --background-1: rgb(61 61 61 / 40%);
   --background-2: #292929;
   --background-4: hsl(0, 0%, 35%);
   --background-5: hsl(0, 0%, 27%);
   --background-9: hsl(0, 0%, 87%);
-  --color: var(--white);
+  --color: var(--black);
   --color-gray: hsl(0, 0%, 70%);
   --color-8: hsl(0, 0%, 80%);
   --accent: hsl(44, 57%, 67%);
