@@ -15,12 +15,13 @@ export default function Footer() {
       <div className={styles.group}>
         <a href='/faq'>Preguntas frecuentes</a>
         <a href='/careers'>Trabaja con nosotros</a>
-        <a href='/appointment'>¿Te llamamos?</a>
+        <a href='/contact'>Contacto</a>
+        <a href='https://www.spa.luxcare.es' target='_blank'>Blog</a>
       </div> <div className={styles.group}>
         <a href='www.instagram.com' target='_blank'>Instagram</a>
         <a href='www.twitter.com' target='_blank'>X</a>
         <a href='www.facebook.com' target='_blank'>Facebook</a>
-        <a href='www.aedin.com' target='_blank'>aedIn</a>
+        <a href='www.linkedin.com' target='_blank'>linkedIn</a>
       </div>
       <div className={styles.group}>
         <a href='/legal/privacy'>Privacidad</a>

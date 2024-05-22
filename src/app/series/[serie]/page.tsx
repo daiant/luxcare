@@ -20,10 +20,9 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
         </header>
         <img src={serie.header} alt={serie.title} />
       </section>
-      <SerieBannerComponent data={serie.mission} />
+      <SerieBannerComponent data={serie.mission} video={serie.video} />
       <section className={styles.media_wrapper}>
         <div className={styles.media}>
-          {/* <video src="/burbuja.webm" autoPlay loop muted playsInline></video> */}
           <img src={serie.cta_2_img} alt={serie.multimedia.right} />
           <p className={styles.media_content}>{serie.multimedia.left}</p>
         </div>
@@ -53,6 +52,10 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           <div className={styles.content}>
             <p role='heading'>{step.title}</p>
             <p role='subheading'>{step.content}</p>
+            {Boolean(step.link) && <a href={step.link}>
+              <span>Conocer más</span>
+              <CaretRight />
+            </a>}
           </div>
         </div>))}
       </section>

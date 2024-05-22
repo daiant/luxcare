@@ -45,15 +45,15 @@ export default function Menu() {
       <div className={styles.links}>
         <div className={styles.group}>
           <a href={'/'}>Inicio</a>
-          <a href={'/series'}>Series</a>
-          <a href={'/blog'}>Blog</a>
-          <a href={'/contact'}>Contacto</a>
+          <a href={'/series/'}>Series</a>
+          <a href='https://www.spa.luxcare.es' target='_blank'>Blog</a>
+          <a href={'/contact/'}>Contacto</a>
         </div>
         <div className={styles.group}>
-          <a href={'/series'}>Todas las series</a>
-          <a href={'/series/crown'}>Serie Crown</a>
-          <a href={'/series/vector'}>Serie Vector</a>
-          <a href={'/series/strato'}>Serie Strato</a>
+          <a href={'/series/'}>Todas las series</a>
+          <a href={'/series/crown/'}>Serie Crown</a>
+          <a href={'/series/vector/'}>Serie Vector</a>
+          <a href={'/series/strato/'}>Serie Strato</a>
         </div>
       </div>
     </div>

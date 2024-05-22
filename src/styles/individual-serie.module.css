@@ -206,6 +206,8 @@
 
 .step .content [role=subheading] {
   margin-block: 1em;
+  line-height: 20px;
+  font-size: 18px;
 }
 
 
@@ -303,6 +305,7 @@
   text-decoration: none !important;
 }
 
+.step a,
 .other_series a {
   color: var(--color);
   font-size: 18px;
@@ -312,6 +315,11 @@
   width: fit-content;
 }
 
+.step a {
+  color: var(--white)
+}
+
+.step a svg,
 .other_series a svg {
   color: var(--accent);
 }

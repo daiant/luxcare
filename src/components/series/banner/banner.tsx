@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './serie-banner.module.css';
 
 
-export default function SerieBannerComponent({ data }: { data: { spa: string, content: string }[] }) {
+export default function SerieBannerComponent({ data, video }: { data: { spa: string, content: string }[], video: string }) {
   const [changing, setChanging] = React.useState(false);
   const [index, setIndex] = React.useState(0);
   const actual = React.useMemo(() => {
@@ -28,6 +28,6 @@ export default function SerieBannerComponent({ data }: { data: { spa: string, co
       <p className={styles.static_content}>Trasciende lo ordinario.</p>
     </div>
     <p className={styles.spa} style={{ opacity: changing ? 0 : 1 }}>{actual.spa}</p>
-    <video src="/images/broll.mp4" loop muted autoPlay playsInline></video>
+    <video src={video} controls muted playsInline></video>
   </section>
 }

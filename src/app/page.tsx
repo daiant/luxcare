@@ -11,7 +11,7 @@ export default function Home() {
     <main className={`snap ${styles.main}`}>
       <section className={styles.banner}>
         <div className={styles.header}>
-          <h2>Simplemente perfecto</h2>
+          {/* <h2>Simplemente perfecto</h2> */}
           <h1>LuxCare Spas</h1>
           <h2>Página en proceso de construcción</h2>
         </div>
@@ -47,7 +47,7 @@ export default function Home() {
             <p className={styles.subtitle}>Distinción. Diseño.</p>
             <p className={styles.title}>Serie Vector</p>
             <p>Despierta emociones</p>
-            <a href="/series/crown">Ver la colección</a>
+            <a href="/series/vector">Ver la colección</a>
           </div>
           <img src={vector.src} alt="Vector" />
         </article>
@@ -56,7 +56,7 @@ export default function Home() {
             <p className={styles.subtitle}>La cumbre. El icono.</p>
             <p className={styles.title}>Serie Strato</p>
             <p>Supera las expectativas</p>
-            <a href="/series/crown">Ver la colección</a>
+            <a href="/series/strato">Ver la colección</a>
           </div>
           <img src={strato.src} alt="Strato" />
         </article>
