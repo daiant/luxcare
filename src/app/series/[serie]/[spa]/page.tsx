@@ -1,79 +1,62 @@
 import HomeContactForm from '@/components/home/contact/home-contact';
 import styles from '@/styles/spa.module.css';
-import Image from 'next/image';
 export default function SpaPage() {
   return <main className={styles.main}>
-    <div className={styles.product}>
-      <aside className={styles.media}>
-        <Image alt='' src='' className={styles.main_image}></Image>
-        <ul className={styles.image_list}>
-          <li>
-            <Image alt='li' src=''></Image>
-          </li>
-        </ul>
-      </aside>
-      <div className={styles.content}>
-        <div role='contentinfo'>
-          <p className={styles.title}>Modelo Euphoria</p>
-          <p className={styles.serie}>Serie Crown</p>
-          <p className={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis reprehenderit tempora, deleniti provident amet tempore delectus libero. Libero, mollitia quod modi ducimus recusandae id impedit cum veritatis unde deleniti temporibus?</p>
+    <section className={styles.product}>
+      <div className={styles.footer}>
+        <p>Serie Crown</p>
+        <p>Modelo Euphoria</p>
+        <p>213x213x90 cm</p>
+        <p>7 personas</p>
+        <a href="/contact" className={styles.link}>Contacta</a>
+      </div>
+      <div className={styles.title_wrapper}>
+        <div className={styles.content}>
+          <h2 className={styles.serie}>Serie Crown</h2>
+          <h1 className={styles.model}>Modelo Euphoria</h1>
         </div>
-        <ul className={styles.interior_selector}>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <ul className={styles.exterior_selector}>
-          <li></li>
-          <li></li>
-        </ul>
-        <section className={styles.details}>
-          <article className={styles.detail}>
-            <header className={styles.header}>Descargas</header>
-            <ul>
-              <li>Descarga 1</li>
-              <li>Descarga 2</li>
+        <div className={styles.configurator}>
+          <p className={styles.title}>Variantes</p>
+          <div className={styles.configuration} id='colors'>
+            <p className={styles.configuration_title}>Colores</p>
+            <ul className={styles.configuration_options}>
+              <li title='negro'></li>
+              <li title='rojo'></li>
+              <li title='blanco'></li>
             </ul>
-          </article>
-          <article className={styles.detail}>
-            <header className={styles.header}>Especificaciones</header>
-            <ul>
-              <li>Especificacion 1</li>
-              <li>Especificacion 2</li>
-            </ul>
-          </article>
-          <article className={styles.detail}>
-            <header className={styles.header}>Materiales</header>
-            <ul>
-              <li>Material 1</li>
-              <li>Material 2</li>
-            </ul>
-          </article>
-        </section>
-        <a href='/dealers'>Encuentra a tu distribuidor</a>
+          </div>
+        </div>
+        <div className={styles.actions}>
+          <a href="/dealers" className={styles.link_secondary}>Encuentra tu distribuidor</a>
+        </div>
       </div>
-    </div>
-    <div className={styles.section}>
-      <div role='contentinfo'>
-        <p>Disenio por</p>
-        <p>Marquis Spas</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur debitis fuga possimus quaerat corrupti repudiandae unde facilis. Voluptatem natus omnis ullam nisi voluptas blanditiis quia pariatur. Hic ex sapiente fuga.</p>
+      <ul className={styles.product_images}>
+        <li><img src="" alt="" /></li>
+        <li><img src="" alt="" /></li>
+        <li><img src="" alt="" /></li>
+        <li><img src="" alt="" /></li>
+        <li><img src="" alt="" /></li>
+      </ul>
+      <div className={styles.product_info}>
+        <details>
+          <summary>Descripción</summary>
+          <p>Lest faccabore quas eatio occum, odisit inihilit dolupta simuscil ipsam ut assit, core si cus, qui dolore volorro rumque volut aut facesserora pratem.  Uditati asitempore eatinum volorpori ut et, nist dolection rem dusant et dolorro odipissim quiae. Luptae volupta tquatquod quamus alitate volupidus excepernam autatas ut volla coriant occus ut vel ipsantium ium as explaccae nisciis ulpa aut dolorum, commos et pelia apiet excersp erorehenia consecum.</p>
+        </details>
+        <details>
+          <summary>Certificaciones</summary>
+          <p>Lest faccabore quas eatio occum, odisit inihilit dolupta simuscil ipsam ut assit, core si cus, qui dolore volorro rumque volut aut facesserora pratem.  Uditati asitempore eatinum volorpori ut et, nist dolection rem dusant et dolorro odipissim quiae. Luptae volupta tquatquod quamus alitate volupidus excepernam autatas ut volla coriant occus ut vel ipsantium ium as explaccae nisciis ulpa aut dolorum, commos et pelia apiet excersp erorehenia consecum.</p>
+        </details>
+        <details>
+          <summary>Especificaciones</summary>
+          <p>Lest faccabore quas eatio occum, odisit inihilit dolupta simuscil ipsam ut assit, core si cus, qui dolore volorro rumque volut aut facesserora pratem.  Uditati asitempore eatinum volorpori ut et, nist dolection rem dusant et dolorro odipissim quiae. Luptae volupta tquatquod quamus alitate volupidus excepernam autatas ut volla coriant occus ut vel ipsantium ium as explaccae nisciis ulpa aut dolorum, commos et pelia apiet excersp erorehenia consecum.</p>
+        </details>
+        <details>
+          <summary>Descripción</summary>
+          <p>Lest faccabore quas eatio occum, odisit inihilit dolupta simuscil ipsam ut assit, core si cus, qui dolore volorro rumque volut aut facesserora pratem.  Uditati asitempore eatinum volorpori ut et, nist dolection rem dusant et dolorro odipissim quiae. Luptae volupta tquatquod quamus alitate volupidus excepernam autatas ut volla coriant occus ut vel ipsantium ium as explaccae nisciis ulpa aut dolorum, commos et pelia apiet excersp erorehenia consecum.</p>
+        </details>
+        
       </div>
-      <Image src='' alt=''></Image>
-    </div>
-    <div className={styles.section}>
-      <div role='contentinfo'>
-        <p>Disenio por</p>
-        <p>Marquis Spas</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur debitis fuga possimus quaerat corrupti repudiandae unde facilis. Voluptatem natus omnis ullam nisi voluptas blanditiis quia pariatur. Hic ex sapiente fuga.</p>
-      </div>
-      <Image src='' alt=''></Image>
-    </div>
+    </section>
     <HomeContactForm />
   </main>
 }
