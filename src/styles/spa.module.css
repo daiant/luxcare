@@ -5,22 +5,24 @@
     flex-wrap: wrap;
     position: relative;
     padding-inline: var(--padding);
+    overflow: hidden;
 }
 
 .product .title_wrapper,
 .product .product_info {
     flex: 1;
-    position: sticky;
-    top: 0;
 }
 .product .product_images {
     flex: 3;
     margin-inline: var(--padding);
-    padding-inline: var(--padding);
+    padding-inline: 16px;
     border-inline: 2px solid var(--color);
+    overflow: scroll;
+    height: 100%;
 }
 .product .product_images li {
-    height: 200px;
+    width: 100%;
+    aspect-ratio: 3 / 4;
     background-color: salmon;
     margin-block-end: 48px;
 }
