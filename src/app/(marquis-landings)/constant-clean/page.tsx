@@ -1,6 +1,6 @@
 import HomeContactForm from '@/components/home/contact/home-contact';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
-import { SERIES } from '@/lib/spas.data';
+import { SERIES } from '@/lib/series.data';
 import styles from '@/styles/marquis-landings.module.css';
 export default function ConstantCleanPage() {
   return <>

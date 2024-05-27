@@ -1,7 +1,7 @@
 import styles from '@/styles/series.module.css';
 import CaretRight from '@/public/images/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
-import { SERIES } from '@/lib/spas.data';
+import { SERIES } from '@/lib/series.data';
 import HomeContactForm from '@/components/home/contact/home-contact';
 export default function SeriesPage() {
 

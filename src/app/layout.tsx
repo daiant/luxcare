@@ -5,7 +5,7 @@ import '@/styles/globals.css'
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
 import { DM_Sans } from 'next/font/google';
 // // Font files can be colocated inside of `app`
-const sans = DM_Sans({ weight: ['400', '500'], subsets: ['latin'] })
+const sans = DM_Sans({ weight: ['400', '500', '700'], subsets: ['latin'] })
 // import localFont from 'next/font/local'
 // const sans = localFont({
 //   src: [

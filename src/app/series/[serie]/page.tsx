@@ -3,7 +3,7 @@ import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import styles from '@/styles/individual-serie.module.css';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import SerieBannerComponent from '@/components/series/banner/banner';
-import { SERIES } from '@/lib/spas.data';
+import { SERIES } from '@/lib/series.data';
 import { notFound } from 'next/navigation';
 
 export default function IndividualSeriePage({ params }: { params: { serie: string } }) {
