@@ -69,3 +69,9 @@
   z-index: 1;
   color: var(--background-color);
 }
+
+@media (max-width: 768px) {
+  .slider li {
+    width: 400px;
+  }
+}

@@ -13,12 +13,24 @@ export const SPAS = {
     },
     variants: [
       {
-        title: 'colores',
+        title: 'Colores Cabina',
         type: 'selector',
-        options: [{
-          title: 'Negro',
-          src: '/images/spas/options/black.webp',
-        }],
+        options: [
+          { title: 'Granito', src: '/images/spas/options/colors/granito.webp' },
+          { title: 'Madera', src: '/images/spas/options/colors/madera.webp' },
+        ],
+      },
+      {
+        title: 'Colores Casco',
+        type: 'selector',
+        options: [
+          { title: 'Alba', src: '/images/spas/options/colors/alba.webp' },
+          { title: 'Glaciar', src: '/images/spas/options/colors/glaciar.webp' },
+          { title: 'Medianoche', src: '/images/spas/options/colors/medianoche.webp' },
+          { title: 'Plata Esterlina', src: '/images/spas/options/colors/plata-esterlina.webp' },
+          { title: 'Sol Toscano', src: '/images/spas/options/colors/sol-toscano.webp' },
+          { title: 'Solsticio', src: '/images/spas/options/colors/solsticio.webp' },
+        ],
       },
     ],
     description: 'El modelo Summit es el refugio definitivo para relajarse y disfrutar del máximo confort.\nTres sillones Adirondack uno al lado del otro miman cada centímetro de tu cuerpo. En el lado opuesto, cuatro asientos de hidromasaje adyacentes brindan un alivio reconfortante, con fácil acceso al jet Regal Whitewater-4™.\n Cuatro zonas H.O.T. proporcionan control y flexibilidad específicos, y su diseño abierto ofrece mucho espacio para estirar las piernas.\nEl Summit no solo ofrece una experiencia de spa de alta gama, sino que también se distingue por su diseño inteligente y su atención al detalle, garantizando que cada sesión de spa sea una experiencia de lujo y relajación incomparable.',
@@ -65,6 +77,11 @@ export const SPAS = {
       value: design_by_marquis,
       src: '/images/marquis.jpg',
       aside_src: '/images/spas/crown/summit/summit_design.webp'
-    }
+    },
+    landing_cards: [
+      { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+      { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+      { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+    ]
   }
 }

@@ -29,7 +29,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
                 <p className={styles.configuration_title}>{titleCase(v.title)}</p>
                 <ul className={styles.configuration_options}>
                   {v.options.map(option => (
-                    <li title='negro' key={option.title}></li>
+                    <li title={option.title} key={option.title} style={{ backgroundImage: `url(${option.src})` }}></li>
                   ))}
                 </ul>
               </div>
@@ -123,21 +123,13 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
       </div>
     </section>
     <section className={styles.cards}>
-      <article className={styles.card}>
-        <h1 className={styles.title}>MicroSilk</h1>
-        <a href="/microsilk" className={styles.link}>Descubre más</a>
-        <img src="/images/beach.jpg" alt="test" className={styles.img} />
-      </article>
-      <article className={styles.card}>
-        <h1 className={styles.title}>HOT Zones</h1>
-        <a href="/microsilk" className={styles.link}>Descubre más</a>
-        <img src="/images/beach.jpg" alt="test" className={styles.img} />
-      </article>
-      <article className={styles.card}>
-        <h1 className={styles.title}>ConstantClean +</h1>
-        <a href="/microsilk" className={styles.link}>Descubre más</a>
-        <img src="/images/beach.jpg" alt="test" className={styles.img} />
-      </article>
+      {spa.landing_cards.map(card => (
+        <article className={styles.card} key={card.title}>
+          <h1 className={styles.title}>{card.title}</h1>
+          <a href={card.href} className={styles.link}>Descubre más</a>
+          <img src={card.src} alt={card.title} className={styles.img} />
+        </article>
+      ))}
     </section>
     <section className={styles.section}>
       <h1 className={styles.title}>Productos relacionados</h1>

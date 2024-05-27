@@ -66,8 +66,8 @@
   }
 
   .configuration_options>* {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     background-color: var(--color);
   }
 }
@@ -98,6 +98,7 @@
   border-bottom: 2px solid;
   padding-block-end: .6em;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .product_info a {
@@ -192,6 +193,7 @@
   justify-content: center;
   align-items: center;
   padding-block-start: 96px;
+  gap: var(--padding);
 
   .main,
   .aside {
@@ -232,12 +234,13 @@
   }
 
   .aside {
+    width: min(500px, 100%);
+
     .img {
-      background-color: salmon;
       max-width: 500px;
       display: block;
-      width: 500px;
-      height: 600px;
+      width: min(500px, 100%);
+      aspect-ratio: 5 / 6;
       object-fit: cover;
       margin-inline: auto;
     }
@@ -254,6 +257,7 @@
     background-color: var(--color);
     color: var(--background-color);
     padding: var(--padding);
+    padding-block-start: max(var(--padding), 48px);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -265,7 +269,8 @@
     overflow: hidden;
 
     .title {
-      font-size: 96px;
+      font-size: 3rem;
+      font-size: clamp(3rem, 2.4rem + 3vw, 6rem);
       font-weight: 500;
       margin-block-end: 0.5em;
     }
@@ -280,11 +285,11 @@
       margin-block-start: auto;
       margin-inline: auto;
       display: block;
-      width: 40%;
+      width: 50%;
       height: auto;
-      aspect-ratio: 1;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
-      background-color: red;
+      border-radius: 8px;
     }
   }
 }
@@ -303,5 +308,36 @@
   100% {
     transform: scale(0.85);
     border-radius: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product .product_images {
+    border-color: transparent;
+  }
+
+  .product_footer {
+    font-size: 20px;
+  }
+
+  .cards .card .img {
+    width: auto;
+    height: 60vh;
+    max-width: 100%;
+  }
+
+  .details .header {
+    display: block;
+  }
+
+  .details .header li {
+    display: flex;
+    justify-content: space-between;
+    border-color: transparent !important;
+    margin-block-start: 32px;
+  }
+
+  .design {
+    flex-direction: column;
   }
 }
