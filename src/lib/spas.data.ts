@@ -53,12 +53,12 @@ export const SPAS = {
       href: '/series/crown'
     },
     details: [
-      { title: "Duradero", src: '/details/1.webp' },
-      { title: "Ergonómico", src: '/details/2.webp' },
-      { title: "Reconfortante", src: '/details/3.webp' },
-      { title: "Elegante", src: '/details/4.webp' },
-      { title: "Potente", src: '/details/5.webp' },
-      { title: "Impactante", src: '/details/6.webp' },
+      { title: "Potente", src: '/images/spas/crown/summit/details/1.webp' },
+      { title: "Ergonómico", src: '/images/spas/crown/summit/details/2.webp' },
+      { title: "Reconfortante", src: '/images/spas/crown/summit/details/3.webp' },
+      { title: "Elegante", src: '/images/spas/crown/summit/details/4.webp' },
+      { title: "Duradero", src: '/images/spas/crown/summit/details/5.webp' },
+      { title: "Impactante", src: '/images/spas/crown/summit/details/6.webp' },
     ],
     design: {
       title: 'Marquis Spas',

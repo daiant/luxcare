@@ -47,7 +47,7 @@ export default function ModelSliderComponent({ items }: { items: { src: string, 
       {items.map((item) => (
         <li key={item.title}>
           <div className={styles.content}>
-            <img src={item.src} alt={item.title} width={250} height={250} className={styles.spa}></img>
+            <img src={item.src} draggable="false" alt={item.title} width={250} height={250} className={styles.spa}></img>
             <p>{item.title}</p>
           </div>
         </li>
