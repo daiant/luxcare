@@ -1,7 +1,7 @@
 import styles from './footer.module.css';
 
 export default function Footer() {
-  return <footer className={styles.footer}>
+  return <><footer className={styles.footer}>
     <div className={styles.header}>
       <div className={styles.cta}>
         <p>Cada día más<br />cerca de nuestros clientes</p>
@@ -29,5 +29,12 @@ export default function Footer() {
         <a href='/legal/tos'>Condiciones</a>
       </div>
     </div>
+
   </footer>
+    <div className={styles.location}>
+      <a href="mailto:info@aquarea.es">info@aquarea.es</a>
+      <a href="tel:+34963368945">963 36 89 45</a>
+      <a href="https://maps.app.goo.gl/6obisiUqU9dm5vjT6" target='_blank'>Carrer 29, 19, 46182 La Canyada, Valencia</a>
+    </div>
+  </>
 }
