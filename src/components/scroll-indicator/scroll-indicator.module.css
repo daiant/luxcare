@@ -1,5 +1,4 @@
 .container {
-  display: grid;
   width: fit-content;
   margin-inline: auto;
   place-content: center;
@@ -9,6 +8,8 @@
 
 .container p {
   position: relative;
+  font-size: 20px;
+  user-select: none;
 }
 
 .container p::after {

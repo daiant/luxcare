@@ -20,32 +20,39 @@
 .main .banner {
   height: 100svh;
   padding: var(--padding);
-  position: relative;
-  display: grid;
-  place-content: center;
+  padding-block-end: 8px;
   background-color: white;
   overflow: hidden;
+  display: grid;
 }
 
-.main .banner .header {
-  grid-column: 1 / 1;
-  align-self: end;
+.main .banner {
   z-index: 1;
-  font-weight: 500;
-  font-size: 7rem;
+  font-size: 3rem;
   padding-block-start: 2em;
   color: var(--black);
+  text-align: center;
 }
 
-.main .banner .header h1,
-.main .banner .header h2 {
+.main .banner h1,
+.main .banner h2 {
+  grid-column: 1 / -1;
+  text-align: center;
   animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
   filter: blur(12px);
   opacity: 0.1;
+  margin-block: 0.2em;
+  font-weight: 500;
 }
 
-.main .banner .header h2 {
+.main .banner h1 {
+  letter-spacing: -1.7px;
+}
+
+.main .banner h2 {
   animation-delay: 0.7s;
+  font-weight: 400;
+  font-size: 22px;
 }
 
 @keyframes text-focus-in {
@@ -61,30 +68,24 @@
 }
 
 .main .banner video {
-  align-self: end;
+  grid-column: 1 / -1;
+  text-align: center;
   height: auto;
   width: 70%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-inline: auto;
+  /* position: absolute; */
   opacity: 0.9;
 
   /* mix-blend-mode: hard-light; */
 }
 
-.main .banner .header h2 {
-  font-weight: 400;
-  font-size: 22px;
-}
 
 .main .banner footer {
-  position: absolute;
-  bottom: var(--padding);
-  width: 100%;
   animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
   filter: blur(12px);
   opacity: 0.1;
+  display: grid;
+  align-items: end;
   animation-delay: 1s;
 }
 
@@ -306,8 +307,8 @@
   }
 
   .main .banner video {
-    width: 120%;
-    top: 30%;
+    width: 100%;
+    margin-block-start: 30%;
   }
 
   .main img.title {

@@ -10,12 +10,12 @@ export default function Home() {
   return (
     <main className={`snap ${styles.main}`}>
       <section className={styles.banner}>
-        <div className={styles.header}>
-          {/* <h2>Simplemente perfecto</h2> */}
-          <h1>LuxCare Spas</h1>
+        <video src="/images/burbuja.webm" loop muted playsInline autoPlay></video>
+        {/* <h2>Simplemente perfecto</h2> */}
+        <div>
+          <h1>Simplemente Perfecto</h1>
           <h2>Página en proceso de construcción</h2>
         </div>
-        <video src="/images/burbuja.webm" loop muted playsInline autoPlay></video>
         <footer>
           <ScrollIndicator />
         </footer>
