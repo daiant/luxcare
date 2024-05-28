@@ -1,87 +1,772 @@
-export const design_by_marquis = "Cada Marquis está diseñado para rendir al máximo. Debajo de los paneles, potentes bombas canalizan el agua optimizada para un flujo máximo. Estas bombas empujan grandes cantidades de agua hacia los asientos diseñados; cada uno pensado para funciones específicas. Desde la hidroterapia hasta la relajación, hay un lugar en un Marquis para ti. Si tu objetivo es pasar tiempo con tu familia y amigos, Marquis ofrece opciones de entretenimiento de primera categoría, incluyendo conexiones Bluetooth y altavoces de la más alta calidad y opciones de acoplamiento.";
+export type Spa = {
+  title: string;
+  serie: string;
+  header: string;
+  video: string;
+  description: string;
+  certifications: Array<{ title: string; type: string; src: string; }>;
+  specifications: Array<{ title: string; value: string; }>;
+  maker: { title: string; href: string; };
+  details: Array<{ title: string; src: string; }>;
+  landing_cards: Array<{ title: string; href: string; src: string; }>;
+  variants: Array<{ title: string; type: string; options: Array<{ title: string; src: string; }> }>;
+  materials: Array<{ type: string; value: string; }>;
+  design: { title: string; value: string; src: string; aside_src: string; };
+}
+const design_by_riviera = {
+  title: 'Riviera Pool',
+  value: 'El Strato 2.1 y el Strato 2.4 presentan diseños elegantes, modernos y lineales que elevan esta serie de piscinas a un punto destacado de tu baño. Estas piscinas son sensacionales donde sea que las coloques, ya sea en interiores o en el jardín. Utilizamos un acrílico sanitario blanco de alta calidad para que el agua parezca fresca y azul. El revestimiento de la piscina está disponible en tres colores y dos opciones diferentes.',
+  src: '/images/spas/strato/rivierapool.webp',
+  aside_src: '/images/spas/strato/header.webp',
+}
+const design_by_marquis = {
+  title: 'Marquis Spas',
+  value: "Cada Marquis está diseñado para rendir al máximo. Debajo de los paneles, potentes bombas canalizan el agua optimizada para un flujo máximo. Estas bombas empujan grandes cantidades de agua hacia los asientos diseñados; cada uno pensado para funciones específicas. Desde la hidroterapia hasta la relajación, hay un lugar en un Marquis para ti. Si tu objetivo es pasar tiempo con tu familia y amigos, Marquis ofrece opciones de entretenimiento de primera categoría, incluyendo conexiones Bluetooth y altavoces de la más alta calidad y opciones de acoplamiento.",
+  src: '/images/marquis.jpg',
+  aside_src: '/images/spas/crown/summit/summit_design.webp',
+};
+const materials = [{ type: 'Interior', value: 'Casco en acrílico' }, { type: 'Exterior', value: 'Cabinete PVC' }];
+const variants = [
+  {
+    title: 'Colores Cabina',
+    type: 'selector',
+    options: [
+      { title: 'Granito', src: '/images/spas/options/colors/granito.webp' },
+      { title: 'Madera', src: '/images/spas/options/colors/madera.webp' },
+    ],
+  },
+  {
+    title: 'Colores Casco',
+    type: 'selector',
+    options: [
+      { title: 'Alba', src: '/images/spas/options/colors/alba.webp' },
+      { title: 'Glaciar', src: '/images/spas/options/colors/glaciar.webp' },
+      { title: 'Medianoche', src: '/images/spas/options/colors/medianoche.webp' },
+      { title: 'Plata Esterlina', src: '/images/spas/options/colors/plata-esterlina.webp' },
+      { title: 'Sol Toscano', src: '/images/spas/options/colors/sol-toscano.webp' },
+      { title: 'Solsticio', src: '/images/spas/options/colors/solsticio.webp' },
+    ],
+  },
+];
 
-export const SPAS = {
-  summit: {
-    title: 'Summit',
-    serie: 'Serie Crown',
-    header: '/images/spas/crown/summit/hero.jpeg',
-    video: '/images/spas/crown/summit/summit_video.mp4',
-    hightlight: {
-      capacity: '7 personas',
-      jets: '53 jets',
-      dimensions: '239 x 239 x 90 cm',
+export const SPAS: { [key: string]: { [key: string]: Spa } } = {
+  crown: {
+    summit: {
+      title: 'Summit',
+      serie: 'Serie Crown',
+      header: '/images/spas/crown/summit/hero.jpeg',
+      video: '/images/spas/crown/summit/summit_video.mp4',
+      description: 'El modelo Summit es el refugio definitivo para relajarse y disfrutar del máximo confort.\nTres sillones Adirondack uno al lado del otro miman cada centímetro de tu cuerpo. En el lado opuesto, cuatro asientos de hidromasaje adyacentes brindan un alivio reconfortante, con fácil acceso al jet Regal Whitewater-4™.\n Cuatro zonas H.O.T. proporcionan control y flexibilidad específicos, y su diseño abierto ofrece mucho espacio para estirar las piernas.\nEl Summit no solo ofrece una experiencia de spa de alta gama, sino que también se distingue por su diseño inteligente y su atención al detalle, garantizando que cada sesión de spa sea una experiencia de lujo y relajación incomparable.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/crown/datasheets/summit.pdf',
+        },
+        {
+          title: 'Garantía Serie Crown - Marquis Spas',
+          type: 'link',
+          src: '/images/images/spas/crown/datasheets/crown.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '239 x 239 x 90 cm' },
+        { title: 'Asientos', value: '7 personas' },
+        { title: 'Jets', value: '65 jets' },
+        { title: 'Bombas', value: '2 x 1817 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/32A/3PH' },
+        { title: 'Filtración', value: '2 filtros' },
+        { title: 'Capacidad', value: '1779 litros' },
+        { title: 'Peso', value: '499 / 2277 kg' },
+      ],
+      maker: {
+        title: "El modelo Summit pertenece a la Serie Crown, de Marquis Spas.",
+        href: '/series/crown'
+      },
+      details: [
+        { title: "Potente", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Ergonómico", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Reconfortante", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Elegante", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Duradero", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Impactante", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
     },
-    variants: [
-      {
-        title: 'Colores Cabina',
-        type: 'selector',
-        options: [
-          { title: 'Granito', src: '/images/spas/options/colors/granito.webp' },
-          { title: 'Madera', src: '/images/spas/options/colors/madera.webp' },
-        ],
+    epic: {
+      title: 'Epic',
+      serie: 'Serie Crown',
+      header: '/images/spas/crown/epic/epic.webp',
+      video: '/images/spas/crown/epic/epic_video.mp4',
+      description: 'El Epic es una verdadera leyenda. Con asientos esculpidos de varios niveles para seis personas, que incluyen una silla Adirondack de cuerpo completo para una terapia potente de pies a cabeza.\nEl asiento de remojo súper profundo te envuelve en calor, apuntando a tu cuello, hombros y columna vertebral.\nCon cinco Zonas H.O.T. - Lumbar, Hombros y Pies - incluyendo un jet Regal Whitewater-4, sin duda recordarás este jacuzzi por generaciones.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/crown/datasheets/epic.pdf',
+        },
+        {
+          title: 'Garantía Serie Crown - Marquis Spas',
+          type: 'link',
+          src: '/images/images/spas/crown/datasheets/crown.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '229 x 229 x 90 cm' },
+        { title: 'Asientos', value: '6 personas' },
+        { title: 'Jets', value: '53 jets' },
+        { title: 'Bombas', value: '2 x 1817 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/32A/3PH' },
+        { title: 'Filtración', value: '2 filtros' },
+        { title: 'Capacidad', value: '1476 litros' },
+        { title: 'Peso', value: '386 / 1814 kg' },
+      ],
+      maker: {
+        title: "El modelo Epic pertenece a la Serie Crown, de Marquis Spas.",
+        href: '/series/crown'
       },
-      {
-        title: 'Colores Casco',
-        type: 'selector',
-        options: [
-          { title: 'Alba', src: '/images/spas/options/colors/alba.webp' },
-          { title: 'Glaciar', src: '/images/spas/options/colors/glaciar.webp' },
-          { title: 'Medianoche', src: '/images/spas/options/colors/medianoche.webp' },
-          { title: 'Plata Esterlina', src: '/images/spas/options/colors/plata-esterlina.webp' },
-          { title: 'Sol Toscano', src: '/images/spas/options/colors/sol-toscano.webp' },
-          { title: 'Solsticio', src: '/images/spas/options/colors/solsticio.webp' },
-        ],
-      },
-    ],
-    description: 'El modelo Summit es el refugio definitivo para relajarse y disfrutar del máximo confort.\nTres sillones Adirondack uno al lado del otro miman cada centímetro de tu cuerpo. En el lado opuesto, cuatro asientos de hidromasaje adyacentes brindan un alivio reconfortante, con fácil acceso al jet Regal Whitewater-4™.\n Cuatro zonas H.O.T. proporcionan control y flexibilidad específicos, y su diseño abierto ofrece mucho espacio para estirar las piernas.\nEl Summit no solo ofrece una experiencia de spa de alta gama, sino que también se distingue por su diseño inteligente y su atención al detalle, garantizando que cada sesión de spa sea una experiencia de lujo y relajación incomparable.',
-    certifications: [
-      {
-        title: 'Ficha técnica',
-        type: 'document',
-        src: '/spas/datasheets.pdf',
-      },
-      {
-        title: 'Garantía Serie Crown - Marquis Spas',
-        type: 'link',
-        src: '#warranty'
-      },
-    ],
-    specifications: [
-      { title: 'Medidas', value: '239 x 239 x 90 cm' },
-      { title: 'Asientos', value: '7 personas' },
-      { title: 'Jets', value: '65' },
-      { title: 'Bombas', value: '2 x 1817 LPM' },
-      { title: 'Electricidad', value: '50 Hz, 230V/32A/3PH' },
-      { title: 'Filtración', value: '2 filtros' },
-      { title: 'Capacidad', value: '1779 litros' },
-      { title: 'Peso', value: '499 / 2277 kg' },
-    ],
-    materials: [
-      { type: 'Interior', value: 'Casco en acrílico' },
-      { type: 'Exterior', value: 'Cabinete PVC' },
-    ],
-    maker: {
-      title: "El modelo Summit pertenece a la Serie Crown, de Marquis Spas.",
-      href: '/series/crown'
+      details: [
+        { title: "Potente", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Ergonómico", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Reconfortante", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Elegante", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Duradero", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Impactante", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
     },
-    details: [
-      { title: "Potente", src: '/images/spas/crown/summit/details/1.webp' },
-      { title: "Ergonómico", src: '/images/spas/crown/summit/details/2.webp' },
-      { title: "Reconfortante", src: '/images/spas/crown/summit/details/3.webp' },
-      { title: "Elegante", src: '/images/spas/crown/summit/details/4.webp' },
-      { title: "Duradero", src: '/images/spas/crown/summit/details/5.webp' },
-      { title: "Impactante", src: '/images/spas/crown/summit/details/6.webp' },
-    ],
-    design: {
-      title: 'Marquis Spas',
-      value: design_by_marquis,
-      src: '/images/marquis.jpg',
-      aside_src: '/images/spas/crown/summit/summit_design.webp'
+    euphoria: {
+      title: 'Euphoria',
+      serie: 'Serie Crown',
+      header: '/images/spas/crown/euphoria/euphoria.jpeg',
+      video: '/images/spas/crown/euphoria/euphoria_video.mp4',
+      description: 'El modelo Euphoria es una celebración real en ciernes.\nPresenta un diseño equilibrado y simétrico con siete asientos de varios niveles, incluyendo dos asientos de terapia extra profunda posicionados uno al lado del otro con masaje de cuerpo completo.\nCada asiento puede acceder al potente jet Regal Whitewater-4 para una terapia intensa en piernas y pies.\n¡Con cinco Zonas H.O.T., tú y tus invitados os sumergiréis en una euforia sin límites!',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/crown/datasheets/euphoria.pdf',
+        },
+        {
+          title: 'Garantía Serie Crown - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/crown/datasheets/crown.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '229 x 229 x 90 cm' },
+        { title: 'Asientos', value: '7 personas' },
+        { title: 'Jets', value: '53 jets' },
+        { title: 'Bombas', value: '2 x 1817 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/32A/3PH' },
+        { title: 'Filtración', value: '2 filtros' },
+        { title: 'Capacidad', value: '1438 litros' },
+        { title: 'Peso', value: '374 / 1812 kg' },
+      ],
+      maker: {
+        title: "El modelo Euphoria pertenece a la Serie Crown, de Marquis Spas.",
+        href: '/series/crown'
+      },
+      details: [
+        { title: "Equilibrado", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Simétrico", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Armonioso", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Relajante", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Elegante", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Exuberante", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
     },
-    landing_cards: [
-      { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
-      { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
-      { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
-    ]
+    destiny: {
+      title: 'Destiny',
+      serie: 'Serie Crown',
+      header: '/images/spas/crown/destiny/destiny.webp',
+      video: '/images/spas/crown/destiny/destiny_video.mp4',
+      description: 'Bienvenidos al modelo Destiny, donde la relajación es inevitable.\nEste santuario cuenta con una configuración de siete asientos de hidromasaje, dispuestos para fomentar conexiones significativas y conversaciones profundas.\nEntre ellos, dos asientos profundos ofrecen alivio específico para las Zonas H.O.T. Estratégicamente posicionado, un asiento de terapia masajea cada músculo a lo largo de tu espalda.\nPotenciado por el formidable jet Regal Whitewater-4, el spa Destiny presenta con orgullo un total de cuatro Zonas H.O.T. Además, los asientos elevados aseguran que cada invitado descubra su propio oasis de comodidad.\nAbraza tu destino, donde te aguarda la tranquilidad!',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/crown/datasheets/destiny.pdf',
+        },
+        {
+          title: 'Garantía Serie Crown - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/crown/datasheets/crown.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '216 x 216 x 90 cm' },
+        { title: 'Asientos', value: '7 personas' },
+        { title: 'Jets', value: '41 jets' },
+        { title: 'Bombas', value: '2 x 1514 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/32A/3PH' },
+        { title: 'Filtración', value: '2 filtros' },
+        { title: 'Capacidad', value: '1173 litros' },
+        { title: 'Peso', value: '318 / 1492 kg' },
+      ],
+      maker: {
+        title: "El modelo Destiny pertenece a la Serie Crown, de Marquis Spas.",
+        href: '/series/crown'
+      },
+      details: [
+        { title: "Profundo", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Amplio", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Diligente", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Acogedor", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Duradero", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Cómodo", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    },
+    resort: {
+      title: 'Resort',
+      serie: 'Serie Crown',
+      header: '/images/spas/crown/resort/resort.webp',
+      video: '/images/spas/crown/resort/resort_video.mp4',
+      description: 'Bienvenidos al Spa Resort, un lugar digno de realeza.\nSu diseño singularmente curvilíneo combina elegancia con comodidad y ofrece una hidroterapia excepcional.\nCon asientos de varios niveles para cinco personas, que incluyen dos Sillas Adirondack dobles: una equipada con jets para la Zona H.O.T. lumbar, la otra con jets para la Zona H.O.T. de los hombros, y ambas con poderosos jets para piernas y pies.\nDos asientos de terapia profunda y un asiento de entrada/refrigeración completan el diseño.',
+      certifications: [
+        {
+          title: 'Ficha técnica', type: 'document',
+          src: '/images/spas/crown/datasheets/resort.pdf',
+        },
+        {
+          title: 'Garantía Serie Crown - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/crown/datasheets/crown.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '216 x 216 x 90 cm' },
+        { title: 'Asientos', value: '5 personas' },
+        { title: 'Jets', value: '50 jets' },
+        { title: 'Bombas', value: '2 x 1514 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/32A/3PH' },
+        { title: 'Filtración', value: '2 filtros' },
+        { title: 'Capacidad', value: '1363 litros' },
+        { title: 'Peso', value: '345 / 1706 kg' },
+      ],
+      maker: {
+        title: "El modelo Resort pertenece a la Serie Crown, de Marquis Spas.",
+        href: '/series/crown'
+      },
+      details: [
+        { title: "Realeza", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Curvilíneo", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Singular", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Acogedor", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Completo", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Revitalizante", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    },
+    wish: {
+      title: 'Wish',
+      serie: 'Serie Crown',
+      header: '/images/spas/crown/wish/wish.webp',
+      video: '/images/spas/crown/wish/wish_video.mp4',
+      description: ' El spa Wish es el reflejo de tus metas en forma de spa.\nCuatro asientos de varios niveles se adaptan a cada tipo de cuerpo, incluido un asiento elevado para calentarse o refrescarse. Además, un lounge de cuerpo completo con espacio generoso para acunarlo en confort cuenta con jets de la Zona H.O.T. lumbar. Un asiento de terapia profunda ofrece jets de la Zona H.O.T. de los hombros.\nAdemás, dos asientos únicos y un asiento de enfriamiento también pueden aprovechar el jet Regal Whitewater-4.\n\nUna parte de los ingresos de la venta del modelo Wish se dona a Make-A-Wish® para ayudar a cumplir los deseos de niños con condiciones de salud críticas.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/crown/datasheets/wish.pdf',
+        },
+        {
+          title: 'Garantía Serie Crown - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/crown/datasheets/crown.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '196 x 196 x 90 cm' },
+        { title: 'Asientos', value: '5 personas' },
+        { title: 'Jets', value: '29 / 30 jets' },
+        { title: 'Bombas', value: '1 x 908 / 2 x 1211 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/32A/3PH' },
+        { title: 'Filtración', value: '1 filtro' },
+        { title: 'Capacidad', value: '984 litros' },
+        { title: 'Peso', value: '273 / 1257 kg' },
+      ],
+      maker: {
+        title: "El modelo Wish  pertenece a la Serie Crown, de Marquis Spas.",
+        href: '/series/crown'
+      },
+      details: [
+        { title: "Rejuvenecedor", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Personalizado", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Único", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Solidario", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Confortable", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Terapéutico", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    },
+    spirit: {
+      title: 'Spirit',
+      serie: 'Serie Crown',
+      header: '/images/spas/crown/spirit/spirit.webp',
+      video: '/images/spas/crown/spirit/spirit_video.mp4',
+      description: 'El Spirit se desliza libremente con su terapia curativa. La entrada frontal curva ofrece un enfoque elegante, con cuatro asientos de hidromasaje para hasta tres personas.\nEl relajante lounge con jets de la Zona H.O.T. de los hombros ofrece terapia de cuerpo completo. El asiento de terapia profunda con jets de la Zona H.O.T. lumbar trabaja todos los músculos de tu espalda.\nAdemás, un asiento de enfriamiento eleva tu corazón por encima del nivel del agua y facilita la entrada y salida.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/crown/datasheets/spirit.pdf',
+        },
+        {
+          title: 'Garantía Serie Crown - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/crown/datasheets/crown.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '168 x 216 x 90 cm' },
+        { title: 'Asientos', value: '4 personas' },
+        { title: 'Jets', value: '32 jets' },
+        { title: 'Bombas', value: '1 x 908 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/32A/3PH' },
+        { title: 'Filtración', value: '1 filtro' },
+        { title: 'Capacidad', value: '1003 litros' },
+        { title: 'Peso', value: '209 / 1211 kg' },
+      ],
+      maker: {
+        title: "El modelo Wish  pertenece a la Serie Crown, de Marquis Spas.",
+        href: '/series/crown'
+      },
+      details: [
+        { title: "Curativo", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Elegante", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Fluido", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Accesible", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Estilizado", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Equilibrado", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    },
+  },
+  vector: {
+    v94: {
+      title: 'V94',
+      serie: 'Serie Vector',
+      header: '/images/spas/vector/v94/v94.webp',
+      video: '/images/spas/vector/v94/v94_video.mp4',
+      description: '¿Buscas un spa grande? ¡El V94 es una verdadera bestia: con 94 pulgadas cuadradas, ofrece todo el espacio que necesitas!\nEl jet Whitewater-4 ofrece una erupción volcánica de terapia revitalizante.\nCon 40 Jetpods y dos bombas de doble velocidad, tienes un spa dinámico diseñado para la multitud.\nEste spa incluye cuatro asientos de masaje especializados, tres asientos de masaje estándar, un banco de enfriamiento, jetpods intercambiables con recubrimiento de acero inoxidable, sistema V-O-L-T™ de alta fluidez, cinco válvulas de control V3 Throttle y ConstantClean™ con SmartClean™.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/vector/datasheets/v94.pdf',
+        },
+        {
+          title: 'Garantía Serie Vector - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/vector/datasheets/vector.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '239 x 239 x 91 cm' },
+        { title: 'Asientos', value: '7 personas' },
+        { title: 'Jets', value: '41 jets' },
+        { title: 'Bombas', value: '2 x 1211 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/1x32A o fase 3' },
+        { title: 'Filtración', value: '2 filtros' },
+        { title: 'Capacidad', value: '1514  litros' },
+        { title: 'Peso', value: '381 / 1894 kg' },
+      ],
+      maker: {
+        title: "El modelo V94 pertenece a la Serie Vector, de Marquis Spas.",
+        href: '/series/vector'
+      },
+      details: [
+        { title: "Amplio", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Robusto", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Dinámico", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Elegante", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Funcional", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Preciso", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    },
+    v94l: {
+      title: 'V94L',
+      serie: 'Serie Vector',
+      header: '/images/spas/vector/v94l/v94l.webp',
+      video: '/images/spas/vector/v94/v94_video.mp4',
+      description: ' ¿Buscas un spa grande con un asiento tipo lounge? ¡El V94L es el hermano del modelo V94, con capacidad para siete personas pero con un lounge de cuerpo completo añadido!\nEl jet Whitewater-4 ofrece una erupción volcánica de terapia revitalizante, especialmente para tus piernas y pies.\nCuenta con 44 Jetpods, dos bombas de doble velocidad y cinco válvulas de control V3 Throttle, cinco asientos de masaje especializados, dos asientos de masaje estándar y el sistema ConstantClean™ con SmartClean™.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/vector/datasheets/v94l.pdf',
+        },
+        {
+          title: 'Garantía Serie Vector - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/vector/datasheets/vector.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '239 x 239 x 91 cm' },
+        { title: 'Asientos', value: '7 personas' },
+        { title: 'Jets', value: '44 jets' },
+        { title: 'Bombas', value: '2 x 1211 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/1x32A o fase 3' },
+        { title: 'Filtración', value: '2 filtros' },
+        { title: 'Capacidad', value: '1685 litros' },
+        { title: 'Peso', value: '381 / 2066 kg' },
+      ],
+      maker: {
+        title: "El modelo V94L pertenece a la Serie Vector, de Marquis Spas.",
+        href: '/series/vector'
+      },
+      details: [
+        { title: "Espacioso", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Relajado", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Vitalizante", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Indulgente", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Eficiente", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Versátil", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    },
+    v84: {
+      title: 'V84',
+      serie: 'Serie Vector',
+      header: '/images/spas/vector/v84/v84.webp',
+      video: '/images/spas/vector/v84/v84_video.mp4',
+      description: 'El spa V84 para seis personas te permite disfrutar con tu familia durante todo el año.\nPerfecto para un grupo, con un asiento elevado que te permite sentir todo el poder del jet Whitewater-4. Un total de 36 Jetpods con el sistema V-O-L-T proporcionan un masaje personalizado.\nAdemás, las cinco válvulas de control V3 Throttle te permiten dirigir la terapia a las áreas problemáticas.\nAdemás, hay que añadirle sus cinco asientos de masaje especializados más un asiento de masaje estándar, un banco de enfriamiento y el sistema ConstantClean™ con SmartClean™.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/vector/datasheets/v84.pdf',
+        },
+        {
+          title: 'Garantía Serie Vector - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/vector/datasheets/vector.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '213 x 213 x 91 cm' },
+        { title: 'Asientos', value: '6 personas' },
+        { title: 'Jets', value: '37 jets' },
+        { title: 'Bombas', value: '2 x 1211 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/1x32A o fase 3' },
+        { title: 'Filtración', value: '2 filtros' },
+        { title: 'Capacidad', value: '1211 litros' },
+        { title: 'Peso', value: '318 / 1530 kg' },
+      ],
+      maker: {
+        title: "El modelo V84 pertenece a la Serie Vector, de Marquis Spas.",
+        href: '/series/vector'
+      },
+      details: [
+        { title: "Innovador", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Duradero", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Eficiente", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Potente", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Elegante", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Satisfactorio", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    },
+    v84l: {
+      title: 'V84L',
+      serie: 'Serie Vector',
+      header: '/images/spas/vector/v84l/v84l.webp',
+      video: '/images/spas/vector/v84/v84_video.mp4',
+      description: 'El spa V84L para cinco personas te asegura una experiencia revitalizante junto a tus amigos.\nEncuentra fácilmente tu asiento de terapia perfecto, además de un lounge tipo commander que ofrece alivio de la cabeza a los pies.\nCon un total de 35 Jetpods, un potente jet Whitewater-4 y cuatro válvulas de control V3 Throttle, tendrás el control que necesitas',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/vector/datasheets/v84l.pdf',
+        },
+        {
+          title: 'Garantía Serie Vector - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/vector/datasheets/vector.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '213 x 213 x 91 cm' },
+        { title: 'Asientos', value: '5 personas' },
+        { title: 'Jets', value: '36 jets' },
+        { title: 'Bombas', value: '2 x 1211 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/1x16A o 1x32A o fase 3' },
+        { title: 'Filtración', value: '2 filtros' },
+        { title: 'Capacidad', value: '1287 litros' },
+        { title: 'Peso', value: '318 / 1605 kg' },
+      ],
+      maker: {
+        title: "El modelo V84L pertenece a la Serie Vector, de Marquis Spas.",
+        href: '/series/vector'
+      },
+      details: [
+        { title: "Versátil", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Robusto", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Funcional", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Adaptable", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Revitalizante", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Acogedor", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    },
+    v77l: {
+      title: 'V77L',
+      serie: 'Serie Vector',
+      header: '/images/spas/vector/v77l/v77l.webp',
+      video: '/images/spas/vector/v77l/v77l_video.mp4',
+      description: 'El spa V77L para cinco personas es el lugar perfecto para conversaciones en familia. Ofrece múltiples posiciones de asiento para acomodar a tu grupo, con espacio suficiente para moverse cómodamente.\nEl lounge tipo Commander de cuerpo completo te permite estirar las piernas.\nUn total de 27 Jetpods con el sistema V-O-L-T proporciona un masaje profesional y tres válvulas de control V3 Throttle ponen la acción al alcance de tus manos.\n\n(El sistema MicroSilk está disponible como opción en la versión V77L de una bomba. No está disponible en la versión V77L de dos bombas).',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/vector/datasheets/v77l.pdf',
+        },
+        {
+          title: 'Garantía Serie Vector - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/vector/datasheets/vector.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '196 x 196 x 91 cm' },
+        { title: 'Asientos', value: '5 personas' },
+        { title: 'Jets', value: '27 jets' },
+        { title: 'Bombas', value: '1x 606LPM/ 2 x 1211 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/1x16A o 1x32A o fase 3' },
+        { title: 'Filtración', value: '1 filtro' },
+        { title: 'Capacidad', value: '1022 litros' },
+        { title: 'Peso', value: '249 / 1272 kg' },
+      ],
+      maker: {
+        title: "El modelo V77L pertenece a la Serie Vector, de Marquis Spas.",
+        href: '/series/vector'
+      },
+      details: [
+        { title: "Personalizable", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Interactivo", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Potente", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Práctico", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Relajante", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Innovador", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    },
+    v65l: {
+      title: 'V65L',
+      serie: 'Serie Vector',
+      header: '/images/spas/vector/v65l/v65l.webp',
+      video: '/images/spas/vector/v65l/v65l_video.mp4',
+      description: 'El modelo V65L es tu oasis personal en casa. Este spa para tres personas, de diseño futurista, se adapta a espacios reducidos gracias a su tamaño compacto. Un cómodo lounge tipo Commander te permite relajarte completamente.\nCon un total de 22 Jetpods, aliviarás los músculos cansados.\nAdemás, el conveniente sistema de 120 voltios Plug-and-Play te permite ubicarlo en cualquier lugar.\nCuenta con tres asientos de masaje especializados, un asiento de enfriamiento, el sistema de alta fluidez V-O-L-T™ con tres válvulas de control V3 Throttle y el sistema ConstantClean™ con SmartClean™.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/vector/datasheets/v65l.pdf',
+        },
+        {
+          title: 'Garantía Serie Vector - Marquis Spas',
+          type: 'link',
+          src: '/images/spas/vector/datasheets/vector.pdf'
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '165 x 213 x 75 cm' },
+        { title: 'Asientos', value: '3 personas' },
+        { title: 'Jets', value: '22 jets' },
+        { title: 'Bombas', value: '1x 454 / 606 LPM' },
+        { title: 'Electricidad', value: '50 Hz, 230V/1x16A o 1x32A o fase 3' },
+        { title: 'Filtración', value: '1 filtro' },
+        { title: 'Capacidad', value: '795 litros' },
+        { title: 'Peso', value: '200 / 994 kg' },
+      ],
+      maker: {
+        title: "El modelo V77L pertenece a la Serie Vector, de Marquis Spas.",
+        href: '/series/vector'
+      },
+      details: [
+        { title: "Moderno", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Elegante", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Futurista", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Práctico", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Personalizable", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Versátil", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [
+        { title: 'MicroSilk', href: '/microsilk', src: '/images/spas/crown/summit/microsilk.webp' },
+        { title: 'ConstantClean+', href: '/constant-clean', src: '/images/spas/crown/summit/constantclean.webp' },
+        { title: 'Flow Control', href: '/flow-control', src: '/images/spas/crown/summit/flow-control.webp' },
+      ],
+      variants,
+      materials,
+      design: design_by_marquis,
+    }
+  },
+  strato: {
+    'strato-21': {
+      title: 'Strato 2.1',
+      serie: 'Serie Vector',
+      header: '/images/spas/strato/strato21/strato21.webp',
+      video: '/images/spas/strato/strato21/strato_video.mp4',
+      description: 'El Strato 2.1 - totalmente renovado - es el spa perfecto para tu baño o terraza, con dimensiones compactas que lo hacen ideal.\nSu diseño moderno y minimalista lo convierte en el centro encantador de tu espacio de baño. La entrada central incluye el skimmer, creando una elegante simetría. Un spa portátil, elegante y moderno en todos los sentidos.\nCon paneles de aluminio y una cubierta patentada Hardtop, este spa se convierte en el nuevo punto destacado, ya sea en el interior de la vivienda o en el jardín.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/strato/datasheets/strato21.pdf',
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '216 x 216 x 93 cm' },
+        { title: 'Asientos', value: '2 personas' },
+        { title: 'Jets', value: '30 jets' },
+        { title: 'Bombas', value: '1x 2,5 CV' },
+        { title: 'Capacidad', value: '1200 litros' },
+        { title: 'Peso', value: '380 / 1580 kg' },
+      ],
+      maker: {
+        title: " El modelo 2.1 pertenece a la Serie Strato, de Riviera Pool.",
+        href: '/series/strato'
+      },
+      details: [
+        { title: "Moderno", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Simétrico", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Sofisticado", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Compacto", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Comodidad", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Estética", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [],
+      variants,
+      materials,
+      design: design_by_riviera,
+    },
+    'strato-24': {
+      title: 'Strato 2.4',
+      serie: 'Serie Vector',
+      header: '/images/spas/strato/strato24/strato24.webp',
+      video: '/images/spas/strato/strato21/strato_video.mp4',
+      description: 'Su diseño moderno y lineal convierte este spa en el encantador centro de atención de tu área de baño. La cómoda entrada central también incorpora el skimmer, creando así una elegante simetría.\nUn spa portátil, tan moderno y elegante como puede ser. Gracias a los paneles de aluminio modernos, esta piscina se convierte en el nuevo punto culminante, ya sea en el interior o en el jardín.\nDiferentes boquillas de masaje tienen diferentes efectos.\nCada zona del cuerpo tiene sus problemas específicos. Por lo tanto, es importante que el equipamiento de boquillas de cada lugar de masaje esté adaptado al cuerpo. Un baño de hidromasaje de 15 minutos aumenta su nivel de oxígeno en sangre en aproximadamente un 10 %.',
+      certifications: [
+        {
+          title: 'Ficha técnica',
+          type: 'document',
+          src: '/images/spas/strato/datasheets/strato24.pdf',
+        },
+      ],
+      specifications: [
+        { title: 'Medidas', value: '236 x 236 x 92 cm' },
+        { title: 'Asientos', value: '4 personas' },
+        { title: 'Jets', value: '36 jets' },
+        { title: 'Reposacabezas', value: '5' },
+        { title: 'Bombas', value: '1x 2,5 CV' },
+        { title: 'Capacidad', value: '1660 litros' },
+        { title: 'Peso', value: '410 / 2070 kg' },
+      ],
+      maker: {
+        title: " El modelo 2.4 pertenece a la Serie Strato, de Riviera Pool.",
+        href: '/series/strato'
+      },
+      details: [
+        { title: "Moderno", src: '/images/spas/crown/summit/details/1.webp' },
+        { title: "Simétrico", src: '/images/spas/crown/summit/details/2.webp' },
+        { title: "Sofisticado", src: '/images/spas/crown/summit/details/3.webp' },
+        { title: "Compacto", src: '/images/spas/crown/summit/details/4.webp' },
+        { title: "Comodidad", src: '/images/spas/crown/summit/details/5.webp' },
+        { title: "Estética", src: '/images/spas/crown/summit/details/6.webp' },
+      ],
+      landing_cards: [],
+      variants,
+      materials,
+      design: design_by_riviera,
+    }
   }
 }

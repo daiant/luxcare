@@ -2,17 +2,19 @@ import HomeContactForm from '@/components/home/contact/home-contact';
 import ModelSliderComponent from '@/components/models/model-slider/model-slider';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import { SERIES } from '@/lib/series.data';
-import { SPAS, design_by_marquis } from '@/lib/spas.data';
+import { SPAS } from '@/lib/spas.data';
 import styles from '@/styles/spa.module.css';
 import { notFound } from 'next/navigation';
 export default function SpaPage({ params }: { params: { serie: string, spa: string } }) {
   const titleCase = (value: string): string => { return value.substring(0, 1).toUpperCase() + value.substring(1) };
 
-  const slug = params.spa;
-  const spa = SPAS[slug as keyof typeof SPAS];
+  const serie = SPAS[params.serie];
+  if (!serie) { notFound(); }
 
+  const spa = serie[params.spa];
   if (!spa) notFound()
 
+  const getSpecification = (value: string): string => { return spa.specifications.find(d => d.title.toLowerCase() === value.toLowerCase())?.value ?? ''; };
   return <main className={styles.main}>
     <div className={styles.product_wrapper}>
       <section className={styles.product}>
@@ -20,7 +22,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
           <div className={styles.content}>
             <h2 className={styles.serie}>Serie {titleCase(params.serie)}</h2>
             <h1 className={styles.model}>Modelo {titleCase(params.spa)}</h1>
-            <p>{spa.hightlight.jets}, {spa.hightlight.capacity}</p>
+            <p>{getSpecification('jets')}, {getSpecification('asientos')}</p>
           </div>
           <div className={styles.configurator}>
             <p className={styles.title}>Variantes</p>
@@ -39,9 +41,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
             <a href="/dealers" className={styles.link_secondary}>Encuentra tu distribuidor</a>
           </div>
         </div>
-        <ul className={styles.product_images}>
-          <li><img src={spa.header} alt={spa.title} /></li>
-        </ul>
+        <img className={styles.product_images} src={spa.header} alt={spa.title} />
         <div className={styles.product_info}>
           <details open>
             <summary>Descripción</summary>
@@ -50,7 +50,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
           <details>
             <summary>Certificaciones</summary>
             {spa.certifications.map(certification => (
-              <p key={certification.title}><a href={certification.src}>{certification.title}</a></p>
+              <p key={certification.title}><a href={certification.src} target='_blank'>{certification.title}</a></p>
             ))}
           </details>
           <details>
@@ -82,8 +82,8 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
       <div className={styles.product_footer}>
         <p>Serie {titleCase(params.serie)}</p>
         <p>Modelo {titleCase(params.spa)}</p>
-        <p>{spa.hightlight.dimensions}</p>
-        <p>{spa.hightlight.capacity}</p>
+        <p>{getSpecification('medidas')}</p>
+        <p>{getSpecification('asientos')}</p>
         <a href="/contact" className={styles.link}>Contacta</a>
       </div>
     </div>
@@ -94,19 +94,19 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
       <ul className={styles.header}>
         <li className={styles.detail}>
           <p className={styles.title}>Personas</p>
-          <p className={styles.content}>7</p>
+          <p className={styles.content}>{getSpecification('asientos').split(' ')[0]}</p>
         </li>
         <li className={styles.detail}>
           <p className={styles.title}>Jets</p>
-          <p className={styles.content}>53</p>
+          <p className={styles.content}>{getSpecification('jets').split(' ')[0]}</p>
         </li>
         <li className={styles.detail}>
           <p className={styles.title}>Peso</p>
-          <p className={styles.content}>300 Kg</p>
+          <p className={styles.content}>{getSpecification('peso').split('/')[0]} Kg</p>
         </li>
         <li className={styles.detail}>
           <p className={styles.title}>Volumen</p>
-          <p className={styles.content}>1800 L</p>
+          <p className={styles.content}>{getSpecification('capacidad').split(' ')[0]} l</p>
         </li>
       </ul>
       <ModelSliderComponent items={spa.details} />
@@ -139,4 +139,15 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
       <HomeContactForm />
     </section>
   </main>
+}
+
+export async function generateStaticParams() {
+  const params: Array<{ serie: string; spa: string }> = [];
+  const series = Object.keys(SPAS);
+  series.forEach((serie, index) => {
+    const spas = Object.keys((SPAS as any)[series[index]]);
+    spas.forEach(spa => params.push({ serie, spa }));
+  })
+
+  return params;
 }

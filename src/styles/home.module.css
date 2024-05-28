@@ -140,7 +140,7 @@
   padding: max(var(--padding), 96px) calc(var(--padding) * 1.5);
   background-color: black;
   position: sticky;
-  top: 0;
+  top: 64px;
   animation: transformate linear both;
   animation-timeline: view();
   overflow: hidden;

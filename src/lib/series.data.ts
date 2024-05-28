@@ -58,49 +58,56 @@ export const crown = {
       serie: 'Crown',
       capacity: '5 personas',
       jets: '50 jets',
-      src: '/images/spas/crown/models/resort.webp'
+      src: '/images/spas/crown/models/resort.webp',
+      href: '/series/crown/resort'
     },
     {
       title: 'Summit',
       serie: 'Crown',
       capacity: '7 personas',
       jets: '65 jets',
-      src: '/images/spas/crown/models/summit.webp'
+      src: '/images/spas/crown/models/summit.webp',
+      href: '/series/crown/summit'
     },
     {
       title: 'Epic',
       serie: 'Crown',
       capacity: '6 personas',
       jets: '53 jets',
-      src: '/images/spas/crown/models/epic.webp'
+      src: '/images/spas/crown/models/epic.webp',
+      href: '/series/crown/epic'
     },
     {
       title: 'Euphoria',
       serie: 'Crown',
       capacity: '7 personas',
       jets: '53 jets',
-      src: '/images/spas/crown/models/euphoria.webp'
+      src: '/images/spas/crown/models/euphoria.webp',
+      href: '/series/crown/euphoria'
     },
     {
       title: 'Destiny',
       serie: 'Crown',
       capacity: '7 personas',
       jets: '41 jets',
-      src: '/images/spas/crown/models/destiny.webp'
+      src: '/images/spas/crown/models/destiny.webp',
+      href: '/series/crown/destiny'
     },
     {
       title: 'Wish',
       serie: 'Crown',
       capacity: '5 personas',
       jets: '29 - 30 jets',
-      src: '/images/spas/crown/models/wish.webp'
+      src: '/images/spas/crown/models/wish.webp',
+      href: '/series/crown/wish'
     },
     {
       title: 'Spirit',
       serie: 'Crown',
       capacity: '3 personas',
       jets: '32 jets',
-      src: '/images/spas/crown/models/spirit.webp'
+      src: '/images/spas/crown/models/spirit.webp',
+      href: '/series/crown/spirit'
     },
   ],
   other_series: [
@@ -183,42 +190,48 @@ export const vector = {
       serie: 'Vector',
       capacity: '7 personas',
       jets: '41 jets',
-      src: '/images/spas/vector/models/V94.webp'
+      src: '/images/spas/vector/models/V94.webp',
+      href: '/series/vector/v94'
     },
     {
       title: 'V94L',
       serie: 'Vector',
       capacity: '7 personas',
       jets: '44 jets',
-      src: '/images/spas/vector/models/V94L.webp'
+      src: '/images/spas/vector/models/V94L.webp',
+      href: '/series/vector/v94l'
     },
     {
       title: 'V84',
       serie: 'Vector',
       capacity: '6 personas',
       jets: '37 jets',
-      src: '/images/spas/vector/models/V84L.webp'
+      src: '/images/spas/vector/models/V84L.webp',
+      href: '/series/vector/v84l'
     },
     {
       title: 'V84L',
       serie: 'Vector',
       capacity: '5 personas',
       jets: '36 jets',
-      src: '/images/spas/vector/models/V84L.webp'
+      src: '/images/spas/vector/models/V84L.webp',
+      href: '/series/vector/v84l'
     },
     {
       title: 'V77L',
       serie: 'Vector',
       capacity: '5 personas',
       jets: '27 jets',
-      src: '/images/spas/vector/models/V77L.webp'
+      src: '/images/spas/vector/models/V77L.webp',
+      href: '/series/vector/v77l'
     },
     {
       title: 'V65L',
       serie: 'Vector',
       capacity: '3 personas',
       jets: '22 jets',
-      src: '/images/spas/vector/models/V65L.webp'
+      src: '/images/spas/vector/models/V65L.webp',
+      href: '/series/vector/v65l'
     },
   ],
   other_series: [
@@ -251,7 +264,7 @@ export const strato = {
     bottom: 'en interiores y exteriores',
     content: 'El elegante, moderno y lineal diseño eleva esta serie de spas al máximo nivel de confort. Los prácticos escalones de entrada central, el inteligente equipamiento de chorros y las sofisticadas áreas de masaje garantizan una experiencia de bienestar pura.'
   },
-  video: '/images/broll.mp4',
+  video: '/images/spas/strato/broll.mp4',
   mission: [
     { spa: "Strato 2.1", content: 'Redefine el concepto.' },
     { spa: "Strato 2.4", content: 'Supera las expectativas.' },
@@ -290,14 +303,16 @@ export const strato = {
       serie: 'Strato',
       capacity: '4 personas',
       jets: '30 jets',
-      src: '/images/spas/strato/models/strato_21.webp'
+      src: '/images/spas/strato/models/strato_21.webp',
+      href: '/series/strato/strato-21'
     },
     {
       title: 'Strato 2.4',
       serie: 'Strato',
       capacity: '5 personas',
       jets: '36 jets',
-      src: '/images/spas/strato/models/strato_24.webp'
+      src: '/images/spas/strato/models/strato_24.webp',
+      href: '/series/strato/strato-24'
     },
   ],
   other_series: [
@@ -306,15 +321,14 @@ export const strato = {
       subheading: 'Elegancia. Exclusividad.',
       content: 'Redefine el estándar de lujo y rendimiento en hidromasaje. Nacida de la galardonada Serie Signature y potenciada por las mejores características terapéuticas, la Serie Crown representa una arquitectura de sistema completamente nueva.',
       url: '/series/crown',
-      src: '/images/spas/crown.webp'
-
+      src: '/images/spas/crown.webp',
     },
     {
       title: 'Serie Vector',
       subheading: 'Potencia. Distinción.',
       content: 'Flujo y una fuerza nunca antes vistos: un control y una versatilidad incomparables en cualquier otro concepto de sistema avanzado. Comando y control individuales, perfectamente diseñados para transportar una experiencia completa de spa.',
       url: '/series/vector',
-      src: '/images/spas/vector.webp'
+      src: '/images/spas/vector.webp',
     },
   ]
 

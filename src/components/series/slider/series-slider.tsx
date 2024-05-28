@@ -5,7 +5,7 @@ import React from 'react';
 
 
 let pos = { x: 0, y: 0, left: 0, top: 0 }
-export default function SeriesSliderComponent({ models }: { models: { src: string, title: string, serie: string, capacity: string, jets: string }[] }) {
+export default function SeriesSliderComponent({ models }: { models: { src: string, title: string, serie: string, capacity: string, jets: string, href: string }[] }) {
   const slider = React.useRef<HTMLUListElement>(null);
 
   function handleMouseDown(e: React.MouseEvent) {
@@ -53,7 +53,7 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
           </div>
           <div className={styles.info_wrapper} >
             <div className={styles.info}>
-              <a className={styles.title} href={'/series/crown/the-resort'}>{model.title}</a>
+              <a className={styles.title} href={model.href}>{model.title}</a>
               <div className={styles.details}>
                 <div className={styles.detail}>
                   <p>Serie</p>
@@ -67,7 +67,7 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
                   <p>Jets</p>
                   <p>{model.jets}</p>
                 </div>
-                <a className={styles.detail} href={'/series/crown/the-resort'}>Descubre más</a>
+                <a className={styles.detail} href={model.href}>Descubre más</a>
               </div>
             </div>
           </div>
