@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
   border: none;
-  border-bottom: 2px solid var(--background-5);
+  border-bottom: 1px solid var(--background-5);
   background-color: var(--background-color);
   color: var(--color);
   padding: 8px 24px;
@@ -14,12 +14,14 @@
 }
 
 .wrapper:focus-within {
+  border-width: 2px;
   border-color: var(--background-4);
 }
 
 .label {
   display: flex;
   flex-direction: column;
+  width: 100%;
   color: var(--color);
   font-size: 14px;
   gap: 4px;

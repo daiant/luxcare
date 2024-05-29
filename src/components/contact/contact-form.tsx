@@ -1,4 +1,4 @@
-'use client';;
+'use client';
 import { FormEventHandler } from 'react';
 import styles from './contact-form.module.css';
 import Input from '../form/input/input';
@@ -24,11 +24,11 @@ export default function ContactForm({ onSubmit, submitted, className }: { onSubm
 
     <div className={styles.actions}>
       <span aria-hidden={!submitted} className={styles.info}>Mensaje enviado correctamente!</span>
-      <button className={styles.button}>Contactar</button>
       <label className={missingTOS ? styles.missingTOS : ''}>
         <input type="checkbox" name="tos" id="tos" />
-        Acepto los <a href="/legal/tos" target="_blank">términos y condiciones</a>
+        <span>Acepto los <a href="/legal/tos" target="_blank">términos y condiciones</a></span>
       </label>
+      <button className={styles.button}>Contactar</button>
     </div>
   </form>
 }

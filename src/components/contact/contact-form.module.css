@@ -1,34 +1,18 @@
 .form {
-  grid-column: 7 / 13;
+  grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 16px;
+  gap: 32px;
 }
 
-.form .input_wrapper {
-  flex-grow: 1;
-  width: 100%;
+.form>*:first-child {
+  border-top: 1px solid var(--background-5);
+  padding-block-start: 32px;
 }
-
-.form .input_wrapper p {
-  margin-inline-start: 6px;
-  margin-block-start: 4px;
-  cursor: pointer;
-}
-
-.form .input_wrapper p:hover {
-  text-decoration: underline;
-}
-
 
 .actions {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
 }
 
 .actions .info {
@@ -38,12 +22,27 @@
   font-size: 18px;
 }
 
+.actions label {
+  display: block;
+  font-size: 20px;
+  margin-block-end: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.actions label input {
+  width: 20px;
+  height: 20px;
+}
+
 .actions .info[aria-hidden="false"] {
   opacity: 1;
   margin-block: 16px;
 }
 
 .actions .button {
+  display: block;
+  margin-inline-start: auto;
   background-color: var(--color);
   color: var(--background-color);
   font-family: var(--font-main);
