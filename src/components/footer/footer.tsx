@@ -1,3 +1,4 @@
+import Logo from '@/public/images/logo.svg';
 import styles from './footer.module.css';
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
         <p>Cada día más<br />cerca de nuestros clientes</p>
       </div>
       <div className={styles.main}>
-        <p>LuxCare Spas</p>
+        <Logo className={styles.logo} />
         <span>Copyright 2024 LuxCare Spas</span>
       </div>
     </div>

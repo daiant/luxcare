@@ -94,6 +94,13 @@
   margin-block: 0;
 }
 
+.main .logo {
+  color: var(--white);
+  width: auto;
+  display: block;
+  margin-block-end: 16px;
+}
+
 .main p {
   font-size: 36px;
   text-transform: uppercase;
