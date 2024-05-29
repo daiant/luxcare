@@ -18,20 +18,36 @@
 
 /* Banner */
 .main .banner {
-  height: 100svh;
-  padding: var(--padding);
-  padding-block-end: 8px;
   background-color: white;
-  overflow: hidden;
-  display: grid;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  height: 100svh;
+  padding-block-end: 8px;
+  padding-block-start: 2em;
+  padding: var(--padding);
+  text-align: center;
+  z-index: 1;
 }
 
-.main .banner {
-  z-index: 1;
-  font-size: 3rem;
-  padding-block-start: 2em;
-  color: var(--black);
-  text-align: center;
+.main .banner>* {}
+
+.main .banner .video {
+  flex: 1;
+  position: relative;
+}
+
+.main .banner .video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main .banner .title {
+  margin-block-end: 32px;
+  margin-block-start: -64px;
 }
 
 .main .banner h1,
@@ -306,10 +322,10 @@
     font-size: 5rem;
   }
 
-  .main .banner video {
+  /* .main .banner video {
     width: 100%;
     margin-block-start: 30%;
-  }
+  } */
 
   .main img.title {
     margin-block-start: 64px;

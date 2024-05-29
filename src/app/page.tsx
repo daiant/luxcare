@@ -10,9 +10,11 @@ export default function Home() {
   return (
     <main className={`snap ${styles.main}`}>
       <section className={styles.banner}>
-        <video src="/images/burbuja.webm" loop muted playsInline autoPlay></video>
+        <div className={styles.video}>
+          <video src="/images/burbuja.webm" loop muted playsInline autoPlay></video>
+        </div>
         {/* <h2>Simplemente perfecto</h2> */}
-        <div>
+        <div className={styles.title}>
           <h1>Simplemente Perfecto</h1>
           <h2>Página en proceso de construcción</h2>
         </div>
