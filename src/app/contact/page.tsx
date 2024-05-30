@@ -36,7 +36,7 @@ export default function Contact() {
       <div className={styles.info}>
         <div>
           <span>Email</span>
-          <a href="mailto:info@aquarea.es">info@aquarea.es</a>
+          <a href="mailto:info@luxcare.es">info@luxcare.es</a>
         </div>
         <div>
           <span>Teléfono</span>

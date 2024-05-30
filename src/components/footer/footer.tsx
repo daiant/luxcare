@@ -33,7 +33,7 @@ export default function Footer() {
 
   </footer>
     <div className={styles.location}>
-      <a href="mailto:info@aquarea.es">info@aquarea.es</a>
+      <a href="mailto:info@luxcare.es">info@luxcare.es</a>
       <a href="tel:+34963368945">963 36 89 45</a>
       <a href="https://maps.app.goo.gl/6obisiUqU9dm5vjT6" target='_blank'>Carrer 29, 19, 46182 La Canyada, Valencia</a>
     </div>

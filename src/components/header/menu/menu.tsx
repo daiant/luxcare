@@ -56,6 +56,17 @@ export default function Menu() {
           <a href={'/series/strato/'}>Serie Strato</a>
         </div>
       </div>
+      <div className={styles.footer}>
+        <div className={styles.group}>
+          <a href="//facebook.com">Facebook</a>
+          <a href="//x.com">X</a>
+          <a href="//linkedin.com">LinkedIn</a>
+          <a href="//instagram">Instagram</a>
+        </div>
+        <div className={styles.group}>
+          <a href="/about">Simplemente perfecto</a>
+        </div>
+      </div>
     </div>
   </div >
 }
