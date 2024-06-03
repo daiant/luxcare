@@ -1,4 +1,4 @@
-'use client';;
+'use client';
 import styles from './menu.module.css';
 import React, { useState } from 'react';
 import Waves from '@/public/images/icons/waves.svg';
