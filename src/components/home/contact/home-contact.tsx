@@ -53,18 +53,22 @@ export default function HomeContactForm() {
     obj['token'] = token;
     const headers = new Headers();
     headers.set("Content-Type", "application/json");
-    const response = await fetch('https://www.luxcare.vercel.app/api/v1/contact', { method: "POST", body: JSON.stringify(obj), headers });
-    setLoading(false);
-    if (response.ok) {
-      setDialogVisible(true);
-    }
-    else {
-      if (!Boolean(obj.name) && !Boolean(obj.email)) {
-        setError([true, false]);
+    try {
+      const response = await fetch('https://luxcare-backoffice.vercel.app/api/v1/contact', { method: "POST", body: JSON.stringify(obj), headers });
+      if (response.ok) {
+        setDialogVisible(true);
       }
-      else setError([false, true])
+      else {
+        if (!Boolean(obj.name) && !Boolean(obj.email)) {
+          setError([true, false]);
+        }
+        else setError([false, true])
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
-
   }, [executeRecaptcha, form.current]);
 
   return <div className={styles.container}>
