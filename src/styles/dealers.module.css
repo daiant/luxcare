@@ -1,4 +1,4 @@
-.wrapper {
+.wrapper>section {
   padding-inline: var(--padding);
 }
 
@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  overflow-x: clip;
 }
 
 .header .content {
@@ -38,7 +39,6 @@
 .header .object {
   width: 400px;
   height: 711px;
-  border: 1px solid salmon;
   grid-row: 1 / -1;
   position: relative;
   display: grid;
@@ -46,27 +46,54 @@
   justify-items: center;
 }
 
-.header .object>div {
-  position: relative;
-  width: 80%;
-  height: 80%;
-  border: 10px solid blue;
-  box-sizing: border-box;
-}
-
 .header .object.left {
   grid-column: 1 / 4;
+  animation: go-left linear both;
+  animation-timeline: scroll();
+  animation-duration: 1ms;
+  /* Firefox requires this to apply the animation */
 }
 
-.header .object.left div {
-  transform: rotate(-8deg);
+@keyframes go-left {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-200%, -130%);
+  }
 }
 
 .header .object.right {
   grid-column: 10 / 13;
+  animation: go-right linear both;
+  animation-timeline: scroll();
+  animation-duration: 1ms;
 }
 
-.header .object.right div {
+@keyframes go-right {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(200%, 130%);
+  }
+}
+
+.header .object>img {
+  position: relative;
+  width: 80%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+
+.header .object.left img {
+  transform: rotate(-8deg);
+}
+
+.header .object.right img {
   transform: rotate(8deg);
 }
 
@@ -74,9 +101,22 @@
   height: calc(100svh - 54px);
   padding-block: var(--padding);
   display: flex;
-  gap: 32px;
-  flex-wrap: wrap-reverse;
+  flex-direction: column;
+  gap: var(--padding);
+}
+
+.fad .content {
+  display: flex;
+  gap: 0 32px;
+  flex-wrap: wrap;
   overflow: hidden;
+  flex: 1;
+}
+
+.fad h1 {
+  width: 100%;
+  font-size: var(--title-font-s);
+  font-weight: 500;
 }
 
 .fad aside {
@@ -84,6 +124,15 @@
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+}
+
+.fad aside input {
+  border: none;
+  border-bottom: 2px solid;
+  font-size: 18px;
+  line-height: 22px;
+  padding-block: 0.3em;
+  outline: 0;
 }
 
 .fad aside ul {
@@ -169,11 +218,22 @@
 }
 
 .keys .main aside {
-  border: 1px solid;
+  border-radius: 16px;
+  box-shadow: 4px 4px 4px -2px #00000055;
+  overflow: hidden;
   flex-basis: 40%;
   flex-grow: 0;
   flex-shrink: 0;
   aspect-ratio: 4 / 3;
+  position: relative;
+}
+
+.keys .main img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .keys .list {

@@ -160,6 +160,8 @@
   top: 64px;
   animation: transformate linear both;
   animation-timeline: view();
+  animation-duration: 1ms;
+  /* Firefox requires this to apply the animation */
   overflow: hidden;
 
 }
