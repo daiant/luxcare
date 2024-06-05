@@ -46,6 +46,7 @@ export default function Menu() {
         <div className={styles.group}>
           <a href={'/'}>Inicio</a>
           <a href={'/series/'}>Series</a>
+          <a href={'/dealers/'}>Distribuidores</a>
           <a href='https://www.spa.luxcare.es' target='_blank'>Blog</a>
           <a href={'/contact/'}>Contacto</a>
         </div>

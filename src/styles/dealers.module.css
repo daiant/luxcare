@@ -15,6 +15,8 @@
   text-align: center;
   grid-column: 3 / 11;
   grid-row: 2 / -1;
+  position: relative;
+  z-index: 1;
 }
 
 .header .content h1 {
@@ -149,6 +151,12 @@
   gap: 16px;
   padding-block-end: 16px;
   border-bottom: 2px solid;
+  font-size: 16px;
+}
+
+.fad aside .name {
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .fad aside ul li a {
@@ -168,12 +176,20 @@
 }
 
 .about_cta {
-  height: calc(100svh - 54px);
+  /* height: calc(100svh - 54px); */
+  height: 300svh;
   padding-block-end: var(--padding);
+  position: relative;
+}
+
+.about_cta .content {
+  height: calc(100svh - 54px);
   display: grid;
   grid-template-rows: 1fr;
-  align-items: end;
   grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  position: sticky;
+  top: 0;
 }
 
 .about_cta .content h1 {
@@ -196,9 +212,26 @@
 }
 
 .about_cta img {
-  border: 1px solid;
   grid-column: 3 / -1;
   aspect-ratio: 4 / 3;
+  width: 100%;
+  object-fit: cover;
+  animation: scale linear both;
+  animation-duration: 1ms;
+  border-radius: 16px;
+  box-shadow: 4px 4px 4px -2px #00000055;
+  animation-timeline: view();
+  transform-origin: bottom right;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(2);
+  }
 }
 
 .keys {
@@ -256,4 +289,68 @@
   line-height: 22px;
   padding-inline: 16px;
   padding-block-start: 0.6em;
+}
+
+@media (max-width:1200px) {
+  .header .content {
+    grid-column: 1 / 9;
+    text-align: left;
+  }
+
+  .header .content p {
+    margin-inline-start: 0;
+  }
+
+  .header .object.left {
+    display: none;
+  }
+
+  .fad aside {
+    flex-grow: 1;
+  }
+
+  .about_cta {
+    height: unset;
+  }
+
+  .about_cta .content {
+    display: flex;
+    flex-direction: column;
+    padding-block: 96px;
+    gap: 96px;
+  }
+
+  .about_cta img {
+    animation: none !important;
+  }
+
+  .keys .main {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    display: block;
+  }
+
+  .header .content {
+    text-align: center;
+    margin-block-end: 64px;
+    margin-block-start: 96px;
+  }
+
+  .header .content p {
+    margin-inline: auto;
+    width: unset;
+  }
+
+  .header .object.right {
+    align-items: start;
+  }
+
+  .header .object.right img {
+    width: 50%;
+  }
+
 }

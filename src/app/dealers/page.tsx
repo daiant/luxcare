@@ -44,11 +44,13 @@ export default function DealersPage() {
     </section>
     <section className={styles.about_cta}>
       <div className={styles.content}>
-        <h1>Tu destino preferido: una experiencia spa de alta gama</h1>
-        <p>Nos esforzamos por fusionar la estética con la funcionalidad, creando un mundo de sensaciones y emociones.</p>
-        <a href="/about">Sobre nosotros</a>
+        <div className={styles.title}>
+          <h1>Tu destino preferido: una experiencia spa de alta gama</h1>
+          <p>Nos esforzamos por fusionar la estética con la funcionalidad, creando un mundo de sensaciones y emociones.</p>
+          <a href="/about">Sobre nosotros</a>
+        </div>
+        <img src="/images/spas/crown.webp" alt="" />
       </div>
-      <img src="" alt="" />
     </section>
     <section className={styles.keys}>
       <h1>Buscamos inspirar la vida de nuestros clientes, creando conexiones significativas y duraderas.</h1>
