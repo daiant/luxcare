@@ -1,17 +1,19 @@
+import { fetchImage } from './fetch-image'
+
 export const crown = {
   title: 'Crown',
   adjective: 'Autenticidad',
   adjectives: 'Grandeza. Exclusividad.',
-  header: '/images/spas/crown/header.webp',
-  cta_img: '/images/spas/crown/crown_3.webp',
-  cta_2_img: '/images/spas/crown/crown_4.webp',
+  header: fetchImage('/images/spas/crown/header.webp'),
+  cta_img: fetchImage('/images/spas/crown/crown_3.webp'),
+  cta_2_img: fetchImage('/images/spas/crown/crown_4.webp'),
   url: '/series/crown',
   summary: {
     top: 'Una experiencia simple',
     bottom: 'mente perfecta',
     content: 'Descubre la Serie Crown de Marquis Spas, una obra maestra de innovación en el mundo del spa. Esta colección redefine el estándar de lujo y rendimiento en hidromasaje, fusionando nuestras características terapéuticas más avanzadas con comodidades de primer nivel, dando lugar al sistema de hidromasaje más elegante y versátil del mercado.',
   },
-  video: '/images/spas/crown/broll.mp4',
+  video: fetchImage('/images/spas/crown/broll.mp4'),
   mission: [
     { spa: 'SUMMIT', content: 'Llega hasta la cumbre.', },
     { spa: 'EPIC', content: 'Conviértete en leyenda.' },
@@ -24,7 +26,7 @@ export const crown = {
   multimedia: {
     left: 'Serie Crown: redefine el estándar de lujo y rendimiento en hidromasaje',
     right: 'Descubre una experiencia de hidromasaje incomparable con su avanzada tecnología y características exclusivas.',
-    right_src: '/images/spas/crown/crown_2.webp'
+    right_src: fetchImage('/images/spas/crown/crown_2.webp')
   },
   left: {
     top: 'Cada spa de la Serie Crown presenta líneas y contornos suaves que no solo añaden un toque de sofisticación, sino que también mejoran la ergonomía y la comodidad del usuario.\n\nLos materiales de alta calidad seleccionados garantizan una durabilidad excepcional, mientras que los acabados realzan la belleza estética de cada modelo.',
@@ -58,7 +60,7 @@ export const crown = {
       serie: 'Crown',
       capacity: '5 personas',
       jets: '50 jets',
-      src: '/images/spas/crown/models/resort.webp',
+      src: fetchImage('/images/spas/crown/models/resort.webp'),
       href: '/series/crown/resort'
     },
     {
@@ -66,7 +68,7 @@ export const crown = {
       serie: 'Crown',
       capacity: '7 personas',
       jets: '65 jets',
-      src: '/images/spas/crown/models/summit.webp',
+      src: fetchImage('/images/spas/crown/models/summit.webp'),
       href: '/series/crown/summit'
     },
     {
@@ -74,7 +76,7 @@ export const crown = {
       serie: 'Crown',
       capacity: '6 personas',
       jets: '53 jets',
-      src: '/images/spas/crown/models/epic.webp',
+      src: fetchImage('/images/spas/crown/models/epic.webp'),
       href: '/series/crown/epic'
     },
     {
@@ -82,7 +84,7 @@ export const crown = {
       serie: 'Crown',
       capacity: '7 personas',
       jets: '53 jets',
-      src: '/images/spas/crown/models/euphoria.webp',
+      src: fetchImage('/images/spas/crown/models/euphoria.webp'),
       href: '/series/crown/euphoria'
     },
     {
@@ -90,7 +92,7 @@ export const crown = {
       serie: 'Crown',
       capacity: '7 personas',
       jets: '41 jets',
-      src: '/images/spas/crown/models/destiny.webp',
+      src: fetchImage('/images/spas/crown/models/destiny.webp'),
       href: '/series/crown/destiny'
     },
     {
@@ -98,7 +100,7 @@ export const crown = {
       serie: 'Crown',
       capacity: '5 personas',
       jets: '29 - 30 jets',
-      src: '/images/spas/crown/models/wish.webp',
+      src: fetchImage('/images/spas/crown/models/wish.webp'),
       href: '/series/crown/wish'
     },
     {
@@ -106,7 +108,7 @@ export const crown = {
       serie: 'Crown',
       capacity: '3 personas',
       jets: '32 jets',
-      src: '/images/spas/crown/models/spirit.webp',
+      src: fetchImage('/images/spas/crown/models/spirit.webp'),
       href: '/series/crown/spirit'
     },
   ],
@@ -116,14 +118,14 @@ export const crown = {
       subheading: 'Potencia. Distinción.',
       content: 'Flujo y una fuerza nunca antes vistos: un control y una versatilidad incomparables en cualquier otro concepto de sistema avanzado. Comando y control individuales, perfectamente diseñados para transportar una experiencia completa de spa.',
       url: '/series/vector',
-      src: '/images/spas/vector.webp'
+      src: fetchImage('/images/spas/vector.webp')
     },
     {
       subheading: 'Elegancia. Diseño.',
       title: 'Serie Strato',
       content: 'El diseño de esta serie destaca por su elegancia, modernidad y líneas limpias. Los escalones de entrada central facilitan el acceso, mientras que el equipamiento de chorros y las áreas de masaje garantizan una experiencia única.',
       url: '/series/strato',
-      src: '/images/spas/strato/strato_3.webp'
+      src: fetchImage('/images/spas/strato/strato_3.webp')
     },
   ]
 

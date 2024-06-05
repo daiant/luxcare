@@ -1,5 +1,6 @@
 'use client';
 import HomeContactForm from '@/components/home/contact/home-contact';
+import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/dealers.module.css';
 
 export default function DealersPage() {
@@ -49,14 +50,14 @@ export default function DealersPage() {
           <p>Nos esforzamos por fusionar la estética con la funcionalidad, creando un mundo de sensaciones y emociones.</p>
           <a href="/about">Sobre nosotros</a>
         </div>
-        <img src="/images/spas/crown.webp" alt="" />
+        <img src={fetchImage("/images/spas/crown.webp")} alt="" />
       </div>
     </section>
     <section className={styles.keys}>
       <h1>Buscamos inspirar la vida de nuestros clientes, creando conexiones significativas y duraderas.</h1>
       <div className={styles.main}>
         <aside>
-          <img src="/images/spas/crown.webp" alt="" />
+          <img src={fetchImage("/images/spas/crown.webp")} alt="" />
         </aside>
         <div className={styles.list}>
           <details>

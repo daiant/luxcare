@@ -1,5 +1,6 @@
 import HomeContactForm from '@/components/home/contact/home-contact';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
+import { fetchImage } from '@/lib/fetch-image';
 import { SERIES } from '@/lib/series.data';
 import styles from '@/styles/marquis-landings.module.css';
 export default function FlowControlPage() {
@@ -40,7 +41,7 @@ export default function FlowControlPage() {
         </div>
       </section>
       <section className={styles.video}>
-        <video src="/images/marquis-landings/broll.webm" loop muted playsInline autoPlay></video>
+        <video src={fetchImage("/images/marquis-landings/broll.webm")} loop muted playsInline autoPlay></video>
       </section>
       <section className={[styles.details, styles.details_secondary].join(' ')}>
         <div className={styles.content_wrapper}>

@@ -3,6 +3,7 @@ import CaretRight from '@/public/images/icons/CaretRight.svg';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import { SERIES } from '@/lib/series.data';
 import HomeContactForm from '@/components/home/contact/home-contact';
+import { fetchImage } from '@/lib/fetch-image';
 export default function SeriesPage() {
 
   return <main className={styles.container}>
@@ -19,7 +20,7 @@ export default function SeriesPage() {
             <CaretRight />
           </a>
         </div>
-        <video src="/images/burbuja.webm" className={styles.image} autoPlay loop muted playsInline></video>
+        <video src={fetchImage("/images/burbuja.webm")} className={styles.image} autoPlay loop muted playsInline></video>
       </div>
     </section>
     <div id='next'>

@@ -5,13 +5,14 @@ import strato from '@/public/images/spas/strato.webp';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import HomeCarouselComponent from '@/components/home/carousel/carousel';
 import ScrollIndicator from '@/components/scroll-indicator/scroll-indicator';
+import { fetchImage } from '@/lib/fetch-image';
 
 export default function Home() {
   return (
     <main className={`snap ${styles.main}`}>
       <section className={styles.banner}>
         <div className={styles.video}>
-          <video src="/images/burbuja.webm" loop muted playsInline autoPlay></video>
+          <video src={fetchImage("/images/burbuja.webm")} loop muted playsInline autoPlay></video>
         </div>
         {/* <h2>Simplemente perfecto</h2> */}
         <div className={styles.title}>

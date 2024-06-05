@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styles from './slider.module.css';
+import { fetchImage } from '@/lib/fetch-image';
 
 export default function Slider() {
   const list = React.useRef<HTMLUListElement | null>(null);
@@ -34,10 +35,10 @@ export default function Slider() {
   return <div className={styles.slider}>
     <ul ref={list}>
       <li>
-        <img draggable='false' src="/home/intro.webp" alt="" />
+        <img draggable='false' src={fetchImage("/home/intro.webp")} alt="" />
       </li>
       <li>
-        <img draggable='false' src="/home/vertical_marquis.png" alt="" />
+        <img draggable='false' src={fetchImage("/home/vertical_marquis.png")} alt="" />
       </li>
     </ul>
     <div className={styles.actions}>

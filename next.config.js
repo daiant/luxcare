@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {}
-
 module.exports = {
+  images: {
+    domains: ['luxcare.es']
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
