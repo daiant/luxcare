@@ -327,6 +327,37 @@
   .keys .main {
     flex-direction: column;
   }
+
+  .keys details summary {
+    list-style: none;
+    opacity: 0.8;
+    transition: opacity 300ms ease;
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+    --_width: 0;
+  }
+
+  .keys details summary::after {
+    content: '';
+    height: 2px;
+    width: var(--_width);
+    background-color: currentColor;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    transition: width 300ms ease;
+  }
+
+  .keys details summary:hover,
+  .keys details[open] summary {
+    --_width: 100%;
+    opacity: 1;
+  }
+
+  .keys details summary::-webkit-details-marker {
+    display: none;
+  }
 }
 
 @media (max-width: 1000px) {
