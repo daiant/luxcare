@@ -1,3 +1,4 @@
+import Cookies from '@/components/cookies/cookies';
 import Footer from '@/components/footer/footer';
 import Menu from '@/components/header/menu/menu';
 
@@ -78,6 +79,7 @@ export default function RootLayout({
           <Menu />
           {children}
           <Footer />
+          <Cookies />
         </ReCaptchaProvider>
       </body>
     </html>
