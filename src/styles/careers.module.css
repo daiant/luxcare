@@ -1,10 +1,10 @@
 .main {
-  padding-inline: var(--padding);
   padding-block: 96px;
 }
 
 .carousel_wrapper {
   position: relative;
+  padding-inline: var(--padding);
   min-height: calc(100svh - 96px);
   display: flex;
   flex-direction: column;
@@ -51,7 +51,8 @@
   margin-block-start: 12px;
   font-size: 18px;
   color: unset;
-  display: inline-block;
+  display: none;
+
 }
 
 .carousel_wrapper .controls {
@@ -81,6 +82,190 @@
   color: var(--background-color);
 }
 
+section.list {
+  padding: var(--padding);
+  display: flex;
+  gap: var(--padding);
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.list aside {
+  flex: 1;
+  position: relative;
+  min-width: 300px;
+}
+
+.list aside img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 2px 2px 8px -4px var(--black);
+}
+
+.list .title {
+  font-size: var(--title-font-s);
+}
+
+.list .item+.item {
+  margin-block-start: var(--padding);
+}
+
+.video_wrapper {
+  padding: calc(var(--padding) * 2) var(--padding);
+}
+
+.video_wrapper header {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--padding);
+}
+
+.video_wrapper header h1 {
+  font-size: var(--title-font-s);
+  font-weight: 400;
+  flex: 1;
+}
+
+.video_wrapper header div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding);
+  min-width: min(100%, 40ch);
+}
+
+.video_wrapper header div p {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.video_wrapper video {
+  width: 70%;
+  margin-inline: auto;
+  display: block;
+  margin-block-start: var(--padding);
+}
+
+.video_wrapper footer p {
+  text-align: center;
+  font-size: var(--title-font-s);
+  margin-block-start: 1em;
+  max-width: 50ch;
+  margin-inline: auto;
+}
+
+.trajectory {
+  padding: 96px var(--padding);
+  background-color: var(--color);
+  color: var(--background-color);
+}
+
+.trajectory header {
+  text-align: center;
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.trajectory header h1 {
+  font-size: var(--title-font-s);
+  font-weight: 400;
+  margin-block-end: 0.5em;
+}
+
+.trajectory main {
+  margin-block-start: 48px;
+  display: flex;
+  gap: var(--padding);
+  flex-wrap: wrap;
+  align-items: stretch;
+  min-height: 7rem;
+
+}
+
+.trajectory main div {
+  background-color: var(--background-color);
+  color: var(--color);
+  flex: 1;
+  text-align: center;
+  border-radius: 8px;
+  padding: 8px;
+  display: grid;
+  place-content: center;
+}
+
+.trajectory main div p {
+  max-width: 20ch;
+}
+
+.cta {
+  padding-block-start: 96px;
+}
+
+.cta h1 {
+  font-size: var(--title-font-m);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 20ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+.cta main {
+  padding-inline: var(--padding);
+  margin-block-start: 48px;
+  padding-block-start: 48px;
+  border-top: 2px solid;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: var(--padding);
+  flex-wrap: wrap;
+}
+
+
+
+.cta main>p {
+  font-size: 22px;
+  line-height: 28px;
+  flex: 1;
+  max-width: 30ch;
+}
+
+.cta main .contact {
+  border-left: 2px solid;
+  padding-inline-start: 16px;
+}
+
+.cta .contact .title {
+  font-size: 28px;
+}
+
+.cta .contact .subtitle {
+  opacity: 0.6;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.cta .contact a {
+  margin-block-start: 32px;
+  display: inline-block;
+  color: unset;
+}
+
+.cta .contact a svg {
+  color: black;
+  margin-inline-start: 2px;
+  transform: rotate(-45deg);
+}
+
+.cta .contact a svg path {
+  stroke: white;
+}
+
 @media (max-width: 768px) {
   .carousel {
     overflow-x: auto;
@@ -88,7 +273,17 @@
     gap: 32px;
   }
 
+  .carousel .item .action {
+    display: inline-block;
+  }
+
   .carousel_wrapper .controls {
     display: none;
+  }
+
+  .cta main .contact {
+    border-color: transparent;
+    padding-inline-start: 0;
+    margin-block-start: 48px;
   }
 }
