@@ -29,7 +29,9 @@ export default function Menu() {
     }
   }
   return <div className={styles.wrapper} ref={menu} id={'theme-' + theme}>
-    <a href="/" className={styles.home}>Luxcare</a>
+    <a href="/" className={styles.home}>
+      <img src="/images/logo_simple.svg" alt="" />
+    </a>
     <div className={styles.burger} onClick={() => setOpen(!open)}>
       {!open && <>
         <span role='button'>Menú</span>
