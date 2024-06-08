@@ -2,13 +2,12 @@
   margin-block-start: 64px;
   padding-block: calc(var(--padding) * 2);
   /* background: linear-gradient(var(--background-color) 50%, #ffd03488 40%); */
-  cursor: grab;
   padding-inline: var(--padding);
 }
 
 .carousel {
   width: 100%;
-
+  cursor: grab;
   overflow-x: auto;
   overflow-y: clip;
   display: flex;
