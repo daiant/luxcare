@@ -3,6 +3,8 @@
   min-height: calc(100dvh - var(--navbar));
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .hero {
@@ -27,7 +29,7 @@
 
 .main {
   grid-template-columns: repeat(12, 1fr);
-  padding-block: 64px 32px;
+  padding-block: 32px;
   flex-grow: 1;
 }
 
@@ -250,6 +252,7 @@
 
 .last_cta h2 {
   font-weight: 400;
+  margin-inline: auto;
 }
 
 .last_cta h1 {

@@ -1,9 +1,9 @@
 .wrapper {
   width: 100%;
   border: none;
-  border-bottom: 1px solid var(--background-5);
+  /* border-bottom: 1px solid var(--background-5); */
   background-color: var(--background-color);
-  padding: 8px 24px;
+  padding-block: 8px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -26,14 +26,19 @@
   width: 100%;
 }
 
+.label span {
+  padding-inline-start: 16px;
+}
 
 .input {
   font-size: 1.125rem;
   font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
   background-color: transparent;
-  border: none;
+  border: 1px solid;
+  padding: 16px;
   outline: 0;
   width: 100%;
+  border-radius: 16px;
 }
 
 .icon {
