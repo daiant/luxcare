@@ -7,7 +7,7 @@ export default function DealersPage() {
   return <main className={styles.wrapper}>
     <section className={styles.header}>
       <div className={[styles.object, styles.left].join(' ')}>
-        <img src='/images/dealers/mobile.png'></img>
+        <img src={fetchImage('/images/dealers/mobile.png')}></img>
       </div>
       <div className={styles.content}>
         <h1><code>Conecta</code> con verdaderos distribuidores</h1>
@@ -15,7 +15,7 @@ export default function DealersPage() {
           ofrecer una calidad de servicio y experiencia incomparables. Están comprometidos a satisfacer todas tus necesidades LuxCare y se enorgullecen de brindar un servicio excelente y personalizado.</p>
       </div>
       <div className={[styles.object, styles.right].join(' ')}>
-        <img src='/images/dealers/mobile.png'></img>
+        <img src={fetchImage('/images/dealers/mobile.png')}></img>
       </div>
     </section>
     <section className={styles.fad}>

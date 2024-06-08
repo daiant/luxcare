@@ -2,6 +2,7 @@
 import styles from './menu.module.css';
 import React, { useState } from 'react';
 import Waves from '@/public/images/icons/waves.svg';
+import GpsIcon from '@/public/images/icons/gps.svg';
 import Close from '@/public/images/icons/close.svg';
 import { usePathname } from 'next/navigation';
 export default function Menu() {
@@ -32,11 +33,13 @@ export default function Menu() {
     <a href="/" className={styles.home}>
       <img src="/images/logo_simple.svg" alt="" />
     </a>
+    <a href='/dealers' className={[styles.burger, styles.icon].join(' ')} title='Distribuidores'>
+      <GpsIcon />
+    </a>
     <div className={styles.burger} onClick={() => setOpen(!open)}>
       {!open && <>
         <span role='button'>Menú</span>
         <Waves />
-        {/* <img src="/icons/waves.svg" alt="" /> */}
       </>}
       {open && <>
         <span role='button'>Cerrar</span>

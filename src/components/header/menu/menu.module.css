@@ -47,6 +47,12 @@
   gap: 8px;
 }
 
+.icon {
+  width: 22px;
+  height: 22px;
+  margin-inline-end: 8px;
+}
+
 .wrapper .burger>* {
   cursor: pointer;
 }
