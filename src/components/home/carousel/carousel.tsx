@@ -47,9 +47,17 @@ export default function HomeCarouselComponent() {
     slider.current.style.cursor = 'grab';
     slider.current.style.removeProperty('user-select');
   }
+  function handleNext() {
+    if (!slider.current) return;
+    const childrenRect = slider.current.children[0].getBoundingClientRect();
+    const gap = getComputedStyle(slider.current).gap.replace('px', '');
+    slider.current.scrollTo({
+      left: slider.current.scrollLeft + childrenRect.width + Number(gap),
+      behavior: 'smooth',
+    })
+  }
   return <div className={styles.container}>
-    <p className={styles.title}>
-      <span>Arrastra</span>
+    <p className={styles.title} onClick={handleNext}>
       <LongLine />
     </p>
     <div className={styles.carousel} onMouseDown={handleMouseDown} ref={slider}>

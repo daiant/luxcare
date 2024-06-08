@@ -7,8 +7,10 @@
 }
 
 .carousel {
-  width: 100vw;
+  width: 100%;
+
   overflow-x: auto;
+  overflow-y: clip;
   display: flex;
   gap: calc(var(--padding) / 2);
 }
@@ -70,17 +72,16 @@
 
 @media (max-width: 768px) {
   .title {
-    display: none;
+    justify-content: flex-end;
   }
 
   .carousel {
-    display: block;
-    overflow-x: unset;
-    width: 100%;
+    scroll-snap-type: x proximity;
   }
 
-  .carousel .item+.item {
-    margin-block-start: 24px;
+  .carousel .item {
+    width: 100%;
+    scroll-snap-align: start;
   }
 
   .carousel p {
@@ -90,9 +91,5 @@
   .carousel .img_wrapper,
   .carousel img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 6 / 7;
-    margin-block-end: 0;
   }
-
 }
