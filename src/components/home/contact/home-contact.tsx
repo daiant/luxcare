@@ -57,6 +57,7 @@ export default function HomeContactForm() {
       const response = await fetch('https://luxcare-backoffice.vercel.app/api/v1/contact', { method: "POST", body: JSON.stringify(obj), headers });
       if (response.ok) {
         setDialogVisible(true);
+        (event.target as HTMLFormElement).reset();
       }
       else {
         if (!Boolean(obj.name) && !Boolean(obj.email)) {
