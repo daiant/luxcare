@@ -29,6 +29,7 @@ export default function Footer() {
       </div>
       <div className={styles.group}>
         <a href='/legal/privacy'>Privacidad</a>
+        <a href='/legal/aviso'>Aviso Legal</a>
         <a href='/legal/cookies'>Cookies</a>
         <a href='/legal/tos'>Condiciones</a>
       </div>
