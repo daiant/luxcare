@@ -76,10 +76,12 @@ export default function HomeContactForm() {
     <div className={styles.dialog} aria-hidden={!dialogVisible}>
       <div className={styles.mask} onClick={() => setDialogVisible(false)}></div>
       <main>
-        <h1>Consulta enviada con éxito!</h1>
-        <h2>En breve nos pondremos en contacto contigo</h2>
-        <div className="action">
-          <button onClick={() => setDialogVisible(false)}>Volver</button>
+        <h1>Perfecto.<br />¡Mensaje enviado!</h1>
+        <div className={styles.column}>
+          <h2>Te contactaremos lo antes posible.</h2>
+          <div className={styles.action}>
+            <button onClick={() => setDialogVisible(false)}>Volver</button>
+          </div>
         </div>
       </main>
     </div>
