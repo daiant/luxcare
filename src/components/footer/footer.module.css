@@ -85,6 +85,7 @@
   width: auto;
   display: block;
   margin-block-end: 16px;
+  filter: invert(1);
 }
 
 .main p {

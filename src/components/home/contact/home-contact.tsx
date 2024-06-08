@@ -94,6 +94,7 @@ export default function HomeContactForm() {
           <label htmlFor="quickPhone">Introduce tu teléfono</label>
           <input type="tel" id='quickPhone' name='phone' required />
           <div className={styles.actions}>
+            <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.</p>
             <button type='submit'>Llámame</button>
             {error[0] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
           </div>
@@ -130,6 +131,7 @@ export default function HomeContactForm() {
         </div>)}
       </fieldset>
       <div className={styles.actions}>
+        <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.</p>
         <button className={loading ? styles.loading : ''} type="submit">Enviar consulta</button>
         {error[1] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
       </div>
