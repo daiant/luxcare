@@ -1,15 +1,18 @@
-import Logo from '@/public/images/logo.svg';
+// import Logo from '@/public/images/logo.svg';
+import { fetchImage } from '@/lib/fetch-image';
 import styles from './footer.module.css';
 
 export default function Footer() {
   return <><footer className={styles.footer}>
     <div className={styles.header}>
-      <div className={styles.cta}>
-        <p>Cada día más<br />cerca de nuestros clientes</p>
-      </div>
       <div className={styles.main}>
-        <Logo className={styles.logo} />
-        <span>Copyright 2024 LuxCare Spas</span>
+        <img src={fetchImage('/images/logo.svg')} alt="" className={styles.logo} />
+        {/* <Logo className={styles.logo} /> */}
+        <div className={styles.group}>
+          <a href="mailto:info@luxcare.es">info@luxcare.es</a>
+          <a href="tel:+34963368945">963 36 89 45</a>
+          <a href="https://maps.app.goo.gl/6obisiUqU9dm5vjT6" target='_blank'>Carrer 29, 19, 46182 La Canyada, Valencia</a>
+        </div>
       </div>
     </div>
     <div className={styles.links}>
@@ -33,9 +36,7 @@ export default function Footer() {
 
   </footer>
     <div className={styles.location}>
-      <a href="mailto:info@luxcare.es">info@luxcare.es</a>
-      <a href="tel:+34963368945">963 36 89 45</a>
-      <a href="https://maps.app.goo.gl/6obisiUqU9dm5vjT6" target='_blank'>Carrer 29, 19, 46182 La Canyada, Valencia</a>
+      <span>Copyright 2024 LuxCare Spas</span>
     </div>
   </>
 }
