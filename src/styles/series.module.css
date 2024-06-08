@@ -154,7 +154,7 @@
 .serie .video {
   width: 100%;
   height: 100dvh;
-  padding-block: var(--padding);
+  padding-block: calc(var(--padding) * 2) var(--padding);
 }
 
 .serie .video video,
