@@ -5,6 +5,7 @@ import HomeContactForm from '@/components/home/contact/home-contact';
 import SerieBannerComponent from '@/components/series/banner/banner';
 import { SERIES } from '@/lib/series.data';
 import { notFound } from 'next/navigation';
+import FadComponent from '@/components/dealers/fad/fad';
 
 export default function IndividualSeriePage({ params }: { params: { serie: string } }) {
   const slug = params.serie;
@@ -90,6 +91,7 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           ))}
         </ul>
       </section>
+      <FadComponent />
       <section className={styles.contact_cta}>
         <HomeContactForm />
       </section>

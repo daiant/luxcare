@@ -6,6 +6,7 @@ import HomeContactForm from '@/components/home/contact/home-contact';
 import HomeCarouselComponent from '@/components/home/carousel/carousel';
 import ScrollIndicator from '@/components/scroll-indicator/scroll-indicator';
 import { fetchImage } from '@/lib/fetch-image';
+import FadComponent from '@/components/dealers/fad/fad';
 
 export default function Home() {
   return (
@@ -106,6 +107,7 @@ export default function Home() {
         <RecommendationsSummary />
       </section>
       */}
+      <FadComponent></FadComponent>
       <section className={styles.news}>
         <HomeContactForm />
       </section>

@@ -4,6 +4,7 @@ import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import { SERIES } from '@/lib/series.data';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import { fetchImage } from '@/lib/fetch-image';
+import FadComponent from '@/components/dealers/fad/fad';
 export default function SeriesPage() {
 
   return <main className={styles.container}>
@@ -53,6 +54,7 @@ export default function SeriesPage() {
         </section>
       })}
     </div>
+    <FadComponent />
     <section className={styles.contact}>
       <HomeContactForm />
     </section>
