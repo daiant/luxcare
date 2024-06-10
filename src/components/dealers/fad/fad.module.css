@@ -1,0 +1,121 @@
+.main {
+  max-width: 900px;
+  text-align: center;
+  margin-inline: auto;
+  min-height: 200vh;
+  position: relative;
+  padding-block: 96px;
+}
+
+.main .content {
+  display: grid;
+  place-content: center;
+  position: sticky;
+  top: 20vh;
+  min-height: 40vh;
+}
+
+.main .content>[role=title] {
+  font-size: var(--title-font-m);
+  max-width: 20ch;
+  margin-inline: auto;
+  text-wrap: balance;
+  margin-block-end: 1em;
+}
+
+.main ul {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.main li {
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #33373a;
+  color: var(--background-color);
+  flex: 1;
+  aspect-ratio: 3 / 3.5;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 15px 40px -8px #0061ff42;
+}
+
+.main li p[role=title] {
+  font-size: 36px;
+  margin-block: 1em;
+}
+
+.main li p[role=contentinfo] {
+  text-wrap: balance;
+  line-height: 18px;
+}
+
+.main li:nth-child(1) {
+  animation: to-left linear forwards;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  transform: translate(100px, 25px) rotate(-3deg);
+  background: linear-gradient(36deg, #0061ff, #bf0fff);
+}
+
+.main li:nth-child(2) {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(-36deg, #0061ff, #d41458);
+}
+
+.main li:nth-child(3) {
+  animation: to-right linear forwards;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  transform: translate(-100px, 25px) rotate(3deg);
+  background: linear-gradient(-36deg, #bf0fff, #ff930f);
+}
+
+@keyframes to-left {
+  10% {
+    transform: translate(100px, 25px) rotate(-3deg);
+  }
+
+  40% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+
+  }
+}
+
+@keyframes to-right {
+  10% {
+    transform: translate(-100px, 25px) rotate(3deg);
+  }
+
+  40% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+
+  }
+}
+
+@media (max-width: 768px) {
+  .main ul {
+    flex-direction: column;
+  }
+
+  .main li {
+    animation: none !important;
+    transform: none !important;
+    /* aspect-ratio: unset; */
+    max-width: 300px;
+    margin-inline: auto;
+  }
+
+  .main li p[role=title] {
+    margin-block-start: 0;
+  }
+}

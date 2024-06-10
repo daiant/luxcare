@@ -1,4 +1,5 @@
 'use client';
+import FadComponent from '@/components/dealers/fad/fad';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/dealers.module.css';
@@ -76,7 +77,7 @@ export default function DealersPage() {
       </div>
     </section>
     <section className={styles.fad_wrapper}>
-      {/* <FadComponent></FadCompon> */}
+      <FadComponent></FadComponent>
     </section>
     <section className={styles.contact}>
       <HomeContactForm />
