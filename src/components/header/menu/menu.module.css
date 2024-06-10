@@ -57,8 +57,11 @@
   cursor: pointer;
 }
 
-.wrapper .burger svg {
+.wrapper .burger svg,
+.wrapper .burger img {
   fill: var(--color);
+  width: 22px;
+  height: 22px;
 }
 
 .submenu {

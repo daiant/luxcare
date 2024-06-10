@@ -45,7 +45,6 @@
   margin-inline-start: auto;
   background-color: var(--color);
   color: var(--background-color);
-  font-family: var(--font-main);
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 24px;
