@@ -46,6 +46,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
+  pointer-events: none;
 }
 
 .header .object.left {
@@ -122,7 +123,7 @@
 }
 
 .fad aside {
-  flex-basis: 400px;
+  flex-basis: 500px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -141,7 +142,8 @@
   padding-left: unset;
   margin-block-start: var(--padding);
   padding-inline-end: 8px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
   flex: 1;
 }
 

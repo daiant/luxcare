@@ -1,10 +1,27 @@
 'use client';
 import FadComponent from '@/components/dealers/fad/fad';
+import InputDealers from '@/components/dealers/input-dealers/input-dealers';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/dealers.module.css';
-
+import React from 'react';
+const dealers = [
+  {
+    name: 'LuxCare La Cañada',
+    type: 'Distribuidor',
+    location: 'Ejemplo de calle, No4, 46980',
+    timetable: 'Lunes - Viernes: 09:00h 14:00h - 16:00h 19:30h',
+    contact: 'Ver contacto',
+    realContact: '12345678',
+  }
+]
 export default function DealersPage() {
+  const [showDealers, setShowDealers] = React.useState(false);
+  function onSearchLocation(value: google.maps.places.PlaceResult | null) {
+    console.log('Han picao', value);
+    setShowDealers(true);
+  }
+
   return <main className={styles.wrapper}>
     <section className={styles.header}>
       <div className={[styles.object, styles.left].join(' ')}>
@@ -23,23 +40,15 @@ export default function DealersPage() {
       <h1>Busca tu distribuidor más cercano</h1>
       <div className={styles.content}>
         <aside>
-          <input placeholder="Introduce tu código postal" type="search" name="zipCode" id="zipCode" />
-          <ul>
-            <li>
-              <div>
-                <p className={styles.name}>Luxcare Mallorca</p>
-                <p className={styles.type}>Distribuidor</p>
-              </div>
-              <p className={styles.link_wrapper}>
-                <a href="https://maps.google.com" target='_blank'>Ejemplo de calle, No4, 46980</a>
-              </p>
-              <p className={styles.link_wrapper}>
-                <a href="tel:+349126598712" target='_blank'>91 265 987</a>
-              </p>
-              <p>Lunes - Viernes: 09:00h 14:00h - 16:00h 19:30h</p>
-              <a href="#">Explorar distribuidor</a>
-            </li>
-          </ul>
+          <InputDealers onSearch={onSearchLocation} />
+          {showDealers && <>
+            <ul>
+              {dealers.map(dealer => <DealerInfo dealer={dealer} />)}
+            </ul>
+          </>}
+          {!showDealers && <p style={{ margin: '8px 0 0 8px' }}>
+            Introduce tu código postal y te mostraremos los distribuidores más cercanos a tu posición.
+          </p>}
         </aside>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3077.3544375550764!2d-0.48548649999999993!3d39.5290576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd605b0182fdcc49%3A0xd8c7da9f1666849b!2sGrupo%20Aquarea%20S.%20L.!5e0!3m2!1ses!2ses!4v1717006596896!5m2!1ses!2ses" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
@@ -83,4 +92,25 @@ export default function DealersPage() {
       <HomeContactForm />
     </section>
   </main>
+}
+const DealerInfo = ({ dealer }: { dealer: { name: string; type: string; location: string; realContact: string; contact: string; timetable: string; } }) => {
+  const [hasClicked, setHasClicked] = React.useState(false);
+  return <li key={dealer.name}>
+    <div>
+      <p className={styles.name}>{dealer.name}</p>
+      <p className={styles.type}>{dealer.type}</p>
+    </div>
+    <p className={styles.link_wrapper}>
+      {dealer.location}
+    </p>
+    <p className={styles.link_wrapper}>
+      {hasClicked && <>
+        <a href={"tel:+" + dealer.realContact} target='_blank'>{dealer.realContact}</a>
+      </>}
+      {!hasClicked && <>
+        <a href={"tel:+" + dealer.contact} target='_blank' onClick={e => { e.preventDefault(), setHasClicked(true) }}>{dealer.contact}</a>
+      </>}
+    </p>
+    <p>{dealer.timetable}</p>
+  </li>
 }
