@@ -4,6 +4,7 @@ import InputDealers from '@/components/dealers/input-dealers/input-dealers';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/dealers.module.css';
+import { useReCaptcha } from 'next-recaptcha-v3';
 import React from 'react';
 const dealers = [
   {
@@ -17,9 +18,26 @@ const dealers = [
 ]
 export default function DealersPage() {
   const [showDealers, setShowDealers] = React.useState(false);
-  function onSearchLocation(value: google.maps.places.PlaceResult | null) {
-    console.log('Han picao', value);
+  const [customerLocation, setCustomerLocation] = React.useState<any>()
+  const { executeRecaptcha } = useReCaptcha();
+  async function onSearchLocation(value: google.maps.places.PlaceResult | null) {
+    const token = executeRecaptcha('dealer_search_location');
+    const host = 'https://luxcare-backoffice.vercel.app'
+    const url = host + '/api/v1/dealer-search-location';
+    await fetch(url, {
+      method: 'POST', body: JSON.stringify({ token, value })
+    });
+    setCustomerLocation(value);
     setShowDealers(true);
+  }
+
+  function handleContactClick(dealer: { name: string; type: string; location: string; timetable: string; contact: string; realContact: string; }) {
+    const token = executeRecaptcha('dealer_contact_click');
+    const host = 'https://luxcare-backoffice.vercel.app'
+    const url = host + '/api/v1/dealer-contact-click';
+    fetch(url, {
+      method: 'POST', body: JSON.stringify({ token, dealer: dealer.name, customer_location: customerLocation })
+    });
   }
 
   return <main className={styles.wrapper}>
@@ -43,7 +61,7 @@ export default function DealersPage() {
           <InputDealers onSearch={onSearchLocation} />
           {showDealers && <>
             <ul>
-              {dealers.map(dealer => <DealerInfo dealer={dealer} />)}
+              {dealers.map(dealer => <DealerInfo dealer={dealer} onClick={() => handleContactClick(dealer)} />)}
             </ul>
           </>}
           {!showDealers && <p style={{ margin: '8px 0 0 8px' }}>
@@ -93,7 +111,7 @@ export default function DealersPage() {
     </section>
   </main>
 }
-const DealerInfo = ({ dealer }: { dealer: { name: string; type: string; location: string; realContact: string; contact: string; timetable: string; } }) => {
+const DealerInfo = ({ dealer, onClick }: { onClick: Function, dealer: { name: string; type: string; location: string; realContact: string; contact: string; timetable: string; } }) => {
   const [hasClicked, setHasClicked] = React.useState(false);
   return <li key={dealer.name}>
     <div>
@@ -108,7 +126,7 @@ const DealerInfo = ({ dealer }: { dealer: { name: string; type: string; location
         <a href={"tel:+" + dealer.realContact} target='_blank'>{dealer.realContact}</a>
       </>}
       {!hasClicked && <>
-        <a href={"tel:+" + dealer.contact} target='_blank' onClick={e => { e.preventDefault(), setHasClicked(true) }}>{dealer.contact}</a>
+        <a href={"tel:+" + dealer.contact} target='_blank' onClick={e => { e.preventDefault(), setHasClicked(true); onClick() }}>{dealer.contact}</a>
       </>}
     </p>
     <p>{dealer.timetable}</p>
