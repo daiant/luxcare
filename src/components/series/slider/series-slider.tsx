@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './slider.module.css'
 import React from 'react';
 
@@ -19,8 +20,8 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
       x: e.clientX,
       y: e.clientY,
     }
-    document.addEventListener('mousemove', mouseMoveHandler as any);
-    document.addEventListener('mouseup', mouseUpHandler as any);
+    document.addEventListener('mousemove', mouseMoveHandler as never);
+    document.addEventListener('mouseup', mouseUpHandler as never);
     slider.current.style.cursor = 'grabbing';
     slider.current.style.userSelect = 'none';
   }
@@ -35,8 +36,9 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
     slider.current.scrollLeft = pos.left - dx;
   }
   function mouseUpHandler(e: React.MouseEvent) {
-    document.removeEventListener('mousemove', mouseMoveHandler as any);
-    document.removeEventListener('mouseup', mouseUpHandler as any);
+    e.preventDefault();
+    document.removeEventListener('mousemove', mouseMoveHandler as never);
+    document.removeEventListener('mouseup', mouseUpHandler as never);
 
     if (!slider.current) return;
     slider.current.style.cursor = 'grab';
@@ -44,10 +46,10 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
   }
   return <div className={styles.slider}>
     <ul ref={slider} onMouseDown={handleMouseDown}>
-      {models.map((model, index) => (
+      {models.map((model) => (
         <li key={model.title}>
           <div className={styles.content}>
-            <img src={model.src} alt={model.title} width={250} height={250} className={styles.spa}></img>
+            <Image src={model.src} alt={model.title} width={250} height={250} className={styles.spa} />
             <p>{model.title}</p>
             <p>{model.serie}</p>
           </div>

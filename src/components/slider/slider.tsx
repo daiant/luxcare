@@ -3,6 +3,7 @@
 import React from 'react';
 import styles from './slider.module.css';
 import { fetchImage } from '@/lib/fetch-image';
+import Image from 'next/image';
 
 export default function Slider() {
   const list = React.useRef<HTMLUListElement | null>(null);
@@ -35,15 +36,15 @@ export default function Slider() {
   return <div className={styles.slider}>
     <ul ref={list}>
       <li>
-        <img draggable='false' src={fetchImage("/home/intro.webp")} alt="" />
+        <Image draggable='false' src={fetchImage("/home/intro.webp")} alt="" />
       </li>
       <li>
-        <img draggable='false' src={fetchImage("/home/vertical_marquis.png")} alt="" />
+        <Image draggable='false' src={fetchImage("/home/vertical_marquis.png")} alt="" />
       </li>
     </ul>
     <div className={styles.actions}>
-      <img className={styles.previous} src='/icons/arrow_down.svg' onClick={handlePrevious}></img>
-      <img className={styles.next} src='/icons/arrow_down.svg' onClick={handleNext}></img>
+      <Image className={styles.previous} src='/icons/arrow_down.svg' onClick={handlePrevious} alt=''/>
+      <Image className={styles.next} src='/icons/arrow_down.svg' onClick={handleNext} alt=''/>
     </div>
   </div>
 }
