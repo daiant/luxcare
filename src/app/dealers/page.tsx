@@ -20,6 +20,7 @@ export default function DealersPage() {
   const [showDealers, setShowDealers] = React.useState(false);
   const [customerLocation, setCustomerLocation] = React.useState<any>()
   const { executeRecaptcha } = useReCaptcha();
+
   async function onSearchLocation(value: google.maps.places.PlaceResult | null) {
     const token = executeRecaptcha('dealer_search_location');
     const host = 'https://luxcare-backoffice.vercel.app'
