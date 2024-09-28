@@ -1,10 +1,11 @@
-
 'use client';
+
 import React from 'react';
 import styles from './input-dealers.module.css';
 import { API_KEY } from '@/lib/autocomplete-location';
 import { APIProvider, useMapsLibrary } from '@vis.gl/react-google-maps';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export default function InputDealers({ onSearch }: { onSearch: Function }) {
   return <APIProvider
     apiKey={API_KEY}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 'use client';
 import FadComponent from '@/components/dealers/fad/fad';
 import InputDealers from '@/components/dealers/input-dealers/input-dealers';
@@ -5,6 +6,7 @@ import HomeContactForm from '@/components/home/contact/home-contact';
 import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/dealers.module.css';
 import { useReCaptcha } from 'next-recaptcha-v3';
+import Image from 'next/image';
 import React from 'react';
 const dealers = [
   {
@@ -18,7 +20,7 @@ const dealers = [
 ]
 export default function DealersPage() {
   const [showDealers, setShowDealers] = React.useState(false);
-  const [customerLocation, setCustomerLocation] = React.useState<any>()
+  const [customerLocation, setCustomerLocation] = React.useState<google.maps.places.PlaceResult | null>(null)
   const { executeRecaptcha } = useReCaptcha();
 
   async function onSearchLocation(value: google.maps.places.PlaceResult | null) {
@@ -28,6 +30,7 @@ export default function DealersPage() {
     await fetch(url, {
       method: 'POST', body: JSON.stringify({ token, value })
     });
+
     setCustomerLocation(value);
     setShowDealers(true);
   }
@@ -44,7 +47,7 @@ export default function DealersPage() {
   return <main className={styles.wrapper}>
     <section className={styles.header}>
       <div className={[styles.object, styles.left].join(' ')}>
-        <img src={fetchImage('/images/dealers/mobile.png')}></img>
+        <Image alt='' src={fetchImage('/images/dealers/mobile.png')} />
       </div>
       <div className={styles.content}>
         <h1><code>Conecta</code> con verdaderos distribuidores</h1>
@@ -52,7 +55,7 @@ export default function DealersPage() {
           ofrecer una calidad de servicio y experiencia incomparables. Están comprometidos a satisfacer todas tus necesidades LuxCare y se enorgullecen de brindar un servicio excelente y personalizado.</p>
       </div>
       <div className={[styles.object, styles.right].join(' ')}>
-        <img src={fetchImage('/images/dealers/mobile.png')}></img>
+        <Image alt='' src={fetchImage('/images/dealers/mobile.png')} />
       </div>
     </section>
     <section className={styles.fad}>
@@ -62,7 +65,7 @@ export default function DealersPage() {
           <InputDealers onSearch={onSearchLocation} />
           {showDealers && <>
             <ul>
-              {dealers.map(dealer => <DealerInfo dealer={dealer} onClick={() => handleContactClick(dealer)} />)}
+              {dealers.map(dealer => <DealerInfo key={dealer.name} dealer={dealer} onClick={() => handleContactClick(dealer)} />)}
             </ul>
           </>}
           {!showDealers && <p style={{ margin: '8px 0 0 8px' }}>
@@ -79,14 +82,14 @@ export default function DealersPage() {
           <p>Nos esforzamos por fusionar la estética con la funcionalidad, creando un mundo de sensaciones y emociones.</p>
           <a href="/about">Sobre nosotros</a>
         </div>
-        <img src={fetchImage("/images/spas/crown.webp")} alt="" />
+        <Image alt='' src={fetchImage("/images/spas/crown.webp")}/>
       </div>
     </section>
     <section className={styles.keys}>
       <h1>Buscamos inspirar la vida de nuestros clientes, creando conexiones significativas y duraderas.</h1>
       <div className={styles.main}>
         <aside>
-          <img src={fetchImage("/images/spas/crown.webp")} alt="" />
+          <Image alt='' src={fetchImage("/images/spas/crown.webp")}/>
         </aside>
         <div className={styles.list}>
           <details>
@@ -127,7 +130,7 @@ const DealerInfo = ({ dealer, onClick }: { onClick: Function, dealer: { name: st
         <a href={"tel:+" + dealer.realContact} target='_blank'>{dealer.realContact}</a>
       </>}
       {!hasClicked && <>
-        <a href={"tel:+" + dealer.contact} target='_blank' onClick={e => { e.preventDefault(), setHasClicked(true); onClick() }}>{dealer.contact}</a>
+        <a href={"tel:+" + dealer.contact} target='_blank' onClick={e => { e.preventDefault(); setHasClicked(true); onClick() }}>{dealer.contact}</a>
       </>}
     </p>
     <p>{dealer.timetable}</p>

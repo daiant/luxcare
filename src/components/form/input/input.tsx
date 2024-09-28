@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './input.module.css';
 export type InputProps = {
   label: string;
@@ -6,11 +7,13 @@ export type InputProps = {
   icon?: string;
   value?: string;
   required?: boolean;
-  onChange?: any;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  onChange?: Function;
   loading?: boolean;
 }
 export default function Input(props: InputProps) {
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     props.onChange ? props.onChange(event) : undefined;
   }
 
@@ -25,7 +28,7 @@ export default function Input(props: InputProps) {
       <span>{props.label}</span>
       <input onChange={handleChange} required={props.required} type={props.type} id={props.name} name={props.name} value={props.value} className={styles.input} />
     </label>
-    {Boolean(props.icon) && <img src={props.icon} alt={props.name} className={getIconClasses()} />}
+    {Boolean(props.icon) && <Image src={props.icon!} alt={props.name} className={getIconClasses()} />}
   </div>
 
 }

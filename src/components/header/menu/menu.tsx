@@ -6,6 +6,7 @@ import Waves from '@/public/images/icons/waves.svg';
 import Close from '@/public/images/icons/close.svg';
 import { usePathname } from 'next/navigation';
 import { fetchImage } from '@/lib/fetch-image';
+import Image from 'next/image';
 export default function Menu() {
   const [theme, setTheme] = useState('light');
   const menu = React.useRef<HTMLDivElement>(null);
@@ -21,21 +22,12 @@ export default function Menu() {
     setOpen(false);
   }, [pathname]);
 
-  function handleTheme() {
-    if (theme === 'dark') {
-      localStorage?.setItem('theme', 'light');
-      setTheme('light');
-    } else {
-      localStorage?.setItem('theme', 'dark');
-      setTheme('dark');
-    }
-  }
   return <div className={styles.wrapper} ref={menu} id={'theme-' + theme}>
     <a href="/" className={styles.home}>
-      <img src={fetchImage("/images/logo_simple.svg")} alt="" />
+      <Image src={fetchImage("/images/logo_simple.svg")} alt="" />
     </a>
     <a href='/dealers' className={[styles.burger, styles.icon].join(' ')} title='Distribuidores'>
-      <img src={fetchImage('/images/icons/gps.svg')} />
+      <Image src={fetchImage('/images/icons/gps.svg')} alt='Distribuidores' />
     </a>
     <div className={styles.burger} onClick={() => setOpen(!open)}>
       {!open && <>

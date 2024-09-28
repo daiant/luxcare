@@ -5,6 +5,7 @@ import { SERIES } from '@/lib/series.data';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import { fetchImage } from '@/lib/fetch-image';
 import FadComponent from '@/components/dealers/fad/fad';
+import Image from 'next/image';
 export default function SeriesPage() {
 
   return <main className={styles.container}>
@@ -46,7 +47,7 @@ export default function SeriesPage() {
             <p></p>
           </div>
           <div className={styles.video}>
-            <img src={fetchImage('/images/spas/' + serie.title.toLowerCase() + '.webp')} />
+            <Image alt='' src={fetchImage('/images/spas/' + serie.title.toLowerCase() + '.webp')} />
           </div>
           <div className={styles.slider}>
             <SeriesSliderComponent models={serie.models} />

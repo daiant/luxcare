@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './model-slider.module.css'
 import React from 'react';
 
@@ -19,8 +20,9 @@ export default function ModelSliderComponent({ items }: { items: { src: string, 
       x: e.clientX,
       y: e.clientY,
     }
-    document.addEventListener('mousemove', mouseMoveHandler as any);
-    document.addEventListener('mouseup', mouseUpHandler as any);
+
+    document.addEventListener('mousemove', mouseMoveHandler as never);
+    document.addEventListener('mouseup', mouseUpHandler as never);
     slider.current.style.cursor = 'grabbing';
     slider.current.style.userSelect = 'none';
   }
@@ -34,9 +36,9 @@ export default function ModelSliderComponent({ items }: { items: { src: string, 
     slider.current.scrollTop = pos.top - dy;
     slider.current.scrollLeft = pos.left - dx;
   }
-  function mouseUpHandler(e: React.MouseEvent) {
-    document.removeEventListener('mousemove', mouseMoveHandler as any);
-    document.removeEventListener('mouseup', mouseUpHandler as any);
+  function mouseUpHandler() {
+    document.removeEventListener('mousemove', mouseMoveHandler as never);
+    document.removeEventListener('mouseup', mouseUpHandler as never);
 
     if (!slider.current) return;
     slider.current.style.cursor = 'grab';
@@ -47,7 +49,7 @@ export default function ModelSliderComponent({ items }: { items: { src: string, 
       {items.map((item) => (
         <li key={item.title}>
           <div className={styles.content}>
-            <img src={item.src} draggable="false" alt={item.title} width={250} height={250} className={styles.spa}></img>
+            <Image src={item.src} draggable="false" alt={item.title} width={250} height={250} className={styles.spa} />
             <p>{item.title}</p>
           </div>
         </li>

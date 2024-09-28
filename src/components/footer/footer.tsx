@@ -1,12 +1,13 @@
 // import Logo from '@/public/images/logo.svg';
 import { fetchImage } from '@/lib/fetch-image';
 import styles from './footer.module.css';
+import Image from 'next/image';
 
 export default function Footer() {
   return <><footer className={styles.footer}>
     <div className={styles.header}>
       <div className={styles.main}>
-        <img src={fetchImage('/images/logo.svg')} alt="" className={styles.logo} />
+        <Image src={fetchImage('/images/logo.svg')} alt="" className={styles.logo} />
         {/* <Logo className={styles.logo} /> */}
         <div className={styles.group}>
           <a href="mailto:info@luxcare.es">info@luxcare.es</a>

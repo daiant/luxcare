@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
 'use client';
 import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/careers.module.css';
 import Caret from '@/public/images/icons/CaretRight.svg';
 import React from 'react';
+import Image from 'next/image';
 
 export default function Careers() {
   const [active, setActive] = React.useState(-1);
@@ -57,15 +59,15 @@ export default function Careers() {
       </div>
       {/* <video src={fetchImage('/images/burbuja.webm')} className={styles.video} autoPlay loop muted playsInline ></video> */}
       <ul className={styles.controls}>
-        <li aria-selected={active <= 0} onClick={() => setActive(0)} role='button'>Herencia</li>
-        <li aria-selected={active == 1} onClick={() => setActive(1)} role='button'>Apuesta</li>
-        <li aria-selected={active == 2} onClick={() => setActive(2)} role='button'>Objetivo</li>
-        <li aria-selected={active == 3} onClick={() => setActive(3)} role='button'>Únete</li>
+        <li aria-selected={active <= 0} onClick={() => setActive(0)}>Herencia</li>
+        <li aria-selected={active == 1} onClick={() => setActive(1)}>Apuesta</li>
+        <li aria-selected={active == 2} onClick={() => setActive(2)}>Objetivo</li>
+        <li aria-selected={active == 3} onClick={() => setActive(3)}>Únete</li>
       </ul>
     </section>
     <section className={styles.list}>
       <aside>
-        <img src={fetchImage('/images/spas/crown.webp')} alt="" />
+        <Image src={fetchImage('/images/spas/crown.webp')} alt="" />
       </aside>
       <main>
         <div className={styles.item}>

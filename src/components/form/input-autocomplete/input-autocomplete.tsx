@@ -21,6 +21,7 @@ export default function InputAutocomplete(props: InputProps & { onSelect?: (valu
   }
   function handleSelect(name: string) {
     setLocation(name);
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     props.onSelect ? props.onSelect(name) : undefined;
     setPlaces([]);
   }

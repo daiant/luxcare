@@ -1,14 +1,18 @@
+import React from 'react';
 import styles from './textarea.module.css';
 export type TextareaProps = {
   label: string;
   name: string;
   value?: string;
   required?: boolean;
-  onChange?: any;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  onChange?: Function;
 }
 export default function Textarea(props: TextareaProps) {
   function handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
-    props.onChange ? props.onChange(event) : undefined;
+    if(props.onChange) {
+      props.onChange(event)
+    }
   }
 
   return <div className={styles.wrapper}>

@@ -9,6 +9,7 @@ export default function HomeContactForm() {
   const [error, setError] = React.useState([false, false]);
   const [dialogVisible, setDialogVisible] = React.useState(false);
   const { executeRecaptcha } = useReCaptcha();
+  
   const questions = [
     {
       type: 'text',
@@ -35,6 +36,7 @@ export default function HomeContactForm() {
       value: '',
     },
   ];
+
   const handleSubmit = React.useCallback(async (event: FormEvent) => {
     event.preventDefault();
     if (!form.current) return;
@@ -45,7 +47,7 @@ export default function HomeContactForm() {
     // Generate ReCaptcha token
     const token = await executeRecaptcha("form_submit");
 
-    const obj: { [index: string]: any } = {};
+    const obj: { [index: string]: FormDataEntryValue | null } = {};
     obj['name'] = data.get('name');
     obj['email'] = data.get('email');
     obj['phone'] = data.get('phone');
@@ -70,7 +72,7 @@ export default function HomeContactForm() {
     } finally {
       setLoading(false);
     }
-  }, [executeRecaptcha, form.current]);
+  }, [executeRecaptcha]);
 
   return <div className={styles.container}>
     <div className={styles.dialog} aria-hidden={!dialogVisible}>
@@ -114,7 +116,7 @@ export default function HomeContactForm() {
     <form onSubmit={handleSubmit} ref={form} className={styles.form}>
       <h1>Contacto</h1>
       <fieldset>
-        {questions.map((question, index) => <div key={question.name} className={styles.question}>
+        {questions.map((question) => <div key={question.name} className={styles.question}>
           <label htmlFor={question.name}>{question.label}</label>
           {question.type === 'textarea' && <textarea
             defaultValue={question.value}

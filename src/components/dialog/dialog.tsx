@@ -1,13 +1,17 @@
 import styles from './dialog.module.css';
 import DialogButton from './button/dialogbutton';
+import { FormEvent } from 'react';
 
 export default function DealerDialog(props: { className?: string, visible: boolean }) {
-  function handleSubmit(event: any) {
-    event.preventDefault(); handleSubmit
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault(); 
     globalThis.location.href = '/contact';
   }
   function requestLocation() {
-    const successCallback = (event: any) => { console.log('location is ', event.coords); globalThis.location.href = '/contact' };
+    const successCallback = (event: GeolocationPosition) => {
+      console.log('location is ', event.coords); 
+      globalThis.location.href = '/contact'
+    };
     const errorCallback = () => { };
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   }

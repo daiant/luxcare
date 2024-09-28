@@ -4,6 +4,7 @@ import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import { SERIES } from '@/lib/series.data';
 import { SPAS } from '@/lib/spas.data';
 import styles from '@/styles/spa.module.css';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 export default function SpaPage({ params }: { params: { serie: string, spa: string } }) {
   const titleCase = (value: string): string => { return value.substring(0, 1).toUpperCase() + value.substring(1) };
@@ -41,7 +42,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
             <a href="/dealers" className={styles.link_secondary}>Encuentra tu distribuidor</a>
           </div>
         </div>
-        <img className={styles.product_images} src={spa.header} alt={spa.title} />
+        <Image className={styles.product_images} src={spa.header} alt={spa.title} />
         <div className={styles.product_info}>
           <details open>
             <summary>Descripción</summary>
@@ -116,10 +117,10 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
         <p className={styles.heading}>Diseño by</p>
         <p className={styles.title}>{spa.design.title}</p>
         <p className={styles.content}>{spa.design.value}</p>
-        <img src={spa.design.src} alt="Marquis Spas" className={styles.img} />
+        <Image src={spa.design.src} alt="Marquis Spas" className={styles.img} />
       </div>
       <div className={styles.aside}>
-        <img src={spa.design.aside_src} alt="SPA" className={styles.img} />
+        <Image src={spa.design.aside_src} alt="SPA" className={styles.img} />
       </div>
     </section>
     <section className={styles.cards}>
@@ -127,7 +128,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
         <article className={styles.card} key={card.title}>
           <h1 className={styles.title}>{card.title}</h1>
           <a href={card.href} className={styles.link}>Descubre más</a>
-          <img src={card.src} alt={card.title} className={styles.img} />
+          <Image src={card.src} alt={card.title} className={styles.img} />
         </article>
       ))}
     </section>
@@ -145,7 +146,7 @@ export async function generateStaticParams() {
   const params: Array<{ serie: string; spa: string }> = [];
   const series = Object.keys(SPAS);
   series.forEach((serie, index) => {
-    const spas = Object.keys((SPAS as any)[series[index]]);
+    const spas = Object.keys(SPAS[series[index]]);
     spas.forEach(spa => params.push({ serie, spa }));
   })
 

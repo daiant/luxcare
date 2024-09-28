@@ -1,12 +1,14 @@
-'use client';;
+'use client';
+
 import ContactForm from '@/components/contact/contact-form';
 import styles from './contact.module.css';
 import { useState } from 'react';
+import Image from 'next/image';
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    (event.target as any).reset();
+    (event.target as HTMLFormElement).reset();
     setSubmitted(true);
   }
 
@@ -29,7 +31,7 @@ export default function Contact() {
         <p>Conviértete en distribuidor LuxCare</p>
         <a href="#form">Rellena el formulario</a>
       </article>
-      <img src='/images/contact/banner.jpg' alt='contacto' />
+      <Image src='/images/contact/banner.jpg' alt='contacto' />
     </section>
     <section className={styles.location}>
       <h1>Información de contacto</h1>
@@ -69,7 +71,7 @@ export default function Contact() {
         <a href="//spa.luxcare.es">Ver más artículos</a>
       </main>
       <aside>
-        <img src='/images/contact/banner.jpg' alt='contacto' />
+        <Image src='/images/contact/banner.jpg' alt='contacto' />
       </aside>
     </section>
     <section className={styles.last_cta}>
