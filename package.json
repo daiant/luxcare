@@ -15,6 +15,7 @@
     "@vis.gl/react-google-maps": "^1.0.2",
     "dotenv": "^16.4.5",
     "g": "^2.0.1",
+    "mariadb": "^3.3.2",
     "next": "^14.2.13",
     "next-recaptcha-v3": "^1.4.1",
     "nodemailer": "^6.9.15",

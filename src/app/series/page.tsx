@@ -46,7 +46,7 @@ export default function SeriesPage() {
             <p></p>
           </div>
           <div className={styles.video}>
-            <img alt='' src={fetchImage('/images/spas/' + serie.title.toLowerCase() + '.webp')} fill/>
+            <img alt='' src={fetchImage('/images/spas/' + serie.title.toLowerCase() + '.webp')} />
           </div>
           <div className={styles.slider}>
             <SeriesSliderComponent models={serie.models} />
