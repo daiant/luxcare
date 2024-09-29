@@ -24,6 +24,9 @@
       }
     ],
     "paths": {
+      "@/db": [
+        "./src/lib/db/db.connection"
+      ],
       "@/*": [
         "./src/*"
       ],
@@ -40,7 +43,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "dist/types/**/*.ts"
+    "dist/types/**/*.ts",
+    "src/lib/db/migrations.js"
   ],
   "exclude": [
     "node_modules"
