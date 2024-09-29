@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import styles from './slider.module.css'
 import React from 'react';
 
@@ -49,7 +48,7 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
       {models.map((model) => (
         <li key={model.title}>
           <div className={styles.content}>
-            <Image src={model.src} alt={model.title} width={250} height={250} className={styles.spa} />
+            <img src={model.src} alt={model.title} width={250} height={250} className={styles.spa} />
             <p>{model.title}</p>
             <p>{model.serie}</p>
           </div>

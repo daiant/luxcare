@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import styles from './dialogbutton.module.css';
-import Image from 'next/image';
 
 type ButtonType = 'submit' | 'reset' | 'button' | undefined;
 // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
@@ -17,7 +16,7 @@ export default function DialogButton(props: { type: ButtonType, text: string, ic
   }
   return <button type={props.type} className={`${styles[props.variant || 'primary']} ${styles.button}`} onClick={handleClick}>
     <span aria-hidden={loading} className={styles.text}>{props.text}</span>
-    {props.icon && <Image alt='' src={props.icon} className={styles.icon} aria-hidden={loading} />}
+    {props.icon && <img alt='' src={props.icon} className={styles.icon} aria-hidden={loading} />}
 
     <span className={styles.loadingWrapper} aria-hidden={!loading}><span className={styles.loading}></span></span>
   </button>

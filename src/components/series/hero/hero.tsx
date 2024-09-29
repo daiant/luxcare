@@ -1,10 +1,11 @@
-import Image from 'next/image';
 import styles from './hero.module.css';
+
 type Props = {
   title: string,
   subttitle: string,
   image: string,
 }
+
 export default function SerieHero(props: Props) {
   return <main className={styles.wrapper}>
     <div className={styles.info}>
@@ -12,7 +13,7 @@ export default function SerieHero(props: Props) {
       <h2 className='hero__subtitle'>{props.subttitle}</h2>
     </div>
     <div className={styles.image}>
-      <Image src={props.image} alt={props.title}/>
+      <img src={props.image} alt={props.title}/>
     </div>
   </main>
 }

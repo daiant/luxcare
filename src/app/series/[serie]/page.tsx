@@ -6,7 +6,6 @@ import SerieBannerComponent from '@/components/series/banner/banner';
 import { SERIES } from '@/lib/series.data';
 import { notFound } from 'next/navigation';
 import FadComponent from '@/components/dealers/fad/fad';
-import Image from 'next/image';
 
 export default function IndividualSeriePage({ params }: { params: { serie: string } }) {
   const slug = params.serie;
@@ -20,20 +19,20 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           <h1>Serie {serie.title}</h1>
           <h2>{serie.adjective}</h2>
         </header>
-        <Image src={serie.header} alt={serie.title} />
+        <img src={serie.header} alt={serie.title} />
       </section>
       <SerieBannerComponent data={serie.mission} video={serie.video} />
       <section className={styles.media_wrapper}>
         <div className={styles.media}>
-          <Image src={serie.cta_2_img} alt={serie.multimedia.right} />
+          <img src={serie.cta_2_img} alt={serie.multimedia.right} />
           <p className={styles.media_content}>{serie.multimedia.left}</p>
         </div>
         <div className={styles.media}>
-          <Image src={serie.multimedia.right_src} alt="" />
+          <img src={serie.multimedia.right_src} alt="" />
           <p className={styles.media_content}>{serie.multimedia.right}</p>
         </div>
         <div className={styles.media}>
-          <Image src={serie.cta_img} alt="Crown" />
+          <img src={serie.cta_img} alt="Crown" />
           <div className={styles.media_content}>
             <p>{serie.left.top}</p>
             <p>{serie.left.bottom}</p>
@@ -75,7 +74,7 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           {serie.other_series.map(other => (
             <li key={other.title}>
               <a href={other.url}>
-                <Image src={other.src} alt={other.title} />
+                <img src={other.src} alt={other.title} />
               </a>
               <div role='contentinfo'>
                 <p className={styles.subheading}>{other.subheading}</p>

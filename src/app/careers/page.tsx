@@ -4,7 +4,6 @@ import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/careers.module.css';
 import Caret from '@/public/images/icons/CaretRight.svg';
 import React from 'react';
-import Image from 'next/image';
 
 export default function Careers() {
   const [active, setActive] = React.useState(-1);
@@ -67,7 +66,7 @@ export default function Careers() {
     </section>
     <section className={styles.list}>
       <aside>
-        <Image src={fetchImage('/images/spas/crown.webp')} alt="" />
+        <img src={fetchImage('/images/spas/crown.webp')} alt="" />
       </aside>
       <main>
         <div className={styles.item}>

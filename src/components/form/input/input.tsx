@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './input.module.css';
 export type InputProps = {
   label: string;
@@ -28,7 +27,7 @@ export default function Input(props: InputProps) {
       <span>{props.label}</span>
       <input onChange={handleChange} required={props.required} type={props.type} id={props.name} name={props.name} value={props.value} className={styles.input} />
     </label>
-    {Boolean(props.icon) && <Image src={props.icon!} alt={props.name} className={getIconClasses()} />}
+    {Boolean(props.icon) && <img src={props.icon!} alt={props.name} className={getIconClasses()} />}
   </div>
 
 }

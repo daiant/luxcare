@@ -1,11 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import styles from './model-slider.module.css'
 import React from 'react';
 
-
 let pos = { x: 0, y: 0, left: 0, top: 0 }
+
 export default function ModelSliderComponent({ items }: { items: { src: string, title: string }[] }) {
   const slider = React.useRef<HTMLUListElement>(null);
 
@@ -49,7 +48,7 @@ export default function ModelSliderComponent({ items }: { items: { src: string, 
       {items.map((item) => (
         <li key={item.title}>
           <div className={styles.content}>
-            <Image src={item.src} draggable="false" alt={item.title} width={250} height={250} className={styles.spa} />
+            <img src={item.src} draggable="false" alt={item.title} width={250} height={250} className={styles.spa} />
             <p>{item.title}</p>
           </div>
         </li>

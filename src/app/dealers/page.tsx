@@ -6,7 +6,6 @@ import HomeContactForm from '@/components/home/contact/home-contact';
 import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/dealers.module.css';
 import { useReCaptcha } from 'next-recaptcha-v3';
-import Image from 'next/image';
 import React from 'react';
 const dealers = [
   {
@@ -47,7 +46,7 @@ export default function DealersPage() {
   return <main className={styles.wrapper}>
     <section className={styles.header}>
       <div className={[styles.object, styles.left].join(' ')}>
-        <Image alt='' src={fetchImage('/images/dealers/mobile.png')} />
+        <img alt='' src={fetchImage('/images/dealers/mobile.png')} />
       </div>
       <div className={styles.content}>
         <h1><code>Conecta</code> con verdaderos distribuidores</h1>
@@ -55,7 +54,7 @@ export default function DealersPage() {
           ofrecer una calidad de servicio y experiencia incomparables. Están comprometidos a satisfacer todas tus necesidades LuxCare y se enorgullecen de brindar un servicio excelente y personalizado.</p>
       </div>
       <div className={[styles.object, styles.right].join(' ')}>
-        <Image alt='' src={fetchImage('/images/dealers/mobile.png')} />
+        <img alt='' src={fetchImage('/images/dealers/mobile.png')} />
       </div>
     </section>
     <section className={styles.fad}>
@@ -82,14 +81,14 @@ export default function DealersPage() {
           <p>Nos esforzamos por fusionar la estética con la funcionalidad, creando un mundo de sensaciones y emociones.</p>
           <a href="/about">Sobre nosotros</a>
         </div>
-        <Image alt='' src={fetchImage("/images/spas/crown.webp")}/>
+        <img alt='' src={fetchImage("/images/spas/crown.webp")}/>
       </div>
     </section>
     <section className={styles.keys}>
       <h1>Buscamos inspirar la vida de nuestros clientes, creando conexiones significativas y duraderas.</h1>
       <div className={styles.main}>
         <aside>
-          <Image alt='' src={fetchImage("/images/spas/crown.webp")}/>
+          <img alt='' src={fetchImage("/images/spas/crown.webp")}/>
         </aside>
         <div className={styles.list}>
           <details>
