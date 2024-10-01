@@ -42,6 +42,8 @@ CREATE TABLE IF NOT EXISTS dealers (
     website varchar(255),
     description varchar(255),
     timetable text,
+		latitude decimal(8,6),
+		longitude decimal(9,6),
     created_at timestamp default current_timestamp(),
     PRIMARY KEY (id)
 )
