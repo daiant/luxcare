@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 'use client';
+
 import FadComponent from '@/components/dealers/fad/fad';
 import InputDealers from '@/components/dealers/input-dealers/input-dealers';
 import HomeContactForm from '@/components/home/contact/home-contact';
@@ -7,41 +7,35 @@ import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/dealers.module.css';
 import { useReCaptcha } from 'next-recaptcha-v3';
 import React from 'react';
-const dealers = [
-  {
-    name: 'LuxCare La Cañada',
-    type: 'Distribuidor',
-    location: 'Ejemplo de calle, No4, 46980',
-    timetable: 'Lunes - Viernes: 09:00h 14:00h - 16:00h 19:30h',
-    contact: 'Ver contacto',
-    realContact: '12345678',
-  }
-]
+
+export type Dealer = {
+	id: number;
+	name: string;
+	type: number;
+	website: string;
+	description: string;
+	timetable: string;
+	direction: string;
+	latitude: number;
+	longitude: number;
+}
+
 export default function DealersPage() {
-  const [showDealers, setShowDealers] = React.useState(false);
+	const [dealers, setDealers] = React.useState<Dealer[]>([]);
   const [customerLocation, setCustomerLocation] = React.useState<google.maps.places.PlaceResult | null>(null)
   const { executeRecaptcha } = useReCaptcha();
 
   async function onSearchLocation(value: google.maps.places.PlaceResult | null) {
     const token = executeRecaptcha('dealer_search_location');
-    const host = 'https://luxcare-backoffice.vercel.app'
-    const url = host + '/api/v1/dealer-search-location';
-    await fetch(url, {
+    const url = '/api/v1/dealer-search-location';
+    const result: { value: Dealer[] } = await fetch(url, {
       method: 'POST', body: JSON.stringify({ token, value })
-    });
+    }).then(response => response.ok ? response.json() : {value: []});
 
     setCustomerLocation(value);
-    setShowDealers(true);
+		setDealers(result.value);
   }
 
-  function handleContactClick(dealer: { name: string; type: string; location: string; timetable: string; contact: string; realContact: string; }) {
-    const token = executeRecaptcha('dealer_contact_click');
-    const host = 'https://luxcare-backoffice.vercel.app'
-    const url = host + '/api/v1/dealer-contact-click';
-    fetch(url, {
-      method: 'POST', body: JSON.stringify({ token, dealer: dealer.name, customer_location: customerLocation })
-    });
-  }
 
   return <main className={styles.wrapper}>
     <section className={styles.header}>
@@ -62,12 +56,12 @@ export default function DealersPage() {
       <div className={styles.content}>
         <aside>
           <InputDealers onSearch={onSearchLocation} />
-          {showDealers && <>
+          {dealers.length > 0 && <>
             <ul>
-              {dealers.map(dealer => <DealerInfo key={dealer.name} dealer={dealer} onClick={() => handleContactClick(dealer)} />)}
+              {dealers.map(dealer => <DealerInfo key={dealer.name} dealer={dealer} customerLocation={customerLocation} />)}
             </ul>
           </>}
-          {!showDealers && <p style={{ margin: '8px 0 0 8px' }}>
+          {dealers.length <= 0 && <p style={{ margin: '8px 0 0 8px' }}>
             Introduce tu código postal y te mostraremos los distribuidores más cercanos a tu posición.
           </p>}
         </aside>
@@ -114,24 +108,64 @@ export default function DealersPage() {
     </section>
   </main>
 }
-const DealerInfo = ({ dealer, onClick }: { onClick: Function, dealer: { name: string; type: string; location: string; realContact: string; contact: string; timetable: string; } }) => {
+
+const DealerInfo = ({ dealer, customerLocation }: { dealer: Dealer, customerLocation: unknown }) => {
+	const [dealerContact, setDealerContact] = React.useState<string | null>(null);
   const [hasClicked, setHasClicked] = React.useState(false);
+	const { executeRecaptcha } = useReCaptcha()
+
+  async function handleContactClick(event: unknown) {
+		(event as Event).preventDefault();
+
+    const token = executeRecaptcha('dealer_contact_click');
+    const url = '/api/v1/dealer-contact-click';
+
+    const contact = await fetch(url, {
+      method: 'POST', body: JSON.stringify({ token, dealer_id: dealer.id, customer_location: customerLocation }),
+    }).then(response => response.ok ? response.json() : null);
+
+		if(contact?.value) {
+			setDealerContact(contact.value);
+			setHasClicked(true);
+		}
+  }
+
+	const formatTimetable = (timetable: string) => {
+		return <>
+			{timetable.split(';').map(day => <p key={day}>
+				<span>{day.substring(0,1)}</span>
+				<span>{': '}</span>
+				<span>{day.substring(1, 3).padStart(2, '0')}</span>
+				<span>{':'}</span>
+				<span>{day.substring(3, 5).padStart(2, '0')}</span>
+				<span>{'h - '}</span>
+				<span>{day.substring(5, 7).padStart(2, '0')}</span>
+				<span>{':'}</span>
+				<span>{day.substring(7, 9).padStart(2, '0')}</span>
+				<span>{'h'}</span>
+			</p>)}
+		</>
+	}
+
   return <li key={dealer.name}>
     <div>
       <p className={styles.name}>{dealer.name}</p>
       <p className={styles.type}>{dealer.type}</p>
     </div>
     <p className={styles.link_wrapper}>
-      {dealer.location}
+      {dealer.description}
+    </p>
+    <p className={styles.link_wrapper}>
+      {dealer.direction}
     </p>
     <p className={styles.link_wrapper}>
       {hasClicked && <>
-        <a href={"tel:+" + dealer.realContact} target='_blank'>{dealer.realContact}</a>
+        <a href={"tel:+" + dealerContact} target='_blank'>{dealerContact}</a>
       </>}
       {!hasClicked && <>
-        <a href={"tel:+" + dealer.contact} target='_blank' onClick={e => { e.preventDefault(); setHasClicked(true); onClick() }}>{dealer.contact}</a>
+        <a href="" onClick={handleContactClick}>Ver contacto</a>
       </>}
     </p>
-    <p>{dealer.timetable}</p>
+    <div>{formatTimetable(dealer.timetable)}</div>
   </li>
 }
