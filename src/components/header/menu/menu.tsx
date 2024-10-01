@@ -23,7 +23,7 @@ export default function Menu() {
 
   return <div className={styles.wrapper} ref={menu} id={'theme-' + theme}>
     <a href="/" className={styles.home}>
-      <img src={fetchImage("/images/logo_simple.svg")} alt="" />
+      <img src={fetchImage("/images/icons/logo_simple.svg")} alt="" />
     </a>
     <a href='/dealers' className={[styles.burger, styles.icon].join(' ')} title='Distribuidores'>
       <img src={fetchImage('/images/icons/gps.svg')} alt='Distribuidores' />
