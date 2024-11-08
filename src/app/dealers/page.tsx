@@ -7,48 +7,47 @@ import { fetchImage } from '@/lib/fetch-image';
 import styles from '@/styles/dealers.module.css';
 import { useReCaptcha } from 'next-recaptcha-v3';
 import React from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle
+} from "@/components/ui/dialog";
+import Button from "@/components/button/button";
 
-export type Dealer = {
+export type DealerResponse = {
 	id: number;
-	name: string;
-	type: number;
-	website: string;
-	description: string;
-	timetable: string;
-	direction: string;
 	latitude: number;
 	longitude: number;
 }
 
 export default function DealersPage() {
-	const [dealers, setDealers] = React.useState<Dealer[]>([]);
+  const [showDialog, setShowDialog] = React.useState(false);
+  const [dealers, setDealers] = React.useState<DealerResponse[]>([]);
   const [customerLocation, setCustomerLocation] = React.useState<google.maps.places.PlaceResult | null>(null)
   const { executeRecaptcha } = useReCaptcha();
 
   async function onSearchLocation(value: google.maps.places.PlaceResult | null) {
     const token = executeRecaptcha('dealer_search_location');
     const url = '/api/v1/dealer-search-location';
-    const result: { value: Dealer[] } = await fetch(url, {
+    const result: { value: DealerResponse[] } = await fetch(url, {
       method: 'POST', body: JSON.stringify({ token, value })
     }).then(response => response.ok ? response.json() : {value: []});
 
     setCustomerLocation(value);
 		setDealers(result.value);
+        setShowDialog(true);
   }
 
 
   return <main className={styles.wrapper}>
     <section className={styles.header}>
-      <div className={[styles.object, styles.left].join(' ')}>
-        <img alt='' src={fetchImage('/images/dealers/mobile.png')} />
-      </div>
       <div className={styles.content}>
         <h1><code>Conecta</code> con verdaderos distribuidores</h1>
         <p>Nuestros distribuidores oficiales están dedicados a
           ofrecer una calidad de servicio y experiencia incomparables. Están comprometidos a satisfacer todas tus necesidades LuxCare y se enorgullecen de brindar un servicio excelente y personalizado.</p>
-      </div>
-      <div className={[styles.object, styles.right].join(' ')}>
-        <img alt='' src={fetchImage('/images/dealers/mobile.png')} />
       </div>
     </section>
     <section className={styles.fad}>
@@ -56,11 +55,12 @@ export default function DealersPage() {
       <div className={styles.content}>
         <aside>
           <InputDealers onSearch={onSearchLocation} />
-          {dealers.length > 0 && <>
-            <ul>
-              {dealers.map(dealer => <DealerInfo key={dealer.name} dealer={dealer} customerLocation={customerLocation} />)}
-            </ul>
-          </>}
+          <DealerDialog
+              dealers={dealers}
+              show={showDialog}
+              customerLocation={customerLocation}
+              onHide={() => setShowDialog(false)}
+          ></DealerDialog>
           {dealers.length <= 0 && <p style={{ margin: '8px 0 0 8px' }}>
             Introduce tu código postal y te mostraremos los distribuidores más cercanos a tu posición.
           </p>}
@@ -109,63 +109,37 @@ export default function DealersPage() {
   </main>
 }
 
-const DealerInfo = ({ dealer, customerLocation }: { dealer: Dealer, customerLocation: unknown }) => {
-	const [dealerContact, setDealerContact] = React.useState<string | null>(null);
-  const [hasClicked, setHasClicked] = React.useState(false);
-	const { executeRecaptcha } = useReCaptcha()
+export function DealerDialog({dealers, show, onHide, customerLocation}: {dealers: DealerResponse[], show: boolean, onHide: Function, customerLocation: google.maps.places.PlaceResult | null }) {
+  const { executeRecaptcha } = useReCaptcha();
+  const [email, setEmail] = React.useState('');
 
   async function handleContactClick(event: unknown) {
-		(event as Event).preventDefault();
+    (event as Event).preventDefault();
 
     const token = executeRecaptcha('dealer_contact_click');
     const url = '/api/v1/dealer-contact-click';
 
     const contact = await fetch(url, {
-      method: 'POST', body: JSON.stringify({ token, dealer_id: dealer.id, customer_location: customerLocation }),
+      method: 'POST', body: JSON.stringify({ token, dealers: dealers, customer_location: customerLocation, customer_info:  email}),
     }).then(response => response.ok ? response.json() : null);
 
-		if(contact?.value) {
-			setDealerContact(contact.value);
-			setHasClicked(true);
-		}
+    // if(contact?.value) {
+    //   setDealerContact(contact.value);
+    //   setHasClicked(true);
+    // }
   }
 
-	const formatTimetable = (timetable: string) => {
-		return <>
-			{timetable.split(';').map(day => <p key={day}>
-				<span>{day.substring(0,1)}</span>
-				<span>{': '}</span>
-				<span>{day.substring(1, 3).padStart(2, '0')}</span>
-				<span>{':'}</span>
-				<span>{day.substring(3, 5).padStart(2, '0')}</span>
-				<span>{'h - '}</span>
-				<span>{day.substring(5, 7).padStart(2, '0')}</span>
-				<span>{':'}</span>
-				<span>{day.substring(7, 9).padStart(2, '0')}</span>
-				<span>{'h'}</span>
-			</p>)}
-		</>
-	}
-
-  return <li key={dealer.name}>
-    <div>
-      <p className={styles.name}>{dealer.name}</p>
-      <p className={styles.type}>{dealer.type}</p>
-    </div>
-    <p className={styles.link_wrapper}>
-      {dealer.description}
-    </p>
-    <p className={styles.link_wrapper}>
-      {dealer.direction}
-    </p>
-    <p className={styles.link_wrapper}>
-      {hasClicked && <>
-        <a href={"tel:+" + dealerContact} target='_blank'>{dealerContact}</a>
-      </>}
-      {!hasClicked && <>
-        <a href="" onClick={handleContactClick}>Ver contacto</a>
-      </>}
-    </p>
-    <div>{formatTimetable(dealer.timetable)}</div>
-  </li>
+  return <Dialog open={show}>
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle>Has encontrado el nirvana, casi</DialogTitle>
+        <DialogDescription>Para saber con qué distribuidores puedes conectarte, introduce tu correo electrónico, o deja que te llamemos</DialogDescription>
+      </DialogHeader>
+      <label>Correo electrónico</label>
+      <input type='email' name='email' />
+      <DialogFooter>
+        <button type="submit" onClick={(e) => onHide()}>Save changes</button>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
 }

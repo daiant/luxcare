@@ -1,22 +1,14 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .wrapper>section {
   padding-inline: var(--padding);
 }
 
 .header {
   padding-block-start: max(64px, calc(var(--padding) * 2));
-  min-height: 100dvh;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  overflow-x: clip;
-}
-
-.header .content {
-  text-align: center;
-  grid-column: 3 / 11;
-  grid-row: 2 / -1;
-  position: relative;
-  z-index: 1;
 }
 
 .header .content h1 {
@@ -28,105 +20,27 @@
 .header .content h1 code {
   font-family: unset;
   opacity: 0.6;
-
 }
 
 .header .content p {
   font-size: 22px;
   line-height: 28px;
-  width: 60%;
-  margin-inline: auto;
-}
-
-.header .object {
-  width: 400px;
-  height: 711px;
-  grid-row: 1 / -1;
-  position: relative;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  pointer-events: none;
-}
-
-.header .object.left {
-  grid-column: 1 / 4;
-  animation: go-left linear both;
-  animation-timeline: scroll();
-  animation-duration: 1ms;
-  /* Firefox requires this to apply the animation */
-}
-
-@keyframes go-left {
-  from {
-    transform: translate(0, 0);
-  }
-
-  to {
-    transform: translate(-200%, -130%);
-  }
-}
-
-.header .object.right {
-  grid-column: 10 / 13;
-  animation: go-right linear both;
-  animation-timeline: scroll();
-  animation-duration: 1ms;
-}
-
-@keyframes go-right {
-  from {
-    transform: translate(0, 0);
-  }
-
-  to {
-    transform: translate(200%, 130%);
-  }
-}
-
-.header .object>img {
-  position: relative;
-  width: 80%;
-  height: auto;
-  box-sizing: border-box;
-}
-
-
-.header .object.left img {
-  transform: rotate(-8deg);
-}
-
-.header .object.right img {
-  transform: rotate(8deg);
 }
 
 .fad {
-  height: calc(100svh - 54px);
-  padding-block: var(--padding);
-  display: flex;
-  flex-direction: column;
-  gap: var(--padding);
-}
-
-.fad .content {
-  display: flex;
-  gap: 0 32px;
-  flex-wrap: wrap;
-  overflow: hidden;
-  flex: 1;
+  padding-block-start: 96px;
 }
 
 .fad h1 {
   width: 100%;
   font-size: var(--title-font-s);
   font-weight: 500;
+  padding-block-end: var(--padding);
 }
 
-.fad aside {
-  flex-basis: 500px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
+.fad .content {
+  display: grid;
+  gap: var(--padding);
 }
 
 .fad aside input {
@@ -138,43 +52,10 @@
   outline: 0;
 }
 
-.fad aside ul {
-  padding-left: unset;
-  margin-block-start: var(--padding);
-  padding-inline-end: 8px;
-  overflow-y: auto;
-  scrollbar-gutter: stable;
-  flex: 1;
-}
-
-.fad aside ul li {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-block-end: 16px;
-  border-bottom: 2px solid;
-  font-size: 16px;
-}
-
-.fad aside .name {
-  font-size: 22px;
-  font-weight: 500;
-}
-
-.fad aside ul li a {
-  color: unset;
-}
-
-.fad aside ul li>a {
-  text-decoration: none;
-  text-transform: uppercase;
-  margin-block-start: 16px;
-}
-
 .fad iframe {
-  flex-shrink: 1;
-  flex-grow: 1;
-  flex-basis: 400px;
+  width: min(100%, 600px);
+  aspect-ratio: 4 / 3;
+  margin-inline: auto;
 }
 
 .about_cta {

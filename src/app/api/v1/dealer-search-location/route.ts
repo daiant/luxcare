@@ -4,12 +4,6 @@ export async function POST(req: Request) {
   const getDealers = () => {
     return makeQuery(`SELECT 
 			id,
-			name, 
-			type,
-			website,
-			description,
-			timetable,
-			direction,
 			latitude,
 			longitude
 		FROM dealers;`);
