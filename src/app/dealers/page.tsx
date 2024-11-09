@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 'use client';
 
 import FadComponent from '@/components/dealers/fad/fad';
@@ -15,30 +16,32 @@ import {
   DialogHeader,
   DialogTitle
 } from "@/components/ui/dialog";
-import Button from "@/components/button/button";
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { DealerContactClickRequest } from '../api/v1/dealer-contact-click/route';
 
-export type DealerResponse = {
-	id: number;
-	latitude: number;
-	longitude: number;
+export type Dealer = {
+  id: number;
+  latitude: number;
+  longitude: number;
 }
 
 export default function DealersPage() {
-  const [showDialog, setShowDialog] = React.useState(false);
-  const [dealers, setDealers] = React.useState<DealerResponse[]>([]);
+  const [showDialog, setShowDialog] = React.useState(true);
+  const [dealers, setDealers] = React.useState<Dealer[]>([]);
   const [customerLocation, setCustomerLocation] = React.useState<google.maps.places.PlaceResult | null>(null)
   const { executeRecaptcha } = useReCaptcha();
 
   async function onSearchLocation(value: google.maps.places.PlaceResult | null) {
     const token = executeRecaptcha('dealer_search_location');
     const url = '/api/v1/dealer-search-location';
-    const result: { value: DealerResponse[] } = await fetch(url, {
+    const result: { value: Dealer[] } = await fetch(url, {
       method: 'POST', body: JSON.stringify({ token, value })
-    }).then(response => response.ok ? response.json() : {value: []});
+    }).then(response => response.ok ? response.json() : { value: [] });
 
     setCustomerLocation(value);
-		setDealers(result.value);
-        setShowDialog(true);
+    setDealers(result.value);
+    setShowDialog(true);
   }
 
 
@@ -56,10 +59,10 @@ export default function DealersPage() {
         <aside>
           <InputDealers onSearch={onSearchLocation} />
           <DealerDialog
-              dealers={dealers}
-              show={showDialog}
-              customerLocation={customerLocation}
-              onHide={() => setShowDialog(false)}
+            dealers={dealers}
+            show={showDialog}
+            customerLocation={customerLocation}
+            onHide={() => setShowDialog(false)}
           ></DealerDialog>
           {dealers.length <= 0 && <p style={{ margin: '8px 0 0 8px' }}>
             Introduce tu código postal y te mostraremos los distribuidores más cercanos a tu posición.
@@ -75,14 +78,14 @@ export default function DealersPage() {
           <p>Nos esforzamos por fusionar la estética con la funcionalidad, creando un mundo de sensaciones y emociones.</p>
           <a href="/about">Sobre nosotros</a>
         </div>
-        <img alt='' src={fetchImage("/images/spas/crown.webp")}/>
+        <img alt='' src={fetchImage("/images/spas/crown.webp")} />
       </div>
     </section>
     <section className={styles.keys}>
       <h1>Buscamos inspirar la vida de nuestros clientes, creando conexiones significativas y duraderas.</h1>
       <div className={styles.main}>
         <aside>
-          <img alt='' src={fetchImage("/images/spas/crown.webp")}/>
+          <img alt='' src={fetchImage("/images/spas/crown.webp")} />
         </aside>
         <div className={styles.list}>
           <details>
@@ -109,37 +112,47 @@ export default function DealersPage() {
   </main>
 }
 
-export function DealerDialog({dealers, show, onHide, customerLocation}: {dealers: DealerResponse[], show: boolean, onHide: Function, customerLocation: google.maps.places.PlaceResult | null }) {
+export function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: Dealer[], show: boolean, onHide: Function, customerLocation: google.maps.places.PlaceResult | null }) {
   const { executeRecaptcha } = useReCaptcha();
   const [email, setEmail] = React.useState('');
+  const [success, setSuccess] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
 
-  async function handleContactClick(event: unknown) {
-    (event as Event).preventDefault();
+  async function handleContactClick(event: React.MouseEvent) {
+    event.preventDefault();
+    setLoading(true);
 
-    const token = executeRecaptcha('dealer_contact_click');
+    const token = await executeRecaptcha('dealer_contact_click');
     const url = '/api/v1/dealer-contact-click';
 
-    const contact = await fetch(url, {
-      method: 'POST', body: JSON.stringify({ token, dealers: dealers, customer_location: customerLocation, customer_info:  email}),
-    }).then(response => response.ok ? response.json() : null);
+    fetch(url, {
+      method: 'POST', body: JSON.stringify({ token, dealers: dealers, customer_location: customerLocation, customer_info: email } as DealerContactClickRequest),
+    })
+      .then(() => setSuccess(true))
+      .finally(() => setLoading(false));
 
-    // if(contact?.value) {
-    //   setDealerContact(contact.value);
-    //   setHasClicked(true);
-    // }
   }
 
-  return <Dialog open={show}>
-    <DialogContent>
+  return <Dialog open={show} onOpenChange={(open) => !open ? onHide() : undefined}>
+    {!success && <DialogContent>
       <DialogHeader>
         <DialogTitle>Has encontrado el nirvana, casi</DialogTitle>
         <DialogDescription>Para saber con qué distribuidores puedes conectarte, introduce tu correo electrónico, o deja que te llamemos</DialogDescription>
       </DialogHeader>
       <label>Correo electrónico</label>
-      <input type='email' name='email' />
+      <Input type='email' name='email' value={email} onChange={e => setEmail(e.target.value)} />
       <DialogFooter>
-        <button type="submit" onClick={(e) => onHide()}>Save changes</button>
+        <Button type="submit" onClick={handleContactClick} disabled={loading}>Quiero saber mas</Button>
       </DialogFooter>
-    </DialogContent>
+    </DialogContent>}
+    {success && <DialogContent>
+      <DialogHeader>
+        <DialogTitle>Informacion enviada!</DialogTitle>
+      </DialogHeader>
+      <p>Hemos enviado la informacion de los distribuidores mas cercanos a ti a tu correo. Si no lo encuentras, no olvides comprobar la carpeta de spam, o contactar con nosotros</p>
+      <DialogFooter>
+        <Button type="submit" onClick={() => onHide()}>Seguir navegando</Button>
+      </DialogFooter>
+    </DialogContent>}
   </Dialog>
 }

@@ -1,13 +1,17 @@
+import { Dealer } from "@/app/dealers/page";
 import { makeQuery } from "@/db";
 
+export type DealerContactClickRequest = {
+  token: string;
+  dealers: Dealer[];
+  customer_location: google.maps.places.PlaceResult;
+  customer_info: string;
+}
+
 export async function POST(req: Request) {
-  const body = await req.json();
+  const body = await req.json() as DealerContactClickRequest;
   if (!body.token)
     return new Response(JSON.stringify({ error: "no token" }), { status: 400 });
-  if (!body.dealer_id)
-    return new Response(JSON.stringify({ error: "no dealer" }), {
-      status: 400,
-    });
 
   const tokenResponse = await fetch(
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA}&response=${body.token}`,
@@ -18,26 +22,22 @@ export async function POST(req: Request) {
     return new Response(JSON.stringify({ error: "Are you a bot?" }), {
       status: 401,
     });
-  // await sql`INSERT INTO dealer_click_events (dealer, event_type, additional_info) VALUES (${body.dealer}, ${DealerEventType.ClickEvent}, ${body.customer_location});`;
 
-  delete body.token;
-  await makeQuery(
-    `
-	INSERT INTO dealer_click_events
-	(dealer_id, event_type, additional_info)
-	VALUES (?, ?, ?);
-	`,
-    [body.dealer_id, 1, JSON.stringify(body)]
-  );
-  const getPhone = async (dealer_id: number) => {
-    const queryResult = await makeQuery(
-      `SELECT contact_phone from dealers where id = ${dealer_id}`
+  await Promise.all(body.dealers.map(async (dealer) => {
+    await makeQuery(
+      `
+    INSERT INTO dealer_click_events
+    (dealer_id, event_type, customer_info, additional_info)
+    VALUES (?, ?, ?, ?);
+    `,
+      [dealer.id, 1, body.customer_info, body.customer_location],
     );
+  }));
 
-    return queryResult[0]?.contact_phone;
-  };
-
+  // TODO: Send email to customer
+  console.log(body.customer_info);
+  
   return new Response(
-    JSON.stringify({ value: await getPhone(body.dealer_id) })
+    JSON.stringify({ value: 'tot be, molt be bonico' }),
   );
 }

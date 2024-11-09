@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS dealer_click_events (
     id int NOT NULL AUTO_INCREMENT,
     dealer_id int,
     event_type int,
+    customer_info text,
     additional_info text,
     created_at timestamp default current_timestamp(),
     PRIMARY KEY (id)
