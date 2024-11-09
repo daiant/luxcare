@@ -19,6 +19,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { DealerContactClickRequest } from '../api/v1/dealer-contact-click/route';
+import { Accordion, AccordionTrigger, AccordionContent, AccordionItem } from '@/components/ui/accordion';
 
 export type Dealer = {
   id: number;
@@ -27,7 +28,7 @@ export type Dealer = {
 }
 
 export default function DealersPage() {
-  const [showDialog, setShowDialog] = React.useState(true);
+  const [showDialog, setShowDialog] = React.useState(false);
   const [dealers, setDealers] = React.useState<Dealer[]>([]);
   const [customerLocation, setCustomerLocation] = React.useState<google.maps.places.PlaceResult | null>(null)
   const { executeRecaptcha } = useReCaptcha();
@@ -55,6 +56,7 @@ export default function DealersPage() {
     </section>
     <section className={styles.fad}>
       <h1>Busca tu distribuidor más cercano</h1>
+      <p>Introduce tu codigo postal para descubrir distribuidores de los mejores spas del mundO</p>
       <div className={styles.content}>
         <aside>
           <InputDealers onSearch={onSearchLocation} />
@@ -76,7 +78,9 @@ export default function DealersPage() {
         <div className={styles.title}>
           <h1>Tu destino preferido: una experiencia spa de alta gama</h1>
           <p>Nos esforzamos por fusionar la estética con la funcionalidad, creando un mundo de sensaciones y emociones.</p>
-          <a href="/about">Sobre nosotros</a>
+          <Button>
+            <a href="/about">Sobre nosotros</a>
+          </Button>
         </div>
         <img alt='' src={fetchImage("/images/spas/crown.webp")} />
       </div>
@@ -87,7 +91,27 @@ export default function DealersPage() {
         <aside>
           <img alt='' src={fetchImage("/images/spas/crown.webp")} />
         </aside>
-        <div className={styles.list}>
+        <Accordion type='single' collapsible className="w-full">
+          <AccordionItem value='item-1'>
+            <AccordionTrigger className='text-lg'>Autenticidad</AccordionTrigger>
+            <AccordionContent>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error adipisci neque doloribus cum magni, quo vel dolorem accusamus non ex labore aperiam, maxime ad vero optio sint, veniam at. Quos.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value='item-2'>
+            <AccordionTrigger className='text-lg'>Garantías sólidas</AccordionTrigger>
+            <AccordionContent>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error adipisci neque doloribus cum magni, quo vel dolorem accusamus non ex labore aperiam, maxime ad vero optio sint, veniam at. Quos.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value='item-3'>
+            <AccordionTrigger className='text-lg'>Compromiso</AccordionTrigger>
+            <AccordionContent>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error adipisci neque doloribus cum magni, quo vel dolorem accusamus non ex labore aperiam, maxime ad vero optio sint, veniam at. Quos.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+        {/* <div className={styles.list}>
           <details>
             <summary>Autenticidad</summary>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam maxime ducimus debitis reiciendis quis culpa et a quidem quisquam eveniet. Nesciunt inventore minima adipisci. Nostrum accusantium amet earum corrupti nobis?</p>
@@ -100,7 +124,7 @@ export default function DealersPage() {
             <summary>Compromiso</summary>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam maxime ducimus debitis reiciendis quis culpa et a quidem quisquam eveniet. Nesciunt inventore minima adipisci. Nostrum accusantium amet earum corrupti nobis?</p>
           </details>
-        </div>
+        </div> */}
       </div>
     </section>
     <section className={styles.fad_wrapper}>
