@@ -136,7 +136,7 @@ export default function DealersPage() {
   </main>
 }
 
-export function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: Dealer[], show: boolean, onHide: Function, customerLocation: google.maps.places.PlaceResult | null }) {
+function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: Dealer[], show: boolean, onHide: Function, customerLocation: google.maps.places.PlaceResult | null }) {
   const { executeRecaptcha } = useReCaptcha();
   const [email, setEmail] = React.useState('');
   const [success, setSuccess] = React.useState(false);
