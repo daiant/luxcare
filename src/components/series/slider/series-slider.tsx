@@ -5,7 +5,7 @@ import React from 'react';
 
 
 let pos = { x: 0, y: 0, left: 0, top: 0 }
-export default function SeriesSliderComponent({ models }: { models: { src: string, title: string, serie: string, capacity: string, jets: string, href: string }[] }) {
+export default function SeriesSliderComponent({ models, padding }: { padding?: number; models: { src: string, title: string, serie: string, capacity: string, jets: string, href: string }[] }) {
   const slider = React.useRef<HTMLUListElement>(null);
 
   function handleMouseDown(e: React.MouseEvent) {
@@ -24,6 +24,7 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
     slider.current.style.cursor = 'grabbing';
     slider.current.style.userSelect = 'none';
   }
+
   function mouseMoveHandler(e: React.MouseEvent) {
     if (!slider.current) return;
     // How far the mouse has been moved
@@ -34,6 +35,7 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
     slider.current.scrollTop = pos.top - dy;
     slider.current.scrollLeft = pos.left - dx;
   }
+
   function mouseUpHandler(e: React.MouseEvent) {
     e.preventDefault();
     document.removeEventListener('mousemove', mouseMoveHandler as never);
@@ -43,7 +45,8 @@ export default function SeriesSliderComponent({ models }: { models: { src: strin
     slider.current.style.cursor = 'grab';
     slider.current.style.removeProperty('user-select');
   }
-  return <div className={styles.slider}>
+
+  return <div className={styles.slider} style={{padding: padding}}>
     <ul ref={slider} onMouseDown={handleMouseDown}>
       {models.map((model) => (
         <li key={model.title}>

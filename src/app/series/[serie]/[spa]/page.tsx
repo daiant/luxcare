@@ -1,14 +1,15 @@
 import HomeContactForm from '@/components/home/contact/home-contact';
 import ModelSliderComponent from '@/components/models/model-slider/model-slider';
 import SeriesSliderComponent from '@/components/series/slider/series-slider';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
 import { SERIES } from '@/lib/series.data';
 import { SPAS } from '@/lib/spas.data';
 import styles from '@/styles/spa.module.css';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 export default function SpaPage({ params }: { params: { serie: string, spa: string } }) {
-  const titleCase = (value: string): string => { return value.substring(0, 1).toUpperCase() + value.substring(1) };
-
   const serie = SPAS[params.serie];
   if (!serie) { notFound(); }
 
@@ -16,100 +17,49 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
   if (!spa) notFound()
 
   const getSpecification = (value: string): string => { return spa.specifications.find(d => d.title.toLowerCase() === value.toLowerCase())?.value ?? ''; };
+
   return <main className={styles.main}>
-    <div className={styles.product_wrapper}>
-      <section className={styles.product}>
-        <div className={styles.title_wrapper}>
-          <div className={styles.content}>
-            <h2 className={styles.serie}>Serie {titleCase(params.serie)}</h2>
-            <h1 className={styles.model}>Modelo {titleCase(params.spa)}</h1>
-            <p>{getSpecification('jets')}, {getSpecification('asientos')}</p>
-          </div>
-          <div className={styles.configurator}>
-            <p className={styles.title}>Variantes</p>
-            {spa.variants.map(v => (
-              <div className={styles.configuration} id={v.title} key={v.title}>
-                <p className={styles.configuration_title}>{titleCase(v.title)}</p>
-                <ul className={styles.configuration_options}>
-                  {v.options.map(option => (
-                    <li title={option.title} key={option.title} style={{ backgroundImage: `url(${option.src})` }}></li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className={styles.actions}>
-            <a href="/dealers" className={styles.link_secondary}>Encuentra tu distribuidor</a>
-          </div>
-        </div>
-        <img className={styles.product_images} src={spa.header} alt={spa.title} />
-        <div className={styles.product_info}>
-          <details open>
-            <summary>Descripción</summary>
-            <p>{spa.description}</p>
-          </details>
-          <details>
-            <summary>Certificaciones</summary>
-            {spa.certifications.map(certification => (
-              <p key={certification.title}><a href={certification.src} target='_blank'>{certification.title}</a></p>
-            ))}
-          </details>
-          <details>
-            <summary>Especificaciones</summary>
-            <ul>
-              {spa.specifications.map(details => (
-                <li key={details.title}>
-                  <span>{titleCase(details.title)}</span> <strong>{details.value}</strong>
-                </li>
-              ))}
-            </ul>
-          </details>
-          <details>
-            <summary>Materiales</summary>
-            <ul>
-              {spa.materials.map(material => (
-                <li key={material.type}>
-                  <span>{material.type}</span> <strong>{material.value}</strong>
-                </li>
-              ))}
-            </ul>
-          </details>
-          <details>
-            <summary>Marca / Fabricante</summary>
-            <p>{spa.maker.title}</p>
-          </details>
-        </div>
-      </section>
-      <div className={styles.product_footer}>
-        <p>Serie {titleCase(params.serie)}</p>
-        <p>Modelo {titleCase(params.spa)}</p>
-        <p>{getSpecification('medidas')}</p>
+    <section className={styles.banner}>
+      <div className={styles.banner_highlights}>
         <p>{getSpecification('asientos')}</p>
-        <a href="/contact" className={styles.link}>Contacta</a>
+        <p>{getSpecification('jets')}</p>
       </div>
-    </div>
+      <div className={styles.banner_title}>
+        <h1>{spa.title}</h1>
+        <Button>
+          <a href="/contact">Solicita presupuesto</a>
+        </Button>
+      </div> 
+      <Image className={styles.banner_img} src={spa.header} alt='SPA' loading='eager' fill/>
+    </section>
+    <section className={styles.description}>
+      <div className={styles.description_content}>
+        <h2>{spa.description.split('.').at(0)}</h2>
+        <p>{spa.description.split('.').slice(1).join('.')}</p>
+    <ul className={styles.specifications}>
+      <li className={styles.detail}>
+        <p className={styles.title}>Personas</p>
+        <p className={styles.content}>{getSpecification('asientos').split(' ')[0]}</p>
+      </li>
+      <li className={styles.detail}>
+        <p className={styles.title}>Jets</p>
+        <p className={styles.content}>{getSpecification('jets').split(' ')[0]}</p>
+      </li>
+      <li className={styles.detail}>
+        <p className={styles.title}>Peso</p>
+        <p className={styles.content}>{getSpecification('peso').split('/')[0]} Kg</p>
+      </li>
+      <li className={styles.detail}>
+        <p className={styles.title}>Volumen</p>
+        <p className={styles.content}>{getSpecification('capacidad').split(' ')[0]} l</p>
+      </li>
+    </ul>
+      </div>
+      <Image src={spa.header} alt='Detalle Hot Tub'
+      width={640} height={400} className={styles.description_img} style={{ width: '100%'}}></Image>
+    </section>
     <section className={styles.video}>
       <video src={spa.video} autoPlay loop muted playsInline></video>
-    </section>
-    <section className={styles.details}>
-      <ul className={styles.header}>
-        <li className={styles.detail}>
-          <p className={styles.title}>Personas</p>
-          <p className={styles.content}>{getSpecification('asientos').split(' ')[0]}</p>
-        </li>
-        <li className={styles.detail}>
-          <p className={styles.title}>Jets</p>
-          <p className={styles.content}>{getSpecification('jets').split(' ')[0]}</p>
-        </li>
-        <li className={styles.detail}>
-          <p className={styles.title}>Peso</p>
-          <p className={styles.content}>{getSpecification('peso').split('/')[0]} Kg</p>
-        </li>
-        <li className={styles.detail}>
-          <p className={styles.title}>Volumen</p>
-          <p className={styles.content}>{getSpecification('capacidad').split(' ')[0]} l</p>
-        </li>
-      </ul>
       <ModelSliderComponent items={spa.details} />
     </section>
     <section className={styles.design}>
@@ -126,15 +76,78 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
     <section className={styles.cards}>
       {spa.landing_cards.map(card => (
         <article className={styles.card} key={card.title}>
-          <h1 className={styles.title}>{card.title}</h1>
-          <a href={card.href} className={styles.link}>Descubre más</a>
           <img src={card.src} alt={card.title} className={styles.img} />
+          <p className={styles.title}>{card.title}</p>
+          <Button className={styles.link} variant='outline'>
+          <a href={card.href}>Descubre más</a>
+          </Button>
         </article>
       ))}
     </section>
+    <section className={styles.datasheet}>
+      <Accordion type='multiple' className='max-w-[900px] mx-auto'>
+        <AccordionItem  value='specifications'>
+          <AccordionTrigger className='text-lg'>Especificaciones</AccordionTrigger>
+          <AccordionContent>
+            <ul>
+              {spa.specifications.map(spec => <li key={spec.title} className='flex gap-x-4 text-base px-4'>
+                <p className='font-semibold'>{spec.title}</p>
+                <p>{spec.value}</p>
+              </li>)}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem  value='certifications'>
+          <AccordionTrigger className='text-lg'>Certificaciones</AccordionTrigger>
+          <AccordionContent>
+            <ul>
+              {spa.certifications.map(cert => <li key={cert.title} >
+                <Button variant='link'>
+                  <a href={cert.src} className='text-base'>{cert.title}</a>
+                  </Button>
+              </li>)}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem  value='materials'>
+          <AccordionTrigger className='text-lg'>Materiales</AccordionTrigger>
+          <AccordionContent>
+            <ul>
+              {spa.materials.map(material => <li key={material.value} className='flex gap-x-4 text-base px-4'>
+                <p className='font-semibold'>{material.type}</p>
+                <p>{material.value}</p>
+              </li>)}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem  value='variants'>
+          <AccordionTrigger className='text-lg'>Variedades</AccordionTrigger>
+          <AccordionContent>
+            <ul className='grid gap-4'>
+              {spa.variants.map(variant => <li className='text-base px-4' key={variant.title}>
+                <p>{variant.title}</p>
+                <ul className='flex gap-x-4'>
+                  {variant.options.map(option => <li key={option.title}>
+                    <img src={option.src} alt={option.title} title={option.title} className='aspect-square w-12' />
+                  </li>)}
+                </ul>
+              </li>)}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem  value='maker'>
+          <AccordionTrigger className='text-lg'>Design by</AccordionTrigger>
+          <AccordionContent>
+            <Button variant='link'>
+              <a href={spa.maker.href} target='_blank' className='text-base'>{spa.maker.title}</a>
+            </Button>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion> 
+    </section>
     <section className={styles.section}>
-      <h1 className={styles.title}>Productos relacionados</h1>
-      <SeriesSliderComponent models={SERIES['crown'].models} />
+      <h2 className={styles.title}>Productos relacionados</h2>
+      <SeriesSliderComponent models={SERIES['crown'].models} padding={0} />
     </section>
     <section className={styles.section}>
       <HomeContactForm />

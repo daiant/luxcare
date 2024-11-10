@@ -252,7 +252,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
     resort: {
       title: 'Resort',
       serie: 'Serie Crown',
-      header: fetchImage('/images/spas/crown/resort/resort.webp'),
+      header: fetchImage('/images/spas/crown.webp'),
       video: fetchImage('/images/spas/crown/resort/resort_video.mp4'),
       description: 'Bienvenidos al Spa Resort, un lugar digno de realeza.\nSu diseño singularmente curvilíneo combina elegancia con comodidad y ofrece una hidroterapia excepcional.\nCon asientos de varios niveles para cinco personas, que incluyen dos Sillas Adirondack dobles: una equipada con jets para la Zona H.O.T. lumbar, la otra con jets para la Zona H.O.T. de los hombros, y ambas con poderosos jets para piernas y pies.\nDos asientos de terapia profunda y un asiento de entrada/refrigeración completan el diseño.',
       certifications: [
