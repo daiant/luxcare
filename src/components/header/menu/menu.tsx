@@ -1,10 +1,9 @@
 'use client';
 import styles from './menu.module.css';
 import React, { useState } from 'react';
-import Waves from '@/public/images/icons/waves.svg';
-import Close from '@/public/images/icons/close.svg';
 import { usePathname } from 'next/navigation';
 import { fetchImage } from '@/lib/fetch-image';
+import { MapPin, Waves, X } from 'lucide-react';
 
 export default function Menu() {
   const [theme, setTheme] = useState('light');
@@ -22,20 +21,20 @@ export default function Menu() {
   }, [pathname]);
 
   return <div className={styles.wrapper} ref={menu} id={'theme-' + theme}>
-    <a href="/" className={styles.home}>
+    <a href="/" className={styles.home} style={{ width: '100px' }}>
       <img src={fetchImage("/images/icons/logo_simple.svg")} alt="" />
     </a>
-    <a href='/dealers' className={[styles.burger, styles.icon].join(' ')} title='Distribuidores'>
-      <img src={fetchImage('/images/icons/gps.svg')} alt='Distribuidores' />
+    <a href='/dealers' className={styles.icon} title='Distribuidores'>
+      <MapPin strokeWidth={1.25} />
     </a>
     <div className={styles.burger} onClick={() => setOpen(!open)}>
       {!open && <>
         <span role='button'>Menú</span>
-        <Waves />
+        <Waves strokeWidth={1} />
       </>}
       {open && <>
         <span role='button'>Cerrar</span>
-        <Close />
+        <X strokeWidth={1} />
       </>}
     </div>
     <div className={styles.submenu} aria-hidden={!open}>

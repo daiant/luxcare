@@ -2,6 +2,7 @@
 import React, { FormEvent } from 'react';
 import styles from './home-contact.module.css';
 import { useReCaptcha } from 'next-recaptcha-v3';
+import { Button } from '@/components/ui/button';
 
 export default function HomeContactForm() {
   const form = React.useRef<HTMLFormElement>(null);
@@ -9,7 +10,7 @@ export default function HomeContactForm() {
   const [error, setError] = React.useState([false, false]);
   const [dialogVisible, setDialogVisible] = React.useState(false);
   const { executeRecaptcha } = useReCaptcha();
-  
+
   const questions = [
     {
       type: 'text',
@@ -82,7 +83,7 @@ export default function HomeContactForm() {
         <div className={styles.column}>
           <h2>Te contactaremos lo antes posible.</h2>
           <div className={styles.action}>
-            <button onClick={() => setDialogVisible(false)}>Volver</button>
+            <Button onClick={() => setDialogVisible(false)}>Volver</Button>
           </div>
         </div>
       </main>
@@ -100,7 +101,7 @@ export default function HomeContactForm() {
           <input type="tel" id='quickPhone' name='phone' required />
           <div className={styles.actions}>
             <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.</p>
-            <button type='submit'>Llámame</button>
+            <Button type='submit'>Llámame</Button>
             {error[0] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
           </div>
         </form>
@@ -137,7 +138,7 @@ export default function HomeContactForm() {
       </fieldset>
       <div className={styles.actions}>
         <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.</p>
-        <button className={loading ? styles.loading : ''} type="submit">Enviar consulta</button>
+        <Button className={loading ? styles.loading : ''} type="submit">Enviar consulta</Button>
         {error[1] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
       </div>
     </form>
