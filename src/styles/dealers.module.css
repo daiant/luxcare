@@ -33,7 +33,7 @@
 
 .fad h1 {
   width: 100%;
-  font-size: var(--title-font-s);
+  font-size: 30px;
   font-weight: 500;
   padding-block-end: 4px;
 }
@@ -47,15 +47,6 @@
   gap: var(--padding);
 }
 
-.fad aside input {
-  border: none;
-  border-bottom: 2px solid;
-  font-size: 18px;
-  line-height: 22px;
-  padding-block: 0.3em;
-  outline: 0;
-}
-
 .fad iframe {
   aspect-ratio: 3;
   width: 100%;
@@ -64,7 +55,7 @@
 .about_cta {
   padding-block: var(--padding);
   position: relative;
-  
+
 }
 
 .about_cta .content h1 {

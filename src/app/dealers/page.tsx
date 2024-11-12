@@ -56,7 +56,6 @@ export default function DealersPage() {
     </section>
     <section className={styles.fad}>
       <h1>Busca tu distribuidor más cercano</h1>
-      <p>Introduce tu codigo postal para descubrir distribuidores de los mejores spas del mundO</p>
       <div className={styles.content}>
         <aside>
           <InputDealers onSearch={onSearchLocation} />
@@ -111,20 +110,6 @@ export default function DealersPage() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        {/* <div className={styles.list}>
-          <details>
-            <summary>Autenticidad</summary>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam maxime ducimus debitis reiciendis quis culpa et a quidem quisquam eveniet. Nesciunt inventore minima adipisci. Nostrum accusantium amet earum corrupti nobis?</p>
-          </details>
-          <details>
-            <summary>Garantías sólidas</summary>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam maxime ducimus debitis reiciendis quis culpa et a quidem quisquam eveniet. Nesciunt inventore minima adipisci. Nostrum accusantium amet earum corrupti nobis?</p>
-          </details>
-          <details>
-            <summary>Compromiso</summary>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam maxime ducimus debitis reiciendis quis culpa et a quidem quisquam eveniet. Nesciunt inventore minima adipisci. Nostrum accusantium amet earum corrupti nobis?</p>
-          </details>
-        </div> */}
       </div>
     </section>
     <section className={styles.fad_wrapper}>
