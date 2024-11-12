@@ -13,7 +13,6 @@ import {
   DialogContent,
   DialogDescription,
   DialogFooter,
-  DialogHeader,
   DialogTitle
 } from "@/components/ui/dialog";
 import { Input } from '@/components/ui/input';
@@ -126,16 +125,22 @@ function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: De
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
-  async function handleContactClick(event: React.MouseEvent) {
+  async function handleContactClick(event: React.FormEvent) {
     event.preventDefault();
     setLoading(true);
 
     const token = await executeRecaptcha('dealer_contact_click');
     const url = '/api/v1/dealer-contact-click';
-    const formData = new FormData();
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
 
     fetch(url, {
-      method: 'POST', body: JSON.stringify({ token, dealers: dealers, customer_location: customerLocation, customer_info: {} } as DealerContactClickRequest),
+      method: 'POST', body: JSON.stringify({
+        token, dealers: dealers, customer_location: customerLocation, customer_info: {
+          name: formData.get('name') as string,
+          email: formData.get('email') as string,
+          phone: formData.get('phone') as string,
+        }
+      } as DealerContactClickRequest),
     })
       .then(() => setSuccess(true))
       .finally(() => setLoading(false));
@@ -154,7 +159,7 @@ function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: De
       <DialogDescription>{getDescription()}</DialogDescription>
 
       <div className='flex flex-row-reverse gap-8'>
-        {!success && <form className='flex flex-col justify-center gap-y-3 grow'>
+        {!success && <form className='flex flex-col justify-center gap-y-3 grow' onSubmit={handleContactClick}>
           <div className="grid gap-y-1">
             <label>Nombre</label>
             <Input type='text' name='name' />
@@ -168,7 +173,7 @@ function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: De
             <Input type='email' name='email' />
           </div>
           <DialogFooter className='mt-2'>
-            <Button type="submit" onClick={handleContactClick} disabled={loading}>Quiero saber más</Button>
+            <Button type="submit" disabled={loading}>Quiero saber más</Button>
           </DialogFooter>
         </form>}
       </div>

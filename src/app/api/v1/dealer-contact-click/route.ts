@@ -5,11 +5,13 @@ export type DealerContactClickRequest = {
   token: string;
   dealers: Dealer[];
   customer_location: google.maps.places.PlaceResult;
-  customer_info: string;
-}
+  customer_info: {
+    [key: string]: string;
+  };
+};
 
 export async function POST(req: Request) {
-  const body = await req.json() as DealerContactClickRequest;
+  const body = (await req.json()) as DealerContactClickRequest;
   if (!body.token)
     return new Response(JSON.stringify({ error: "no token" }), { status: 400 });
 
@@ -23,21 +25,21 @@ export async function POST(req: Request) {
       status: 401,
     });
 
-  await Promise.all(body.dealers.map(async (dealer) => {
-    await makeQuery(
-      `
+  await Promise.all(
+    body.dealers.map(async (dealer) => {
+      await makeQuery(
+        `
     INSERT INTO dealer_click_events
     (dealer_id, event_type, customer_info, additional_info)
     VALUES (?, ?, ?, ?);
     `,
-      [dealer.id, 1, body.customer_info, body.customer_location],
-    );
-  }));
+        [dealer.id, 1, body.customer_info, body.customer_location]
+      );
+    })
+  );
 
   // TODO: Send email to customer
   console.log(body.customer_info);
-  
-  return new Response(
-    JSON.stringify({ value: 'tot be, molt be bonico' }),
-  );
+
+  return new Response(JSON.stringify({ value: "tot be, molt be bonico" }));
 }
