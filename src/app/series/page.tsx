@@ -5,6 +5,7 @@ import HomeContactForm from '@/components/home/contact/home-contact';
 import { SERIES } from '@/lib/series.data';
 import { fetchImage } from '@/lib/fetch-image';
 import FadComponent from '@/components/dealers/fad/fad';
+import Image from 'next/image';
 
 export default function SeriesPage() {
   return <main className={styles.container}>
@@ -21,7 +22,7 @@ export default function SeriesPage() {
             <CaretRight />
           </a>
         </div>
-        <video src={fetchImage("/images/burbuja.webm")} className={styles.image} autoPlay loop muted playsInline></video>
+        <Image src={fetchImage("/images/series.webp")} width={1920} height={1080} alt='' className='z-[-1] object-cover absolute inset-0 w-[100%] h-[100%]' />
       </div>
     </section>
     <div id='next'>

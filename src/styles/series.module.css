@@ -10,17 +10,35 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 48px;
+  color: var(--white);
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.685) 100%);
+}
+
+.banner h1,
+.banner .content [role=contentinfo] {
+  position: relative;
+  z-index: 1;
 }
 
 .banner h1 {
-  /* color: var(--white); */
   font-size: 2.25rem;
   font-size: clamp(2.25rem, 1.9rem + 1.752vw, 4rem);
   font-weight: 500;
 }
 
 .banner h1 .gray {
-  color: #9b9f9f;
+  /* color: #9b9f9f; */
   display: block;
 }
 
