@@ -61,7 +61,7 @@ export default function Menu() {
           <a href="//instagram">Instagram</a>
         </div>
         <div className={styles.group}>
-          <a href="/about">Simplemente perfecto</a>
+          <p>Simplemente perfecto</p>
         </div>
       </div>
     </div>

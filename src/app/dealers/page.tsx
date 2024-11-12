@@ -76,9 +76,9 @@ export default function DealersPage() {
         <div className={styles.title}>
           <h1>Tu destino preferido: una experiencia spa de alta gama</h1>
           <p>Nos esforzamos por fusionar la estética con la funcionalidad, creando un mundo de sensaciones y emociones.</p>
-          <Button>
+          {/* <Button>
             <a href="/about">Sobre nosotros</a>
-          </Button>
+          </Button> */}
         </div>
         <img alt='' src={fetchImage("/images/spas/crown.webp")} />
       </div>
@@ -131,7 +131,7 @@ function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: De
 
     const token = await executeRecaptcha('dealer_contact_click');
     const url = '/api/v1/dealer-contact-click';
-    const formData = new FormData(event.currentTarget as HTMLFormElement);
+    const formData = new FormData(event.target as HTMLFormElement);
 
     fetch(url, {
       method: 'POST', body: JSON.stringify({
