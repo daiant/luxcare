@@ -27,7 +27,7 @@ export type Dealer = {
 }
 
 export default function DealersPage() {
-  const [showDialog, setShowDialog] = React.useState(true);
+  const [showDialog, setShowDialog] = React.useState(false);
   const [dealers, setDealers] = React.useState<Dealer[]>([]);
   const [customerLocation, setCustomerLocation] = React.useState<google.maps.places.PlaceResult | null>(null)
   const { executeRecaptcha } = useReCaptcha();
