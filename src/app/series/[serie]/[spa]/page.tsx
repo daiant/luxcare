@@ -29,34 +29,34 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
         <Button>
           <a href="/contact">Solicita presupuesto</a>
         </Button>
-      </div> 
-      <Image className={styles.banner_img} src={spa.header} alt='SPA' loading='eager' fill/>
+      </div>
+      <Image className={styles.banner_img} src={spa.header} alt='SPA' loading='eager' fill />
     </section>
     <section className={styles.description}>
       <div className={styles.description_content}>
         <h2>{spa.description.split('.').at(0)}</h2>
         <p>{spa.description.split('.').slice(1).join('.')}</p>
-    <ul className={styles.specifications}>
-      <li className={styles.detail}>
-        <p className={styles.title}>Personas</p>
-        <p className={styles.content}>{getSpecification('asientos').split(' ')[0]}</p>
-      </li>
-      <li className={styles.detail}>
-        <p className={styles.title}>Jets</p>
-        <p className={styles.content}>{getSpecification('jets').split(' ')[0]}</p>
-      </li>
-      <li className={styles.detail}>
-        <p className={styles.title}>Peso</p>
-        <p className={styles.content}>{getSpecification('peso').split('/')[0]} Kg</p>
-      </li>
-      <li className={styles.detail}>
-        <p className={styles.title}>Volumen</p>
-        <p className={styles.content}>{getSpecification('capacidad').split(' ')[0]} l</p>
-      </li>
-    </ul>
+        <ul className={styles.specifications}>
+          <li className={styles.detail}>
+            <p className={styles.title}>Personas</p>
+            <p className={styles.content}>{getSpecification('asientos').split(' ')[0]}</p>
+          </li>
+          <li className={styles.detail}>
+            <p className={styles.title}>Jets</p>
+            <p className={styles.content}>{getSpecification('jets').split(' ')[0]}</p>
+          </li>
+          <li className={styles.detail}>
+            <p className={styles.title}>Peso</p>
+            <p className={styles.content}>{getSpecification('peso').split('/')[0]} Kg</p>
+          </li>
+          <li className={styles.detail}>
+            <p className={styles.title}>Volumen</p>
+            <p className={styles.content}>{getSpecification('capacidad').split(' ')[0]} l</p>
+          </li>
+        </ul>
       </div>
-      <Image src={spa.header} alt='Detalle Hot Tub'
-      width={640} height={400} className={styles.description_img} style={{ width: '100%'}}></Image>
+      <Image src={spa.detail ?? spa.header} alt='Detalle Hot Tub'
+        width={640} height={400} className={styles.description_img} style={{ width: '100%' }}></Image>
     </section>
     <section className={styles.video}>
       <video src={spa.video} autoPlay loop muted playsInline></video>
@@ -79,14 +79,14 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
           <img src={card.src} alt={card.title} className={styles.img} />
           <p className={styles.title}>{card.title}</p>
           <Button className={styles.link} variant='outline'>
-          <a href={card.href}>Descubre más</a>
+            <a href={card.href}>Descubre más</a>
           </Button>
         </article>
       ))}
     </section>
     <section className={styles.datasheet}>
       <Accordion type='multiple' className='max-w-[900px] mx-auto'>
-        <AccordionItem  value='specifications'>
+        <AccordionItem value='specifications'>
           <AccordionTrigger className='text-lg'>Especificaciones</AccordionTrigger>
           <AccordionContent>
             <ul>
@@ -97,19 +97,19 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
             </ul>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem  value='certifications'>
+        <AccordionItem value='certifications'>
           <AccordionTrigger className='text-lg'>Certificaciones</AccordionTrigger>
           <AccordionContent>
             <ul>
               {spa.certifications.map(cert => <li key={cert.title} >
                 <Button variant='link'>
                   <a href={cert.src} className='text-base'>{cert.title}</a>
-                  </Button>
+                </Button>
               </li>)}
             </ul>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem  value='materials'>
+        <AccordionItem value='materials'>
           <AccordionTrigger className='text-lg'>Materiales</AccordionTrigger>
           <AccordionContent>
             <ul>
@@ -120,7 +120,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
             </ul>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem  value='variants'>
+        <AccordionItem value='variants'>
           <AccordionTrigger className='text-lg'>Variedades</AccordionTrigger>
           <AccordionContent>
             <ul className='grid gap-4'>
@@ -135,7 +135,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
             </ul>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem  value='maker'>
+        <AccordionItem value='maker'>
           <AccordionTrigger className='text-lg'>Design by</AccordionTrigger>
           <AccordionContent>
             <Button variant='link'>
@@ -143,7 +143,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
             </Button>
           </AccordionContent>
         </AccordionItem>
-      </Accordion> 
+      </Accordion>
     </section>
     <section className={styles.section}>
       <h2 className={styles.title}>Productos relacionados</h2>

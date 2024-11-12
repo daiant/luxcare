@@ -68,6 +68,11 @@
   font-size: 18px;
 }
 
+.description_img {
+  width: 80%;
+  margin-inline: auto;
+}
+
 .specifications {
   gap: 32px;
   margin-block-start: auto;
