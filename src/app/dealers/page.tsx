@@ -28,7 +28,7 @@ export type Dealer = {
 }
 
 export default function DealersPage() {
-  const [showDialog, setShowDialog] = React.useState(false);
+  const [showDialog, setShowDialog] = React.useState(true);
   const [dealers, setDealers] = React.useState<Dealer[]>([]);
   const [customerLocation, setCustomerLocation] = React.useState<google.maps.places.PlaceResult | null>(null)
   const { executeRecaptcha } = useReCaptcha();
@@ -123,7 +123,6 @@ export default function DealersPage() {
 
 function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: Dealer[], show: boolean, onHide: Function, customerLocation: google.maps.places.PlaceResult | null }) {
   const { executeRecaptcha } = useReCaptcha();
-  const [email, setEmail] = React.useState('');
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
@@ -133,35 +132,49 @@ function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: De
 
     const token = await executeRecaptcha('dealer_contact_click');
     const url = '/api/v1/dealer-contact-click';
+    const formData = new FormData();
 
     fetch(url, {
-      method: 'POST', body: JSON.stringify({ token, dealers: dealers, customer_location: customerLocation, customer_info: email } as DealerContactClickRequest),
+      method: 'POST', body: JSON.stringify({ token, dealers: dealers, customer_location: customerLocation, customer_info: {} } as DealerContactClickRequest),
     })
       .then(() => setSuccess(true))
       .finally(() => setLoading(false));
 
   }
+  const getTitle = () => {
+    return success ? '¡Informacion enviada!' : 'Has encontrado el nirvana, casi';
+  }
 
+  const getDescription = () => {
+    return success ? 'Hemos enviado la informacion de los distribuidores mas cercanos a ti a tu correo. Si no lo encuentras, no olvides comprobar la carpeta de spam, o contactar con nosotros' : 'Para saber con qué distribuidores puedes conectarte, introduce tu correo electrónico, o deja que te llamemos';
+  }
   return <Dialog open={show} onOpenChange={(open) => !open ? onHide() : undefined}>
-    {!success && <DialogContent>
-      <DialogHeader>
-        <DialogTitle>Has encontrado el nirvana, casi</DialogTitle>
-        <DialogDescription>Para saber con qué distribuidores puedes conectarte, introduce tu correo electrónico, o deja que te llamemos</DialogDescription>
-      </DialogHeader>
-      <label>Correo electrónico</label>
-      <Input type='email' name='email' value={email} onChange={e => setEmail(e.target.value)} />
-      <DialogFooter>
-        <Button type="submit" onClick={handleContactClick} disabled={loading}>Quiero saber mas</Button>
-      </DialogFooter>
-    </DialogContent>}
-    {success && <DialogContent>
-      <DialogHeader>
-        <DialogTitle>Informacion enviada!</DialogTitle>
-      </DialogHeader>
-      <p>Hemos enviado la informacion de los distribuidores mas cercanos a ti a tu correo. Si no lo encuentras, no olvides comprobar la carpeta de spam, o contactar con nosotros</p>
-      <DialogFooter>
+    <DialogContent>
+      <DialogTitle>{getTitle()}</DialogTitle>
+      <DialogDescription>{getDescription()}</DialogDescription>
+
+      <div className='flex flex-row-reverse gap-8'>
+        {!success && <form className='flex flex-col justify-center gap-y-3 grow'>
+          <div className="grid gap-y-1">
+            <label>Nombre</label>
+            <Input type='text' name='name' />
+          </div>
+          <div className="grid gap-y-1">
+            <label>Teléfono</label>
+            <Input type='tel' name='phone' />
+          </div>
+          <div className="grid gap-y-1">
+            <label>Correo electrónico</label>
+            <Input type='email' name='email' />
+          </div>
+          <DialogFooter className='mt-2'>
+            <Button type="submit" onClick={handleContactClick} disabled={loading}>Quiero saber más</Button>
+          </DialogFooter>
+        </form>}
+      </div>
+      {success && <DialogFooter>
         <Button type="submit" onClick={() => onHide()}>Seguir navegando</Button>
-      </DialogFooter>
-    </DialogContent>}
+      </DialogFooter>}
+    </DialogContent>
   </Dialog>
 }
