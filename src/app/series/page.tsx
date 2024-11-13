@@ -10,7 +10,7 @@ import Image from 'next/image';
 export default function SeriesPage() {
   return <main className={styles.container}>
     <section className={styles.banner}>
-      <h1><span className={styles.gray}>Descubre</span> todos los modelos</h1>
+      <h1><span className={styles.gray}>Descubre</span> todos los spas</h1>
       <div className={styles.content}>
         <div role='contentinfo'>
           <h2>

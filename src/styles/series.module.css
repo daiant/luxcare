@@ -149,7 +149,7 @@
 
 .serie .container [role=heading] span:nth-child(2)::after,
 .serie .container [role=heading] span:nth-child(3)::before {
-  content: '-'
+  content: '_'
 }
 
 .serie .container .title {
