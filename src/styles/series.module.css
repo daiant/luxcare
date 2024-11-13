@@ -53,6 +53,7 @@
 .banner .content [role=contentinfo] {
   max-width: 40ch;
   text-align: end;
+  margin-block-end: var(--padding);
 }
 
 .banner .content h2 {
@@ -79,6 +80,11 @@
 
 .banner .link {
   justify-content: flex-end;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: var(--padding);
+  transform: translate(-50%, -50%);
 }
 
 .banner .link *:not(span) {

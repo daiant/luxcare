@@ -17,11 +17,11 @@ export default function SeriesPage() {
             Innovación, bienestar, experiencia: revitaliza cuerpo y mente.
           </h2>
           <p style={{ marginBlock: 24 }}></p>
-          <a href={'#next'} className={styles.link}>
-            <span>Descubre</span>
-            <CaretRight />
-          </a>
         </div>
+        <a href={'#next'} className={styles.link}>
+          <span>Descubre</span>
+          <CaretRight />
+        </a>
         <Image src={fetchImage("/images/series.webp")} width={1920} height={1080} alt='' className='z-[-1] object-cover absolute inset-0 w-[100%] h-[100%]' />
       </div>
     </section>
