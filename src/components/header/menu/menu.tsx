@@ -51,10 +51,11 @@ export default function Menu() {
           <a href={'/series/crown/'}>Serie Crown</a>
           <a href={'/series/vector/'}>Serie Vector</a>
           <a href={'/series/strato/'}>Serie Strato</a>
+          <a href={'/series/design/'}>Serie Design</a>
         </div>
       </div>
       <div className={styles.footer}>
-        <div className={styles.group}>
+      <div className={styles.group}>
           <a href="//facebook.com">Facebook</a>
           <a href="//x.com">X</a>
           <a href="//linkedin.com">LinkedIn</a>

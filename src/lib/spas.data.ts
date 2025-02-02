@@ -20,6 +20,25 @@ export type Spa = {
   materials: Array<{ type: string; value: string }>;
   design: { title: string; value: string; src: string; aside_src: string };
 };
+
+export const design_landing_cards = [
+  {
+    title: "Extreme Isolation",
+    href: "/microsilk",
+    src: fetchImage("/images/spas/crown/summit/microsilk.webp"),
+  },
+  {
+    title: "Desinfección UV",
+    href: "/microsilk",
+    src: fetchImage("/images/spas/crown/summit/microsilk.webp"),
+  },
+  {
+    title: "Silent Wave Eco",
+    href: "/microsilk",
+    src: fetchImage("/images/spas/crown/summit/microsilk.webp"),
+  },
+]
+
 const design_by_riviera = {
   title: "Riviera Pool",
   value:
@@ -27,6 +46,15 @@ const design_by_riviera = {
   src: fetchImage("/images/spas/strato/rivierapool.webp"),
   aside_src: fetchImage("/images/spas/strato/header.webp"),
 };
+
+const design_by_DESIGN = {
+  title: "Riviera Pool",
+  value:
+    "El Strato 2.1 y el Strato 2.4 presentan diseños elegantes, modernos y lineales que elevan esta serie de piscinas a un punto destacado de tu baño. Estas piscinas son sensacionales donde sea que las coloques, ya sea en interiores o en el jardín. Utilizamos un acrílico sanitario blanco de alta calidad para que el agua parezca fresca y azul. El revestimiento de la piscina está disponible en tres colores y dos opciones diferentes.",
+  src: fetchImage("/images/spas/strato/rivierapool.webp"),
+  aside_src: fetchImage("/images/spas/strato/header.webp"),
+};
+
 const design_by_marquis = {
   title: "Marquis Spas",
   value:
@@ -34,10 +62,12 @@ const design_by_marquis = {
   src: fetchImage("/images/marquis.jpg"),
   aside_src: fetchImage("/images/spas/crown/summit/summit_design.webp"),
 };
+
 const materials = [
   { type: "Interior", value: "Casco en acrílico" },
   { type: "Exterior", value: "Cabinete PVC" },
 ];
+
 const variants = [
   {
     title: "Colores Cabina",
@@ -113,7 +143,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1817 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
-        { title: "Capacidad", value: "1779 litros" },
+        { title: "Capacidad", value: "1779 L" },
         { title: "Peso", value: "499 / 2277 kg" },
       ],
       maker: {
@@ -193,7 +223,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1817 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
-        { title: "Capacidad", value: "1476 litros" },
+        { title: "Capacidad", value: "1476 L" },
         { title: "Peso", value: "386 / 1814 kg" },
       ],
       maker: {
@@ -250,7 +280,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
     euphoria: {
       title: "Euphoria",
       serie: "Serie Crown",
-      header: fetchImage("/images/spas/crown/euphoria/euphoria.jpeg"),
+      header: fetchImage("/images/spas/crown/euphoria/euphoria.wepb"),
       video: fetchImage("/images/spas/crown/euphoria/euphoria_video.mp4"),
       description:
         "El modelo Euphoria es una celebración real en ciernes.\nPresenta un diseño equilibrado y simétrico con siete asientos de varios niveles, incluyendo dos asientos de terapia extra profunda posicionados uno al lado del otro con masaje de cuerpo completo.\nCada asiento puede acceder al potente jet Regal Whitewater-4 para una terapia intensa en piernas y pies.\n¡Con cinco Zonas H.O.T., tú y tus invitados os sumergiréis en una euforia sin límites!",
@@ -273,7 +303,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1817 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
-        { title: "Capacidad", value: "1438 litros" },
+        { title: "Capacidad", value: "1438 L" },
         { title: "Peso", value: "374 / 1812 kg" },
       ],
       maker: {
@@ -354,7 +384,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1514 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
-        { title: "Capacidad", value: "1173 litros" },
+        { title: "Capacidad", value: "1173 L" },
         { title: "Peso", value: "318 / 1492 kg" },
       ],
       maker: {
@@ -435,7 +465,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1514 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
-        { title: "Capacidad", value: "1363 litros" },
+        { title: "Capacidad", value: "1363 L" },
         { title: "Peso", value: "345 / 1706 kg" },
       ],
       maker: {
@@ -515,7 +545,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "1 x 908 / 2 x 1211 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "1 filtro" },
-        { title: "Capacidad", value: "984 litros" },
+        { title: "Capacidad", value: "984 L" },
         { title: "Peso", value: "273 / 1257 kg" },
       ],
       maker: {
@@ -595,7 +625,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "1 x 908 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "1 filtro" },
-        { title: "Capacidad", value: "1003 litros" },
+        { title: "Capacidad", value: "1003 L" },
         { title: "Peso", value: "209 / 1211 kg" },
       ],
       maker: {
@@ -677,7 +707,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1211 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/1x32A o fase 3" },
         { title: "Filtración", value: "2 filtros" },
-        { title: "Capacidad", value: "1514  litros" },
+        { title: "Capacidad", value: "1514  L" },
         { title: "Peso", value: "381 / 1894 kg" },
       ],
       maker: {
@@ -757,7 +787,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1211 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/1x32A o fase 3" },
         { title: "Filtración", value: "2 filtros" },
-        { title: "Capacidad", value: "1685 litros" },
+        { title: "Capacidad", value: "1685 L" },
         { title: "Peso", value: "381 / 2066 kg" },
       ],
       maker: {
@@ -837,7 +867,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1211 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/1x32A o fase 3" },
         { title: "Filtración", value: "2 filtros" },
-        { title: "Capacidad", value: "1211 litros" },
+        { title: "Capacidad", value: "1211 L" },
         { title: "Peso", value: "318 / 1530 kg" },
       ],
       maker: {
@@ -917,7 +947,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1211 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/1x16A o 1x32A o fase 3" },
         { title: "Filtración", value: "2 filtros" },
-        { title: "Capacidad", value: "1287 litros" },
+        { title: "Capacidad", value: "1287 L" },
         { title: "Peso", value: "318 / 1605 kg" },
       ],
       maker: {
@@ -997,7 +1027,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "1x 606LPM/ 2 x 1211 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/1x16A o 1x32A o fase 3" },
         { title: "Filtración", value: "1 filtro" },
-        { title: "Capacidad", value: "1022 litros" },
+        { title: "Capacidad", value: "1022 L" },
         { title: "Peso", value: "249 / 1272 kg" },
       ],
       maker: {
@@ -1077,7 +1107,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "1x 454 / 606 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/1x16A o 1x32A o fase 3" },
         { title: "Filtración", value: "1 filtro" },
-        { title: "Capacidad", value: "795 litros" },
+        { title: "Capacidad", value: "795 L" },
         { title: "Peso", value: "200 / 994 kg" },
       ],
       maker: {
@@ -1152,7 +1182,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Asientos", value: "2 personas" },
         { title: "Jets", value: "30 jets" },
         { title: "Bombas", value: "1x 2,5 CV" },
-        { title: "Capacidad", value: "1200 litros" },
+        { title: "Capacidad", value: "1200 L" },
         { title: "Peso", value: "380 / 1580 kg" },
       ],
       maker: {
@@ -1210,7 +1240,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Jets", value: "36 jets" },
         { title: "Reposacabezas", value: "5" },
         { title: "Bombas", value: "1x 2,5 CV" },
-        { title: "Capacidad", value: "1660 litros" },
+        { title: "Capacidad", value: "1660 L" },
         { title: "Peso", value: "410 / 2070 kg" },
       ],
       maker: {
@@ -1249,4 +1279,380 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_riviera,
     },
   },
+  design: {
+    alaska: {
+      title: "Alaska",
+      serie: "Serie Design",
+      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
+      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      description: "El modelo Alaska de la serie Design de Waterwave Spas combina elegancia y lujo con tecnología avanzada. Con un diseño refinado y un revestimiento de aluminio, este spa ofrece una experiencia incomparable de relajación. Equipado con 67 chorros de agua, dos asientos ergonómicos y dos tumbonas, proporciona un masaje completo para el cuerpo. Además, su iluminación ambiental crea una atmósfera tranquila y sofisticada, ideal para disfrutar de momentos de puro bienestar en tu propio hogar.",
+      certifications: [
+        {
+          title: "Ficha técnica",
+          type: "document",
+          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+        },
+      ],
+      specifications: [
+        { title: "Medidas", value: "230 x 230 x 92 cm" },
+        { title: "Asientos", value: "4 personas" },
+        { title: 'Capacidad', value: '2 asientos y 2 tumbonas'},
+        { title: "Jets", value: "67 jets" },
+        { title: "Reposacabezas", value: "5" },
+        { title: "Bombas", value: "1 x 3 PS 2 velocidades + 2 x 3 PS 1 velocidad" },
+        { title: "Volumen", value: "1819 L" },
+        { title: "Electricidad", value: "230 V" },
+        {title: 'Filtración', value: '2 x 50 sq'},
+        { title: "Peso", value: "380 / 2199 kg" },
+      ],
+      maker: {
+        title: " El modelo Alaska pertenece a la Serie Design, de Alguien",
+        href: "/series/design",
+      },
+      details: [
+        {
+          title: "Moderno",
+          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
+        },
+        {
+          title: "Simétrico",
+          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
+        },
+        {
+          title: "Sofisticado",
+          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+        },
+        {
+          title: "Compacto",
+          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+        },
+        {
+          title: "Comodidad",
+          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+        },
+        {
+          title: "Estética",
+          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+        },
+      ],
+      landing_cards: design_landing_cards,
+      variants,
+      materials: [
+        { type: "Interior", value: "Casco en Acrílico + Estructura de Acero" },
+        { type: "Exterior", value: "Revestimiento PVC" },
+      ],
+      design: design_by_DESIGN,
+    },
+    columbus: {
+      title: "Columbus",
+      serie: "Serie Design",
+      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
+      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      description: "El modelo Columbus combina tecnología avanzada y diseño ergonómico para ofrecer una experiencia de spa versátil. Con capacidad para 3 personas en una combinación de asientos y tumbonas, este spa garantiza comodidad y relajación. Sus 33 chorros ajustables proporcionan una terapia personalizada para aliviar tensiones musculares, mientras que el sistema de iluminación LED y otras características modernas añaden un toque de lujo. Ideal para disfrutar en familia o con amigos, el Columbus es una opción completa y sofisticada.",
+      certifications: [
+        {
+          title: "Ficha técnica",
+          type: "document",
+          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+        },
+      ],
+      specifications: [
+        { title: "Medidas", value: "216 x 165 x 74 cm" },
+        { title: "Asientos", value: "3 personas" },
+        { title: 'Capacidad', value: '1 asiento y 2 tumbonas'},
+        { title: "Jets", value: "33 jets" },
+        { title: "Bombas", value: "2 x 3 PS 1 velocidad" },
+        { title: "Volumen", value: "1100 L" },
+        { title: "Electricidad", value: "230 V" },
+        {title: 'Filtración', value: '1 x 50 sq'},
+        { title: "Peso", value: "270 / 1370 kg" },
+      ],
+      maker: {
+        title: "El modelo Columbus pertenece a la Serie Design, de Alguien",
+        href: "/series/design",
+      },
+      details: [
+        {
+          title: "Moderno",
+          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
+        },
+        {
+          title: "Simétrico",
+          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
+        },
+        {
+          title: "Sofisticado",
+          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+        },
+        {
+          title: "Compacto",
+          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+        },
+        {
+          title: "Comodidad",
+          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+        },
+        {
+          title: "Estética",
+          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+        },
+      ],
+      landing_cards: design_landing_cards,
+      variants,
+      materials: [
+        { type: "Interior", value: "Casco en Acrílico + Estructura de Acero" },
+        { type: "Exterior", value: "Revestimiento PVC" },
+      ],
+      design: design_by_DESIGN,
+    },
+    jackson: {
+      title: "Jackson",
+      serie: "Serie Design",
+      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
+      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      description: "El modelo Jackson es un spa compacto diseñado para combinar comodidad y funcionalidad, ideal para espacios más pequeños. Con capacidad para 5 personas, ofrece tres tumbonas y dos asientos ergonómicos que maximizan la relajación. Su sistema de chorros ajustables proporciona una experiencia de hidroterapia personalizada, mientras que características como la iluminación LED crean un ambiente acogedor. Perfecto para quienes buscan un spa eficiente y de alta calidad para disfrutar en casa.",
+      certifications: [
+        {
+          title: "Ficha técnica",
+          type: "document",
+          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+        },
+      ],
+      specifications: [
+        { title: "Medidas", value: "216 x 216 x 92 cm" },
+        { title: "Asientos", value: "3 personas" },
+        { title: 'Capacidad', value: '3 asientos y 2 tumbonas'},
+        { title: "Jets", value: "62 jets" },
+        { title: "Bombas", value: "2 x 3 PS 1 velocidad" },
+        { title: "Volumen", value: "1474 L" },
+        { title: "Electricidad", value: "230 V" },
+        {title: 'Filtración', value: '1 x 50 sq'},
+        { title: "Peso", value: "320 / 1794 kg" },
+      ],
+      maker: {
+        title: "El modelo Jackson pertenece a la Serie Design, de Alguien",
+        href: "/series/design",
+      },
+      details: [
+        {
+          title: "Moderno",
+          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
+        },
+        {
+          title: "Simétrico",
+          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
+        },
+        {
+          title: "Sofisticado",
+          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+        },
+        {
+          title: "Compacto",
+          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+        },
+        {
+          title: "Comodidad",
+          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+        },
+        {
+          title: "Estética",
+          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+        },
+      ],
+      landing_cards: design_landing_cards,
+      variants,
+      materials: [
+        { type: "Interior", value: "Casco en Acrílico + Estructura de Acero" },
+        { type: "Exterior", value: "Revestimiento PVC" },
+      ],
+      design: design_by_DESIGN,
+    },
+    nizza: {
+      title: "Nizza",
+      serie: "Serie Design",
+      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
+      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      description: "El modelo Nizza es un spa diseñado para combinar estilo y funcionalidad, con capacidad para 5 personas, incluyendo una cómoda tumbona. Equipado con un sistema de chorros ajustables y una iluminación LED ambiental, ofrece una experiencia de hidroterapia relajante y personalizable. Su diseño espacioso y materiales de alta calidad lo convierten en una excelente opción para quienes buscan confort y rendimiento en su hogar.",
+      certifications: [
+        {
+          title: "Ficha técnica",
+          type: "document",
+          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+        },
+      ],
+      specifications: [
+        { title: "Medidas", value: "220 x 220 x 96 cm" },
+        { title: "Asientos", value: "5 personas" },
+        { title: 'Capacidad', value: '4 asientos y 1 tumbona'},
+        { title: "Jets", value: "54 jets" },
+        { title: "Bombas", value: "1 x 3 PS 2 velocidades + 2 x 3 PS 1 velocidad" },
+        { title: "Volumen", value: "1500 L" },
+        { title: "Electricidad", value: "230 V" },
+        {title: 'Filtración', value: '2 x 50 sq'},
+        { title: "Peso", value: "350 / 1850 kg" },
+      ],
+      maker: {
+        title: "El modelo Nizza pertenece a la Serie Design, de Alguien",
+        href: "/series/design",
+      },
+      details: [
+        {
+          title: "Moderno",
+          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
+        },
+        {
+          title: "Simétrico",
+          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
+        },
+        {
+          title: "Sofisticado",
+          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+        },
+        {
+          title: "Compacto",
+          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+        },
+        {
+          title: "Comodidad",
+          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+        },
+        {
+          title: "Estética",
+          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+        },
+      ],
+      landing_cards: design_landing_cards,
+      variants,
+      materials: [
+        { type: "Interior", value: "Casco en Acrílico + Estructura de Acero" },
+        { type: "Exterior", value: "Revestimiento PVC" },
+      ],
+      design: design_by_DESIGN,
+    },
+    nizzaII: {
+      title: "Nizza II",
+      serie: "Serie Design",
+      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
+      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      description: "El modelo Nizza II es una versión mejorada con capacidad para 5 personas, incluyendo una doble tumbona reclinable. Diseñado para maximizar la relajación, incorpora chorros ajustables para hidroterapia personalizada, iluminación LED y un sistema de eficiencia energética. Su diseño moderno y materiales duraderos lo convierten en una opción ideal para disfrutar de lujo y confort en cualquier espacio exterior.",
+      certifications: [
+        {
+          title: "Ficha técnica",
+          type: "document",
+          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+        },
+      ],
+      specifications: [
+        { title: "Medidas", value: "230 x 230 x 92 cm" },
+        { title: "Asientos", value: "5 personas" },
+        { title: 'Capacidad', value: '4 asientos y 1 tumbona'},
+        { title: "Jets", value: "42 jets" },
+        { title: "Bombas", value: "1 x 3 PS 2 velocidades + 2 x 3 PS 1 velocidad" },
+        { title: "Volumen", value: "1500 L" },
+        { title: "Electricidad", value: "230 V" },
+        {title: 'Filtración', value: '2 x 50 sq'},
+        { title: "Peso", value: "350 / 1850 kg" },
+      ],
+      maker: {
+        title: "El modelo Nizza II pertenece a la Serie Design, de Alguien",
+        href: "/series/design",
+      },
+      details: [
+        {
+          title: "Moderno",
+          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
+        },
+        {
+          title: "Simétrico",
+          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
+        },
+        {
+          title: "Sofisticado",
+          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+        },
+        {
+          title: "Compacto",
+          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+        },
+        {
+          title: "Comodidad",
+          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+        },
+        {
+          title: "Estética",
+          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+        },
+      ],
+      landing_cards: design_landing_cards,
+      variants,
+      materials: [
+        { type: "Interior", value: "Casco en Acrílico + Estructura de Acero" },
+        { type: "Exterior", value: "Revestimiento PVC" },
+      ],
+      design: design_by_DESIGN,
+    },
+    richmond: {
+      title: "Richmond",
+      serie: "Serie Design",
+      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
+      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      description: "El modelo Richmond ofrece un diseño espacioso para hasta 3 personas, con 1 asiento ergonómico y dos tumbonas para mayor comodidad. Equipado con chorros ajustables para una experiencia de hidroterapia personalizada, destaca por su iluminación LED y un sistema energético eficiente. Su combinación de lujo y funcionalidad lo hace ideal para transformar cualquier espacio exterior en un oasis de relajación.",
+      certifications: [
+        {
+          title: "Ficha técnica",
+          type: "document",
+          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+        },
+      ],
+      specifications: [
+        { title: "Medidas", value: "216 x 165 x 82 cm" },
+        { title: "Asientos", value: "3 personas" },
+        { title: 'Capacidad', value: '1 asiento y 2 tumbonas'},
+        { title: "Jets", value: "41 jets" },
+        { title: "Bombas", value: "2 x 3 PS 1 velocidad" },
+        { title: "Volumen", value: "1100 L" },
+        { title: "Electricidad", value: "230 V" },
+        {title: 'Filtración', value: '2 x 50 sq'},
+        { title: "Peso", value: "270 / 1370 kg" },
+      ],
+      maker: {
+        title: "El modelo Nizza II pertenece a la Serie Design, de Alguien",
+        href: "/series/design",
+      },
+      details: [
+        {
+          title: "Moderno",
+          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
+        },
+        {
+          title: "Simétrico",
+          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
+        },
+        {
+          title: "Sofisticado",
+          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+        },
+        {
+          title: "Compacto",
+          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+        },
+        {
+          title: "Comodidad",
+          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+        },
+        {
+          title: "Estética",
+          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+        },
+      ],
+      landing_cards: design_landing_cards,
+      variants,
+      materials: [
+        { type: "Interior", value: "Casco en Acrílico + Estructura de Acero" },
+        { type: "Exterior", value: "Revestimiento PVC" },
+      ],
+      design: design_by_DESIGN,
+    },
+  },
+
 };

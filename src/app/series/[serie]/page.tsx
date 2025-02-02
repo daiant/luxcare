@@ -19,27 +19,32 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           <h1>Serie {serie.title}</h1>
           <h2>{serie.adjective}</h2>
         </header>
-        <img src={serie.header} alt={serie.title} />
+        <img src={serie.header} alt={serie.title}/>
       </section>
-      <SerieBannerComponent data={serie.mission} video={serie.video} />
+      <SerieBannerComponent data={serie.mission} video={serie.video}/>
       <section className={styles.media_wrapper}>
         <div className={styles.media}>
-          <img src={serie.cta_2_img} alt={serie.multimedia.right} />
+          <img src={serie.cta_2_img} alt={serie.multimedia.right}/>
           <p className={styles.media_content}>{serie.multimedia.left}</p>
         </div>
         <div className={styles.media}>
-          <img src={serie.multimedia.right_src} alt="" />
+          <img src={serie.multimedia.right_src} alt=""/>
           <p className={styles.media_content}>{serie.multimedia.right}</p>
         </div>
         <div className={styles.media}>
-          <img src={serie.cta_img} alt="Crown" />
+          <img src={serie.cta_img} alt="Crown"/>
           <div className={styles.media_content}>
             <p>{serie.left.top}</p>
             <p>{serie.left.bottom}</p>
-            <p>Diseño y construcción</p>
           </div>
         </div>
-      </section >
+      </section>
+      <section className={styles.models} id='models'>
+        <header>
+          <p>Conoce <span>todos los</span> <br/><span>modelos</span> {serie.title}</p>
+        </header>
+        <SeriesSliderComponent models={serie.models}/>
+      </section>
       <section className={styles.steps}>
         <header>
           <div className={styles.call}>
@@ -54,17 +59,11 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
             <p role='heading' aria-level={1}>{step.title}</p>
             <p role='subheading'>{step.content}</p>
             {Boolean(step.link) && <a href={step.link}>
-              <span>Conocer más</span>
-              <CaretRight />
+                <span>Conocer más</span>
+                <CaretRight/>
             </a>}
           </div>
         </div>))}
-      </section>
-      <section className={styles.models} id='models'>
-        <header>
-          <p>Conoce <span>todos los</span> <br /><span>modelos</span> {serie.title}</p>
-        </header>
-        <SeriesSliderComponent models={serie.models} />
       </section>
       <section className={styles.other_series}>
         <header>
@@ -74,7 +73,7 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           {serie.other_series.map(other => (
             <li key={other.title}>
               <a href={other.url}>
-                <img src={other.src} alt={other.title} />
+                <img src={other.src} alt={other.title}/>
               </a>
               <div role='contentinfo'>
                 <p className={styles.subheading}>{other.subheading}</p>
@@ -84,16 +83,16 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
                 <p>{other.content}</p>
                 <a href={other.url}>
                   <span>Descubre la colección</span>
-                  <CaretRight />
+                  <CaretRight/>
                 </a>
               </div>
             </li>
           ))}
         </ul>
       </section>
-      <FadComponent />
+      <FadComponent/>
       <section className={styles.contact_cta}>
-        <HomeContactForm />
+        <HomeContactForm/>
       </section>
     </div>
 }
