@@ -30,12 +30,12 @@ export const design_landing_cards = [
   {
     title: "Desinfección UV",
     href: "/microsilk",
-    src: fetchImage("/images/spas/crown/summit/microsilk.webp"),
+    src: fetchImage("/images/spas/crown/summit/constantclean.webp"),
   },
   {
     title: "Silent Wave Eco",
     href: "/microsilk",
-    src: fetchImage("/images/spas/crown/summit/microsilk.webp"),
+    src: fetchImage("/images/spas/crown/summit/flow-control.webp"),
   },
 ]
 
@@ -143,6 +143,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Bombas", value: "2 x 1817 LPM" },
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
+        { title: "Volumen", value: "1779 L" },
         { title: "Capacidad", value: "1779 L" },
         { title: "Peso", value: "499 / 2277 kg" },
       ],
@@ -224,6 +225,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
         { title: "Capacidad", value: "1476 L" },
+        { title: "Volumen", value: "1476 L" },
         { title: "Peso", value: "386 / 1814 kg" },
       ],
       maker: {
@@ -280,7 +282,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
     euphoria: {
       title: "Euphoria",
       serie: "Serie Crown",
-      header: fetchImage("/images/spas/crown/euphoria/euphoria.wepb"),
+      header: fetchImage("/images/spas/crown/euphoria/euphoria.webp"),
       video: fetchImage("/images/spas/crown/euphoria/euphoria_video.mp4"),
       description:
         "El modelo Euphoria es una celebración real en ciernes.\nPresenta un diseño equilibrado y simétrico con siete asientos de varios niveles, incluyendo dos asientos de terapia extra profunda posicionados uno al lado del otro con masaje de cuerpo completo.\nCada asiento puede acceder al potente jet Regal Whitewater-4 para una terapia intensa en piernas y pies.\n¡Con cinco Zonas H.O.T., tú y tus invitados os sumergiréis en una euforia sin límites!",
@@ -304,6 +306,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
         { title: "Capacidad", value: "1438 L" },
+        { title: "Volumen", value: "1438 L" },
         { title: "Peso", value: "374 / 1812 kg" },
       ],
       maker: {
@@ -385,6 +388,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
         { title: "Capacidad", value: "1173 L" },
+        { title: "Volumen", value: "1173 L" },
         { title: "Peso", value: "318 / 1492 kg" },
       ],
       maker: {
@@ -466,6 +470,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "2 filtros" },
         { title: "Capacidad", value: "1363 L" },
+        { title: "Volumen", value: "1363 L" },
         { title: "Peso", value: "345 / 1706 kg" },
       ],
       maker: {
@@ -546,6 +551,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "1 filtro" },
         { title: "Capacidad", value: "984 L" },
+        { title: "Volumen", value: "984 L" },
         { title: "Peso", value: "273 / 1257 kg" },
       ],
       maker: {
@@ -626,6 +632,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/32A/3PH" },
         { title: "Filtración", value: "1 filtro" },
         { title: "Capacidad", value: "1003 L" },
+        { title: "Volumen", value: "1003 L" },
         { title: "Peso", value: "209 / 1211 kg" },
       ],
       maker: {
@@ -708,6 +715,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/1x32A o fase 3" },
         { title: "Filtración", value: "2 filtros" },
         { title: "Capacidad", value: "1514  L" },
+        { title: "Volumen", value: "1514  L" },
         { title: "Peso", value: "381 / 1894 kg" },
       ],
       maker: {
@@ -788,6 +796,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/1x32A o fase 3" },
         { title: "Filtración", value: "2 filtros" },
         { title: "Capacidad", value: "1685 L" },
+        { title: "Volumen", value: "1685 L" },
         { title: "Peso", value: "381 / 2066 kg" },
       ],
       maker: {
@@ -868,6 +877,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/1x32A o fase 3" },
         { title: "Filtración", value: "2 filtros" },
         { title: "Capacidad", value: "1211 L" },
+        { title: "Volumen", value: "1211 L" },
         { title: "Peso", value: "318 / 1530 kg" },
       ],
       maker: {
@@ -948,6 +958,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/1x16A o 1x32A o fase 3" },
         { title: "Filtración", value: "2 filtros" },
         { title: "Capacidad", value: "1287 L" },
+        { title: "Volumen", value: "1287 L" },
         { title: "Peso", value: "318 / 1605 kg" },
       ],
       maker: {
@@ -1028,6 +1039,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/1x16A o 1x32A o fase 3" },
         { title: "Filtración", value: "1 filtro" },
         { title: "Capacidad", value: "1022 L" },
+        { title: "Volumen", value: "1022 L" },
         { title: "Peso", value: "249 / 1272 kg" },
       ],
       maker: {
@@ -1108,6 +1120,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Electricidad", value: "50 Hz, 230V/1x16A o 1x32A o fase 3" },
         { title: "Filtración", value: "1 filtro" },
         { title: "Capacidad", value: "795 L" },
+        { title: "Volumen", value: "795 L" },
         { title: "Peso", value: "200 / 994 kg" },
       ],
       maker: {
@@ -1183,6 +1196,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Jets", value: "30 jets" },
         { title: "Bombas", value: "1x 2,5 CV" },
         { title: "Capacidad", value: "1200 L" },
+        { title: "Volumen", value: "1200 L" },
         { title: "Peso", value: "380 / 1580 kg" },
       ],
       maker: {
@@ -1241,6 +1255,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Reposacabezas", value: "5" },
         { title: "Bombas", value: "1x 2,5 CV" },
         { title: "Capacidad", value: "1660 L" },
+        { title: "Volumen", value: "1660 L" },
         { title: "Peso", value: "410 / 2070 kg" },
       ],
       maker: {
