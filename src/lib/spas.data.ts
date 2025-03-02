@@ -48,9 +48,9 @@ const design_by_riviera = {
 };
 
 const design_by_DESIGN = {
-  title: "Riviera Pool",
+  title: "WaterWave Spas",
   value:
-    "El Strato 2.1 y el Strato 2.4 presentan diseños elegantes, modernos y lineales que elevan esta serie de piscinas a un punto destacado de tu baño. Estas piscinas son sensacionales donde sea que las coloques, ya sea en interiores o en el jardín. Utilizamos un acrílico sanitario blanco de alta calidad para que el agua parezca fresca y azul. El revestimiento de la piscina está disponible en tres colores y dos opciones diferentes.",
+    "Cada modelo WaterWave ha sido diseñado para ofrecer el máximo confort y rendimiento. Con bombas de alta potencia que optimizan el flujo del agua, cada chorro está estratégicamente ubicado para proporcionar un masaje terapéutico eficaz. Sus asientos están pensados para satisfacer diversas necesidades, desde relajación profunda hasta hidroterapia. Además, varios de sus modelos cuentan con opciones de entretenimiento avanzadas, como conectividad Bluetooth y altavoces de calidad, permitiendo que disfrutes de una experiencia inigualable en compañía de tus seres queridos.",
   src: fetchImage("/images/spas/strato/rivierapool.webp"),
   aside_src: fetchImage("/images/spas/strato/header.webp"),
 };
@@ -1283,8 +1283,9 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
     alaska: {
       title: "Alaska",
       serie: "Serie Design",
-      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
-      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      header: fetchImage("/images/spas/design/alaska/alaska-hero.webp"),
+      detail: fetchImage("/images/spas/design/alaska/alaska-detail.webp"),
+      video: fetchImage("/images/spas/design/videos/design-video.mp4"),
       description: "El modelo Alaska de la serie Design de Waterwave Spas combina elegancia y lujo con tecnología avanzada. Con un diseño refinado y un revestimiento de aluminio, este spa ofrece una experiencia incomparable de relajación. Equipado con 67 chorros de agua, dos asientos ergonómicos y dos tumbonas, proporciona un masaje completo para el cuerpo. Además, su iluminación ambiental crea una atmósfera tranquila y sofisticada, ideal para disfrutar de momentos de puro bienestar en tu propio hogar.",
       certifications: [
         {
@@ -1306,33 +1307,33 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Peso", value: "380 / 2199 kg" },
       ],
       maker: {
-        title: " El modelo Alaska pertenece a la Serie Design, de Alguien",
+        title: " El modelo Alaska pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: [
         {
-          title: "Moderno",
-          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
-        },
-        {
-          title: "Simétrico",
-          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
-        },
-        {
           title: "Sofisticado",
-          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details-Serie-Design.jpg"),
         },
         {
-          title: "Compacto",
-          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+          title: "Ergonómico",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details2-Serie-Design.jpg"),
         },
         {
-          title: "Comodidad",
-          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+          title: "Relajante",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details3-Serie-Design.jpg"),
         },
         {
-          title: "Estética",
-          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+          title: "Potente",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details17-Serie-Design.jpg"),
+        },
+        {
+          title: "Exclusivo",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details5-Serie-Design.jpg"),
+        },
+        {
+          title: "Funcional",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details18-Serie-Design.jpg"),
         },
       ],
       landing_cards: design_landing_cards,
@@ -1346,8 +1347,9 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
     columbus: {
       title: "Columbus",
       serie: "Serie Design",
-      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
-      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      header: fetchImage("/images/spas/design/columbus/columbus-hero.png"),
+      detail: fetchImage("/images/spas/design/columbus/columbus-detail.png"),
+      video: fetchImage("/images/spas/design/videos/design-video.mp4"),
       description: "El modelo Columbus combina tecnología avanzada y diseño ergonómico para ofrecer una experiencia de spa versátil. Con capacidad para 3 personas en una combinación de asientos y tumbonas, este spa garantiza comodidad y relajación. Sus 33 chorros ajustables proporcionan una terapia personalizada para aliviar tensiones musculares, mientras que el sistema de iluminación LED y otras características modernas añaden un toque de lujo. Ideal para disfrutar en familia o con amigos, el Columbus es una opción completa y sofisticada.",
       certifications: [
         {
@@ -1368,33 +1370,33 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Peso", value: "270 / 1370 kg" },
       ],
       maker: {
-        title: "El modelo Columbus pertenece a la Serie Design, de Alguien",
+        title: "El modelo Columbus pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: [
         {
-          title: "Moderno",
-          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
-        },
-        {
-          title: "Simétrico",
-          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
-        },
-        {
           title: "Sofisticado",
-          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details-Serie-Design.jpg"),
         },
         {
-          title: "Compacto",
-          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+          title: "Ergonómico",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details2-Serie-Design.jpg"),
         },
         {
-          title: "Comodidad",
-          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+          title: "Relajante",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details3-Serie-Design.jpg"),
         },
         {
-          title: "Estética",
-          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+          title: "Potente",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details17-Serie-Design.jpg"),
+        },
+        {
+          title: "Exclusivo",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details5-Serie-Design.jpg"),
+        },
+        {
+          title: "Funcional",
+          src: fetchImage("/images/spas/design/alaska/options/Alaska-Details18-Serie-Design.jpg"),
         },
       ],
       landing_cards: design_landing_cards,
@@ -1408,8 +1410,9 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
     jackson: {
       title: "Jackson",
       serie: "Serie Design",
-      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
-      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      header: fetchImage("/images/spas/design/jackson/jackson-hero.jpg"),
+      detail: fetchImage("/images/spas/design/jackson/jackson-detail.jpg"),
+      video: fetchImage("/images/spas/design/videos/design-video.mp4"),
       description: "El modelo Jackson es un spa compacto diseñado para combinar comodidad y funcionalidad, ideal para espacios más pequeños. Con capacidad para 5 personas, ofrece tres tumbonas y dos asientos ergonómicos que maximizan la relajación. Su sistema de chorros ajustables proporciona una experiencia de hidroterapia personalizada, mientras que características como la iluminación LED crean un ambiente acogedor. Perfecto para quienes buscan un spa eficiente y de alta calidad para disfrutar en casa.",
       certifications: [
         {
@@ -1430,33 +1433,33 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Peso", value: "320 / 1794 kg" },
       ],
       maker: {
-        title: "El modelo Jackson pertenece a la Serie Design, de Alguien",
+        title: "El modelo Jackson pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: [
         {
-          title: "Moderno",
-          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
-        },
-        {
-          title: "Simétrico",
-          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
-        },
-        {
           title: "Sofisticado",
-          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+          src: fetchImage("/images/spas/design/jackson/options/Jackson-Details2-Serie-Design.jpg"),
         },
         {
-          title: "Compacto",
-          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+          title: "Ergonómico",
+          src: fetchImage("/images/spas/design/jackson/options/Jackson-Details3-Serie-Design.jpg"),
         },
         {
-          title: "Comodidad",
-          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+          title: "Relajante",
+          src: fetchImage("/images/spas/design/jackson/options/Jackson-Details7-Serie-Design.jpg"),
         },
         {
-          title: "Estética",
-          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+          title: "Potente",
+          src: fetchImage("/images/spas/design/jackson/options/Jackson-Details8-Serie-Design.jpg"),
+        },
+        {
+          title: "Exclusivo",
+          src: fetchImage("/images/spas/design/jackson/options/Jackson-Details19-Serie-Design.jpg"),
+        },
+        {
+          title: "Funcional",
+          src: fetchImage("/images/spas/design/jackson/options/Jackson-Details23-Serie-Design.jpg"),
         },
       ],
       landing_cards: design_landing_cards,
@@ -1470,8 +1473,9 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
     nizza: {
       title: "Nizza",
       serie: "Serie Design",
-      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
-      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      header: fetchImage("/images/spas/design/nizza/nizza-hero.jpg"),
+      detail: fetchImage("/images/spas/design/nizza/nizza-detail.jpg"),
+      video: fetchImage("/images/spas/design/videos/design-video.mp4"),
       description: "El modelo Nizza es un spa diseñado para combinar estilo y funcionalidad, con capacidad para 5 personas, incluyendo una cómoda tumbona. Equipado con un sistema de chorros ajustables y una iluminación LED ambiental, ofrece una experiencia de hidroterapia relajante y personalizable. Su diseño espacioso y materiales de alta calidad lo convierten en una excelente opción para quienes buscan confort y rendimiento en su hogar.",
       certifications: [
         {
@@ -1492,33 +1496,33 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Peso", value: "350 / 1850 kg" },
       ],
       maker: {
-        title: "El modelo Nizza pertenece a la Serie Design, de Alguien",
+        title: "El modelo Nizza pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: [
         {
-          title: "Moderno",
-          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
-        },
-        {
-          title: "Simétrico",
-          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
-        },
-        {
           title: "Sofisticado",
-          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+          src: fetchImage("/images/spas/design/nizza/options/Nizza-Details2-Serie-Design.jpg"),
         },
         {
-          title: "Compacto",
-          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+          title: "Ergonómico",
+          src: fetchImage("/images/spas/design/nizza/options/Nizza-Details3-Serie-Design.jpg"),
         },
         {
-          title: "Comodidad",
-          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+          title: "Relajante",
+          src: fetchImage("/images/spas/design/nizza/options/Nizza-Details4-Serie-Design.jpg"),
         },
         {
-          title: "Estética",
-          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+          title: "Potente",
+          src: fetchImage("/images/spas/design/nizza/options/Nizza-Details-Serie-Design.jpg"),
+        },
+        {
+          title: "Exclusivo",
+          src: fetchImage("/images/spas/design/nizza/options/NizzaDetails1-Serie-Design.jpg"),
+        },
+        {
+          title: "Funcional",
+          src: fetchImage("/images/spas/design/nizza/options/NizzaTop-Serie-Design.png"),
         },
       ],
       landing_cards: design_landing_cards,
@@ -1532,8 +1536,9 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
     nizzaII: {
       title: "Nizza II",
       serie: "Serie Design",
-      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
-      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      header: fetchImage("/images/spas/design/nizzaII/nizzaII-hero.jpg"),
+      detail: fetchImage("/images/spas/design/nizzaII/nizzaII-detail.jpg"),
+      video: fetchImage("/images/spas/design/videos/design-video.mp4"),
       description: "El modelo Nizza II es una versión mejorada con capacidad para 5 personas, incluyendo una doble tumbona reclinable. Diseñado para maximizar la relajación, incorpora chorros ajustables para hidroterapia personalizada, iluminación LED y un sistema de eficiencia energética. Su diseño moderno y materiales duraderos lo convierten en una opción ideal para disfrutar de lujo y confort en cualquier espacio exterior.",
       certifications: [
         {
@@ -1554,33 +1559,33 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Peso", value: "350 / 1850 kg" },
       ],
       maker: {
-        title: "El modelo Nizza II pertenece a la Serie Design, de Alguien",
+        title: "El modelo Nizza II pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: [
         {
-          title: "Moderno",
-          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
-        },
-        {
-          title: "Simétrico",
-          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
-        },
-        {
           title: "Sofisticado",
-          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+          src: fetchImage("/images/spas/design/nizzaII/options/Nizza2-Cascada5-Serie-Design.jpg"),
         },
         {
-          title: "Compacto",
-          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+          title: "Ergonómico",
+          src: fetchImage("/images/spas/design/nizzaII/options/Nizza2-Details2-Serie-Design.jpg"),
         },
         {
-          title: "Comodidad",
-          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+          title: "Relajante",
+          src: fetchImage("/images/spas/design/nizzaII/options/Nizza2-Details-Serie-Design.jpg"),
         },
         {
-          title: "Estética",
-          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+          title: "Potente",
+          src: fetchImage("/images/spas/design/nizzaII/options/Nizza2-GeneralView2-Serie-Design.jpg"),
+        },
+        {
+          title: "Exclusivo",
+          src: fetchImage("/images/spas/design/nizzaII/options/Nizza2-TopView-Serie-Design.png"),
+        },
+        {
+          title: "Funcional",
+          src: fetchImage("/images/spas/design/nizza/options/Nizza-Details-Serie-Design.jpg"),
         },
       ],
       landing_cards: design_landing_cards,
@@ -1594,8 +1599,9 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
     richmond: {
       title: "Richmond",
       serie: "Serie Design",
-      header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
-      video: fetchImage("/images/spas/strato/strato21/strato_video.mp4"),
+      header: fetchImage("/images/spas/design/richmond/richmond-hero.jpg"),
+      detail: fetchImage("/images/spas/design/richmond/richmond-detail.jpg"),
+      video: fetchImage("/images/spas/design/videos/design-video.mp4"),
       description: "El modelo Richmond ofrece un diseño espacioso para hasta 3 personas, con 1 asiento ergonómico y dos tumbonas para mayor comodidad. Equipado con chorros ajustables para una experiencia de hidroterapia personalizada, destaca por su iluminación LED y un sistema energético eficiente. Su combinación de lujo y funcionalidad lo hace ideal para transformar cualquier espacio exterior en un oasis de relajación.",
       certifications: [
         {
@@ -1616,33 +1622,33 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         { title: "Peso", value: "270 / 1370 kg" },
       ],
       maker: {
-        title: "El modelo Nizza II pertenece a la Serie Design, de Alguien",
+        title: "El modelo Nizza II pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: [
         {
-          title: "Moderno",
-          src: fetchImage("/images/spas/crown/summit/details/1.webp"),
-        },
-        {
-          title: "Simétrico",
-          src: fetchImage("/images/spas/crown/summit/details/2.webp"),
-        },
-        {
           title: "Sofisticado",
-          src: fetchImage("/images/spas/crown/summit/details/3.webp"),
+          src: fetchImage("/images/spas/design/richmond/options/Richmond-Cascada2-Serie-Design.jpg"),
         },
         {
-          title: "Compacto",
-          src: fetchImage("/images/spas/crown/summit/details/4.webp"),
+          title: "Ergonómico",
+          src: fetchImage("/images/spas/design/richmond/options/Richmond-Details4-Serie-Design.jpg"),
         },
         {
-          title: "Comodidad",
-          src: fetchImage("/images/spas/crown/summit/details/5.webp"),
+          title: "Relajante",
+          src: fetchImage("/images/spas/design/richmond/options/Richmond-Details6-Serie-Design.jpg"),
         },
         {
-          title: "Estética",
-          src: fetchImage("/images/spas/crown/summit/details/6.webp"),
+          title: "Potente",
+          src: fetchImage("/images/spas/design/richmond/options/Richmond-Details7-Serie-Design.jpg"),
+        },
+        {
+          title: "Exclusivo",
+          src: fetchImage("/images/spas/design/richmond/options/Richmond-Details13-Serie-Design.jpg"),
+        },
+        {
+          title: "Funcional",
+          src: fetchImage("/images/spas/design/richmond/options/RichmondTop-Serie-Design.png"),
         },
       ],
       landing_cards: design_landing_cards,

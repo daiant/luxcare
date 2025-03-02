@@ -51,7 +51,7 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
           </li>
           <li className={styles.detail}>
             <p className={styles.title}>Volumen</p>
-            <p className={styles.content}>{getSpecification('capacidad').split(' ')[0]} l</p>
+            <p className={styles.content}>{getSpecification('volumen').split(' ')[0]} l</p>
           </li>
         </ul>
       </div>
