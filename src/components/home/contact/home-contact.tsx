@@ -79,7 +79,7 @@ export default function HomeContactForm() {
     <div className={styles.dialog} aria-hidden={!dialogVisible}>
       <div className={styles.mask} onClick={() => setDialogVisible(false)}></div>
       <main>
-        <h1>Perfecto.<br />¡Mensaje enviado!</h1>
+        <h1>Perfecto.<br/>¡Mensaje enviado!</h1>
         <div className={styles.column}>
           <h2>Te contactaremos lo antes posible.</h2>
           <div className={styles.action}>
@@ -89,22 +89,9 @@ export default function HomeContactForm() {
       </main>
     </div>
     <aside className={styles.aside}>
-      <header>
-        <h1>Haz tu consulta</h1>
-        <h2>Si tienes cualquier duda o sugerencia, escríbenos y sigue los siguientes pasos. Deja que LuxCare se preocupe por ti.</h2>
-      </header>
-      <header className={styles.quickForm}>
+      <header style={{marginInline: 'auto', width: 'fit-content'}}>
         <h1>¿Te llamamos?</h1>
         <h2>Introduce únicamente tu teléfono y nosotros haremos el resto.</h2>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <label htmlFor="quickPhone">Introduce tu teléfono</label>
-          <input type="tel" id='quickPhone' name='phone' required />
-          <div className={styles.actions}>
-            <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.</p>
-            <Button type='submit'>Llámame</Button>
-            {error[0] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
-          </div>
-        </form>
       </header>
       {/* <div role='main'>
         <p className={styles.current}>
@@ -113,35 +100,49 @@ export default function HomeContactForm() {
         <p className={styles.separator}>/</p>
         <p className={styles.total}>4</p>
       </div> */}
+    <header className={styles.quickForm}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <div className={styles.inputWrapper} >
+          <input type="tel" id='quickPhone' name='phone' required title='Introduce tu teléfono'
+                 placeholder='+34 600 00 00'/>
+          <button type='submit'>Llámame</button>
+        </div>
+        <div className={styles.actions}>
+          <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.
+          </p>
+          {error[0] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
+        </div>
+      </form>
+    </header>
     </aside>
-    <form onSubmit={handleSubmit} ref={form} className={styles.form}>
-      <h1>Contacto</h1>
-      <fieldset>
-        {questions.map((question) => <div key={question.name} className={styles.question}>
-          <label htmlFor={question.name}>{question.label}</label>
-          {question.type === 'textarea' && <textarea
-            defaultValue={question.value}
-            onChange={(e) => question.value = e.target.value}
-            id={question.name}
-            name={question.name}
-            required
-          ></textarea>}
+    {/*<form onSubmit={handleSubmit} ref={form} className={styles.form}>*/}
+    {/*  <h1>Contacto</h1>*/}
+    {/*  <fieldset>*/}
+    {/*    {questions.map((question) => <div key={question.name} className={styles.question}>*/}
+    {/*      <label htmlFor={question.name}>{question.label}</label>*/}
+    {/*      {question.type === 'textarea' && <textarea*/}
+    {/*        defaultValue={question.value}*/}
+    {/*        onChange={(e) => question.value = e.target.value}*/}
+    {/*        id={question.name}*/}
+    {/*        name={question.name}*/}
+    {/*        required*/}
+    {/*      ></textarea>}*/}
 
-          {question.type !== 'textarea' && <input type={question.type}
-            defaultValue={question.value}
-            onChange={(e) => question.value = e.target.value}
-            id={question.name}
-            name={question.name}
-            required
-          />}
-        </div>)}
-      </fieldset>
-      <div className={styles.actions}>
-        <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.</p>
-        <Button className={loading ? styles.loading : ''} type="submit">Enviar consulta</Button>
-        {error[1] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
-      </div>
-    </form>
+    {/*      {question.type !== 'textarea' && <input type={question.type}*/}
+    {/*        defaultValue={question.value}*/}
+    {/*        onChange={(e) => question.value = e.target.value}*/}
+    {/*        id={question.name}*/}
+    {/*        name={question.name}*/}
+    {/*        required*/}
+    {/*      />}*/}
+    {/*    </div>)}*/}
+    {/*  </fieldset>*/}
+    {/*  <div className={styles.actions}>*/}
+    {/*    <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.</p>*/}
+    {/*    <Button className={loading ? styles.loading : ''} type="submit">Enviar consulta</Button>*/}
+    {/*    {error[1] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}*/}
+    {/*  </div>*/}
+    {/*</form>*/}
   </div>
 
 }

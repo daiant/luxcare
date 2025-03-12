@@ -55,7 +55,6 @@ export default function SeriesPage() {
         </section>
       })}
     </div>
-    <FadComponent />
     <section className={styles.contact}>
       <HomeContactForm />
     </section>

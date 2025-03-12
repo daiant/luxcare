@@ -112,7 +112,6 @@ export default function DealersPage() {
       </div>
     </section>
     <section className={styles.fad_wrapper}>
-      <FadComponent></FadComponent>
     </section>
     <section className={styles.contact}>
       <HomeContactForm />

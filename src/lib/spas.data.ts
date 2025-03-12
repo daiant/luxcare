@@ -1,6 +1,9 @@
 import { fetchImage } from "./fetch-image";
+import {crown, design, strato, vector} from "@/lib/series.data";
+import {StepsProps} from "@/app/series/components/step/step";
 
 export type Spa = {
+  steps: StepsProps['steps'];
   title: string;
   serie: string;
   header: string;
@@ -118,6 +121,7 @@ const variants = [
 export const SPAS: { [key: string]: { [key: string]: Spa } } = {
   crown: {
     summit: {
+      steps: crown.steps,
       title: "Summit",
       serie: "Serie Crown",
       header: fetchImage("/images/spas/crown/summit/hero.jpeg"),
@@ -199,6 +203,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     epic: {
+      steps: crown.steps,
       title: "Epic",
       serie: "Serie Crown",
       header: fetchImage("/images/spas/crown/epic/epic.webp"),
@@ -280,6 +285,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     euphoria: {
+      steps: crown.steps,
       title: "Euphoria",
       serie: "Serie Crown",
       header: fetchImage("/images/spas/crown/euphoria/euphoria.webp"),
@@ -362,6 +368,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     destiny: {
+      steps: crown.steps,
       title: "Destiny",
       serie: "Serie Crown",
       header: fetchImage("/images/spas/crown/destiny/destiny.webp"),
@@ -443,6 +450,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     resort: {
+      steps: crown.steps,
       title: "Resort",
       serie: "Serie Crown",
       header: fetchImage("/images/spas/crown.webp"),
@@ -525,6 +533,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     wish: {
+      steps: crown.steps,
       title: "Wish",
       serie: "Serie Crown",
       header: fetchImage("/images/spas/crown/wish/wish.webp"),
@@ -606,6 +615,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     spirit: {
+      steps: crown.steps,
       title: "Spirit",
       serie: "Serie Crown",
       header: fetchImage("/images/spas/crown/spirit/spirit.webp"),
@@ -689,6 +699,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
   },
   vector: {
     v94: {
+      steps: vector.steps,
       title: "V94",
       serie: "Serie Vector",
       header: fetchImage("/images/spas/vector/v94/v94.webp"),
@@ -770,6 +781,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     v94l: {
+      steps: vector.steps,
       title: "V94L",
       serie: "Serie Vector",
       header: fetchImage("/images/spas/vector/v94l/v94l.webp"),
@@ -851,6 +863,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     v84: {
+      steps: vector.steps,
       title: "V84",
       serie: "Serie Vector",
       header: fetchImage("/images/spas/vector/v84/v84.webp"),
@@ -932,6 +945,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     v84l: {
+      steps: vector.steps,
       title: "V84L",
       serie: "Serie Vector",
       header: fetchImage("/images/spas/vector/v84l/v84l.webp"),
@@ -1013,6 +1027,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     v77l: {
+      steps: vector.steps,
       title: "V77L",
       serie: "Serie Vector",
       header: fetchImage("/images/spas/vector/v77l/v77l.webp"),
@@ -1094,6 +1109,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_marquis,
     },
     v65l: {
+      steps: vector.steps,
       title: "V65L",
       serie: "Serie Vector",
       header: fetchImage("/images/spas/vector/v65l/v65l.webp"),
@@ -1177,6 +1193,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
   },
   strato: {
     "strato-21": {
+      steps: strato.steps,
       title: "Strato 2.1",
       serie: "Serie Vector",
       header: fetchImage("/images/spas/strato/strato21/strato21.webp"),
@@ -1235,6 +1252,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_riviera,
     },
     "strato-24": {
+      steps: strato.steps,
       title: "Strato 2.4",
       serie: "Serie Vector",
       header: fetchImage("/images/spas/strato/strato24/strato24.webp"),
@@ -1296,6 +1314,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
   },
   design: {
     alaska: {
+      steps: design.steps,
       title: "Alaska",
       serie: "Serie Design",
       header: fetchImage("/images/spas/design/alaska/alaska-hero.webp"),
@@ -1360,6 +1379,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_DESIGN,
     },
     columbus: {
+      steps: design.steps,
       title: "Columbus",
       serie: "Serie Design",
       header: fetchImage("/images/spas/design/columbus/columbus-hero.png"),
@@ -1423,6 +1443,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_DESIGN,
     },
     jackson: {
+      steps: design.steps,
       title: "Jackson",
       serie: "Serie Design",
       header: fetchImage("/images/spas/design/jackson/jackson-hero.jpg"),
@@ -1486,6 +1507,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_DESIGN,
     },
     nizza: {
+      steps: design.steps,
       title: "Nizza",
       serie: "Serie Design",
       header: fetchImage("/images/spas/design/nizza/nizza-hero.jpg"),
@@ -1549,6 +1571,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_DESIGN,
     },
     nizzaII: {
+      steps: design.steps,
       title: "Nizza II",
       serie: "Serie Design",
       header: fetchImage("/images/spas/design/nizzaII/nizzaII-hero.jpg"),
@@ -1612,6 +1635,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_DESIGN,
     },
     richmond: {
+      steps: design.steps,
       title: "Richmond",
       serie: "Serie Design",
       header: fetchImage("/images/spas/design/richmond/richmond-hero.jpg"),

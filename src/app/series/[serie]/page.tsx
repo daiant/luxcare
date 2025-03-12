@@ -5,7 +5,7 @@ import HomeContactForm from '@/components/home/contact/home-contact';
 import SerieBannerComponent from '@/components/series/banner/banner';
 import { SERIES } from '@/lib/series.data';
 import { notFound } from 'next/navigation';
-import FadComponent from '@/components/dealers/fad/fad';
+import Steps from "@/app/series/components/step/step";
 
 export default function IndividualSeriePage({ params }: { params: { serie: string } }) {
   const slug = params.serie;
@@ -45,26 +45,6 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
         </header>
         <SeriesSliderComponent models={serie.models}/>
       </section>
-      <section className={styles.steps}>
-        <header>
-          <div className={styles.call}>
-            <span>En LuxCare hablamos</span>
-            <span>de sensaciones.</span>
-          </div>
-        </header>
-        {serie.steps.map((step, index) => (<div className={styles.step} key={step.title}>
-          <div className={styles.number}>{String(index + 1).padStart(2, '0')}</div>
-          <div className={styles.separator}></div>
-          <div className={styles.content}>
-            <p role='heading' aria-level={1}>{step.title}</p>
-            <p role='subheading'>{step.content}</p>
-            {Boolean(step.link) && <a href={step.link}>
-                <span>Conocer más</span>
-                <CaretRight/>
-            </a>}
-          </div>
-        </div>))}
-      </section>
       <section className={styles.other_series}>
         <header>
           <p role='title'>Descubre <span>todas nuestras</span> series</p>
@@ -90,7 +70,6 @@ export default function IndividualSeriePage({ params }: { params: { serie: strin
           ))}
         </ul>
       </section>
-      <FadComponent/>
       <section className={styles.contact_cta}>
         <HomeContactForm/>
       </section>

@@ -8,6 +8,7 @@ import { SPAS } from '@/lib/spas.data';
 import styles from '@/styles/spa.module.css';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import Steps from "@/app/series/components/step/step";
 
 export default function SpaPage({ params }: { params: { serie: string, spa: string } }) {
   const serie = SPAS[params.serie];
@@ -73,16 +74,8 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
         <img src={spa.design.aside_src} alt="SPA" className={styles.img} />
       </div>
     </section>
-    <section className={styles.cards}>
-      {spa.landing_cards.map(card => (
-        <article className={styles.card} key={card.title}>
-          <img src={card.src} alt={card.title} className={styles.img} />
-          <p className={styles.title}>{card.title}</p>
-          <Button className={styles.link} variant='outline'>
-            <a href={card.href}>Descubre más</a>
-          </Button>
-        </article>
-      ))}
+    <section className={styles.cards} style={{display: 'block', paddingInline: 0}}>
+      <Steps steps={spa.steps}/>
     </section>
     <section className={styles.datasheet}>
       <Accordion type='multiple' className='max-w-[900px] mx-auto'>

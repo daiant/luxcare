@@ -107,7 +107,6 @@ export default function Home() {
         <RecommendationsSummary />
       </section>
       */}
-      <FadComponent></FadComponent>
       <section className={styles.news}>
         <HomeContactForm />
       </section>
