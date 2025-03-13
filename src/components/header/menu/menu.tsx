@@ -3,7 +3,7 @@ import styles from './menu.module.css';
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { fetchImage } from '@/lib/fetch-image';
-import { MapPin, Waves, X } from 'lucide-react';
+import { Waves, X } from 'lucide-react';
 
 export default function Menu() {
   const [theme, setTheme] = useState('light');
@@ -24,16 +24,16 @@ export default function Menu() {
     <a href="/" className={styles.home} style={{ width: '100px' }}>
       <img src={fetchImage("/images/icons/logo_simple.svg")} alt="" />
     </a>
-    <a href='/dealers' className={styles.icon} title='Distribuidores'>
-      <MapPin strokeWidth={1.25} />
-    </a>
+    {/*<a href='/dealers' className={styles.icon} title='Distribuidores'>*/}
+    {/*  <MapPin strokeWidth={1.25} />*/}
+    {/*</a>*/}
     <div className={styles.burger} onClick={() => setOpen(!open)}>
       {!open && <>
-        <span role='button'>Menú</span>
+        {/*<span role='button'>Menú</span>*/}
         <Waves strokeWidth={1} />
       </>}
       {open && <>
-        <span role='button'>Cerrar</span>
+        {/*<span role='button'>Cerrar</span>*/}
         <X strokeWidth={1} />
       </>}
     </div>
@@ -42,7 +42,7 @@ export default function Menu() {
         <div className={styles.group}>
           <a href={'/'}>Inicio</a>
           <a href={'/series/'}>Series</a>
-          <a href={'/dealers/'}>Distribuidores</a>
+          {/*<a href={'/dealers/'}>Distribuidores</a>*/}
           <a href='https://www.spa.luxcare.es' target='_blank'>Blog</a>
           <a href={'/contact/'}>Contacto</a>
         </div>
