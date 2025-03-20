@@ -17,8 +17,8 @@ export default function Home() {
         </div>
         {/* <h2>Simplemente perfecto</h2> */}
         <div className={styles.title}>
-          <h1>Simplemente Perfecto</h1>
-          <h2>Página en proceso de construcción</h2>
+          <h1>Spas y Jacuzzis de exterior de lujo</h1>
+          <h2>Simplemente perfecto.</h2>
         </div>
         <footer>
           <ScrollIndicator />
