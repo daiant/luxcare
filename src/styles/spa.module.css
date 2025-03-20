@@ -17,9 +17,11 @@
 .banner_highlights {
   grid-row: 1;
   display: flex;
-  justify-content: flex-end;
+  /*justify-content: flex-end;*/
   align-items: center;
   gap: 1ch;
+  margin-block-end: 1em;
+  margin-inline-start: .5em;
 }
 
 .banner_highlights p {
@@ -36,7 +38,7 @@
   font-size: clamp(4rem, 3rem + 5vw, 9rem);
   font-weight: 900;
   text-transform: uppercase;
-  margin-block-end: .25em;
+  margin-block-end: .125em;
 }
 
 .banner_img {

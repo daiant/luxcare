@@ -124,7 +124,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: crown.steps,
       title: "Summit",
       serie: "Serie Crown",
-      header: fetchImage("/images/spas/crown/summit/hero.jpeg"),
+      header: fetchImage("/images/spas/crown/summit/summit_hero.webp"),
       video: fetchImage("/images/spas/crown/summit/summit_video.mp4"),
       description:
         "El modelo Summit es el refugio definitivo para relajarse y disfrutar del máximo confort.\nTres sillones Adirondack uno al lado del otro miman cada centímetro de tu cuerpo. En el lado opuesto, cuatro asientos de hidromasaje adyacentes brindan un alivio reconfortante, con fácil acceso al jet Regal Whitewater-4™.\n Cuatro zonas H.O.T. proporcionan control y flexibilidad específicos, y su diseño abierto ofrece mucho espacio para estirar las piernas.\nEl Summit no solo ofrece una experiencia de spa de alta gama, sino que también se distingue por su diseño inteligente y su atención al detalle, garantizando que cada sesión de spa sea una experiencia de lujo y relajación incomparable.",
@@ -206,7 +206,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: crown.steps,
       title: "Epic",
       serie: "Serie Crown",
-      header: fetchImage("/images/spas/crown/epic/epic.webp"),
+      header: fetchImage("/images/spas/crown/epic/epic_hero.webp"),
       video: fetchImage("/images/spas/crown/epic/epic_video.mp4"),
       description:
         "El Epic es una verdadera leyenda. Con asientos esculpidos de varios niveles para seis personas, que incluyen una silla Adirondack de cuerpo completo para una terapia potente de pies a cabeza.\nEl asiento de remojo súper profundo te envuelve en calor, apuntando a tu cuello, hombros y columna vertebral.\nCon cinco Zonas H.O.T. - Lumbar, Hombros y Pies - incluyendo un jet Regal Whitewater-4, sin duda recordarás este jacuzzi por generaciones.",
@@ -288,7 +288,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: crown.steps,
       title: "Euphoria",
       serie: "Serie Crown",
-      header: fetchImage("/images/spas/crown/euphoria/euphoria.webp"),
+      header: fetchImage("/images/spas/crown/euphoria/euphoria_hero.webp"),
       video: fetchImage("/images/spas/crown/euphoria/euphoria_video.mp4"),
       description:
         "El modelo Euphoria es una celebración real en ciernes.\nPresenta un diseño equilibrado y simétrico con siete asientos de varios niveles, incluyendo dos asientos de terapia extra profunda posicionados uno al lado del otro con masaje de cuerpo completo.\nCada asiento puede acceder al potente jet Regal Whitewater-4 para una terapia intensa en piernas y pies.\n¡Con cinco Zonas H.O.T., tú y tus invitados os sumergiréis en una euforia sin límites!",
@@ -371,7 +371,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: crown.steps,
       title: "Destiny",
       serie: "Serie Crown",
-      header: fetchImage("/images/spas/crown/destiny/destiny.webp"),
+      header: fetchImage("/images/spas/crown/destiny/destiny_hero.webp"),
       video: fetchImage("/images/spas/crown/destiny/destiny_video.mp4"),
       description:
         "Bienvenidos al modelo Destiny, donde la relajación es inevitable.\nEste santuario cuenta con una configuración de siete asientos de hidromasaje, dispuestos para fomentar conexiones significativas y conversaciones profundas.\nEntre ellos, dos asientos profundos ofrecen alivio específico para las Zonas H.O.T. Estratégicamente posicionado, un asiento de terapia masajea cada músculo a lo largo de tu espalda.\nPotenciado por el formidable jet Regal Whitewater-4, el spa Destiny presenta con orgullo un total de cuatro Zonas H.O.T. Además, los asientos elevados aseguran que cada invitado descubra su propio oasis de comodidad.\nAbraza tu destino, donde te aguarda la tranquilidad!",
@@ -453,7 +453,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: crown.steps,
       title: "Resort",
       serie: "Serie Crown",
-      header: fetchImage("/images/spas/crown.webp"),
+      header: fetchImage("/images/spas/crown/resort/resort_hero.webp"),
       detail: fetchImage("/images/spas/crown/resort/resort.webp"),
       video: fetchImage("/images/spas/crown/resort/resort_video.mp4"),
       description:
@@ -536,7 +536,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: crown.steps,
       title: "Wish",
       serie: "Serie Crown",
-      header: fetchImage("/images/spas/crown/wish/wish.webp"),
+      header: fetchImage("/images/spas/crown/wish/wish_hero.webp"),
       video: fetchImage("/images/spas/crown/wish/wish_video.mp4"),
       description:
         " El spa Wish es el reflejo de tus metas en forma de spa.\nCuatro asientos de varios niveles se adaptan a cada tipo de cuerpo, incluido un asiento elevado para calentarse o refrescarse. Además, un lounge de cuerpo completo con espacio generoso para acunarlo en confort cuenta con jets de la Zona H.O.T. lumbar. Un asiento de terapia profunda ofrece jets de la Zona H.O.T. de los hombros.\nAdemás, dos asientos únicos y un asiento de enfriamiento también pueden aprovechar el jet Regal Whitewater-4.\n\nUna parte de los ingresos de la venta del modelo Wish se dona a Make-A-Wish® para ayudar a cumplir los deseos de niños con condiciones de salud críticas.",
@@ -618,7 +618,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: crown.steps,
       title: "Spirit",
       serie: "Serie Crown",
-      header: fetchImage("/images/spas/crown/spirit/spirit.webp"),
+      header: fetchImage("/images/spas/crown/spirit/spirit_hero.webp"),
       video: fetchImage("/images/spas/crown/spirit/spirit_video.mp4"),
       description:
         "El Spirit se desliza libremente con su terapia curativa. La entrada frontal curva ofrece un enfoque elegante, con cuatro asientos de hidromasaje para hasta tres personas.\nEl relajante lounge con jets de la Zona H.O.T. de los hombros ofrece terapia de cuerpo completo. El asiento de terapia profunda con jets de la Zona H.O.T. lumbar trabaja todos los músculos de tu espalda.\nAdemás, un asiento de enfriamiento eleva tu corazón por encima del nivel del agua y facilita la entrada y salida.",
@@ -702,7 +702,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: vector.steps,
       title: "V94",
       serie: "Serie Vector",
-      header: fetchImage("/images/spas/vector/v94/v94.webp"),
+      header: fetchImage("/images/spas/vector/v94/v94_hero.webp"),
       video: fetchImage("/images/spas/vector/v94/v94_video.mp4"),
       description:
         "¿Buscas un spa grande? ¡El V94 es una verdadera bestia: con 94 pulgadas cuadradas, ofrece todo el espacio que necesitas!\nEl jet Whitewater-4 ofrece una erupción volcánica de terapia revitalizante.\nCon 40 Jetpods y dos bombas de doble velocidad, tienes un spa dinámico diseñado para la multitud.\nEste spa incluye cuatro asientos de masaje especializados, tres asientos de masaje estándar, un banco de enfriamiento, jetpods intercambiables con recubrimiento de acero inoxidable, sistema V-O-L-T™ de alta fluidez, cinco válvulas de control V3 Throttle y ConstantClean™ con SmartClean™.",
@@ -784,7 +784,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: vector.steps,
       title: "V94L",
       serie: "Serie Vector",
-      header: fetchImage("/images/spas/vector/v94l/v94l.webp"),
+      header: fetchImage("/images/spas/vector/v94l/v94l_hero.webp"),
       video: fetchImage("/images/spas/vector/v94/v94_video.mp4"),
       description:
         " ¿Buscas un spa grande con un asiento tipo lounge? ¡El V94L es el hermano del modelo V94, con capacidad para siete personas pero con un lounge de cuerpo completo añadido!\nEl jet Whitewater-4 ofrece una erupción volcánica de terapia revitalizante, especialmente para tus piernas y pies.\nCuenta con 44 Jetpods, dos bombas de doble velocidad y cinco válvulas de control V3 Throttle, cinco asientos de masaje especializados, dos asientos de masaje estándar y el sistema ConstantClean™ con SmartClean™.",
@@ -866,7 +866,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: vector.steps,
       title: "V84",
       serie: "Serie Vector",
-      header: fetchImage("/images/spas/vector/v84/v84.webp"),
+      header: fetchImage("/images/spas/vector/v84/v84_hero.webp"),
       video: fetchImage("/images/spas/vector/v84/v84_video.mp4"),
       description:
         "El spa V84 para seis personas te permite disfrutar con tu familia durante todo el año.\nPerfecto para un grupo, con un asiento elevado que te permite sentir todo el poder del jet Whitewater-4. Un total de 36 Jetpods con el sistema V-O-L-T proporcionan un masaje personalizado.\nAdemás, las cinco válvulas de control V3 Throttle te permiten dirigir la terapia a las áreas problemáticas.\nAdemás, hay que añadirle sus cinco asientos de masaje especializados más un asiento de masaje estándar, un banco de enfriamiento y el sistema ConstantClean™ con SmartClean™.",
@@ -948,7 +948,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: vector.steps,
       title: "V84L",
       serie: "Serie Vector",
-      header: fetchImage("/images/spas/vector/v84l/v84l.webp"),
+      header: fetchImage("/images/spas/vector/v84l/v84l_hero.webp"),
       video: fetchImage("/images/spas/vector/v84/v84_video.mp4"),
       description:
         "El spa V84L para cinco personas te asegura una experiencia revitalizante junto a tus amigos.\nEncuentra fácilmente tu asiento de terapia perfecto, además de un lounge tipo commander que ofrece alivio de la cabeza a los pies.\nCon un total de 35 Jetpods, un potente jet Whitewater-4 y cuatro válvulas de control V3 Throttle, tendrás el control que necesitas",
@@ -1030,7 +1030,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: vector.steps,
       title: "V77L",
       serie: "Serie Vector",
-      header: fetchImage("/images/spas/vector/v77l/v77l.webp"),
+      header: fetchImage("/images/spas/vector/v77l/v77l_hero.webp"),
       video: fetchImage("/images/spas/vector/v77l/v77l_video.mp4"),
       description:
         "El spa V77L para cinco personas es el lugar perfecto para conversaciones en familia. Ofrece múltiples posiciones de asiento para acomodar a tu grupo, con espacio suficiente para moverse cómodamente.\nEl lounge tipo Commander de cuerpo completo te permite estirar las piernas.\nUn total de 27 Jetpods con el sistema V-O-L-T proporciona un masaje profesional y tres válvulas de control V3 Throttle ponen la acción al alcance de tus manos.\n\n(El sistema MicroSilk está disponible como opción en la versión V77L de una bomba. No está disponible en la versión V77L de dos bombas).",
@@ -1112,7 +1112,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       steps: vector.steps,
       title: "V65L",
       serie: "Serie Vector",
-      header: fetchImage("/images/spas/vector/v65l/v65l.webp"),
+      header: fetchImage("/images/spas/vector/v65l/v65l_hero.webp"),
       video: fetchImage("/images/spas/vector/v65l/v65l_video.mp4"),
       description:
         "El modelo V65L es tu oasis personal en casa. Este spa para tres personas, de diseño futurista, se adapta a espacios reducidos gracias a su tamaño compacto. Un cómodo lounge tipo Commander te permite relajarte completamente.\nCon un total de 22 Jetpods, aliviarás los músculos cansados.\nAdemás, el conveniente sistema de 120 voltios Plug-and-Play te permite ubicarlo en cualquier lugar.\nCuenta con tres asientos de masaje especializados, un asiento de enfriamiento, el sistema de alta fluidez V-O-L-T™ con tres válvulas de control V3 Throttle y el sistema ConstantClean™ con SmartClean™.",

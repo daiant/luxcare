@@ -21,17 +21,17 @@ export default function SpaPage({ params }: { params: { serie: string, spa: stri
 
   return <main className={styles.main}>
     <section className={styles.banner}>
-      <div className={styles.banner_highlights}>
-        <p>{getSpecification('asientos')}</p>
-        <p>{getSpecification('jets')}</p>
-      </div>
       <div className={styles.banner_title}>
         <h1>{spa.title}</h1>
+        <div className={styles.banner_highlights}>
+          <p>{getSpecification('asientos')}</p>
+          <p>{getSpecification('jets')}</p>
+        </div>
         <Button>
           <a href="/contact">Solicita presupuesto</a>
         </Button>
       </div>
-      <Image className={styles.banner_img} src={spa.header} alt='SPA' loading='eager' fill />
+      <Image className={styles.banner_img} src={spa.header} alt='SPA' loading='eager' fill/>
     </section>
     <section className={styles.description}>
       <div className={styles.description_content}>
