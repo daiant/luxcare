@@ -364,7 +364,7 @@ export const design = {
   title: "Design",
   adjective: "Perfección.",
   adjectives: "Pureza. Perfección.",
-  header: fetchImage("/images/spas/crown/header.webp"),
+  header: fetchImage("/images/spas/design/header.webp"),
   cta_img: fetchImage("/images/spas/crown/crown_3.webp"),
   cta_2_img: fetchImage("/images/spas/crown/crown_4.webp"),
   url: "/series/design",
@@ -463,7 +463,7 @@ export const design = {
       capacity: "Placeholder",
       jets: "Placeholder",
       src: fetchImage("/images/spas/crown/models/summit.webp"),
-      href: "/series/design/nizza-ii",
+      href: "/series/design/nizzaII",
     },
     {
       title: "Richmond",

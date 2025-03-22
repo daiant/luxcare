@@ -123,6 +123,8 @@
 
 .design .main .img {
   margin-block-start: auto;
+  max-height: 300px;
+  object-fit: contain;
 }
 
 .design .heading {

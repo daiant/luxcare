@@ -36,7 +36,7 @@ export default function Footer() {
 
   </footer>
     <div className={styles.location}>
-      <span>Copyright 2024 LuxCare Spas</span>
+      <span>Copyright {new Date().getFullYear()} LuxCare Spas</span>
     </div>
   </>
 }

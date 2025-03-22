@@ -2,6 +2,7 @@ import styles from '@/styles/home.module.css';
 import crown from '@/public/images/spas/crown.webp';
 import vector from '@/public/images/spas/vector.webp';
 import strato from '@/public/images/spas/strato.webp';
+import design from '@/public/images/spas/design.webp';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import HomeCarouselComponent from '@/components/home/carousel/carousel';
 import ScrollIndicator from '@/components/scroll-indicator/scroll-indicator';
@@ -43,7 +44,7 @@ export default function Home() {
             <p>Acapara las miradas</p>
             <a href="/series/crown">Ver la colección</a>
           </div>
-          <img src={crown.src} alt="Crown" />
+          <img src={crown.src} alt="Crown"/>
         </article>
         <article className={styles.serie}>
           <div role='contentinfo'>
@@ -52,7 +53,7 @@ export default function Home() {
             <p>Despierta emociones</p>
             <a href="/series/vector">Ver la colección</a>
           </div>
-          <img src={vector.src} alt="Vector" />
+          <img src={vector.src} alt="Vector"/>
         </article>
         <article className={styles.serie}>
           <div role='contentinfo'>
@@ -61,13 +62,24 @@ export default function Home() {
             <p>Supera las expectativas</p>
             <a href="/series/strato">Ver la colección</a>
           </div>
-          <img src={strato.src} alt="Strato" />
+          <img src={strato.src} alt="Strato"/>
+        </article>
+        <article className={styles.serie}>
+          <div role='contentinfo'>
+            <p className={styles.subtitle}>Pureza. Perfección.</p>
+            <p className={styles.title}>Serie Design</p>
+            <p>Eleva el diseño a un nuevo nivel.</p>
+            <a href="/series/design">Ver la colección</a>
+          </div>
+          <img src={design.src} alt="Design"/>
         </article>
       </section>
       <section className={styles.keys}>
         <div>
           <p role='heading' aria-level={2}>LuxCare, nuestra forma de ser únicos.</p>
-          <p role='contentinfo'>Vamos más allá de ofrecer productos de alta gama como Marquis Spas y Riviera Pool. Nos hace destacar la pasión que ponemos en cada recomendación que hacemos y en cada experiencia que proporcionamos. </p>
+          <p role='contentinfo'>Vamos más allá de ofrecer productos de alta gama como Marquis Spas y Riviera Pool. Nos
+            hace destacar la pasión que ponemos en cada recomendación que hacemos y en cada experiencia que
+            proporcionamos. </p>
           <p role='contentinfo'>
             Nos esforzamos por entender las preferencias de nuestros clientes y reflejar su estilo en cada sugerencia, ofreciendo opciones que no solo son elegantes, sino que también brindan momentos de relajación y bienestar incomparables.
           </p>
