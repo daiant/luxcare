@@ -373,7 +373,7 @@ export const design = {
     bottom: "latirá más rápido",
     content: "Las líneas rectas, impecables en su pureza, combinadas con tumbonas y asientos ergonómicos, elevan la estética y funcionalidad a un nivel inigualable, convirtiendo cada experiencia en un deleite para los sentidos.",
   },
-  video: fetchImage("/images/spas/crown/broll.mp4"),
+  video: fetchImage("/images/spas/design/videos/design-video.mp4"),
   mission: [
     { spa: "ALASKA", content: "No dejes deseos por cumplir." },
     { spa: "COLUMBUS", content: "Lleno de innovaciones." },

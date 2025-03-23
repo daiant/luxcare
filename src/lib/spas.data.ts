@@ -1348,7 +1348,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         {
           title: "Ficha técnica",
           type: "document",
-          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+          src: fetchImage("/images/spas/design/datasheets/alaska.pdf"),
         },
       ],
       specifications: [
@@ -1388,7 +1388,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         {
           title: "Ficha técnica",
           type: "document",
-          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+          src: fetchImage("/images/spas/columbus/datasheets/columbus.pdf"),
         },
       ],
       specifications: [
@@ -1427,7 +1427,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         {
           title: "Ficha técnica",
           type: "document",
-          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+          src: fetchImage("/images/spas/design/datasheets/jackson.pdf"),
         },
       ],
       specifications: [
@@ -1466,7 +1466,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         {
           title: "Ficha técnica",
           type: "document",
-          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+          src: fetchImage("/images/spas/design/datasheets/nizzaII.pdf"),
         },
       ],
       specifications: [
@@ -1505,7 +1505,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         {
           title: "Ficha técnica",
           type: "document",
-          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+          src: fetchImage("/images/spas/design/datasheets/nizzaII.pdf"),
         },
       ],
       specifications: [
@@ -1544,7 +1544,7 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
         {
           title: "Ficha técnica",
           type: "document",
-          src: fetchImage("/images/spas/strato/datasheets/strato24.pdf"),
+          src: fetchImage("/images/spas/design/datasheets/richmond.pdf"),
         },
       ],
       specifications: [
