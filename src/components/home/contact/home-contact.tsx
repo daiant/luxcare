@@ -11,36 +11,10 @@ export default function HomeContactForm() {
   const [dialogVisible, setDialogVisible] = React.useState(false);
   const { executeRecaptcha } = useReCaptcha();
 
-  const questions = [
-    {
-      type: 'text',
-      name: 'name',
-      label: 'Escribe tu nombre',
-      value: '',
-    },
-    {
-      type: 'email',
-      name: 'email',
-      label: 'Introduce tu email',
-      value: '',
-    },
-    {
-      type: 'tel',
-      name: 'phone',
-      label: 'Introduce tu teléfono',
-      value: '',
-    },
-    {
-      type: 'textarea',
-      name: 'question',
-      label: 'Escribe tu consulta',
-      value: '',
-    },
-  ];
-
   const handleSubmit = React.useCallback(async (event: FormEvent) => {
     event.preventDefault();
     if (!form.current) return;
+    if(loading) return;
 
     setLoading(true);
     setError([false, false]);
@@ -73,7 +47,7 @@ export default function HomeContactForm() {
     } finally {
       setLoading(false);
     }
-  }, [executeRecaptcha]);
+  }, [executeRecaptcha, loading]);
 
   return <div className={styles.container}>
     <div className={styles.dialog} aria-hidden={!dialogVisible}>

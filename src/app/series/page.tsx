@@ -4,7 +4,6 @@ import SeriesSliderComponent from '@/components/series/slider/series-slider';
 import HomeContactForm from '@/components/home/contact/home-contact';
 import { SERIES } from '@/lib/series.data';
 import { fetchImage } from '@/lib/fetch-image';
-import FadComponent from '@/components/dealers/fad/fad';
 import Image from 'next/image';
 
 export default function SeriesPage() {

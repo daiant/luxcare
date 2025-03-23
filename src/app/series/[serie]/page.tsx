@@ -5,7 +5,6 @@ import HomeContactForm from '@/components/home/contact/home-contact';
 import SerieBannerComponent from '@/components/series/banner/banner';
 import { SERIES } from '@/lib/series.data';
 import { notFound } from 'next/navigation';
-import Steps from "@/app/series/components/step/step";
 
 export default function IndividualSeriePage({ params }: { params: { serie: string } }) {
   const slug = params.serie;
