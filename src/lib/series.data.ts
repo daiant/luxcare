@@ -40,25 +40,21 @@ export const crown = {
       title: "MICROSILK",
       content:
         "Sumergirte en un jacuzzi Marquis con MicroSilk equivale a un tratamiento facial de oxígeno para todo tu cuerpo. Este innovador sistema hidrata y humecta simultáneamente, dejando tu piel suave como la seda y disminuyendo visiblemente las líneas de expresión y arrugas.",
-      link: "/microsilk",
     },
     {
       title: "CONSTANTCLEAN+",
       content:
         "ConstantClean+™ destaca como el sistema de gestión de agua más eficiente. Incluido de serie en todos los jacuzzis de la Colección Crown, este sistema garantiza una limpieza más completa del agua en un lapso notablemente breve.",
-      link: "/constant-clean",
     },
     {
       title: "CONTROL DE FLUJO DINÁMICO",
       content:
         "Al girar la palanca hacia el rojo, activas los jets de la Zona H.O.T. rojos; hacia el azul, los jets azules. En cualquier punto intermedio, todos los jets de tu asiento se activan. Además, un control de aire intuitivo te permite ajustar la sensación perfecta.",
-      link: "/flow-control",
     },
     {
       title: "H.O.T. ZONES",
       content:
         "Estas áreas están diseñadas para dirigirse a zonas específicas del cuerpo. Funcionan como las manos expertas de un masajista, ideales para relajar grupos musculares tensos que necesitan un tratamiento especial.",
-      link: "/volt",
     },
   ],
 
@@ -179,25 +175,21 @@ export const vector = {
       title: "MICROSILK",
       content:
         "Sumergirte en un jacuzzi Marquis con MicroSilk equivale a un tratamiento facial de oxígeno para todo tu cuerpo. Este innovador sistema hidrata y humecta simultáneamente, dejando tu piel suave como la seda y disminuyendo visiblemente las líneas de expresión y arrugas.",
-      link: "/microsilk",
     },
     {
       title: "CONSTANTCLEAN+",
       content:
         "ConstantClean+™ destaca como el sistema de gestión de agua más eficiente. Incluido de serie en todos los jacuzzis de la Colección Vector, este sistema garantiza una limpieza más completa del agua en un lapso notablemente breve.",
-      link: "/constant-clean",
     },
     {
       title: "CONTROL DE FLUJO DINÁMICO",
       content:
         "Con un incremento de hasta un 40% en el volumen de flujo, el sistema V-O-L-T™ está meticulosamente diseñado para lograr un flujo alto con una presión baja. Esto implica la minimización de corrientes cruzadas, remolinos y turbulencias del agua que se desplazan perpendicularmente a la dirección del flujo.",
-      link: "/flow-control",
     },
     {
       title: "H.O.T. ZONES",
       content:
         "Estas áreas están diseñadas para dirigirse a zonas específicas del cuerpo. Funcionan como las manos expertas de un masajista, ideales para relajar grupos musculares tensos que necesitan un tratamiento especial.",
-      link: "/volt",
     },
   ],
 
@@ -371,7 +363,8 @@ export const design = {
   summary: {
     top: "Cada corazón",
     bottom: "latirá más rápido",
-    content: "Las líneas rectas, impecables en su pureza, combinadas con tumbonas y asientos ergonómicos, elevan la estética y funcionalidad a un nivel inigualable, convirtiendo cada experiencia en un deleite para los sentidos.",
+    content:
+      "Las líneas rectas, impecables en su pureza, combinadas con tumbonas y asientos ergonómicos, elevan la estética y funcionalidad a un nivel inigualable, convirtiendo cada experiencia en un deleite para los sentidos.",
   },
   video: fetchImage("/images/spas/design/videos/design-video.mp4"),
   mission: [
@@ -384,12 +377,14 @@ export const design = {
   ],
   multimedia: {
     left: "Serie Design: redefine la pureza y sofisticación en cada línea.",
-    right: "Lleva el diseño a un nuevo nivel, donde la perfección se combina con una experiencia de lujo.",
+    right:
+      "Lleva el diseño a un nuevo nivel, donde la perfección se combina con una experiencia de lujo.",
     right_src: fetchImage("/images/spas/crown/crown_2.webp"),
   },
   left: {
     top: "",
-    bottom: "Cada spa de la Serie Design está diseñado con líneas rectas y precisas que reflejan la pureza en su forma, aportando una sensación de modernidad y elegancia a cualquier espacio.\n" +
+    bottom:
+      "Cada spa de la Serie Design está diseñado con líneas rectas y precisas que reflejan la pureza en su forma, aportando una sensación de modernidad y elegancia a cualquier espacio.\n" +
       "\n" +
       "Los materiales de primera calidad empleados aseguran no solo una durabilidad sobresaliente, sino también una estética impecable que resalta en cualquier entorno.\n" +
       "\n" +
@@ -399,29 +394,21 @@ export const design = {
   },
   steps: [
     {
-      title: "MICROSILK",
+      title: "EXTREME ISOLATION",
       content:
-        "Sumergirte en un jacuzzi Marquis con MicroSilk equivale a un tratamiento facial de oxígeno para todo tu cuerpo. Este innovador sistema hidrata y humecta simultáneamente, dejando tu piel suave como la seda y disminuyendo visiblemente las líneas de expresión y arrugas.",
-      link: "/microsilk",
+        "Mejora significativamente los beneficios de la hidroterapia. Un aislamiento de alta calidad que mantenga bajo control el consumo de energía incluso en climas fríos es lo más importante. El aislamiento Xtreme es único en el mercado.",
     },
     {
-      title: "CONSTANTCLEAN+",
+      title: "DESINFECCIÓN UV",
       content:
-        "ConstantClean+™ destaca como el sistema de gestión de agua más eficiente. Incluido de serie en todos los jacuzzis de la Colección Crown, este sistema garantiza una limpieza más completa del agua en un lapso notablemente breve.",
-      link: "/constant-clean",
+        "Destruye casi el 100% de las bacterias en el acto. odos los Spas de la Serie Design by Waterwave incluyen una lámpara de desinfección ultravioleta para facilitar el cuidado del agua. Esto hace que el cuidado del agua sea un juego de niños. El uso de productos químicos para el cuidado del agua se reduce al mínimo. La irradiación con luz UV concentrada puede destruir casi el 100% de todos los virus y bacterias en el acto.",
     },
     {
-      title: "CONTROL DE FLUJO DINÁMICO",
+      title: "AIRBLOWER + AROMATERAPIA",
       content:
-        "Al girar la palanca hacia el rojo, activas los jets de la Zona H.O.T. rojos; hacia el azul, los jets azules. En cualquier punto intermedio, todos los jets de tu asiento se activan. Además, un control de aire intuitivo te permite ajustar la sensación perfecta.",
-      link: "/flow-control",
+        "Agua cristalina, caliente y una fragancia relajante.  Añade fragancias estimulantes o calmantes en función de tus preferencias. Estas fragancias  liberan tensión física y mental cuando se inhalan. A través de la Serie Design by Waterwave Spas, el aroma se libera a través de los jets de aire o Airblowers.",
     },
-    {
-      title: "H.O.T. ZONES",
-      content:
-        "Estas áreas están diseñadas para dirigirse a zonas específicas del cuerpo. Funcionan como las manos expertas de un masajista, ideales para relajar grupos musculares tensos que necesitan un tratamiento especial.",
-      link: "/volt",
-    },
+    ,
   ],
 
   models: [
