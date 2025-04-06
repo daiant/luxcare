@@ -408,9 +408,7 @@ export const design = {
       content:
         "Agua cristalina, caliente y una fragancia relajante.  Añade fragancias estimulantes o calmantes en función de tus preferencias. Estas fragancias  liberan tensión física y mental cuando se inhalan. A través de la Serie Design by Waterwave Spas, el aroma se libera a través de los jets de aire o Airblowers.",
     },
-    ,
   ],
-
   models: [
     {
       title: "Alaska",

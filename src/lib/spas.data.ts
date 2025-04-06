@@ -1,9 +1,9 @@
 import { fetchImage } from "./fetch-image";
-import {crown, design, strato, vector} from "@/lib/series.data";
-import {StepsProps} from "@/app/series/components/step/step";
+import { crown, design, strato, vector } from "@/lib/series.data";
+import { StepsProps } from "@/app/series/components/step/step";
 
 export type Spa = {
-  steps: StepsProps['steps'];
+  steps: StepsProps["steps"];
   title: string;
   serie: string;
   header: string;
@@ -40,7 +40,7 @@ export const design_landing_cards = [
     href: "/microsilk",
     src: fetchImage("/images/spas/crown/summit/flow-control.webp"),
   },
-]
+];
 
 const design_by_riviera = {
   title: "Riviera Pool",
@@ -139,7 +139,7 @@ const designDetails = [
     title: "Sofisticado",
     src: fetchImage("/images/spas/design/details/sofisticado.jpg"),
   },
-]
+];
 
 export const SPAS: { [key: string]: { [key: string]: Spa } } = {
   crown: {
@@ -1343,7 +1343,8 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       header: fetchImage("/images/spas/design/alaska/alaska-hero.jpg"),
       detail: fetchImage("/images/spas/design/alaska/alaska-detail.webp"),
       video: fetchImage("/images/spas/design/videos/design-video.mp4"),
-      description: "El modelo Alaska de la serie Design de Waterwave Spas combina elegancia y lujo con tecnología avanzada. Con un diseño refinado y un revestimiento de aluminio, este spa ofrece una experiencia incomparable de relajación. Equipado con 67 chorros de agua, dos asientos ergonómicos y dos tumbonas, proporciona un masaje completo para el cuerpo. Además, su iluminación ambiental crea una atmósfera tranquila y sofisticada, ideal para disfrutar de momentos de puro bienestar en tu propio hogar.",
+      description:
+        "El modelo Alaska de la serie Design de Waterwave Spas combina elegancia y lujo con tecnología avanzada. Con un diseño refinado y un revestimiento de aluminio, este spa ofrece una experiencia incomparable de relajación. Equipado con 67 chorros de agua, dos asientos ergonómicos y dos tumbonas, proporciona un masaje completo para el cuerpo. Además, su iluminación ambiental crea una atmósfera tranquila y sofisticada, ideal para disfrutar de momentos de puro bienestar en tu propio hogar.",
       certifications: [
         {
           title: "Ficha técnica",
@@ -1354,17 +1355,21 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       specifications: [
         { title: "Medidas", value: "230 x 230 x 92 cm" },
         { title: "Asientos", value: "4 personas" },
-        { title: 'Capacidad', value: '2 asientos y 2 tumbonas'},
+        { title: "Capacidad", value: "2 asientos y 2 tumbonas" },
         { title: "Jets", value: "67 jets" },
         { title: "Reposacabezas", value: "5" },
-        { title: "Bombas", value: "1 x 3 PS 2 velocidades + 2 x 3 PS 1 velocidad" },
+        {
+          title: "Bombas",
+          value: "1 x 3 PS 2 velocidades + 2 x 3 PS 1 velocidad",
+        },
         { title: "Volumen", value: "1819 L" },
         { title: "Electricidad", value: "230 V" },
-        {title: 'Filtración', value: '2 x 50 sq'},
+        { title: "Filtración", value: "2 x 50 sq" },
         { title: "Peso", value: "380 / 2199 kg" },
       ],
       maker: {
-        title: " El modelo Alaska pertenece a la Serie Design, de WaterWave Spas",
+        title:
+          " El modelo Alaska pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: designDetails,
@@ -1383,7 +1388,8 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       header: fetchImage("/images/spas/design/columbus/columbus-hero.jpg"),
       detail: fetchImage("/images/spas/design/columbus/columbus-detail.png"),
       video: fetchImage("/images/spas/design/videos/design-video.mp4"),
-      description: "El modelo Columbus combina tecnología avanzada y diseño ergonómico para ofrecer una experiencia de spa versátil. Con capacidad para 3 personas en una combinación de asientos y tumbonas, este spa garantiza comodidad y relajación. Sus 33 chorros ajustables proporcionan una terapia personalizada para aliviar tensiones musculares, mientras que el sistema de iluminación LED y otras características modernas añaden un toque de lujo. Ideal para disfrutar en familia o con amigos, el Columbus es una opción completa y sofisticada.",
+      description:
+        "El modelo Columbus combina tecnología avanzada y diseño ergonómico para ofrecer una experiencia de spa versátil. Con capacidad para 3 personas en una combinación de asientos y tumbonas, este spa garantiza comodidad y relajación. Sus 33 chorros ajustables proporcionan una terapia personalizada para aliviar tensiones musculares, mientras que el sistema de iluminación LED y otras características modernas añaden un toque de lujo. Ideal para disfrutar en familia o con amigos, el Columbus es una opción completa y sofisticada.",
       certifications: [
         {
           title: "Ficha técnica",
@@ -1394,16 +1400,17 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       specifications: [
         { title: "Medidas", value: "216 x 165 x 74 cm" },
         { title: "Asientos", value: "3 personas" },
-        { title: 'Capacidad', value: '1 asiento y 2 tumbonas'},
+        { title: "Capacidad", value: "1 asiento y 2 tumbonas" },
         { title: "Jets", value: "33 jets" },
         { title: "Bombas", value: "2 x 3 PS 1 velocidad" },
         { title: "Volumen", value: "1100 L" },
         { title: "Electricidad", value: "230 V" },
-        {title: 'Filtración', value: '1 x 50 sq'},
+        { title: "Filtración", value: "1 x 50 sq" },
         { title: "Peso", value: "270 / 1370 kg" },
       ],
       maker: {
-        title: "El modelo Columbus pertenece a la Serie Design, de WaterWave Spas",
+        title:
+          "El modelo Columbus pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: designDetails,
@@ -1422,7 +1429,8 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       header: fetchImage("/images/spas/design/jackson/jackson-hero.jpg"),
       detail: fetchImage("/images/spas/design/jackson/jackson-detail.jpg"),
       video: fetchImage("/images/spas/design/videos/design-video.mp4"),
-      description: "El modelo Jackson es un spa compacto diseñado para combinar comodidad y funcionalidad, ideal para espacios más pequeños. Con capacidad para 5 personas, ofrece tres tumbonas y dos asientos ergonómicos que maximizan la relajación. Su sistema de chorros ajustables proporciona una experiencia de hidroterapia personalizada, mientras que características como la iluminación LED crean un ambiente acogedor. Perfecto para quienes buscan un spa eficiente y de alta calidad para disfrutar en casa.",
+      description:
+        "El modelo Jackson es un spa compacto diseñado para combinar comodidad y funcionalidad, ideal para espacios más pequeños. Con capacidad para 5 personas, ofrece tres tumbonas y dos asientos ergonómicos que maximizan la relajación. Su sistema de chorros ajustables proporciona una experiencia de hidroterapia personalizada, mientras que características como la iluminación LED crean un ambiente acogedor. Perfecto para quienes buscan un spa eficiente y de alta calidad para disfrutar en casa.",
       certifications: [
         {
           title: "Ficha técnica",
@@ -1433,16 +1441,17 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       specifications: [
         { title: "Medidas", value: "216 x 216 x 92 cm" },
         { title: "Asientos", value: "3 personas" },
-        { title: 'Capacidad', value: '3 asientos y 2 tumbonas'},
+        { title: "Capacidad", value: "3 asientos y 2 tumbonas" },
         { title: "Jets", value: "62 jets" },
         { title: "Bombas", value: "2 x 3 PS 1 velocidad" },
         { title: "Volumen", value: "1474 L" },
         { title: "Electricidad", value: "230 V" },
-        {title: 'Filtración', value: '1 x 50 sq'},
+        { title: "Filtración", value: "1 x 50 sq" },
         { title: "Peso", value: "320 / 1794 kg" },
       ],
       maker: {
-        title: "El modelo Jackson pertenece a la Serie Design, de WaterWave Spas",
+        title:
+          "El modelo Jackson pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: designDetails,
@@ -1461,7 +1470,8 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       header: fetchImage("/images/spas/design/nizza/nizza-hero.jpg"),
       detail: fetchImage("/images/spas/design/nizza/nizza-detail.jpg"),
       video: fetchImage("/images/spas/design/videos/design-video.mp4"),
-      description: "El modelo Nizza es un spa diseñado para combinar estilo y funcionalidad, con capacidad para 5 personas, incluyendo una cómoda tumbona. Equipado con un sistema de chorros ajustables y una iluminación LED ambiental, ofrece una experiencia de hidroterapia relajante y personalizable. Su diseño espacioso y materiales de alta calidad lo convierten en una excelente opción para quienes buscan confort y rendimiento en su hogar.",
+      description:
+        "El modelo Nizza es un spa diseñado para combinar estilo y funcionalidad, con capacidad para 5 personas, incluyendo una cómoda tumbona. Equipado con un sistema de chorros ajustables y una iluminación LED ambiental, ofrece una experiencia de hidroterapia relajante y personalizable. Su diseño espacioso y materiales de alta calidad lo convierten en una excelente opción para quienes buscan confort y rendimiento en su hogar.",
       certifications: [
         {
           title: "Ficha técnica",
@@ -1472,12 +1482,15 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       specifications: [
         { title: "Medidas", value: "220 x 220 x 96 cm" },
         { title: "Asientos", value: "5 personas" },
-        { title: 'Capacidad', value: '4 asientos y 1 tumbona'},
+        { title: "Capacidad", value: "4 asientos y 1 tumbona" },
         { title: "Jets", value: "54 jets" },
-        { title: "Bombas", value: "1 x 3 PS 2 velocidades + 2 x 3 PS 1 velocidad" },
+        {
+          title: "Bombas",
+          value: "1 x 3 PS 2 velocidades + 2 x 3 PS 1 velocidad",
+        },
         { title: "Volumen", value: "1500 L" },
         { title: "Electricidad", value: "230 V" },
-        {title: 'Filtración', value: '2 x 50 sq'},
+        { title: "Filtración", value: "2 x 50 sq" },
         { title: "Peso", value: "350 / 1850 kg" },
       ],
       maker: {
@@ -1500,7 +1513,8 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       header: fetchImage("/images/spas/design/nizzaII/nizzaii-hero.jpg"),
       detail: fetchImage("/images/spas/design/nizzaII/nizzaII-detail.jpg"),
       video: fetchImage("/images/spas/design/videos/design-video.mp4"),
-      description: "El modelo Nizza II es una versión mejorada con capacidad para 5 personas, incluyendo una doble tumbona reclinable. Diseñado para maximizar la relajación, incorpora chorros ajustables para hidroterapia personalizada, iluminación LED y un sistema de eficiencia energética. Su diseño moderno y materiales duraderos lo convierten en una opción ideal para disfrutar de lujo y confort en cualquier espacio exterior.",
+      description:
+        "El modelo Nizza II es una versión mejorada con capacidad para 5 personas, incluyendo una doble tumbona reclinable. Diseñado para maximizar la relajación, incorpora chorros ajustables para hidroterapia personalizada, iluminación LED y un sistema de eficiencia energética. Su diseño moderno y materiales duraderos lo convierten en una opción ideal para disfrutar de lujo y confort en cualquier espacio exterior.",
       certifications: [
         {
           title: "Ficha técnica",
@@ -1511,16 +1525,20 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       specifications: [
         { title: "Medidas", value: "230 x 230 x 92 cm" },
         { title: "Asientos", value: "5 personas" },
-        { title: 'Capacidad', value: '4 asientos y 1 tumbona'},
+        { title: "Capacidad", value: "4 asientos y 1 tumbona" },
         { title: "Jets", value: "42 jets" },
-        { title: "Bombas", value: "1 x 3 PS 2 velocidades + 2 x 3 PS 1 velocidad" },
+        {
+          title: "Bombas",
+          value: "1 x 3 PS 2 velocidades + 2 x 3 PS 1 velocidad",
+        },
         { title: "Volumen", value: "1500 L" },
         { title: "Electricidad", value: "230 V" },
-        {title: 'Filtración', value: '2 x 50 sq'},
+        { title: "Filtración", value: "2 x 50 sq" },
         { title: "Peso", value: "350 / 1850 kg" },
       ],
       maker: {
-        title: "El modelo Nizza II pertenece a la Serie Design, de WaterWave Spas",
+        title:
+          "El modelo Nizza II pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: designDetails,
@@ -1539,7 +1557,8 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       header: fetchImage("/images/spas/design/richmond/richmond-hero.jpg"),
       detail: fetchImage("/images/spas/design/richmond/richmond-detail.jpg"),
       video: fetchImage("/images/spas/design/videos/design-video.mp4"),
-      description: "El modelo Richmond ofrece un diseño espacioso para hasta 3 personas, con 1 asiento ergonómico y dos tumbonas para mayor comodidad. Equipado con chorros ajustables para una experiencia de hidroterapia personalizada, destaca por su iluminación LED y un sistema energético eficiente. Su combinación de lujo y funcionalidad lo hace ideal para transformar cualquier espacio exterior en un oasis de relajación.",
+      description:
+        "El modelo Richmond ofrece un diseño espacioso para hasta 3 personas, con 1 asiento ergonómico y dos tumbonas para mayor comodidad. Equipado con chorros ajustables para una experiencia de hidroterapia personalizada, destaca por su iluminación LED y un sistema energético eficiente. Su combinación de lujo y funcionalidad lo hace ideal para transformar cualquier espacio exterior en un oasis de relajación.",
       certifications: [
         {
           title: "Ficha técnica",
@@ -1550,16 +1569,17 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       specifications: [
         { title: "Medidas", value: "216 x 165 x 82 cm" },
         { title: "Asientos", value: "3 personas" },
-        { title: 'Capacidad', value: '1 asiento y 2 tumbonas'},
+        { title: "Capacidad", value: "1 asiento y 2 tumbonas" },
         { title: "Jets", value: "41 jets" },
         { title: "Bombas", value: "2 x 3 PS 1 velocidad" },
         { title: "Volumen", value: "1100 L" },
         { title: "Electricidad", value: "230 V" },
-        {title: 'Filtración', value: '2 x 50 sq'},
+        { title: "Filtración", value: "2 x 50 sq" },
         { title: "Peso", value: "270 / 1370 kg" },
       ],
       maker: {
-        title: "El modelo Nizza II pertenece a la Serie Design, de WaterWave Spas",
+        title:
+          "El modelo Nizza II pertenece a la Serie Design, de WaterWave Spas",
         href: "/series/design",
       },
       details: designDetails,
@@ -1572,5 +1592,4 @@ export const SPAS: { [key: string]: { [key: string]: Spa } } = {
       design: design_by_DESIGN,
     },
   },
-
 };

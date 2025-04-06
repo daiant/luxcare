@@ -1,8 +1,8 @@
 import styles from "@/styles/individual-serie.module.css";
 import CaretRight from "@/public/images/icons/CaretRight.svg";
 
-export type StepsProps = { steps: { title: string, content: string, link: string }[] };
-export default function Steps({steps}: StepsProps) {
+export type StepsProps = { steps: { title: string, content: string, link?: string }[] };
+export default function Steps({ steps }: StepsProps) {
   return <section className={styles.steps}>
     <header>
       <div className={styles.call}>
@@ -17,8 +17,8 @@ export default function Steps({steps}: StepsProps) {
         <p role='heading' aria-level={1}>{step.title}</p>
         <p role='subheading'>{step.content}</p>
         {Boolean(step.link) && <a href={step.link}>
-            <span>Conocer más</span>
-            <CaretRight/>
+          <span>Conocer más</span>
+          <CaretRight />
         </a>}
       </div>
     </div>))}
