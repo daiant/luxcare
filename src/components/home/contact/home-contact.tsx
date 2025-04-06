@@ -14,7 +14,7 @@ export default function HomeContactForm() {
   const handleSubmit = React.useCallback(async (event: FormEvent) => {
     event.preventDefault();
     if (!form.current) return;
-    if(loading) return;
+    if (loading) return;
 
     setLoading(true);
     setError([false, false]);
@@ -53,7 +53,7 @@ export default function HomeContactForm() {
     <div className={styles.dialog} aria-hidden={!dialogVisible}>
       <div className={styles.mask} onClick={() => setDialogVisible(false)}></div>
       <main>
-        <h1>Perfecto.<br/>¡Mensaje enviado!</h1>
+        <h1>Perfecto.<br />¡Mensaje enviado!</h1>
         <div className={styles.column}>
           <h2>Te contactaremos lo antes posible.</h2>
           <div className={styles.action}>
@@ -63,60 +63,29 @@ export default function HomeContactForm() {
       </main>
     </div>
     <aside className={styles.aside}>
-      <header style={{marginInline: 'auto', width: 'fit-content'}}>
-        <h1>¿Te llamamos?</h1>
-        <h2>Introduce únicamente tu teléfono y nosotros haremos el resto.</h2>
+      <header style={{ marginInline: 'auto', width: 'fit-content' }}>
+        <h1><strong>Deja que nuestros expertos</strong> lo hagan <br /> todo <strong>más simple</strong></h1>
+        <h2>¿Estás listo para empezar?</h2>
       </header>
-      {/* <div role='main'>
-        <p className={styles.current}>
-          {questionIndex + 1}
-        </p>
-        <p className={styles.separator}>/</p>
-        <p className={styles.total}>4</p>
-      </div> */}
-    <header className={styles.quickForm}>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.inputWrapper} >
-          <input type="tel" id='quickPhone' name='phone' required title='Introduce tu teléfono'
-                 placeholder='+34 600 00 00'/>
-          <button type='submit'>Llámame</button>
-        </div>
-        <div className={styles.actions}>
-          <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.
-          </p>
-          {error[0] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
-        </div>
-      </form>
-    </header>
+      <header className={styles.quickForm}>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.inputWrapper} >
+            <div className={styles.wrapper} data-label='Nombre'>
+              <input type="text" id='quickName' name='name' required title='Introduce tu nombre' placeholder=' ' />
+            </div>
+            <div className={styles.wrapper} data-label='Teléfono' >
+              <input type="tel" id='quickPhone' name='phone' required title='Introduce tu teléfono' placeholder=' ' />
+            </div>
+            <button type='submit'>Obtener consulta</button>
+          </div>
+          <div className={styles.actions}>
+            <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.
+            </p>
+            {error[0] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}
+          </div>
+        </form>
+      </header>
     </aside>
-    {/*<form onSubmit={handleSubmit} ref={form} className={styles.form}>*/}
-    {/*  <h1>Contacto</h1>*/}
-    {/*  <fieldset>*/}
-    {/*    {questions.map((question) => <div key={question.name} className={styles.question}>*/}
-    {/*      <label htmlFor={question.name}>{question.label}</label>*/}
-    {/*      {question.type === 'textarea' && <textarea*/}
-    {/*        defaultValue={question.value}*/}
-    {/*        onChange={(e) => question.value = e.target.value}*/}
-    {/*        id={question.name}*/}
-    {/*        name={question.name}*/}
-    {/*        required*/}
-    {/*      ></textarea>}*/}
-
-    {/*      {question.type !== 'textarea' && <input type={question.type}*/}
-    {/*        defaultValue={question.value}*/}
-    {/*        onChange={(e) => question.value = e.target.value}*/}
-    {/*        id={question.name}*/}
-    {/*        name={question.name}*/}
-    {/*        required*/}
-    {/*      />}*/}
-    {/*    </div>)}*/}
-    {/*  </fieldset>*/}
-    {/*  <div className={styles.actions}>*/}
-    {/*    <p className={styles.tos}>Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.</p>*/}
-    {/*    <Button className={loading ? styles.loading : ''} type="submit">Enviar consulta</Button>*/}
-    {/*    {error[1] && <p className={styles.error}>Algo ha ido mal. Inténtalo de nuevo más tarde.</p>}*/}
-    {/*  </div>*/}
-    {/*</form>*/}
   </div>
 
 }
