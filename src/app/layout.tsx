@@ -1,7 +1,7 @@
 import Cookies from '@/components/cookies/cookies';
 import Footer from '@/components/footer/footer';
 import Menu from '@/components/header/menu/menu';
-import {GTMnoscript, GTMscript} from '@/lib/gtm/gtm';
+import { GoogleTagManager } from '@next/third-parties/google'
 
 import '@/styles/globals.css'
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
@@ -73,18 +73,21 @@ export default function RootLayout({
   return (
     <html lang="es" className={sans.className}>
       <head>
+        <GoogleTagManager gtmId="GTM-NCMBVJWJ" />
         <meta name="google-site-verification" content="emwMyVv_Y97sB-tX2sNjSstG9k8Ts82RM6sLWnd0Gac" />
       </head>
       <body>
-        <GTMnoscript />
-        <ReCaptchaProvider reCaptchaKey="6Lc6leEpAAAAAHYRPY6O527AF_STDSE9C5d9Aw60" useEnterprise>
-          <Menu />
-          {children}
-          <Footer />
-          <Cookies />
-        </ReCaptchaProvider>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCMBVJWJ"
+                height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe>
+      </noscript>
+      <ReCaptchaProvider reCaptchaKey="6Lc6leEpAAAAAHYRPY6O527AF_STDSE9C5d9Aw60" useEnterprise>
+        <Menu/>
+        {children}
+        <Footer/>
+        <Cookies/>
+      </ReCaptchaProvider>
       </body>
-    <GTMscript />
     </html>
   )
 }
