@@ -72,11 +72,11 @@ function DealerDialog({ dealers, show, onHide, customerLocation }: { dealers: De
 
   }
   const getTitle = () => {
-    return success ? '¡Informacion enviada!' : 'Has encontrado el nirvana, casi';
+    return success ? '¡Información enviada!' : 'Continúa para obtener más información';
   }
 
   const getDescription = () => {
-    return success ? 'Hemos enviado la informacion de los distribuidores mas cercanos a ti a tu correo. Si no lo encuentras, no olvides comprobar la carpeta de spam, o contactar con nosotros' : 'Para saber con qué distribuidores puedes conectarte, introduce tu correo electrónico, o deja que te llamemos';
+    return success ? 'Hemos enviado la información de los distribuidores más cercanos a ti a tu correo. Si no lo encuentras, no olvides comprobar la carpeta de spam, o contactar con nosotros' : 'Para saber con qué distribuidores puedes conectarte, introduce tu correo electrónico, o deja que te llamemos';
   }
   return <Dialog open={show} onOpenChange={(open) => !open ? onHide() : undefined}>
     <DialogContent>

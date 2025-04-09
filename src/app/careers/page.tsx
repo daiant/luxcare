@@ -11,7 +11,6 @@ export default function Careers() {
     if (active < 0) return;
     const carousel = document.querySelector('#carousel')
     const next = carousel?.children[active];
-    console.log(next);
     next?.scrollIntoView({
       behavior: 'smooth',
       block: 'center'

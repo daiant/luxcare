@@ -3,6 +3,7 @@ import React, { FormEvent } from 'react';
 import styles from './home-contact.module.css';
 import { useReCaptcha } from 'next-recaptcha-v3';
 import { Button } from '@/components/ui/button';
+import {Dialog, DialogContent, DialogDescription, DialogFooter, DialogTitle} from "@/components/ui/dialog";
 
 export default function HomeContactForm() {
   const form = React.useRef<HTMLFormElement>(null);
@@ -13,6 +14,7 @@ export default function HomeContactForm() {
 
   const handleSubmit = React.useCallback(async (event: FormEvent) => {
     event.preventDefault();
+    console.log('resum', form)
     if (!form.current) return;
     if (loading) return;
 
@@ -21,7 +23,6 @@ export default function HomeContactForm() {
     const data = new FormData(event.target as HTMLFormElement);
     // Generate ReCaptcha token
     const token = await executeRecaptcha("form_submit");
-
     const obj: { [index: string]: FormDataEntryValue | null } = {};
     obj['name'] = data.get('name');
     obj['email'] = data.get('email');
@@ -31,7 +32,7 @@ export default function HomeContactForm() {
     const headers = new Headers();
     headers.set("Content-Type", "application/json");
     try {
-      const response = await fetch('https://luxcare-backoffice.vercel.app/api/v1/contact', { method: "POST", body: JSON.stringify(obj), headers });
+      const response = await fetch('/api/v1/contact', { method: "POST", body: JSON.stringify(obj), headers });
       if (response.ok) {
         setDialogVisible(true);
         (event.target as HTMLFormElement).reset();
@@ -50,25 +51,22 @@ export default function HomeContactForm() {
   }, [executeRecaptcha, loading]);
 
   return <div className={styles.container}>
-    <div className={styles.dialog} aria-hidden={!dialogVisible}>
-      <div className={styles.mask} onClick={() => setDialogVisible(false)}></div>
-      <main>
-        <h1>Perfecto.<br />¡Mensaje enviado!</h1>
-        <div className={styles.column}>
-          <h2>Te contactaremos lo antes posible.</h2>
-          <div className={styles.action}>
-            <Button onClick={() => setDialogVisible(false)}>Volver</Button>
-          </div>
-        </div>
-      </main>
-    </div>
+    <Dialog open={dialogVisible} onOpenChange={setDialogVisible}>
+      <DialogContent>
+        <DialogTitle>Perfecto. ¡Mensaje enviado!</DialogTitle>
+        <DialogDescription>Te contactaremos lo antes posible.</DialogDescription>
+        <DialogFooter className='mt-2'>
+          <Button onClick={() => window.location.reload()}>Volver</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
     <aside className={styles.aside}>
       <header style={{ marginInline: 'auto', width: 'fit-content' }}>
         <h1><strong>Deja que nuestros expertos</strong> lo hagan <br /> todo <strong>más simple</strong></h1>
         <h2>¿Estás listo para empezar?</h2>
       </header>
       <header className={styles.quickForm}>
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit} className={styles.form} ref={form}>
           <div className={styles.inputWrapper} >
             <div className={styles.wrapper} data-label='Nombre'>
               <input type="text" id='quickName' name='name' required title='Introduce tu nombre' placeholder=' ' />

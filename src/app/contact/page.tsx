@@ -2,17 +2,59 @@
 
 import ContactForm from '@/components/contact/contact-form';
 import styles from './contact.module.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Dealers from "@/components/dealers/Dealers";
+import {Dialog, DialogContent, DialogDescription, DialogFooter, DialogTitle} from "@/components/ui/dialog";
+import {Button} from "@/components/ui/button";
+import {useReCaptcha} from "next-recaptcha-v3";
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [error, setError] = React.useState(false);
+  const { executeRecaptcha } = useReCaptcha();
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    (event.target as HTMLFormElement).reset();
-    setSubmitted(true);
+    setSubmitted(false);
+    setError(false);
+
+    const data = new FormData(event.target as HTMLFormElement);
+    // Generate ReCaptcha token
+    const token = await executeRecaptcha("form_submit");
+    const obj: { [index: string]: FormDataEntryValue | null } = {};
+    obj['name'] = data.get('name');
+    obj['email'] = data.get('email');
+    obj['phone'] = data.get('phone');
+    obj['question'] = data.get('subject');
+    obj['token'] = token;
+    const headers = new Headers();
+    headers.set("Content-Type", "application/json");
+    try {
+      const response = await fetch('/api/v1/contact', { method: "POST", body: JSON.stringify(obj), headers });
+      if (response.ok) {
+        setSubmitted(true);
+        (event.target as HTMLFormElement).reset();
+      }
+      else {
+        console.error('Error', response.status)
+        console.error(await response.text())
+        setError(true)
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return <div className={styles.wrapper}>
+    <Dialog open={submitted} onOpenChange={setSubmitted}>
+      <DialogContent>
+        <DialogTitle>{error ? 'Ha habido un error' : 'Perfecto. ¡Mensaje enviado!'}</DialogTitle>
+        <DialogDescription>{error ? 'Por favor, inténtalo de nuevo más tarde' : 'Te contactaremos lo antes posible.'}</DialogDescription>
+        <DialogFooter className='mt-2'>
+          <Button onClick={() => window.location.reload()}>Volver</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+
     <header className={styles.hero} id='form'>
       <Dealers/>
       <h1 style={{marginBlockStart: 96}}>¿Nos conocemos?</h1>
@@ -43,23 +85,6 @@ export default function Contact() {
             (Paterna, Valencia)</a>
         </div>
       </div>
-      {/*<main>*/}
-      {/*  <div className={styles.timetable}>*/}
-      {/*    <p>LUNES: DE 09:00h A 19:30h</p>*/}
-      {/*    <p>MARTES: DE 09:00h A 19:30h</p>*/}
-      {/*    <p>MIÉRCOLES: DE 09:00h A 19:30h</p>*/}
-      {/*    <p>JUEVES: DE 09:00h A 19:30h</p>*/}
-      {/*    <p>VIERNES: DE 09:00h A 19:30h</p>*/}
-      {/*    <p>SÁBADO: DE 10:00h A 14:00h</p>*/}
-      {/*    <p>DOMINGO: CERRADO</p>*/}
-      {/*  </div>*/}
-      {/*  <aside>*/}
-      {/*    <iframe*/}
-      {/*      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3077.3544375550764!2d-0.48548649999999993!3d39.5290576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd605b0182fdcc49%3A0xd8c7da9f1666849b!2sGrupo%20Aquarea%20S.%20L.!5e0!3m2!1ses!2ses!4v1717006596896!5m2!1ses!2ses"*/}
-      {/*      width="600" height="450" allowFullScreen loading="lazy"*/}
-      {/*      referrerPolicy="no-referrer-when-downgrade"></iframe>*/}
-      {/*  </aside>*/}
-      {/*</main>*/}
     </section>
     <section className={styles.cta}>
       <article>
@@ -69,21 +94,5 @@ export default function Contact() {
       </article>
       <img src='/images/contact/banner.jpg' alt='contacto'/>
     </section>
-    {/*<section className={styles.blog}>*/}
-    {/*  <main>*/}
-    {/*    <h1>Lorem ipsum dolor, </h1>*/}
-    {/*    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, ducimus nobis. Ipsam quibusdam error, beatae*/}
-    {/*      aliquid dolor at sapiente, repudiandae minima officia ea quas. Quas laborum quis facilis maiores cumque?</p>*/}
-    {/*    <a href="//spa.luxcare.es">Ver más artículos</a>*/}
-    {/*  </main>*/}
-    {/*  <aside>*/}
-    {/*    <img src='/images/contact/banner.jpg' alt='contacto'/>*/}
-    {/*  </aside>*/}
-    {/*</section>*/}
-    {/*<section className={styles.last_cta}>*/}
-    {/*  <h2>Comienza a beneficiarte de todas tus nuevas ventajas</h2>*/}
-    {/*  <h1>Conviértete en miembro ahora</h1>*/}
-    {/*  <a href="#form">Rellena el formulario</a>*/}
-    {/*</section>*/}
   </div>
 }

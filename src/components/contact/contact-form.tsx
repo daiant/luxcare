@@ -4,7 +4,7 @@ import styles from './contact-form.module.css';
 import Input from '../form/input/input';
 import Textarea from '../form/textarea/textarea';
 import React from 'react';
-export default function ContactForm({ onSubmit, submitted, className }: { onSubmit: FormEventHandler<HTMLFormElement>, submitted: boolean, className?: string }) {
+export default function ContactForm({ onSubmit, className }: { onSubmit: FormEventHandler<HTMLFormElement>, submitted: boolean, className?: string }) {
 
   return <form className={`${styles.form} ${className}`} autoComplete='off' onSubmit={onSubmit}>
     <Input required={true} label='Nombre' name='name' type='text' ></Input>
@@ -13,7 +13,6 @@ export default function ContactForm({ onSubmit, submitted, className }: { onSubm
     <Textarea required={true} label='¿Cómo te podemos ayudar?' name='subject' />
 
     <div className={styles.actions}>
-      <span aria-hidden={!submitted} className={styles.info}>Mensaje enviado correctamente!</span>
       <label className={styles.tos}>
         Al hacer click estoy aceptando los <a href='/legal/tos'>Términos y condiciones</a>.
       </label>

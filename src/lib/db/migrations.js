@@ -1,4 +1,4 @@
-import { makeQuery } from "./db.connection";
+import { makeQuery } from "@/db";
 
 export default async function makeMigrations() {
     await makeQuery(`

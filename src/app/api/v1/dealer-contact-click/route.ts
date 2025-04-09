@@ -39,7 +39,5 @@ export async function POST(req: Request) {
   );
 
   // TODO: Send email to customer
-  console.log(body.customer_info);
-
-  return new Response(JSON.stringify({ value: "tot be, molt be bonico" }));
+  return new Response(JSON.stringify({ value: "saved into db" }));
 }
