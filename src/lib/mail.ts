@@ -1,11 +1,10 @@
 import nodemailer from 'nodemailer'
 
 export const mailer = nodemailer.createTransport({
-  host: 'mail.luxcare.es',
+  host: 'smtp.gmail.com',
   port: 465,
-  // secure: true,
   auth: {
-    user: 'web@luxcare.es',
+    user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASS,
   }
 });

@@ -22,7 +22,7 @@ export async function POST(req: Request) {
 
   console.log("Sending contact mail...");
   await mailer.sendMail({
-    from: "web@luxcare.es",
+    from: process.env.MAIL_USER,
     to: "cmg2512@gmail.com",
     subject: "Nuevo Contacto Luxcare",
     html: `
