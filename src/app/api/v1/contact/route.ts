@@ -48,6 +48,9 @@ export async function POST(req: Request) {
         : ``
     }
     `,
+  }).then(response => {
+    console.log("Contact mail sent successfully");
+    console.log(response.accepted);
   });
   return new Response(JSON.stringify({ msg: "saved into db" }));
 }
